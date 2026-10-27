@@ -322,9 +322,15 @@
                   </span>
                 </div>
               </div>
-              <button onclick="clearChat()" class="text-xs text-slate-400 hover:text-red-500 transition px-2 py-1 rounded">
-                Tarixni tozalash
-              </button>
+              <div class="flex items-center space-x-2">
+                <button onclick="openAiKeyModal()" class="text-xs text-blue-600 hover:text-blue-700 bg-blue-50 px-2.5 py-1 rounded-xl font-bold transition flex items-center space-x-1" title="Haqiqiy Gemini AI kalitini ulash">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i>
+                  <span>AI Miya (Gemini)</span>
+                </button>
+                <button onclick="clearChat()" class="text-xs text-slate-400 hover:text-red-500 transition px-2 py-1 rounded">
+                  Tarixni tozalash
+                </button>
+              </div>
             </div>
 
             <!-- Messages Stream -->
@@ -464,6 +470,50 @@
       </button>
     </div>
   </nav>
+
+  <!-- ================= AI KEY SETTINGS MODAL ================= -->
+  <div id="modal-ai-key" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100 text-left animate-in fade-in zoom-in duration-200">
+      
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-black text-slate-900">Haqiqiy Sun’iy Intellektni Ulash</h3>
+          <p class="text-xs text-slate-500">Google Gemini AI bilan jonli suhbat</p>
+        </div>
+      </div>
+
+      <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+        Google Gemini sizning har qanday savolingizga (o‘zbekcha yoki nemischa) xuddi haqiqiy nemis tili o‘qituvchisidek chuqur tahlil bilan jonli javob beradi.
+      </p>
+
+      <div class="mb-4">
+        <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Google Gemini API Kaliti</label>
+        <input type="password" id="input-gemini-key" placeholder="AIzaSy..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xs font-mono">
+      </div>
+
+      <div class="bg-blue-50 p-3 rounded-2xl border border-blue-100 text-xs text-blue-900 mb-5">
+        <span class="font-bold block mb-1">🎁 Bepul kalit olish (1 daqiqa):</span>
+        <a href="https://aistudio.google.com/app/apikey" target="_blank" class="text-blue-600 underline font-semibold flex items-center space-x-1">
+          <span>aistudio.google.com ga kirish</span>
+          <i data-lucide="external-link" class="w-3 h-3 ml-1"></i>
+        </a>
+        <p class="text-[11px] text-blue-700 mt-1">Google hisobingiz bilan kirib, "Create API Key" tugmasini bosing — kalit mutlaqo bepul beriladi!</p>
+      </div>
+
+      <div class="flex gap-2">
+        <button onclick="closeAiKeyModal()" class="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-xs transition">
+          Bekor qilish
+        </button>
+        <button onclick="saveAiKey()" class="flex-1 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs transition">
+          Saqlash & Ulash
+        </button>
+      </div>
+
+    </div>
+  </div>
 
   <script src="/app.js"></script>
 </body>

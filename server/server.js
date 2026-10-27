@@ -301,8 +301,8 @@ app.get('/api/chat/history', authMiddleware, (req, res) => {
   res.json({ chats });
 });
 
-app.post('/api/chat/message', authMiddleware, (req, res) => {
-  const { message, scenario } = req.body;
+app.post('/api/chat/message', authMiddleware, async (req, res) => {
+  const { message, scenario, apiKey } = req.body;
   if (!message || !message.trim()) {
     return res.status(400).json({ error: 'Xabar bo‘sh bo‘lishi mumkin emas' });
   }
@@ -310,8 +310,8 @@ app.post('/api/chat/message', authMiddleware, (req, res) => {
   const user = db.getUserById(req.user.id);
   const userLevel = user ? user.currentLevel : 'A1';
 
-  // Generate response & error analysis
-  const aiResult = aiEngine.generateAiResponse(message, scenario || 'free', userLevel);
+  // Generate response via Gemini or intelligent fallback
+  const aiResult = await aiEngine.generateAiResponse(message, scenario || 'free', userLevel, apiKey);
 
   // Save User message
   db.addChatMessage(req.user.id, {

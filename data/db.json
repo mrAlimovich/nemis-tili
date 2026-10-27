@@ -126,6 +126,23 @@
         "tip": "Gap tuzayotganda fe’lni 2-o‘rinda saqlashni unutmang!",
         "scenario": "free",
         "timestamp": "2026-10-27T07:57:19.258Z"
+      },
+      {
+        "id": "1793105661918",
+        "role": "user",
+        "text": "manga yordam bera olasanmi",
+        "scenario": "free",
+        "timestamp": "2026-10-27T12:54:21.918Z"
+      },
+      {
+        "id": "1793105661919",
+        "role": "assistant",
+        "textDe": "Natürlich! Ich kann dir sehr gerne beim Deutschlernen helfen. Womit möchtest du anfangen?",
+        "textUz": "Albatta! Men senga nemis tilini o‘rganishda jon deb yordam beraman. Nimadan boshlashni xohlaysan: grammatikami yoki oddiy suhbatdanmi?",
+        "corrections": [],
+        "tip": "\"Ich kann dir helfen\" — Men senga yordam bera olaman.",
+        "scenario": "free",
+        "timestamp": "2026-10-27T12:54:21.919Z"
       }
     ]
   }

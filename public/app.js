@@ -1195,9 +1195,14 @@ async function handleSendChatMessage(e) {
     const sendBtn = document.getElementById('btn-chat-send');
     sendBtn.disabled = true;
 
+    const apiKey = localStorage.getItem('gm_gemini_key') || '';
     const res = await api('/api/chat/message', {
       method: 'POST',
-      body: JSON.stringify({ message, scenario: STATE.activeScenario })
+      body: JSON.stringify({
+        message,
+        scenario: STATE.activeScenario,
+        apiKey
+      })
     });
 
     const aiHtml = renderChatMessage(res.message);
@@ -1215,6 +1220,35 @@ async function handleSendChatMessage(e) {
     const sendBtn = document.getElementById('btn-chat-send');
     if (sendBtn) sendBtn.disabled = false;
   }
+}
+
+function openAiKeyModal() {
+  const modal = document.getElementById('modal-ai-key');
+  if (modal) {
+    modal.classList.remove('hidden');
+    const input = document.getElementById('input-gemini-key');
+    if (input) input.value = localStorage.getItem('gm_gemini_key') || '';
+    initIcons();
+  }
+}
+
+function closeAiKeyModal() {
+  const modal = document.getElementById('modal-ai-key');
+  if (modal) modal.classList.add('hidden');
+}
+
+function saveAiKey() {
+  const input = document.getElementById('input-gemini-key');
+  const key = (input.value || '').trim();
+  if (key) {
+    localStorage.setItem('gm_gemini_key', key);
+    playSound('correct');
+    alert('Google Gemini Sun’iy Intellekti muvaffaqiyatli ulandi! Endi u to‘g‘ridan-to‘g‘ri jonli javob beradi.');
+  } else {
+    localStorage.removeItem('gm_gemini_key');
+    alert('Kalit o‘chirildi. Dastur standart aqlli rejimda davom etadi.');
+  }
+  closeAiKeyModal();
 }
 
 async function clearChat() {
