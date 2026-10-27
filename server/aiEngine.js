@@ -1,4 +1,5 @@
-// AI Engine with Direct Google Gemini Integration & Smart Fallback
+// AI Engine with Multi-Provider Failover: Google Gemini + Groq/xAI Grok + Smart Fallback
+
 const scenarios = {
   free: {
     name: 'Erkin Suhbat (Freies Gespräch)',
@@ -26,7 +27,6 @@ const scenarios = {
   }
 };
 
-// System prompt instructing the AI model to behave as German Master AI
 function buildSystemPrompt(scenarioKey, userLevel) {
   const sc = scenarios[scenarioKey] || scenarios.free;
   return `Siz "GERMAN MASTER AI" platformasining nemis tili shaxsiy murabbiyisiz.
@@ -35,65 +35,103 @@ Joriy muloqot senariysi: "${sc.name}" (${sc.description}).
 
 QOIDALAR:
 1. O'quvchi qaysi tilda (nemischa, o'zbekcha yoki ruscha) yozishidan qat'i nazar, unga do'stona, samimiy va o'rgatuvchi tarzda javob bering.
-2. Har bir javobingizda tabiiy nemis tilidagi javob (dialog davomi) va uning o'zbekcha ma'nosi bo'lishi shart.
-3. Agar o'quvchi nemischa yozgan bo'lsa va xato qilgan bo'lsa, xatosini aniqlab, to'g'ri variantini va sababini tushuntiring.
-4. Javobingizni FAQAT quyidagi JSON formatida qaytaring:
+2. Har bir javobingizda tabiiy nemis tilidagi dialog davomi va uning o'zbekcha ma'nosi bo'lishi shart.
+3. Agar o'quvchi nemischa xato qilgan bo'lsa, xatosini aniqlab, to'g'ri variantini va sababini tushuntiring.
+4. Javobingizni FAQAT quyidagi toza JSON formatida qaytaring:
 {
-  "replyDe": "Nemischa tabiiy javob (agar o'quvchi o'zbekcha savol bergan bo'lsa ham unga nemischa qisqa javob va o'rgatish)",
-  "replyUz": "Nemischa javobingizning o'zbekcha tushunarli tarjimasi",
+  "replyDe": "Nemischa tabiiy javob",
+  "replyUz": "O'zbekcha tarjima",
   "corrections": [
     {
       "category": "GRAMMAR / VOCABULARY / ARTICLE",
-      "original": "o'quvchi xato yozgan so'z yoki gap",
-      "corrected": "to'g'ri varianti",
-      "reason": "o'zbek tilida qisqa tushuntirish"
+      "original": "xato so'z yoki gap",
+      "corrected": "to'g'risi",
+      "reason": "o'zbekcha tushuntirish"
     }
   ],
   "tip": "Qisqa va foydali nemis tili maslahati"
 }`;
 }
 
-// Real AI Generation using Google Gemini API
+// 1. Google Gemini API Call
 async function generateWithGemini(userMessage, scenarioKey, userLevel, apiKey) {
   const systemPrompt = buildSystemPrompt(scenarioKey, userLevel);
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
-  const requestBody = {
-    contents: [
-      {
-        role: 'user',
-        parts: [{ text: `${systemPrompt}\n\nFoydalanuvchi xabari: "${userMessage}"` }]
-      }
-    ],
-    generationConfig: {
-      temperature: 0.7,
-      responseMimeType: "application/json"
-    }
-  };
-
   const response = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(requestBody)
+    body: JSON.stringify({
+      contents: [
+        {
+          role: 'user',
+          parts: [{ text: `${systemPrompt}\n\nFoydalanuvchi xabari: "${userMessage}"` }]
+        }
+      ],
+      generationConfig: {
+        temperature: 0.7,
+        responseMimeType: "application/json"
+      }
+    })
   });
 
   if (!response.ok) {
     const errText = await response.text();
-    throw new Error(`Gemini API Error: ${errText}`);
+    throw new Error(`Gemini Error (${response.status}): ${errText}`);
   }
 
   const data = await response.json();
   const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!text) throw new Error('AI javob qaytarmadi');
+  if (!text) throw new Error('Gemini bo‘sh javob qaytardi');
 
   return JSON.parse(text);
 }
 
-// Fallback intelligent responder if API key is not yet configured
+// 2. Groq or xAI Grok API Call (OpenAI compatible)
+async function generateWithGroqOrGrok(userMessage, scenarioKey, userLevel, apiKey) {
+  const systemPrompt = buildSystemPrompt(scenarioKey, userLevel);
+
+  // Detect whether it's Groq (console.groq.com) or xAI Grok (api.x.ai)
+  const isXai = apiKey.startsWith('xai-');
+  const endpoint = isXai 
+    ? 'https://api.x.ai/v1/chat/completions' 
+    : 'https://api.groq.com/openai/v1/chat/completions';
+  
+  const model = isXai ? 'grok-beta' : 'llama-3.3-70b-versatile';
+
+  const response = await fetch(endpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`
+    },
+    body: JSON.stringify({
+      model: model,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userMessage }
+      ],
+      response_format: { type: "json_object" },
+      temperature: 0.7
+    })
+  });
+
+  if (!response.ok) {
+    const errText = await response.text();
+    throw new Error(`Groq/Grok Error (${response.status}): ${errText}`);
+  }
+
+  const data = await response.json();
+  const text = data.choices?.[0]?.message?.content;
+  if (!text) throw new Error('Groq/Grok bo‘sh javob qaytardi');
+
+  return JSON.parse(text);
+}
+
+// 3. Fallback Rule-Based Intelligence
 function generateFallbackResponse(userMessage, scenarioKey) {
   const text = userMessage.trim().toLowerCase();
 
-  // If user asks in Uzbek
   if (/yordam bera olasanmi|yordam ber|menga yordam|yordam kerak/i.test(text)) {
     return {
       replyDe: 'Natürlich! Ich kann dir sehr gerne beim Deutschlernen helfen. Womit möchtest du anfangen?',
@@ -112,32 +150,6 @@ function generateFallbackResponse(userMessage, scenarioKey) {
     };
   }
 
-  if (/tushunmadim|yana tushuntir|qanaqa/i.test(text)) {
-    return {
-      replyDe: 'Kein Problem! Sag mir einfach genau, was unklar ist.',
-      replyUz: 'Hechqisi yo‘q! Aynan qaysi mavzu yoki qoida tushunarsiz bo‘lganini ayt, sodda qilib tushuntirib beraman.',
-      corrections: [],
-      tip: 'So‘rashdan hech qachon tortinmang!'
-    };
-  }
-
-  // Akkusativ check
-  if (/ich\s+habe\s+ein\s+(tisch|stuhl|apfel|kaffee)/i.test(text)) {
-    return {
-      replyDe: 'Sehr gut! Aber vergiss nicht: Im Akkusativ heißt es "einen Tisch".',
-      replyUz: 'Juda yaxshi! Lekin unutmang: Akkusativda (tushum kelishigida) "einen Tisch" bo‘ladi.',
-      corrections: [
-        {
-          category: 'ARTICLE / CASE',
-          original: 'ein Tisch',
-          corrected: 'einen Tisch',
-          reason: 'Erkak jinsidagi otlar Akkusativda "ein" emas, "einen" oladi.'
-        }
-      ],
-      tip: 'haben fe’lidan keyin erkak jinsi doimo "einen" bo‘ladi.'
-    };
-  }
-
   return {
     replyDe: 'Das ist interessant! Könntest du das auf Deutsch versuchen?',
     replyUz: 'Bu juda qiziq! Shuni nemis tilida aytib ko‘ra olasanmi? Masalan oddiy so‘zlar bilan boshla.',
@@ -146,17 +158,32 @@ function generateFallbackResponse(userMessage, scenarioKey) {
   };
 }
 
-async function generateAiResponse(userMessage, scenarioKey, userLevel, customApiKey) {
-  const apiKey = customApiKey || process.env.GEMINI_API_KEY;
+// Master Orchestrator: Try Gemini -> On failure try Groq/Grok -> Fallback
+async function generateAiResponse(userMessage, scenarioKey, userLevel, keys = {}) {
+  const geminiKey = keys.geminiKey || process.env.GEMINI_API_KEY;
+  const groqKey = keys.groqKey || process.env.GROQ_API_KEY;
 
-  if (apiKey) {
+  // 1. Try Gemini First (if available)
+  if (geminiKey) {
     try {
-      return await generateWithGemini(userMessage, scenarioKey, userLevel, apiKey);
+      console.log('Attempting AI response via Google Gemini...');
+      return await generateWithGemini(userMessage, scenarioKey, userLevel, geminiKey);
     } catch (err) {
-      console.error('Gemini error, falling back:', err.message);
+      console.warn('Gemini failed or rate limit hit! Switching immediately to Backup AI (Groq/Grok)...', err.message);
     }
   }
 
+  // 2. Try Groq / Grok Second (Instant Failover)
+  if (groqKey) {
+    try {
+      console.log('Attempting AI response via Groq/Grok AI...');
+      return await generateWithGroqOrGrok(userMessage, scenarioKey, userLevel, groqKey);
+    } catch (err) {
+      console.warn('Groq/Grok also failed:', err.message);
+    }
+  }
+
+  // 3. Fallback
   return generateFallbackResponse(userMessage, scenarioKey);
 }
 

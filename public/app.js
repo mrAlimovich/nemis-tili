@@ -1195,13 +1195,15 @@ async function handleSendChatMessage(e) {
     const sendBtn = document.getElementById('btn-chat-send');
     sendBtn.disabled = true;
 
-    const apiKey = localStorage.getItem('gm_gemini_key') || '';
+    const geminiKey = localStorage.getItem('gm_gemini_key') || '';
+    const groqKey = localStorage.getItem('gm_groq_key') || '';
     const res = await api('/api/chat/message', {
       method: 'POST',
       body: JSON.stringify({
         message,
         scenario: STATE.activeScenario,
-        apiKey
+        geminiKey,
+        groqKey
       })
     });
 
@@ -1226,8 +1228,10 @@ function openAiKeyModal() {
   const modal = document.getElementById('modal-ai-key');
   if (modal) {
     modal.classList.remove('hidden');
-    const input = document.getElementById('input-gemini-key');
-    if (input) input.value = localStorage.getItem('gm_gemini_key') || '';
+    const inputGemini = document.getElementById('input-gemini-key');
+    const inputGroq = document.getElementById('input-groq-key');
+    if (inputGemini) inputGemini.value = localStorage.getItem('gm_gemini_key') || '';
+    if (inputGroq) inputGroq.value = localStorage.getItem('gm_groq_key') || '';
     initIcons();
   }
 }
@@ -1238,16 +1242,25 @@ function closeAiKeyModal() {
 }
 
 function saveAiKey() {
-  const input = document.getElementById('input-gemini-key');
-  const key = (input.value || '').trim();
-  if (key) {
-    localStorage.setItem('gm_gemini_key', key);
-    playSound('correct');
-    alert('Google Gemini Sun’iy Intellekti muvaffaqiyatli ulandi! Endi u to‘g‘ridan-to‘g‘ri jonli javob beradi.');
+  const inputGemini = document.getElementById('input-gemini-key');
+  const inputGroq = document.getElementById('input-groq-key');
+  const geminiKey = (inputGemini ? inputGemini.value : '').trim();
+  const groqKey = (inputGroq ? inputGroq.value : '').trim();
+
+  if (geminiKey) {
+    localStorage.setItem('gm_gemini_key', geminiKey);
   } else {
     localStorage.removeItem('gm_gemini_key');
-    alert('Kalit o‘chirildi. Dastur standart aqlli rejimda davom etadi.');
   }
+
+  if (groqKey) {
+    localStorage.setItem('gm_groq_key', groqKey);
+  } else {
+    localStorage.removeItem('gm_groq_key');
+  }
+
+  playSound('correct');
+  alert('AI kalitlari muvaffaqiyatli saqlandi!\n\n🔄 Tizim: 1-kalit (Gemini) tugasa, avtomatik 2-kalit (Groq/Grok)ga ulanadi!');
   closeAiKeyModal();
 }
 

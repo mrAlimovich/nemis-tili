@@ -302,7 +302,7 @@ app.get('/api/chat/history', authMiddleware, (req, res) => {
 });
 
 app.post('/api/chat/message', authMiddleware, async (req, res) => {
-  const { message, scenario, apiKey } = req.body;
+  const { message, scenario, apiKey, geminiKey, groqKey } = req.body;
   if (!message || !message.trim()) {
     return res.status(400).json({ error: 'Xabar bo‘sh bo‘lishi mumkin emas' });
   }
@@ -310,8 +310,14 @@ app.post('/api/chat/message', authMiddleware, async (req, res) => {
   const user = db.getUserById(req.user.id);
   const userLevel = user ? user.currentLevel : 'A1';
 
-  // Generate response via Gemini or intelligent fallback
-  const aiResult = await aiEngine.generateAiResponse(message, scenario || 'free', userLevel, apiKey);
+  // Support both single apiKey or { geminiKey, groqKey }
+  const keys = {
+    geminiKey: geminiKey || apiKey,
+    groqKey: groqKey
+  };
+
+  // Generate response via Gemini or instant Failover to Groq/Grok or smart fallback
+  const aiResult = await aiEngine.generateAiResponse(message, scenario || 'free', userLevel, keys);
 
   // Save User message
   db.addChatMessage(req.user.id, {
