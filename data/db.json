@@ -1,0 +1,132 @@
+{
+  "users": [
+    {
+      "id": "usr_1793087839209r9sv",
+      "name": "Jasur",
+      "email": "jasur@test.com",
+      "passwordHash": "$2b$10$eKmEPtdwxPDScu3t1ujmfuTaybEq1Y8SsOtp2QKLLjlAcUnZgLn1K",
+      "targetLevel": "B1",
+      "currentLevel": "A0",
+      "goal": "Ish",
+      "createdAt": "2026-10-27T07:57:19.213Z"
+    },
+    {
+      "id": "usr_1793088016928ccse",
+      "name": "Ikromjon",
+      "email": "dg.ramz177@gmail.com",
+      "passwordHash": "$2b$10$bnjsC.XjsfqyAEaruhJBI.6wWUft.oP.VOcZ4HBcaSozGcayhOFEi",
+      "targetLevel": "B1",
+      "currentLevel": "A0",
+      "goal": "Ish va Faoliyat",
+      "createdAt": "2026-10-27T08:00:16.928Z"
+    },
+    {
+      "id": "usr_1793091158369i03w",
+      "name": "Акбархон",
+      "email": "m_akbar96@mail.ru",
+      "passwordHash": "$2b$10$lBfVDiC0Hy3TFT7C5GQUbOnP09m6fO4JqS.a.nD2PNf4PoLPpQB4y",
+      "targetLevel": "B1",
+      "currentLevel": "A1",
+      "goal": "Ish va Faoliyat",
+      "createdAt": "2026-10-27T08:52:38.369Z"
+    }
+  ],
+  "progress": {
+    "usr_1793087839209r9sv": {
+      "completedLessons": {},
+      "diagnostic": null,
+      "xp": 0,
+      "streak": 1,
+      "lastStudyDate": "2026-10-27",
+      "mistakes": [
+        {
+          "id": "1793087839261",
+          "category": "ARTICLE / CASE",
+          "original": "ein tisch",
+          "corrected": "einen tisch",
+          "reason": "\"tisch\" so‘zi erkak jinsida (der). Akkusativda (tushum kelishigida) \"ein\" emas, \"einen\" bo‘ladi!",
+          "timestamp": "2026-10-27T07:57:19.261Z"
+        }
+      ]
+    },
+    "usr_1793088016928ccse": {
+      "completedLessons": {
+        "lesson_1": {
+          "score": 75,
+          "completedAt": "2026-10-27T08:38:30.790Z",
+          "attempts": 1
+        }
+      },
+      "diagnostic": null,
+      "xp": 23,
+      "streak": 1,
+      "lastStudyDate": "2026-10-27",
+      "mistakes": [
+        {
+          "id": "1793090310794",
+          "type": "order",
+          "question": "So‘zlarni to‘g‘ri tartibda joylashtiring: \"Ko‘rishguncha xayr!\"",
+          "userAnswer": "auf wedersehen",
+          "correctAnswer": "Auf Wiedersehen",
+          "reason": "\"Auf Wiedersehen\" rasmiy xayrlashish iborasidir.",
+          "timestamp": "2026-10-27T08:38:30.794Z"
+        }
+      ]
+    },
+    "usr_1793091158369i03w": {
+      "completedLessons": {},
+      "diagnostic": {
+        "level": "A1",
+        "totalScorePct": 20,
+        "vocabularyPct": 24,
+        "grammarPct": 20,
+        "readingPct": 30,
+        "writingPct": 15,
+        "speakingPct": 10,
+        "listeningPct": 15,
+        "strongAreas": [],
+        "weakAreas": [
+          "Muntazam yangi leksika yodlash",
+          "Artikllar (der/die/das) va fe’l o‘rni",
+          "Jonli og‘zaki nutq va talaffuz",
+          "Nemischa nutqni eshitib ilg‘ash"
+        ],
+        "mainProblems": "Nemischa o‘ylash odatini shakllantirish va faol so‘zlarni ko‘paytirish zarur.",
+        "completedAt": "2026-10-27T08:57:01.482Z"
+      },
+      "xp": 0,
+      "streak": 1,
+      "lastStudyDate": "2026-10-27",
+      "mistakes": []
+    }
+  },
+  "flashcards": {},
+  "chats": {
+    "usr_1793087839209r9sv": [
+      {
+        "id": "1793087839255",
+        "role": "user",
+        "text": "Ich habe ein Tisch",
+        "scenario": "free",
+        "timestamp": "2026-10-27T07:57:19.255Z"
+      },
+      {
+        "id": "1793087839258",
+        "role": "assistant",
+        "textDe": "Sehr gut formuliert! Erzähle mir mehr darüber. Was machst du heute noch?",
+        "textUz": "Juda yaxshi ifodaladingiz! Bu haqida yana ko‘proq so‘zlab bering. Bugun yana nimalar qilasiz?",
+        "corrections": [
+          {
+            "category": "ARTICLE / CASE",
+            "original": "ein tisch",
+            "corrected": "einen tisch",
+            "reason": "\"tisch\" so‘zi erkak jinsida (der). Akkusativda (tushum kelishigida) \"ein\" emas, \"einen\" bo‘ladi!"
+          }
+        ],
+        "tip": "Gap tuzayotganda fe’lni 2-o‘rinda saqlashni unutmang!",
+        "scenario": "free",
+        "timestamp": "2026-10-27T07:57:19.258Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>German Master AI — 0 dan C2 gacha Nemis tili Murabbiyi</title>
+  <meta name="description" content="Nemis tilini 0 dan C2 gacha puxta o‘rgatuvchi shaxsiy AI murabbiyingiz">
+  <meta name="theme-color" content="#2563eb">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- QRCode CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col font-sans antialiased selection:bg-blue-100 selection:text-blue-700">
+
+  <!-- ================= TOP HEADER ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      
+      <!-- Brand -->
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="navigate('lessons')">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-red-500 to-slate-900 flex items-center justify-center text-white shadow-md shadow-red-500/20">
+          <span class="text-xl font-black">DE</span>
+        </div>
+        <div>
+          <div class="flex items-center space-x-1.5">
+            <span class="font-extrabold text-base md:text-lg tracking-tight text-slate-900">GERMAN MASTER</span>
+            <span class="bg-blue-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">AI</span>
+          </div>
+          <p class="text-[11px] text-slate-500 hidden sm:block">0 dan C2 gacha Shaxsiy Murabbiy</p>
+        </div>
+      </div>
+
+      <!-- Auth Controls & Badges -->
+      <div id="header-user-actions" class="flex items-center space-x-2 md:space-x-3">
+        <!-- Will be populated dynamically by app.js -->
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTAINER ================= -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-6 mb-20 md:mb-6">
+    
+    <!-- AUTH VIEW (LOGIN / REGISTER) -->
+    <div id="view-auth" class="hidden max-w-md mx-auto my-6">
+      <div class="bg-white rounded-2xl shadow-xl border border-slate-200/80 p-6 md:p-8">
+        
+        <!-- Tabs -->
+        <div class="flex p-1 bg-slate-100 rounded-xl mb-6">
+          <button id="auth-tab-login" onclick="toggleAuthMode('login')" class="flex-1 py-2 text-sm font-semibold rounded-lg transition bg-white text-blue-600 shadow-sm">
+            Kirish (Login)
+          </button>
+          <button id="auth-tab-register" onclick="toggleAuthMode('register')" class="flex-1 py-2 text-sm font-semibold rounded-lg transition text-slate-600 hover:text-slate-900">
+            Ro‘yxatdan o‘tish
+          </button>
+        </div>
+
+        <div id="auth-alert" class="hidden mb-4 p-3 rounded-xl text-sm font-medium"></div>
+
+        <!-- FORM -->
+        <form id="auth-form" onsubmit="handleAuthSubmit(event)">
+          <div id="auth-name-group" class="hidden mb-4">
+            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Ismingiz</label>
+            <input type="text" id="auth-name" placeholder="Masalan: Sardor" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Email yoki Taxallus</label>
+            <input type="email" id="auth-email" required placeholder="nomingiz@mail.com" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Parol</label>
+            <input type="password" id="auth-password" required placeholder="••••••••" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+          </div>
+
+          <div id="auth-goal-group" class="hidden mb-5">
+            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Asosiy maqsadingiz</label>
+            <select id="auth-goal" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm bg-white">
+              <option value="Ish va Faoliyat">Germaniyada ishlash (Beruf / Job)</option>
+              <option value="Universitet / Studium">O‘qishga kirish (Studium / Ausbildung)</option>
+              <option value="Rasmiy Imtihon">Goethe / telc / ÖSD imtihoni</option>
+              <option value="Erkin muloqot">Erkin gaplashish va sayohat</option>
+            </select>
+          </div>
+
+          <button type="submit" id="auth-submit-btn" class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-bold rounded-xl shadow-lg shadow-blue-500/25 transition">
+            Hisobga kirish
+          </button>
+        </form>
+
+        <p class="text-xs text-center text-slate-500 mt-5">
+          Ham kompyuterdan, ham telefoningizdan bir xil login bilan kirishingiz mumkin.
+        </p>
+      </div>
+    </div>
+
+    <!-- MAIN APP CONTENT (Protected) -->
+    <div id="view-app" class="hidden">
+      
+      <!-- Top Sub-Navigation (Desktop / Tablet) -->
+      <nav class="hidden md:flex items-center justify-between p-1.5 bg-white border border-slate-200 rounded-2xl shadow-sm mb-6">
+        <div class="flex space-x-1">
+          <button onclick="navigate('lessons')" id="nav-btn-lessons" class="nav-item flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition bg-blue-50 text-blue-700">
+            <i data-lucide="book-open" class="w-4 h-4"></i>
+            <span>O‘quv Rejasi (Darslar)</span>
+          </button>
+          <button onclick="navigate('diagnostic')" id="nav-btn-diagnostic" class="nav-item flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition text-slate-600 hover:text-slate-900 hover:bg-slate-50">
+            <i data-lucide="activity" class="w-4 h-4"></i>
+            <span>Diagnostika (Test)</span>
+          </button>
+          <button onclick="navigate('ai-tutor')" id="nav-btn-ai-tutor" class="nav-item flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition text-slate-600 hover:text-slate-900 hover:bg-slate-50">
+            <i data-lucide="bot" class="w-4 h-4"></i>
+            <span>AI Murabbiy (Suhbat)</span>
+            <span class="bg-red-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">Ovozli</span>
+          </button>
+          <button onclick="navigate('vocabulary')" id="nav-btn-vocabulary" class="nav-item flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition text-slate-600 hover:text-slate-900 hover:bg-slate-50">
+            <i data-lucide="layers" class="w-4 h-4"></i>
+            <span>Lug‘at (Flashcards)</span>
+          </button>
+          <button onclick="navigate('profile')" id="nav-btn-profile" class="nav-item flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition text-slate-600 hover:text-slate-900 hover:bg-slate-50">
+            <i data-lucide="user-check" class="w-4 h-4"></i>
+            <span>Progress & Xatolar</span>
+          </button>
+        </div>
+
+        <button onclick="openDeviceSyncModal()" class="flex items-center space-x-1.5 text-xs font-semibold px-3 py-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition border border-blue-200">
+          <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
+          <span>Telefonga ulash</span>
+        </button>
+      </nav>
+
+      <!-- SECTION: LESSONS LIST -->
+      <section id="section-lessons" class="section-view">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div>
+            <h1 class="text-2xl font-black text-slate-900">O‘quv Xaritasi (Roadmap)</h1>
+            <p class="text-sm text-slate-500">A0 dan C2 gacha puxta o‘ylangan interaktiv darslar</p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Daraja:</span>
+            <span id="badge-current-level" class="px-2.5 py-1 bg-amber-100 text-amber-800 text-xs font-extrabold rounded-lg">A0 (Boshlang‘ich)</span>
+          </div>
+        </div>
+
+        <!-- Lessons Cards Grid -->
+        <div id="lessons-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Filled by JS -->
+        </div>
+      </section>
+
+      <!-- SECTION: SINGLE LESSON INTERACTIVE VIEW -->
+      <section id="section-lesson-detail" class="section-view hidden">
+        <button onclick="navigate('lessons')" class="flex items-center space-x-2 text-sm font-bold text-slate-600 hover:text-blue-600 mb-4 transition">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span>Barcha darslarga qaytish</span>
+        </button>
+
+        <div id="lesson-detail-container" class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <!-- Filled by JS -->
+        </div>
+      </section>
+
+      <!-- SECTION: DIAGNOSTIC PLACEMENT TEST -->
+      <section id="section-diagnostic" class="section-view hidden">
+        <div class="max-w-2xl mx-auto bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold">
+              <i data-lucide="activity" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h2 class="text-xl font-black text-slate-900">Darajani Aniqlash Testi (A0 – C2)</h2>
+              <p class="text-xs text-slate-500">Bosqichma-bosqich diagnostika: qaysi darajadaligingizni aniqlaymiz</p>
+            </div>
+          </div>
+
+          <div id="diagnostic-content">
+            <!-- Will show welcome / questions / result -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: AI TUTOR & SPEAKING SIMULATOR -->
+      <section id="section-ai-tutor" class="section-view hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- Scenarios Selector -->
+          <div class="lg:col-span-1 bg-white rounded-2xl border border-slate-200 p-5 shadow-sm h-fit">
+            <h3 class="font-extrabold text-slate-900 text-base mb-1">Muloqot Senariylari</h3>
+            <p class="text-xs text-slate-500 mb-4">Real hayotdagi vaziyatlarni tanlang va AI bilan mashq qiling:</p>
+
+            <div id="scenarios-list" class="space-y-2">
+              <!-- Filled by JS -->
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-100">
+              <h4 class="text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">Murabbiy Qoidasi:</h4>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                Gapirayotganingizda har bir xatoni darhol to‘xtatmaymiz. Avval tabiiy suhbatlashamiz, so‘ngra xatolar tahlili va to‘g‘ri variantlarini ko‘rsatamiz.
+              </p>
+            </div>
+          </div>
+
+          <!-- Chat Box -->
+          <div class="lg:col-span-2 bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col h-[650px] overflow-hidden">
+            
+            <!-- Chat Header -->
+            <div class="p-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold shadow-md shadow-blue-500/20">
+                  <i data-lucide="bot" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 id="active-scenario-title" class="font-bold text-sm text-slate-900">Erkin Suhbat</h4>
+                  <span class="inline-flex items-center text-[11px] text-emerald-600 font-medium">
+                    <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span>
+                    German Master AI faol
+                  </span>
+                </div>
+              </div>
+              <button onclick="clearChat()" class="text-xs text-slate-400 hover:text-red-500 transition px-2 py-1 rounded">
+                Tarixni tozalash
+              </button>
+            </div>
+
+            <!-- Messages Stream -->
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4">
+              <!-- Chat bubbles inserted here -->
+            </div>
+
+            <!-- Input Bar -->
+            <div class="p-3 border-t border-slate-200 bg-white">
+              <form id="chat-form" onsubmit="handleSendChatMessage(event)" class="flex items-center space-x-2">
+                
+                <!-- Voice Mic Button (Web Speech Recognition) -->
+                <button type="button" id="btn-mic" onclick="toggleSpeechRecognition()" title="Ovoz bilan gapirish" class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+                  <i data-lucide="mic" class="w-5 h-5"></i>
+                </button>
+
+                <input type="text" id="chat-input" placeholder="Nemischa yozing yoki mikrofondan gapiring..." class="flex-1 px-4 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                
+                <button type="submit" id="btn-chat-send" class="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-bold shadow-sm transition flex items-center space-x-1">
+                  <span>Yuborish</span>
+                  <i data-lucide="send" class="w-4 h-4 ml-1"></i>
+                </button>
+              </form>
+              <div id="mic-status" class="hidden text-[11px] text-red-500 font-semibold mt-1.5 flex items-center space-x-1">
+                <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                <span>Tinglanmoqda... Nemischa gapiring!</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION: VOCABULARY & FLASHCARDS -->
+      <section id="section-vocabulary" class="section-view hidden">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div>
+            <h2 class="text-2xl font-black text-slate-900">Lug‘at Treneri (Spaced Repetition)</h2>
+            <p class="text-sm text-slate-500">Artikllar ranglari bilan eslab qolish (Leitner tizimi: Day 1, 3, 7, 14, 30)</p>
+          </div>
+
+          <!-- Color Legend -->
+          <div class="flex items-center space-x-3 text-xs font-bold">
+            <span class="flex items-center space-x-1 text-blue-600"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span><span>der (Maskulin)</span></span>
+            <span class="flex items-center space-x-1 text-red-600"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span><span>die (Feminin)</span></span>
+            <span class="flex items-center space-x-1 text-emerald-600"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span><span>das (Neutrum)</span></span>
+          </div>
+        </div>
+
+        <!-- Flashcards Cards List -->
+        <div id="vocabulary-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Filled by JS -->
+        </div>
+      </section>
+
+      <!-- SECTION: PROFILE & PROGRESS -->
+      <section id="section-profile" class="section-view hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- User Summary Card -->
+          <div class="lg:col-span-1 bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <div class="flex flex-col items-center text-center">
+              <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white text-3xl font-black flex items-center justify-center shadow-lg shadow-blue-500/20 mb-3" id="profile-avatar-letter">
+                U
+              </div>
+              <h3 id="profile-name" class="font-extrabold text-xl text-slate-900">Foydalanuvchi</h3>
+              <p id="profile-email" class="text-xs text-slate-500 mb-4">email@mail.com</p>
+
+              <div class="w-full grid grid-cols-2 gap-2 text-left bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs mb-4">
+                <div>
+                  <span class="text-slate-400 block font-semibold">Hozirgi daraja:</span>
+                  <span id="profile-current-level" class="font-bold text-blue-600 text-sm">A0</span>
+                </div>
+                <div>
+                  <span class="text-slate-400 block font-semibold">Maqsad:</span>
+                  <span id="profile-target-goal" class="font-bold text-slate-800 text-sm">Ish / O‘qish</span>
+                </div>
+                <div>
+                  <span class="text-slate-400 block font-semibold">Jami XP:</span>
+                  <span id="profile-total-xp" class="font-bold text-amber-600 text-sm">0 XP</span>
+                </div>
+                <div>
+                  <span class="text-slate-400 block font-semibold">Kunlik Streak:</span>
+                  <span id="profile-streak" class="font-bold text-orange-600 text-sm">🔥 1 kun</span>
+                </div>
+              </div>
+
+              <button onclick="handleLogout()" class="w-full py-2.5 text-xs font-bold text-red-600 hover:bg-red-50 rounded-xl transition border border-red-200">
+                Hisobdan chiqish (Logout)
+              </button>
+            </div>
+          </div>
+
+          <!-- Mistakes Notebook & Recommendations -->
+          <div class="lg:col-span-2 space-y-6">
+            
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center space-x-2">
+                  <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-500"></i>
+                  <h3 class="font-black text-slate-900 text-lg">Mening Xatolar Daftarcham (Fehlerbuch)</h3>
+                </div>
+                <span id="mistakes-count-badge" class="px-2 py-0.5 bg-amber-100 text-amber-800 text-xs font-bold rounded-full">0 ta xato</span>
+              </div>
+              <p class="text-xs text-slate-500 mb-4">
+                Suhbat va testlarda yo‘l qo‘ygan xatolaringiz murabbiy tomonidan avtomatik saqlanib, takrorlash uchun ajratiladi.
+              </p>
+
+              <div id="mistakes-list" class="space-y-3">
+                <!-- Mistakes inserted here -->
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ================= MOBILE BOTTOM NAVIGATION ================= -->
+  <nav id="mobile-nav" class="hidden md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur border-t border-slate-200 shadow-lg px-2 py-1">
+    <div class="flex items-center justify-around">
+      <button onclick="navigate('lessons')" id="m-nav-lessons" class="flex flex-col items-center py-1.5 px-3 rounded-xl text-blue-600 font-bold">
+        <i data-lucide="book-open" class="w-5 h-5"></i>
+        <span class="text-[10px] mt-0.5">Darslar</span>
+      </button>
+      <button onclick="navigate('diagnostic')" id="m-nav-diagnostic" class="flex flex-col items-center py-1.5 px-3 rounded-xl text-slate-500 hover:text-slate-900">
+        <i data-lucide="activity" class="w-5 h-5"></i>
+        <span class="text-[10px] mt-0.5">Test</span>
+      </button>
+      <button onclick="navigate('ai-tutor')" id="m-nav-ai-tutor" class="flex flex-col items-center py-1.5 px-3 rounded-xl text-slate-500 hover:text-slate-900 relative">
+        <i data-lucide="bot" class="w-5 h-5"></i>
+        <span class="text-[10px] mt-0.5">AI Suhbat</span>
+        <span class="absolute top-1 right-2 w-2 h-2 bg-red-500 rounded-full"></span>
+      </button>
+      <button onclick="navigate('vocabulary')" id="m-nav-vocabulary" class="flex flex-col items-center py-1.5 px-3 rounded-xl text-slate-500 hover:text-slate-900">
+        <i data-lucide="layers" class="w-5 h-5"></i>
+        <span class="text-[10px] mt-0.5">Lug‘at</span>
+      </button>
+      <button onclick="navigate('profile')" id="m-nav-profile" class="flex flex-col items-center py-1.5 px-3 rounded-xl text-slate-500 hover:text-slate-900">
+        <i data-lucide="user-check" class="w-5 h-5"></i>
+        <span class="text-[10px] mt-0.5">Profil</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ================= DEVICE SYNC MODAL (QR CODE & NETWORK LINK) ================= -->
+  <div id="modal-device-sync" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100 text-center animate-in fade-in zoom-in duration-200">
+      
+      <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
+        <i data-lucide="smartphone" class="w-6 h-6"></i>
+      </div>
+
+      <h3 class="text-xl font-extrabold text-slate-900 mb-1">Telefonda yoki Do‘stlaringiz bilan ochish</h3>
+      <p class="text-xs text-slate-500 mb-5 leading-relaxed">
+        Telefoningiz kamerasi orqali QR-kodni skanerlang yoki quyidagi manzilni brauzerga kiriting:
+      </p>
+
+      <!-- QR Code Container -->
+      <div id="qrcode-container" class="bg-slate-50 p-4 rounded-2xl inline-block border border-slate-200 mx-auto mb-4"></div>
+
+      <!-- Network URL box with copy button -->
+      <div class="flex items-center justify-between bg-slate-100 px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-mono text-slate-800 mb-4">
+        <span id="sync-network-url" class="truncate font-bold">http://192.168.110.77:4000</span>
+        <button onclick="copyNetworkUrl()" class="ml-2 text-blue-600 hover:text-blue-700 font-sans font-bold flex items-center space-x-1 shrink-0">
+          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+          <span>Nusxa olish</span>
+        </button>
+      </div>
+
+      <p class="text-[11px] text-slate-400 mb-5">
+        💡 Eslatma: Telefon va kompyuter bitta Wi-Fi tarmog‘iga ulangan bo‘lishi kerak.
+      </p>
+
+      <button onclick="closeDeviceSyncModal()" class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-sm transition">
+        Tushundim, yopish
+      </button>
+
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
