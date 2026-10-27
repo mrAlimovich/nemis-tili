@@ -1,56 +1,76 @@
 /* ====================================================
-   GERMAN MASTER AI — ULTRA-MODERN TRENDY DESIGN
-   Neo-Glassmorphism + Aurora Mesh + Outfit & Plus Jakarta
+   GERMAN MASTER AI — ULTRA-SLEEK MINIMALIST TYPOGRAPHY
+   Inter & Urbanist (Light / Thin / Elegant aesthetic)
    ==================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Urbanist:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Outfit', var(--font-main);
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Urbanist', 'Inter', sans-serif;
   
   --bg-light: #f8fafc;
-  --card-light: rgba(255, 255, 255, 0.82);
-  --border-light: rgba(226, 232, 240, 0.8);
-  --shadow-ambient: 0 20px 40px -15px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.8);
+  --card-light: rgba(255, 255, 255, 0.85);
+  --border-light: rgba(226, 232, 240, 0.7);
+  --shadow-ambient: 0 16px 36px -12px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(255, 255, 255, 0.9);
   
-  --bg-dark: #070b14;
+  --bg-dark: #080c16;
   --card-dark: rgba(15, 23, 42, 0.75);
-  --border-dark: rgba(255, 255, 255, 0.08);
-  --shadow-dark: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --border-dark: rgba(255, 255, 255, 0.07);
+  --shadow-dark: 0 16px 36px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
-/* Base Body Styles */
+/* Base Body Styles - Thin & Crisp */
 body {
   font-family: var(--font-main);
+  font-weight: 350;
+  letter-spacing: -0.012em;
   background-color: var(--bg-light);
-  color: #0f172a;
+  color: #1e293b;
   background-image: 
-    radial-gradient(at 10% 20%, rgba(59, 130, 246, 0.08) 0px, transparent 50%),
-    radial-gradient(at 90% 10%, rgba(147, 51, 234, 0.07) 0px, transparent 50%),
-    radial-gradient(at 50% 80%, rgba(245, 158, 11, 0.06) 0px, transparent 50%),
-    radial-gradient(#e2e8f0 1.2px, transparent 1.2px);
+    radial-gradient(at 10% 20%, rgba(59, 130, 246, 0.07) 0px, transparent 50%),
+    radial-gradient(at 90% 10%, rgba(147, 51, 234, 0.06) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(245, 158, 11, 0.05) 0px, transparent 50%),
+    radial-gradient(#e2e8f0 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headings with Outfit font */
+/* Headings with Urbanist - Elegant & Clean */
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-heading);
-  letter-spacing: -0.025em;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+/* Refine thick font weight overrides for a slim, modern look */
+.font-black {
+  font-weight: 600 !important;
+}
+
+.font-extrabold {
+  font-weight: 550 !important;
+}
+
+.font-bold {
+  font-weight: 500 !important;
+}
+
+.font-semibold {
+  font-weight: 450 !important;
 }
 
 /* Dark Mode Overrides */
 body.dark-mode {
   background-color: var(--bg-dark);
-  color: #f8fafc;
+  color: #f1f5f9;
   background-image: 
-    radial-gradient(at 10% 20%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-    radial-gradient(at 90% 10%, rgba(139, 92, 246, 0.12) 0px, transparent 50%),
-    radial-gradient(at 50% 80%, rgba(245, 158, 11, 0.1) 0px, transparent 50%),
-    radial-gradient(#1e293b 1.2px, transparent 1.2px);
+    radial-gradient(at 10% 20%, rgba(59, 130, 246, 0.12) 0px, transparent 50%),
+    radial-gradient(at 90% 10%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(245, 158, 11, 0.08) 0px, transparent 50%),
+    radial-gradient(#1e293b 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
 }
 
@@ -69,26 +89,26 @@ body.dark-mode .text-slate-600 { color: #cbd5e1 !important; }
 body.dark-mode .text-slate-500 { color: #94a3b8 !important; }
 
 body.dark-mode .bg-slate-50 {
-  background-color: rgba(30, 41, 59, 0.6) !important;
+  background-color: rgba(30, 41, 59, 0.5) !important;
   border-color: rgba(255, 255, 255, 0.06) !important;
 }
 
 body.dark-mode .bg-slate-100 {
-  background-color: rgba(30, 41, 59, 0.8) !important;
+  background-color: rgba(30, 41, 59, 0.7) !important;
 }
 
 body.dark-mode .border-slate-200,
 body.dark-mode .border-slate-100 {
-  border-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
 }
 
 body.dark-mode #mobile-nav {
-  background-color: rgba(11, 17, 32, 0.92) !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(8, 12, 22, 0.92) !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
   backdrop-filter: blur(20px);
 }
 
-/* Trendy Glassmorphic Card Container */
+/* Glassmorphism */
 .bg-white {
   background-color: var(--card-light);
   backdrop-filter: blur(16px);
@@ -100,28 +120,14 @@ body.dark-mode .bg-white {
   box-shadow: var(--shadow-dark);
 }
 
-/* German Flag Ribbon (Top Modern Glow) */
+/* German Flag Ribbon */
 .de-flag-ribbon {
   background: linear-gradient(90deg, #090d16 0%, #111827 33.3%, #ef4444 33.3%, #dc2626 66.6%, #fbbf24 66.6%, #f59e0b 100%);
-  height: 4px;
+  height: 3px;
   width: 100%;
-  box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
 }
 
-/* Gradient Text Effect */
-.text-gradient-primary {
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-gold {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* 3D Flashcard Flip with Glassmorphism */
+/* 3D Flashcard Flip */
 .perspective-1000 {
   perspective: 1000px;
 }
@@ -160,8 +166,8 @@ body.dark-mode .bg-white {
 
 /* Custom Scrollbars */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -169,35 +175,35 @@ body.dark-mode .bg-white {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.4);
+  background: rgba(148, 163, 184, 0.3);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 116, 139, 0.7);
+  background: rgba(100, 116, 139, 0.6);
 }
 
 body.dark-mode ::-webkit-scrollbar-thumb {
-  background: rgba(51, 65, 85, 0.6);
+  background: rgba(51, 65, 85, 0.5);
 }
 
 /* Leaderboard Glow Badges */
 .rank-badge-1 {
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #b45309 100%);
   color: white;
-  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.45);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.35);
 }
 
 .rank-badge-2 {
   background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 50%, #475569 100%);
   color: white;
-  box-shadow: 0 8px 20px rgba(100, 116, 139, 0.35);
+  box-shadow: 0 8px 20px rgba(100, 116, 139, 0.25);
 }
 
 .rank-badge-3 {
   background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #9a3412 100%);
   color: white;
-  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.35);
+  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.25);
 }
 
 /* Card Hover Elevation */
@@ -206,20 +212,8 @@ body.dark-mode ::-webkit-scrollbar-thumb {
 }
 
 .hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.15), 0 0 0 1px rgba(59, 130, 246, 0.4);
-}
-
-/* Blitz Timer Animation */
-@keyframes timerPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.02); }
-}
-
-.timer-critical {
-  animation: timerPulse 0.4s infinite ease-in-out;
-  background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%) !important;
-  box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 28px -10px rgba(37, 99, 235, 0.12), 0 0 0 1px rgba(59, 130, 246, 0.3);
 }
 
 /* Mobile tap highlight reset */
