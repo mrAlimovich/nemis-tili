@@ -366,7 +366,7 @@ async function loadLessons() {
     grid.innerHTML = STATE.lessons.map(lesson => {
       const isDone = lesson.isCompleted;
       return `
-        <div onclick="openLesson('${lesson.id}')" class="group bg-white rounded-3xl border ${isDone ? 'border-emerald-200 bg-emerald-50/10' : 'border-slate-200'} hover:border-blue-500 p-5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between">
+        <div onclick="openLesson('${lesson.id}')" class="group hover-lift bg-white rounded-3xl border ${isDone ? 'border-emerald-200 bg-emerald-50/10' : 'border-slate-200'} hover:border-blue-500 p-5 shadow-sm transition cursor-pointer flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="px-3 py-1 bg-slate-100 group-hover:bg-blue-50 text-slate-600 group-hover:text-blue-600 rounded-xl text-xs font-black">
@@ -1311,7 +1311,7 @@ async function loadVocabularyView() {
 
     return `
       <div class="perspective-1000">
-        <div id="card-${word.id}" onclick="flipCard('${word.id}')" class="flashcard-inner bg-white rounded-3xl border ${genderColor} shadow-sm hover:shadow-md transition">
+        <div id="card-${word.id}" onclick="flipCard('${word.id}')" class="flashcard-inner hover-lift bg-white rounded-3xl border ${genderColor} shadow-sm transition">
           <div class="flashcard-front">
             <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">${word.category}</span>
             <div class="flex items-center space-x-1.5 mb-1">
