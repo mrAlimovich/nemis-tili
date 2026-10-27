@@ -86,6 +86,17 @@ module.exports = {
         textDe: 'Hallo, Guten Tag! Danke schön!',
         textUz: 'Salom, Xayrli kun! Katta rahmat!',
         tip: 'Tugmani bosing va ushbu gapni baland ovozda talaffuz qiling.'
+      },
+      kulturtip: {
+        title: '🇩🇪 Pünktlichkeit (O‘z vaqtida bo‘lish)',
+        text: 'Germaniyada vaqtga qat’iy rioya qilish — eng oliy hurmat belgisi. Agar uchrashuvga yoki darsga 5 daqiqa kech qolsangiz, bu juda qo‘pol hisoblanadi. Doimo 5-10 daqiqa oldin borish odat tusiga kirgan!'
+      },
+      listening: {
+        title: '🎧 Tinglab tushunish (Hörverstehen)',
+        audioText: 'Hallo! Ich bin Thomas. Guten Tag!',
+        question: 'Thomas kim bilan yoki qanday salomlashdi?',
+        options: ['Gute Nacht dedi', 'Guten Tag va Hallo dedi', 'Tschüss dedi'],
+        correctIndex: 1
       }
     },
 
@@ -168,6 +179,17 @@ module.exports = {
         textDe: 'Ich komme aus Usbekistan und ich lerne Deutsch.',
         textUz: 'Men O‘zbekistondanman va men nemis tilini o‘rganayapman.',
         tip: 'Dona-dona va ishonch bilan ayting.'
+      },
+      kulturtip: {
+        title: '🇩🇪 Siezen vs. Duzen (Sizlash yoki Senlash)',
+        text: 'Germaniyada kattalar, ustozlar, hamkasblar va begonalarga "Sie" (Siz) deb murojaat qilinadi. Faqat do‘stlar, bolalar va yaqinlar o‘rtasida "Du" (Sen) ishlatiladi. Ruxsatsiz "Du" deyish odobsizlik sanaladi.'
+      },
+      listening: {
+        title: '🎧 Tinglab tushunish (Hörverstehen)',
+        audioText: 'Guten Tag, mein Name ist Anna Weber. Ich wohne in Berlin.',
+        question: 'Anna Weber qayerda yashaydi?',
+        options: ['Taschkentda', 'Berlinda', 'Münchenda'],
+        correctIndex: 1
       }
     },
 

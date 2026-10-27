@@ -6,7 +6,7 @@ const STATE = {
   token: localStorage.getItem('gm_token') || null,
   user: null,
   activeView: 'lessons',
-  authMode: 'login', // 'login' or 'register'
+  authMode: 'login',
   lessons: [],
   currentLesson: null,
   vocabulary: [],
@@ -14,14 +14,28 @@ const STATE = {
   chatMessages: [],
   isRecording: false,
   speechRecognition: null,
-  networkInfo: null
+  soundEnabled: localStorage.getItem('gm_sound') !== 'false',
+  darkMode: localStorage.getItem('gm_theme') === 'dark',
+  blitz: {
+    timer: 60,
+    interval: null,
+    score: 0,
+    combo: 0,
+    currentWord: null,
+    isPlaying: false
+  }
 };
 
 // ----------------- INITIALIZATION -----------------
 document.addEventListener('DOMContentLoaded', async () => {
+  if (STATE.darkMode) {
+    document.body.classList.add('dark-mode');
+  }
+  updateThemeIcon();
+  updateSoundIcon();
+
   initIcons();
   setupSpeechRecognition();
-  await fetchNetworkInfo();
 
   if (STATE.token) {
     await fetchCurrentUser();
@@ -33,6 +47,105 @@ document.addEventListener('DOMContentLoaded', async () => {
 function initIcons() {
   if (window.lucide) {
     window.lucide.createIcons();
+  }
+}
+
+// ----------------- SOUND EFFECTS (WEB AUDIO SYNTHESIZER) -----------------
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playSound(type) {
+  if (!STATE.soundEnabled) return;
+  try {
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    const now = audioCtx.currentTime;
+
+    if (type === 'correct') {
+      // Pleasant high chime
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(587.33, now); // D5
+      osc.frequency.exponentialRampToValueAtTime(880, now + 0.15); // A5
+      gain.gain.setValueAtTime(0.15, now);
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 0.25);
+    } else if (type === 'wrong') {
+      // Gentle low buzz
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(220, now);
+      osc.frequency.exponentialRampToValueAtTime(146.83, now + 0.2);
+      gain.gain.setValueAtTime(0.12, now);
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 0.2);
+    } else if (type === 'fanfare') {
+      // Victory celebration
+      [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(freq, now + i * 0.1);
+        gain.gain.setValueAtTime(0.15, now + i * 0.1);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + i * 0.1 + 0.3);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + i * 0.1);
+        osc.stop(now + i * 0.1 + 0.3);
+      });
+    } else if (type === 'click') {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(400, now);
+      gain.gain.setValueAtTime(0.05, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 0.05);
+    }
+  } catch (e) {
+    // Audio context silently handled
+  }
+}
+
+function toggleDarkMode() {
+  STATE.darkMode = !STATE.darkMode;
+  document.body.classList.toggle('dark-mode', STATE.darkMode);
+  localStorage.setItem('gm_theme', STATE.darkMode ? 'dark' : 'light');
+  updateThemeIcon();
+  playSound('click');
+}
+
+function updateThemeIcon() {
+  const btn = document.getElementById('btn-theme');
+  if (btn) {
+    btn.innerHTML = `<i data-lucide="${STATE.darkMode ? 'sun' : 'moon'}" class="w-4 h-4 ${STATE.darkMode ? 'text-amber-400' : 'text-slate-500'}"></i>`;
+    initIcons();
+  }
+}
+
+function toggleSoundFx() {
+  STATE.soundEnabled = !STATE.soundEnabled;
+  localStorage.setItem('gm_sound', STATE.soundEnabled);
+  updateSoundIcon();
+  if (STATE.soundEnabled) playSound('click');
+}
+
+function updateSoundIcon() {
+  const btn = document.getElementById('btn-sound');
+  if (btn) {
+    btn.innerHTML = `<i data-lucide="${STATE.soundEnabled ? 'volume-2' : 'volume-x'}" class="w-4 h-4 ${STATE.soundEnabled ? 'text-blue-600' : 'text-slate-400'}"></i>`;
+    initIcons();
   }
 }
 
@@ -56,17 +169,6 @@ async function api(endpoint, options = {}) {
   }
 }
 
-async function fetchNetworkInfo() {
-  try {
-    const info = await api('/api/info');
-    STATE.networkInfo = info;
-    const urlSpan = document.getElementById('sync-network-url');
-    if (urlSpan) urlSpan.innerText = info.networkUrl;
-  } catch (e) {
-    console.log('Network info fetch error:', e);
-  }
-}
-
 // ----------------- AUTHENTICATION -----------------
 function toggleAuthMode(mode) {
   STATE.authMode = mode;
@@ -82,15 +184,16 @@ function toggleAuthMode(mode) {
     nameGroup.classList.remove('hidden');
     goalGroup.classList.remove('hidden');
     submitBtn.innerText = 'Ro‘yxatdan o‘tish (Boshlash)';
-    tabReg.className = 'flex-1 py-2 text-sm font-semibold rounded-lg transition bg-white text-blue-600 shadow-sm';
-    tabLogin.className = 'flex-1 py-2 text-sm font-semibold rounded-lg transition text-slate-600 hover:text-slate-900';
+    tabReg.className = 'flex-1 py-2.5 text-sm font-bold rounded-xl transition bg-white text-blue-600 shadow-sm';
+    tabLogin.className = 'flex-1 py-2.5 text-sm font-bold rounded-xl transition text-slate-600 hover:text-slate-900';
   } else {
     nameGroup.classList.add('hidden');
     goalGroup.classList.add('hidden');
     submitBtn.innerText = 'Hisobga kirish';
-    tabLogin.className = 'flex-1 py-2 text-sm font-semibold rounded-lg transition bg-white text-blue-600 shadow-sm';
-    tabReg.className = 'flex-1 py-2 text-sm font-semibold rounded-lg transition text-slate-600 hover:text-slate-900';
+    tabLogin.className = 'flex-1 py-2.5 text-sm font-bold rounded-xl transition bg-white text-blue-600 shadow-sm';
+    tabReg.className = 'flex-1 py-2.5 text-sm font-bold rounded-xl transition text-slate-600 hover:text-slate-900';
   }
+  playSound('click');
 }
 
 async function handleAuthSubmit(e) {
@@ -120,13 +223,15 @@ async function handleAuthSubmit(e) {
     STATE.token = res.token;
     STATE.user = res.user;
     localStorage.setItem('gm_token', res.token);
+    playSound('fanfare');
 
     showAppView();
     renderHeaderBadges();
     await loadInitialData();
 
   } catch (err) {
-    alertEl.className = 'mb-4 p-3 rounded-xl text-sm font-medium bg-red-50 text-red-700 border border-red-200';
+    playSound('wrong');
+    alertEl.className = 'mb-4 p-3.5 rounded-2xl text-sm font-medium bg-red-50 text-red-700 border border-red-200';
     alertEl.innerText = err.message;
     alertEl.classList.remove('hidden');
   }
@@ -176,7 +281,7 @@ function renderHeaderBadges() {
     <!-- Streak -->
     <div class="flex items-center space-x-1 px-2.5 py-1 rounded-xl bg-orange-50 border border-orange-200 text-orange-600 text-xs font-bold" title="Kunlik o‘qish uzluksizligi">
       <span>🔥</span>
-      <span>${STATE.user.streak || 1} kun</span>
+      <span>${STATE.user.streak || 1}</span>
     </div>
 
     <!-- XP -->
@@ -185,14 +290,8 @@ function renderHeaderBadges() {
       <span>${STATE.user.xp || 0} XP</span>
     </div>
 
-    <!-- Phone Connect Button -->
-    <button onclick="openDeviceSyncModal()" class="hidden sm:flex items-center space-x-1 px-2.5 py-1 bg-slate-100 hover:bg-slate-200 rounded-xl text-xs font-semibold text-slate-700 transition" title="Telefonda ochish">
-      <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
-      <span>Telefon</span>
-    </button>
-
-    <!-- User Avatar -->
-    <div onclick="navigate('profile')" class="cursor-pointer w-8 h-8 rounded-xl bg-blue-600 text-white font-black text-xs flex items-center justify-center shadow-sm" title="${STATE.user.name}">
+    <!-- User Avatar Button -->
+    <div onclick="navigate('profile')" class="cursor-pointer w-8 h-8 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs flex items-center justify-center shadow-sm transition" title="${STATE.user.name}">
       ${(STATE.user.name || 'U').charAt(0).toUpperCase()}
     </div>
   `;
@@ -202,34 +301,31 @@ function renderHeaderBadges() {
 // ----------------- NAVIGATION -----------------
 function navigate(viewName) {
   STATE.activeView = viewName;
+  playSound('click');
 
-  // Hide all sections
   document.querySelectorAll('.section-view').forEach(s => s.classList.add('hidden'));
 
-  // Deselect desktop nav items
+  // Desktop Nav highlight
   document.querySelectorAll('.nav-item').forEach(btn => {
-    btn.className = 'nav-item flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition text-slate-600 hover:text-slate-900 hover:bg-slate-50';
+    btn.className = 'nav-item flex items-center space-x-2 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition text-slate-600 hover:text-slate-900 hover:bg-slate-50';
   });
-
-  // Highlight active nav item
   const activeBtn = document.getElementById(`nav-btn-${viewName}`);
   if (activeBtn) {
-    activeBtn.className = 'nav-item flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition bg-blue-50 text-blue-700 shadow-sm';
+    activeBtn.className = 'nav-item flex items-center space-x-2 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition bg-blue-50 text-blue-700 shadow-sm';
   }
 
-  // Update mobile nav highlight
-  ['lessons', 'diagnostic', 'ai-tutor', 'vocabulary', 'profile'].forEach(name => {
+  // Mobile Nav highlight
+  ['lessons', 'leaderboard', 'blitz', 'ai-tutor', 'vocabulary', 'profile'].forEach(name => {
     const mBtn = document.getElementById(`m-nav-${name}`);
     if (mBtn) {
       if (name === viewName) {
-        mBtn.className = 'flex flex-col items-center py-1.5 px-3 rounded-xl text-blue-600 font-bold';
+        mBtn.className = 'flex flex-col items-center py-1.5 px-2 rounded-xl text-blue-600 font-bold';
       } else {
-        mBtn.className = 'flex flex-col items-center py-1.5 px-3 rounded-xl text-slate-500 hover:text-slate-900';
+        mBtn.className = 'flex flex-col items-center py-1.5 px-2 rounded-xl text-slate-500 hover:text-slate-900';
       }
     }
   });
 
-  // Show selected section
   const targetSection = document.getElementById(`section-${viewName}`);
   if (targetSection) {
     targetSection.classList.remove('hidden');
@@ -237,8 +333,9 @@ function navigate(viewName) {
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  // Route triggers
   if (viewName === 'lessons') loadLessons();
+  if (viewName === 'leaderboard') loadLeaderboardView();
+  if (viewName === 'blitz') loadBlitzView();
   if (viewName === 'diagnostic') loadDiagnosticView();
   if (viewName === 'ai-tutor') loadAiTutorView();
   if (viewName === 'vocabulary') loadVocabularyView();
@@ -269,15 +366,15 @@ async function loadLessons() {
     grid.innerHTML = STATE.lessons.map(lesson => {
       const isDone = lesson.isCompleted;
       return `
-        <div onclick="openLesson('${lesson.id}')" class="group bg-white rounded-2xl border ${isDone ? 'border-emerald-200 bg-emerald-50/10' : 'border-slate-200'} hover:border-blue-400 p-5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between">
+        <div onclick="openLesson('${lesson.id}')" class="group bg-white rounded-3xl border ${isDone ? 'border-emerald-200 bg-emerald-50/10' : 'border-slate-200'} hover:border-blue-500 p-5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="px-2.5 py-1 bg-slate-100 group-hover:bg-blue-50 text-slate-600 group-hover:text-blue-600 rounded-lg text-xs font-black">
+              <span class="px-3 py-1 bg-slate-100 group-hover:bg-blue-50 text-slate-600 group-hover:text-blue-600 rounded-xl text-xs font-black">
                 DARS 0${lesson.number} • ${lesson.level}
               </span>
               ${isDone 
-                ? '<span class="flex items-center space-x-1 text-emerald-600 text-xs font-bold"><i data-lucide="check-circle-2" class="w-4 h-4"></i><span>Bajarildi</span></span>'
-                : '<span class="text-xs font-bold text-blue-600 flex items-center space-x-1"><span>Boshlash</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>'
+                ? '<span class="flex items-center space-x-1 text-emerald-600 text-xs font-extrabold"><i data-lucide="check-circle-2" class="w-4 h-4"></i><span>Bajarildi</span></span>'
+                : '<span class="text-xs font-extrabold text-blue-600 flex items-center space-x-1"><span>Boshlash</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>'
               }
             </div>
             <h3 class="font-extrabold text-slate-900 text-base group-hover:text-blue-600 transition mb-1">${lesson.title}</h3>
@@ -285,8 +382,8 @@ async function loadLessons() {
           </div>
 
           <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-medium">
-            <span>⏱ 15-20 daqiqa</span>
-            <span>+30 XP</span>
+            <span>⏱ 15 daqiqa</span>
+            <span class="text-amber-600 font-bold">+30 XP</span>
           </div>
         </div>
       `;
@@ -331,14 +428,14 @@ async function openLesson(lessonId) {
           <!-- Rules list -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
             ${l.theory.rules.map(r => `
-              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
                 <div class="flex items-center justify-between mb-1.5">
                   <span class="font-bold text-slate-900 text-sm font-mono">${r.pattern}</span>
-                  <span class="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold">${r.pronunciation}</span>
+                  <span class="text-xs px-2 py-0.5 rounded-lg bg-blue-100 text-blue-800 font-bold">${r.pronunciation}</span>
                 </div>
                 <div class="text-xs text-slate-600 flex items-center justify-between mt-2">
                   <span class="font-semibold text-slate-800">${r.exampleDe}</span>
-                  <button onclick="playGermanAudio('${r.exampleDe.replace(/'/g, "\\'")}')" class="p-1 rounded text-blue-600 hover:bg-blue-100 transition" title="Talaffuzni tinglash">
+                  <button onclick="playGermanAudio('${r.exampleDe.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg text-blue-600 hover:bg-blue-100 transition" title="Tinglash">
                     <i data-lucide="volume-2" class="w-4 h-4"></i>
                   </button>
                 </div>
@@ -348,8 +445,8 @@ async function openLesson(lessonId) {
           </div>
 
           <!-- Phrases Table -->
-          <div class="border border-slate-200 rounded-xl overflow-hidden">
-            <div class="bg-slate-100 px-4 py-2 text-xs font-bold text-slate-600 uppercase">Asosiy Iboralar & Misollar</div>
+          <div class="border border-slate-200 rounded-2xl overflow-hidden">
+            <div class="bg-slate-100 px-4 py-2.5 text-xs font-bold text-slate-600 uppercase">Asosiy Iboralar & Misollar</div>
             <div class="divide-y divide-slate-100">
               ${l.theory.table.map(row => `
                 <div class="px-4 py-3 flex items-center justify-between hover:bg-slate-50 transition text-sm">
@@ -357,7 +454,7 @@ async function openLesson(lessonId) {
                     <span class="font-bold text-slate-900">${row.de}</span>
                     <span class="text-slate-400 text-xs block md:inline md:ml-3">${row.uz}</span>
                   </div>
-                  <button onclick="playGermanAudio('${row.de.replace(/'/g, "\\'")}')" class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition" title="Tinglash">
+                  <button onclick="playGermanAudio('${row.de.replace(/'/g, "\\'")}')" class="p-2 text-blue-600 hover:bg-blue-50 rounded-xl transition" title="Tinglash">
                     <i data-lucide="volume-2" class="w-4 h-4"></i>
                   </button>
                 </div>
@@ -366,14 +463,45 @@ async function openLesson(lessonId) {
           </div>
         </div>
 
+        <!-- CULTURAL LIFEHACK (KULTURTIP) -->
+        ${l.kulturtip ? `
+          <div class="p-5 rounded-3xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200">
+            <span class="text-xs font-black uppercase text-amber-800 tracking-wider block mb-1">GERMANIYA HAYOTI & MASLAHAT</span>
+            <h4 class="font-extrabold text-slate-900 text-base mb-1.5">${l.kulturtip.title}</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">${l.kulturtip.text}</p>
+          </div>
+        ` : ''}
+
+        <!-- LISTENING COMPREHENSION (HÖRVERSTEHEN) -->
+        ${l.listening ? `
+          <div class="p-5 rounded-3xl bg-indigo-50 border border-indigo-200">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-black uppercase text-indigo-800 tracking-wider">${l.listening.title}</span>
+              <button onclick="playGermanAudio('${l.listening.audioText.replace(/'/g, "\\'")}')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold flex items-center space-x-1.5 transition shadow-sm">
+                <i data-lucide="volume-2" class="w-4 h-4"></i>
+                <span>Audioni Tinglash</span>
+              </button>
+            </div>
+            <h5 class="font-bold text-sm text-slate-900 mb-2">${l.listening.question}</h5>
+            <div class="space-y-1.5">
+              ${l.listening.options.map((opt, oIdx) => `
+                <button onclick="checkListeningAnswer(${oIdx}, ${l.listening.correctIndex})" class="w-full text-left p-3 rounded-xl bg-white border border-indigo-100 hover:border-indigo-400 text-xs font-medium text-slate-800 transition">
+                  ${opt}
+                </button>
+              `).join('')}
+            </div>
+            <div id="listening-feedback" class="hidden mt-2 p-2.5 rounded-xl text-xs font-bold"></div>
+          </div>
+        ` : ''}
+
         <!-- STEP 2: SPEAKING PROMPT -->
         ${l.speakingPrompt ? `
-          <div class="p-5 rounded-2xl bg-amber-50 border border-amber-200">
+          <div class="p-5 rounded-3xl bg-amber-50 border border-amber-200">
             <div class="flex items-center space-x-2 text-amber-800 font-bold text-sm mb-2">
               <i data-lucide="mic" class="w-5 h-5 text-amber-600"></i>
-              <span>2. Speaking Mashqi (Talaffuz Qiling!)</span>
+              <span>Speaking Mashqi (Ovoz bilan ayting)</span>
             </div>
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white p-4 rounded-xl border border-amber-100">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white p-4 rounded-2xl border border-amber-100">
               <div>
                 <p class="text-lg font-black text-slate-900">${l.speakingPrompt.textDe}</p>
                 <p class="text-xs text-slate-500">${l.speakingPrompt.textUz}</p>
@@ -391,22 +519,22 @@ async function openLesson(lessonId) {
         <div>
           <div class="flex items-center space-x-2 text-blue-600 font-black text-sm uppercase tracking-wider mb-4">
             <i data-lucide="check-square" class="w-5 h-5"></i>
-            <span>3. Interaktiv Mashqlar & Mini Test</span>
+            <span>Interaktiv Mashqlar & Mini Test</span>
           </div>
 
           <form id="lesson-quiz-form" onsubmit="handleLessonQuizSubmit(event, '${l.id}')" class="space-y-6">
             ${l.exercises.map((ex, idx) => `
-              <div class="p-5 rounded-2xl border border-slate-200 bg-white shadow-sm" id="ex-card-${ex.id}">
+              <div class="p-5 rounded-3xl border border-slate-200 bg-white shadow-sm" id="ex-card-${ex.id}">
                 <span class="text-xs font-bold text-blue-600 uppercase mb-1 block">Savol ${idx + 1}</span>
                 <h4 class="font-bold text-slate-900 text-sm mb-3">${ex.question}</h4>
 
                 ${renderExerciseInput(ex)}
 
-                <div id="ex-feedback-${ex.id}" class="hidden mt-3 p-3 rounded-xl text-xs font-medium"></div>
+                <div id="ex-feedback-${ex.id}" class="hidden mt-3 p-3 rounded-2xl text-xs font-medium"></div>
               </div>
             `).join('')}
 
-            <button type="submit" id="btn-submit-lesson" class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-extrabold rounded-xl shadow-lg shadow-blue-500/25 transition text-sm">
+            <button type="submit" id="btn-submit-lesson" class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-extrabold rounded-2xl shadow-lg shadow-blue-500/25 transition text-sm">
               Javoblarni Tekshirish va Darsni Yakunlash
             </button>
           </form>
@@ -425,12 +553,26 @@ async function openLesson(lessonId) {
   }
 }
 
+function checkListeningAnswer(selected, correct) {
+  const fb = document.getElementById('listening-feedback');
+  fb.classList.remove('hidden');
+  if (selected === correct) {
+    playSound('correct');
+    fb.className = 'mt-2 p-2.5 rounded-xl text-xs font-bold bg-emerald-100 text-emerald-800';
+    fb.innerText = '✅ To‘g‘ri topdingiz! Barakalla.';
+  } else {
+    playSound('wrong');
+    fb.className = 'mt-2 p-2.5 rounded-xl text-xs font-bold bg-red-100 text-red-800';
+    fb.innerText = '❌ Noto‘g‘ri. Audioni qaytadan tinglab ko‘ring.';
+  }
+}
+
 function renderExerciseInput(ex) {
   if (ex.type === 'multiple-choice') {
     return `
       <div class="space-y-2">
         ${ex.options.map((opt, oIdx) => `
-          <label class="flex items-center space-x-3 p-3 rounded-xl border border-slate-200 hover:border-blue-400 hover:bg-blue-50/20 cursor-pointer transition text-sm">
+          <label class="flex items-center space-x-3 p-3 rounded-2xl border border-slate-200 hover:border-blue-400 hover:bg-blue-50/20 cursor-pointer transition text-sm">
             <input type="radio" name="answer_${ex.id}" value="${oIdx}" class="text-blue-600 focus:ring-blue-500" required>
             <span class="text-slate-800">${opt}</span>
           </label>
@@ -480,31 +622,25 @@ async function handleLessonQuizSubmit(e, lessonId) {
     let isCorrect = false;
 
     if (ex.type === 'multiple-choice') {
-      if (parseInt(val, 10) === ex.correctIndex) {
-        isCorrect = true;
-      }
+      if (parseInt(val, 10) === ex.correctIndex) isCorrect = true;
     } else if (ex.type === 'fill-blank') {
       const cleanVal = (val || '').trim().toLowerCase();
       const expected = ex.correctAnswer.toLowerCase();
       const alts = (ex.altAnswers || []).map(a => a.toLowerCase());
-      if (cleanVal === expected || alts.includes(cleanVal)) {
-        isCorrect = true;
-      }
+      if (cleanVal === expected || alts.includes(cleanVal)) isCorrect = true;
     } else if (ex.type === 'order') {
       const cleanVal = (val || '').trim().replace(/[.,!?]/g, '').toLowerCase();
       const expected = ex.correctSentence.replace(/[.,!?]/g, '').toLowerCase();
-      if (cleanVal === expected) {
-        isCorrect = true;
-      }
+      if (cleanVal === expected) isCorrect = true;
     }
 
     feedbackEl.classList.remove('hidden');
     if (isCorrect) {
       correctCount++;
-      feedbackEl.className = 'mt-3 p-3 rounded-xl text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200';
+      feedbackEl.className = 'mt-3 p-3 rounded-2xl text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200';
       feedbackEl.innerHTML = `✅ To‘g‘ri! ${ex.explanation || ''}`;
     } else {
-      feedbackEl.className = 'mt-3 p-3 rounded-xl text-xs font-semibold bg-red-50 text-red-800 border border-red-200';
+      feedbackEl.className = 'mt-3 p-3 rounded-2xl text-xs font-semibold bg-red-50 text-red-800 border border-red-200';
       feedbackEl.innerHTML = `❌ Noto‘g‘ri. To‘g‘ri javob: <strong>${ex.correctAnswer || ex.correctSentence || ex.options[ex.correctIndex]}</strong>. ${ex.explanation || ''}`;
       mistakes.push({
         type: ex.type,
@@ -516,11 +652,15 @@ async function handleLessonQuizSubmit(e, lessonId) {
     }
   });
 
-  // Submit score to backend
+  if (correctCount === lesson.exercises.length) {
+    playSound('fanfare');
+  } else {
+    playSound('correct');
+  }
+
   try {
     const submitBtn = document.getElementById('btn-submit-lesson');
     submitBtn.disabled = true;
-    submitBtn.innerText = 'Tekshirilmoqda...';
 
     const res = await api(`/api/lessons/${lessonId}/submit`, {
       method: 'POST',
@@ -532,7 +672,7 @@ async function handleLessonQuizSubmit(e, lessonId) {
     });
 
     if (window.confetti && correctCount === lesson.exercises.length) {
-      window.confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+      window.confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
     }
 
     if (STATE.user) {
@@ -541,12 +681,240 @@ async function handleLessonQuizSubmit(e, lessonId) {
       renderHeaderBadges();
     }
 
-    submitBtn.className = 'w-full py-3.5 bg-emerald-600 text-white font-extrabold rounded-xl shadow-lg transition text-sm';
+    submitBtn.className = 'w-full py-3.5 bg-emerald-600 text-white font-extrabold rounded-2xl shadow-lg transition text-sm';
     submitBtn.innerHTML = `🎉 Dars yakunlandi! Natija: ${correctCount}/${lesson.exercises.length} (+${res.earnedXp} XP)`;
 
   } catch (err) {
     console.error('Error submitting lesson:', err);
   }
+}
+
+// ----------------- LEADERBOARD ENGINE (DO'STLAR REYTINGI) -----------------
+async function loadLeaderboardView() {
+  const listEl = document.getElementById('leaderboard-list');
+  const podiumEl = document.getElementById('leaderboard-podium');
+  if (!listEl || !podiumEl) return;
+
+  try {
+    const res = await api('/api/leaderboard');
+    const leaders = res.leaderboard || [];
+
+    // Render Podium (Rank 2, Rank 1, Rank 3)
+    const top1 = leaders[0] || null;
+    const top2 = leaders[1] || null;
+    const top3 = leaders[2] || null;
+
+    podiumEl.innerHTML = `
+      <!-- TOP 2 -->
+      <div class="flex flex-col items-center">
+        <div class="w-12 h-12 rounded-2xl rank-badge-2 flex items-center justify-center font-black text-sm mb-1 shadow-md">
+          ${top2 ? top2.name.charAt(0).toUpperCase() : '2'}
+        </div>
+        <span class="text-xs font-bold truncate max-w-[80px] text-slate-800">${top2 ? top2.name : '—'}</span>
+        <span class="text-[10px] text-slate-400 font-extrabold">${top2 ? top2.xp + ' XP' : ''}</span>
+        <div class="w-full bg-slate-200 h-16 rounded-t-2xl mt-2 flex items-center justify-center font-black text-slate-500 text-sm">2</div>
+      </div>
+
+      <!-- TOP 1 (CHAMPION) -->
+      <div class="flex flex-col items-center">
+        <div class="relative">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-lg">👑</span>
+          <div class="w-16 h-16 rounded-3xl rank-badge-1 flex items-center justify-center font-black text-xl mb-1 shadow-lg">
+            ${top1 ? top1.name.charAt(0).toUpperCase() : '1'}
+          </div>
+        </div>
+        <span class="text-xs font-black truncate max-w-[100px] text-slate-900">${top1 ? top1.name : '—'}</span>
+        <span class="text-[11px] text-amber-600 font-extrabold">${top1 ? top1.xp + ' XP' : ''}</span>
+        <div class="w-full bg-amber-300 h-24 rounded-t-2xl mt-2 flex items-center justify-center font-black text-amber-900 text-lg">1</div>
+      </div>
+
+      <!-- TOP 3 -->
+      <div class="flex flex-col items-center">
+        <div class="w-12 h-12 rounded-2xl rank-badge-3 flex items-center justify-center font-black text-sm mb-1 shadow-md">
+          ${top3 ? top3.name.charAt(0).toUpperCase() : '3'}
+        </div>
+        <span class="text-xs font-bold truncate max-w-[80px] text-slate-800">${top3 ? top3.name : '—'}</span>
+        <span class="text-[10px] text-slate-400 font-extrabold">${top3 ? top3.xp + ' XP' : ''}</span>
+        <div class="w-full bg-orange-200 h-12 rounded-t-2xl mt-2 flex items-center justify-center font-black text-orange-800 text-xs">3</div>
+      </div>
+    `;
+
+    // Render Full List
+    listEl.innerHTML = leaders.map((u, idx) => {
+      const isMe = STATE.user && STATE.user.id === u.id;
+      return `
+        <div class="py-3 px-2 flex items-center justify-between ${isMe ? 'bg-blue-50/70 rounded-2xl font-bold' : ''}">
+          <div class="flex items-center space-x-3">
+            <span class="w-6 text-center font-black text-xs ${idx < 3 ? 'text-amber-500' : 'text-slate-400'}">${idx + 1}</span>
+            <div class="w-9 h-9 rounded-xl bg-slate-200 flex items-center justify-center font-bold text-xs text-slate-700">
+              ${u.name.charAt(0).toUpperCase()}
+            </div>
+            <div>
+              <span class="text-sm font-bold text-slate-900 flex items-center space-x-1">
+                <span>${u.name}</span>
+                ${isMe ? '<span class="text-[10px] bg-blue-600 text-white px-1.5 py-0.2 rounded font-extrabold">SIZ</span>' : ''}
+              </span>
+              <span class="text-[11px] text-slate-400 block">${u.currentLevel} • 🔥 ${u.streak} kun</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="text-sm font-black text-amber-600">${u.xp} XP</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    initIcons();
+  } catch (err) {
+    console.error('Error loading leaderboard:', err);
+  }
+}
+
+// ----------------- BLITZ 60s GAME ENGINE -----------------
+const blitzQuestions = [
+  { q: '"der Tisch" ning o‘zbekcha ma’nosi nima?', a: ['stol', 'stul', 'eshik', 'deraza'], c: 0 },
+  { q: '"die Lampe" artikli qaysi?', a: ['der', 'die', 'das', 'den'], c: 1 },
+  { q: '"das Haus" nimani anglatadi?', a: ['uy', 'xona', 'daraxt', 'shahar'], c: 0 },
+  { q: '"Danke" ga javob qanday aytiladi?', a: ['Hallo', 'Bitte', 'Tschüss', 'Guten Tag'], c: 1 },
+  { q: 'Erkak jinsidagi ot qaysi?', a: ['die Frau', 'das Auto', 'der Mann', 'die Mutter'], c: 2 },
+  { q: '"Guten Morgen" qachon aytiladi?', a: ['Ertalab', 'Kechqurun', 'Kunduzi', 'Tun'], c: 0 },
+  { q: '"sie" so‘zida "ie" qanday o‘qiladi?', a: ['ay', 'cho‘ziq ii', 'ey', 'uu'], c: 1 },
+  { q: '"Ich habe ______ Apfel" (der Apfel)?', a: ['ein', 'eine', 'einen', 'einem'], c: 2 },
+  { q: '"Wasser" ning artikli nima?', a: ['der', 'die', 'das', 'den'], c: 2 },
+  { q: '"Auf Wiedersehen" degani?', a: ['Salom', 'Xayrli tong', 'Ko‘rishguncha xayr', 'Iltimos'], c: 2 }
+];
+
+let blitzCurrentIndex = 0;
+
+function loadBlitzView() {
+  const container = document.getElementById('blitz-container');
+  if (!container) return;
+
+  if (STATE.blitz.isPlaying) return;
+
+  container.innerHTML = `
+    <div class="py-4">
+      <div class="w-16 h-16 rounded-3xl bg-orange-100 text-orange-600 text-3xl font-black flex items-center justify-center mx-auto mb-3">
+        ⚡
+      </div>
+      <h3 class="text-xl font-black text-slate-900 mb-1">60-Soniyalik Lug‘at Jangi</h3>
+      <p class="text-xs text-slate-500 mb-6 max-w-xs mx-auto">
+        60 soniya ichida imkon qadar ko‘p nemischa so‘zlarni toping. Har bir to‘g‘ri javob sizga XP va do‘stlar reytingida ochko keltiradi!
+      </p>
+
+      <button onclick="startBlitzGame()" class="w-full py-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold rounded-2xl shadow-lg shadow-orange-500/25 transition text-sm">
+        Jangni Boshlash! 🚀
+      </button>
+    </div>
+  `;
+}
+
+function startBlitzGame() {
+  STATE.blitz.isPlaying = true;
+  STATE.blitz.score = 0;
+  STATE.blitz.timer = 60;
+  blitzCurrentIndex = 0;
+  playSound('fanfare');
+
+  const scoreBadge = document.getElementById('blitz-score-badge');
+  if (scoreBadge) scoreBadge.innerText = 'Ball: 0';
+
+  renderBlitzQuestion();
+
+  clearInterval(STATE.blitz.interval);
+  STATE.blitz.interval = setInterval(() => {
+    STATE.blitz.timer--;
+    const timerBar = document.getElementById('blitz-timer-bar');
+    if (timerBar) {
+      const pct = (STATE.blitz.timer / 60) * 100;
+      timerBar.style.width = `${pct}%`;
+      if (STATE.blitz.timer <= 10) {
+        timerBar.classList.add('timer-critical');
+      } else {
+        timerBar.classList.remove('timer-critical');
+      }
+    }
+
+    if (STATE.blitz.timer <= 0) {
+      endBlitzGame();
+    }
+  }, 1000);
+}
+
+function renderBlitzQuestion() {
+  const container = document.getElementById('blitz-container');
+  const q = blitzQuestions[blitzCurrentIndex % blitzQuestions.length];
+
+  container.innerHTML = `
+    <div class="space-y-4">
+      <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Qolgan vaqt: ${STATE.blitz.timer}s</span>
+      <h4 class="text-lg font-black text-slate-900">${q.q}</h4>
+
+      <div class="grid grid-cols-2 gap-2.5">
+        ${q.a.map((opt, oIdx) => `
+          <button onclick="handleBlitzAnswer(${oIdx}, ${q.c})" class="p-3.5 rounded-2xl border border-slate-200 hover:border-orange-500 hover:bg-orange-50 font-bold text-sm text-slate-800 transition">
+            ${opt}
+          </button>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+async function handleBlitzAnswer(selected, correct) {
+  if (selected === correct) {
+    playSound('correct');
+    STATE.blitz.score += 10;
+  } else {
+    playSound('wrong');
+  }
+
+  const scoreBadge = document.getElementById('blitz-score-badge');
+  if (scoreBadge) scoreBadge.innerText = `Ball: ${STATE.blitz.score}`;
+
+  blitzCurrentIndex++;
+  renderBlitzQuestion();
+}
+
+async function endBlitzGame() {
+  clearInterval(STATE.blitz.interval);
+  STATE.blitz.isPlaying = false;
+  playSound('fanfare');
+
+  const container = document.getElementById('blitz-container');
+  const earnedXp = Math.round(STATE.blitz.score / 2);
+
+  // Submit score to backend
+  try {
+    await api('/api/blitz/score', {
+      method: 'POST',
+      body: JSON.stringify({ correctCount: STATE.blitz.score / 10, score: STATE.blitz.score })
+    });
+    if (STATE.user) {
+      STATE.user.xp = (STATE.user.xp || 0) + earnedXp;
+      renderHeaderBadges();
+    }
+  } catch (e) {}
+
+  if (window.confetti) window.confetti({ particleCount: 100, spread: 70 });
+
+  container.innerHTML = `
+    <div class="py-4 space-y-4">
+      <div class="text-3xl">🏆</div>
+      <h3 class="text-2xl font-black text-slate-900">Vaqt Tugadi!</h3>
+      <p class="text-sm font-bold text-amber-600">Jami to‘plagan ballingiz: ${STATE.blitz.score}</p>
+      <p class="text-xs text-slate-500">+${earnedXp} XP hisobingizga qo‘shildi!</p>
+
+      <div class="flex gap-2">
+        <button onclick="startBlitzGame()" class="flex-1 py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-2xl text-xs transition">
+          Yana o‘ynash
+        </button>
+        <button onclick="navigate('leaderboard')" class="flex-1 py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-2xl text-xs transition">
+          Reytingni ko‘rish
+        </button>
+      </div>
+    </div>
+  `;
 }
 
 // ----------------- DIAGNOSTIC PLACEMENT ENGINE -----------------
@@ -567,7 +935,7 @@ async function loadDiagnosticView() {
         Test A0 dan C1 gacha bo‘lgan 10 ta saralangan savoldan iborat. Qiyin savollardan qo‘rqmang, bilmaganingizni taxmin qilmang — bu sizga mos darslarni aniqlab beradi.
       </p>
 
-      <button onclick="startDiagnosticTest()" class="py-3 px-8 bg-blue-600 hover:bg-blue-700 text-white font-extrabold rounded-xl shadow-lg shadow-blue-500/25 transition text-sm">
+      <button onclick="startDiagnosticTest()" class="py-3 px-8 bg-blue-600 hover:bg-blue-700 text-white font-extrabold rounded-2xl shadow-lg shadow-blue-500/25 transition text-sm">
         Testni Boshlash (3 daqiqa)
       </button>
     </div>
@@ -597,19 +965,18 @@ function renderDiagnosticQuestion(index) {
         <span class="text-blue-600">Phase ${q.phase} (${q.level})</span>
       </div>
 
-      <!-- Progress bar -->
       <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden mb-6">
         <div class="bg-blue-600 h-full transition-all duration-300" style="width: ${((index + 1) / diagnosticQuestions.length) * 100}%"></div>
       </div>
 
       <div class="mb-6">
-        <span class="text-xs font-bold px-2 py-0.5 rounded bg-purple-50 text-purple-700 uppercase mb-2 inline-block">${q.category}</span>
+        <span class="text-xs font-bold px-2 py-0.5 rounded-lg bg-purple-50 text-purple-700 uppercase mb-2 inline-block">${q.category}</span>
         <h3 class="text-base font-extrabold text-slate-900">${q.question}</h3>
       </div>
 
       <div class="space-y-2 mb-6">
         ${q.options.map((opt, oIdx) => `
-          <button onclick="handleDiagnosticAnswer(${index}, ${oIdx})" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50/30 transition text-sm font-medium text-slate-800">
+          <button onclick="handleDiagnosticAnswer(${index}, ${oIdx})" class="w-full text-left p-4 rounded-2xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50/30 transition text-sm font-medium text-slate-800">
             ${opt}
           </button>
         `).join('')}
@@ -628,7 +995,6 @@ async function handleDiagnosticAnswer(qIndex, selectedIndex) {
   if (qIndex + 1 < diagnosticQuestions.length) {
     renderDiagnosticQuestion(qIndex + 1);
   } else {
-    // Finish test
     await submitDiagnosticTest();
   }
 }
@@ -650,6 +1016,7 @@ async function submitDiagnosticTest() {
     }
 
     if (window.confetti) window.confetti({ particleCount: 80, spread: 60 });
+    playSound('fanfare');
 
     container.innerHTML = `
       <div class="space-y-6">
@@ -659,8 +1026,7 @@ async function submitDiagnosticTest() {
           <p class="text-xs text-slate-500">Umumiy ko‘rsatkich: ${r.totalScorePct}% to‘g‘ri javob</p>
         </div>
 
-        <!-- Metrics Bars -->
-        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-3">
+        <div class="bg-slate-50 p-5 rounded-3xl border border-slate-200 space-y-3">
           ${renderMetricBar('Lug‘at (Vocabulary)', r.vocabularyPct)}
           ${renderMetricBar('Grammatika (Grammar)', r.grammarPct)}
           ${renderMetricBar('O‘qib tushunish (Reading)', r.readingPct)}
@@ -668,19 +1034,18 @@ async function submitDiagnosticTest() {
           ${renderMetricBar('Eshitib tushunish (Listening)', r.listeningPct)}
         </div>
 
-        <!-- Areas -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-          <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900">
+          <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900">
             <span class="font-bold block mb-1">💪 Kuchli tomonlar:</span>
             ${(r.strongAreas || []).map(a => `<div>• ${a}</div>`).join('') || '—'}
           </div>
-          <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900">
+          <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900">
             <span class="font-bold block mb-1">⚠️ E’tibor qaratish kerak:</span>
             ${(r.weakAreas || []).map(a => `<div>• ${a}</div>`).join('') || '—'}
           </div>
         </div>
 
-        <button onclick="navigate('lessons')" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-extrabold rounded-xl shadow-lg shadow-blue-500/25 transition text-sm">
+        <button onclick="navigate('lessons')" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-extrabold rounded-2xl shadow-lg shadow-blue-500/25 transition text-sm">
           Shaxsiy Darslarga Kirish
         </button>
       </div>
@@ -714,7 +1079,7 @@ async function loadAiTutorView() {
     scenariosList.innerHTML = Object.entries(resScenarios.scenarios).map(([key, sc]) => {
       const isActive = STATE.activeScenario === key;
       return `
-        <button onclick="selectScenario('${key}')" class="w-full text-left p-3 rounded-xl border ${isActive ? 'border-blue-500 bg-blue-50/50 text-blue-800' : 'border-slate-200 hover:bg-slate-50 text-slate-800'} transition flex flex-col">
+        <button onclick="selectScenario('${key}')" class="w-full text-left p-3 rounded-2xl border ${isActive ? 'border-blue-500 bg-blue-50/50 text-blue-800' : 'border-slate-200 hover:bg-slate-50 text-slate-800'} transition flex flex-col">
           <span class="font-bold text-xs">${sc.name}</span>
           <span class="text-[11px] text-slate-400 truncate">${sc.description}</span>
         </button>
@@ -769,33 +1134,28 @@ function renderChatMessage(msg) {
   if (msg.role === 'user') {
     return `
       <div class="flex justify-end">
-        <div class="max-w-[85%] bg-blue-600 text-white rounded-2xl rounded-tr-sm px-4 py-3 shadow-sm text-sm">
+        <div class="max-w-[85%] bg-blue-600 text-white rounded-3xl rounded-tr-sm px-4 py-3 shadow-sm text-sm">
           <p>${msg.text}</p>
         </div>
       </div>
     `;
   }
 
-  // Assistant Message
   const hasCorrections = msg.corrections && msg.corrections.length > 0;
   return `
     <div class="flex justify-start">
-      <div class="max-w-[90%] bg-slate-100 rounded-2xl rounded-tl-sm p-4 text-slate-900 shadow-sm text-sm space-y-2.5">
-        
-        <!-- German audio & text -->
+      <div class="max-w-[90%] bg-slate-100 rounded-3xl rounded-tl-sm p-4 text-slate-900 shadow-sm text-sm space-y-2.5">
         <div class="flex items-start justify-between gap-3">
           <p class="font-bold text-slate-900 text-base leading-snug">${msg.textDe}</p>
-          <button onclick="playGermanAudio('${msg.textDe.replace(/'/g, "\\'")}')" class="shrink-0 p-1.5 rounded-lg bg-white hover:bg-slate-200 text-blue-600 transition shadow-sm" title="Ovoz bilan tinglash">
+          <button onclick="playGermanAudio('${msg.textDe.replace(/'/g, "\\'")}')" class="shrink-0 p-1.5 rounded-xl bg-white hover:bg-slate-200 text-blue-600 transition shadow-sm" title="Ovoz bilan tinglash">
             <i data-lucide="volume-2" class="w-4 h-4"></i>
           </button>
         </div>
 
-        <!-- Uzbek translation -->
         <p class="text-xs text-slate-500 italic border-l-2 border-blue-400 pl-2">${msg.textUz}</p>
 
-        <!-- Corrections box if error was made -->
         ${hasCorrections ? `
-          <div class="p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs space-y-1.5 mt-2">
+          <div class="p-3 rounded-2xl bg-amber-50 border border-amber-200 text-xs space-y-1.5 mt-2">
             <span class="font-black text-amber-900 uppercase tracking-wider block text-[10px]">Tahlil va Xatolarni Tuzatish:</span>
             ${msg.corrections.map(c => `
               <div class="text-slate-800">
@@ -808,11 +1168,10 @@ function renderChatMessage(msg) {
         ` : ''}
 
         ${msg.tip ? `
-          <div class="text-[11px] text-slate-500 bg-white/70 p-2 rounded-lg">
+          <div class="text-[11px] text-slate-500 bg-white/70 p-2 rounded-xl">
             💡 ${msg.tip}
           </div>
         ` : ''}
-
       </div>
     </div>
   `;
@@ -827,10 +1186,10 @@ async function handleSendChatMessage(e) {
   input.value = '';
   const container = document.getElementById('chat-messages');
 
-  // Optimistically append user message
   const userHtml = renderChatMessage({ role: 'user', text: message });
   container.insertAdjacentHTML('beforeend', userHtml);
   container.scrollTop = container.scrollHeight;
+  playSound('click');
 
   try {
     const sendBtn = document.getElementById('btn-chat-send');
@@ -846,7 +1205,6 @@ async function handleSendChatMessage(e) {
     container.scrollTop = container.scrollHeight;
     initIcons();
 
-    // Automatically speak AI German reply!
     if (res.message.textDe) {
       playGermanAudio(res.message.textDe);
     }
@@ -865,23 +1223,16 @@ async function clearChat() {
   await loadChatHistory();
 }
 
-// ----------------- WEB SPEECH: SYNTHESIS & RECOGNITION -----------------
+// ----------------- WEB SPEECH AUDIO -----------------
 function playGermanAudio(text) {
-  if (!('speechSynthesis' in window)) {
-    alert('Brauzeringiz ovozli o‘qishni qo‘llab-quvvatlamaydi.');
-    return;
-  }
-
-  window.speechSynthesis.cancel(); // Stop any currently playing audio
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'de-DE';
-  utterance.rate = 0.9; // natural, slightly clear speed for learners
-
-  // Try to find a native German voice
+  utterance.rate = 0.9;
   const voices = window.speechSynthesis.getVoices();
   const deVoice = voices.find(v => v.lang.startsWith('de') || v.lang === 'de-DE');
   if (deVoice) utterance.voice = deVoice;
-
   window.speechSynthesis.speak(utterance);
 }
 
@@ -901,19 +1252,13 @@ function setupSpeechRecognition() {
     toggleSpeechRecognition(false);
   };
 
-  STATE.speechRecognition.onerror = (e) => {
-    console.log('Speech recognition error:', e);
-    toggleSpeechRecognition(false);
-  };
-
-  STATE.speechRecognition.onend = () => {
-    toggleSpeechRecognition(false);
-  };
+  STATE.speechRecognition.onerror = () => toggleSpeechRecognition(false);
+  STATE.speechRecognition.onend = () => toggleSpeechRecognition(false);
 }
 
 function toggleSpeechRecognition(forceState) {
   if (!STATE.speechRecognition) {
-    alert('Brauzeringiz mikrofon orqali nemischa nutqni aniqlashni qo‘llab-quvvatlamaydi (Google Chrome yoki Safari tavsiya etiladi).');
+    alert('Brauzeringiz ovoz bilan gapirishni qo‘llab-quvvatlamaydi (Google Chrome yoki Safari tavsiya etiladi).');
     return;
   }
 
@@ -925,11 +1270,11 @@ function toggleSpeechRecognition(forceState) {
 
   if (STATE.isRecording) {
     STATE.speechRecognition.start();
-    if (btnMic) btnMic.className = 'p-2.5 rounded-xl bg-red-500 text-white animate-pulse transition';
+    if (btnMic) btnMic.className = 'p-2.5 rounded-2xl bg-red-500 text-white animate-pulse transition';
     if (micStatus) micStatus.classList.remove('hidden');
   } else {
     try { STATE.speechRecognition.stop(); } catch (e) {}
-    if (btnMic) btnMic.className = 'p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition';
+    if (btnMic) btnMic.className = 'p-2.5 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition';
     if (micStatus) micStatus.classList.add('hidden');
   }
 }
@@ -966,9 +1311,7 @@ async function loadVocabularyView() {
 
     return `
       <div class="perspective-1000">
-        <div id="card-${word.id}" onclick="flipCard('${word.id}')" class="flashcard-inner bg-white rounded-2xl border ${genderColor} shadow-sm hover:shadow-md transition">
-          
-          <!-- FRONT -->
+        <div id="card-${word.id}" onclick="flipCard('${word.id}')" class="flashcard-inner bg-white rounded-3xl border ${genderColor} shadow-sm hover:shadow-md transition">
           <div class="flashcard-front">
             <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">${word.category}</span>
             <div class="flex items-center space-x-1.5 mb-1">
@@ -985,7 +1328,6 @@ async function loadVocabularyView() {
             </div>
           </div>
 
-          <!-- BACK -->
           <div class="flashcard-back bg-slate-900 text-white">
             <span class="text-xs text-slate-400 uppercase tracking-wider mb-1">O‘zbekcha ma’nosi:</span>
             <h4 class="text-lg font-bold text-amber-400 mb-2">${word.meaningUz}</h4>
@@ -993,15 +1335,14 @@ async function loadVocabularyView() {
             <p class="text-[11px] text-slate-400 mb-4">${word.exampleUz}</p>
 
             <div class="flex items-center space-x-2" onclick="event.stopPropagation()">
-              <button onclick="reviewFlashcard('${word.id}', false)" class="px-3 py-1.5 rounded-lg bg-red-600/80 hover:bg-red-600 text-white text-xs font-bold transition">
+              <button onclick="reviewFlashcard('${word.id}', false)" class="px-3 py-1.5 rounded-xl bg-red-600/80 hover:bg-red-600 text-white text-xs font-bold transition">
                 Takrorlayman
               </button>
-              <button onclick="reviewFlashcard('${word.id}', true)" class="px-3 py-1.5 rounded-lg bg-emerald-600/80 hover:bg-emerald-600 text-white text-xs font-bold transition">
+              <button onclick="reviewFlashcard('${word.id}', true)" class="px-3 py-1.5 rounded-xl bg-emerald-600/80 hover:bg-emerald-600 text-white text-xs font-bold transition">
                 Eslab qoldim ✅
               </button>
             </div>
           </div>
-
         </div>
       </div>
     `;
@@ -1012,16 +1353,21 @@ async function loadVocabularyView() {
 
 function flipCard(cardId) {
   const el = document.getElementById(`card-${cardId}`);
-  if (el) el.classList.toggle('is-flipped');
+  if (el) {
+    el.classList.toggle('is-flipped');
+    playSound('click');
+  }
 }
 
 async function reviewFlashcard(wordId, isCorrect) {
   try {
+    if (isCorrect) playSound('correct');
+    else playSound('wrong');
+
     await api(`/api/vocabulary/${wordId}/review`, {
       method: 'POST',
       body: JSON.stringify({ isCorrect })
     });
-    // Flip back
     const el = document.getElementById(`card-${wordId}`);
     if (el) el.classList.remove('is-flipped');
     await loadVocabulary();
@@ -1059,7 +1405,7 @@ async function loadProfileView() {
       `;
     } else {
       list.innerHTML = mistakes.map(m => `
-        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs">
           <div class="flex items-center justify-between mb-1">
             <span class="font-bold text-red-600">${m.category || 'XATO'}</span>
             <span class="text-[10px] text-slate-400">${new Date(m.timestamp || Date.now()).toLocaleDateString()}</span>
@@ -1079,36 +1425,11 @@ async function loadProfileView() {
   }
 }
 
-// ----------------- DEVICE SYNC / QR CODE MODAL -----------------
-function openDeviceSyncModal() {
-  const modal = document.getElementById('modal-device-sync');
-  modal.classList.remove('hidden');
-
-  const container = document.getElementById('qrcode-container');
-  container.innerHTML = '';
-
-  const targetUrl = STATE.networkInfo ? STATE.networkInfo.networkUrl : window.location.href;
-
-  if (window.QRCode) {
-    new window.QRCode(container, {
-      text: targetUrl,
-      width: 180,
-      height: 180,
-      colorDark: '#0f172a',
-      colorLight: '#f8fafc',
-      correctLevel: window.QRCode.CorrectLevel.M
-    });
-  }
-  initIcons();
-}
-
-function closeDeviceSyncModal() {
-  document.getElementById('modal-device-sync').classList.add('hidden');
-}
-
-function copyNetworkUrl() {
-  const url = document.getElementById('sync-network-url').innerText;
+// ----------------- COPY SHARE LINK -----------------
+function copyShareLink() {
+  const url = window.location.origin;
   navigator.clipboard.writeText(url).then(() => {
-    alert(`Manzil nusxalandi: ${url}\n\nTelefoningizdagi brauzerga (Safari / Chrome) qo‘ying!`);
+    playSound('correct');
+    alert(`Do‘stlaringiz uchun havola nusxalandi:\n\n${url}\n\nTelegram orqali do‘stlaringizga yuboring!`);
   });
 }

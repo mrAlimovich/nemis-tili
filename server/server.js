@@ -346,6 +346,22 @@ app.delete('/api/chat/clear', authMiddleware, (req, res) => {
   res.json({ success: true });
 });
 
+// ----------------- LEADERBOARD ROUTE -----------------
+app.get('/api/leaderboard', authMiddleware, (req, res) => {
+  const leaderboard = db.getLeaderboard();
+  res.json({ leaderboard });
+});
+
+// ----------------- BLITZ GAME ROUTE -----------------
+app.post('/api/blitz/score', authMiddleware, (req, res) => {
+  const { correctCount, score } = req.body;
+  const earnedXp = Math.max(5, Math.min(50, Math.round(correctCount * 3)));
+  const progress = db.getUserProgress(req.user.id);
+  progress.xp = (progress.xp || 0) + earnedXp;
+  db.writeDb(db.readDb()); // or write progress
+  res.json({ success: true, earnedXp, totalXp: progress.xp });
+});
+
 // ----------------- MISTAKES ROUTE -----------------
 app.get('/api/mistakes', authMiddleware, (req, res) => {
   const progress = db.getUserProgress(req.user.id);

@@ -250,6 +250,25 @@ module.exports = {
     return message;
   },
 
+  getLeaderboard() {
+    const db = readDb();
+    const list = db.users.map(u => {
+      const prog = db.progress[u.id] || { xp: 0, streak: 1, completedLessons: {} };
+      return {
+        id: u.id,
+        name: u.name,
+        currentLevel: u.currentLevel || 'A0',
+        targetLevel: u.targetLevel || 'B1',
+        goal: u.goal || 'Ish / O‘qish',
+        xp: prog.xp || 0,
+        streak: prog.streak || 1,
+        completedCount: Object.keys(prog.completedLessons || {}).length
+      };
+    });
+    // Sort descending by XP, then streak
+    return list.sort((a, b) => b.xp - a.xp || b.streak - a.streak);
+  },
+
   clearUserChats(userId) {
     const db = readDb();
     db.chats[userId] = [];
