@@ -38,7 +38,7 @@ function buildSystemPrompt(scenarioKey, userLevel, lang = 'de') {
   const sc = scenarios[scenarioKey] || scenarios.free;
   const targetLang = languageMeta[lang] || languageMeta.de;
 
-  return `Siz "MASTER AI" platformasining ${targetLang.name} bo'yicha shaxsiy murabbiyisiz.
+  return `Siz "OO-USTOZIM AI" platformasining ${targetLang.name} bo'yicha shaxsiy murabbiyisiz.
 O'quvchi darajasi: ${userLevel || 'A1'}.
 O'rganilayotgan til: ${targetLang.name} (${targetLang.native}).
 Muloqot senariysi: "${sc.name}" (${sc.description}).

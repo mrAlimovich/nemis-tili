@@ -148,11 +148,27 @@ app.get('/api/lessons', authMiddleware, (req, res) => {
   const lang = req.query.lang || 'de';
   const progress = db.getUserProgress(req.user.id);
   const userCompleted = progress.completedLessons || {};
+  const user = db.getUserById(req.user.id);
+  const userLevel = (user && user.currentLevel) || 'A0';
+
+  const LEVEL_RANKS = { 'A0': 0, 'A1': 1, 'A2': 2, 'B1': 3, 'B2': 4, 'C1': 5 };
+  const userRank = LEVEL_RANKS[userLevel] || 0;
 
   const lessonList = curriculum[lang] || curriculum.de;
 
-  const lessonsWithStatus = lessonList.map(lesson => {
+  const lessonsWithStatus = lessonList.map((lesson, idx) => {
     const isCompleted = !!userCompleted[lesson.id];
+    const lessonRank = LEVEL_RANKS[lesson.level] || 1;
+
+    let isLocked = true;
+    if (idx === 0) {
+      isLocked = false;
+    } else if (userRank >= lessonRank) {
+      isLocked = false;
+    } else if (idx > 0 && userCompleted[lessonList[idx - 1].id]) {
+      isLocked = false;
+    }
+
     return {
       id: lesson.id,
       lang: lesson.lang,
@@ -161,6 +177,7 @@ app.get('/api/lessons', authMiddleware, (req, res) => {
       title: lesson.title,
       goal: lesson.goal,
       isCompleted,
+      isLocked,
       score: isCompleted ? userCompleted[lesson.id].score : 0
     };
   });

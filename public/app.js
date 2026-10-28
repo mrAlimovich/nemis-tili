@@ -507,12 +507,42 @@ function renderLessonsList() {
 
   grid.innerHTML = filtered.map(lesson => {
     const isDone = lesson.isCompleted;
+    const isLocked = lesson.isLocked;
+    const numDisplay = lesson.number < 10 ? `0${lesson.number}` : lesson.number;
+
+    if (isLocked) {
+      return `
+        <div onclick="showLockedLessonAlert('${lesson.title.replace(/'/g, "\\'")}')" class="group bg-slate-50/80 rounded-3xl border border-dashed border-slate-200 p-5 transition cursor-pointer flex flex-col justify-between hover:border-amber-300">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-3 py-1 bg-slate-200 text-slate-500 rounded-xl text-xs font-bold">
+                DARS ${numDisplay} • ${lesson.level}
+              </span>
+              <span class="flex items-center space-x-1 text-slate-400 text-xs font-bold">
+                <i data-lucide="lock" class="w-3.5 h-3.5 text-amber-500"></i>
+                <span>Qulflangan</span>
+              </span>
+            </div>
+            <h3 class="font-bold text-slate-600 text-base mb-1">${lesson.title}</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">${lesson.goal}</p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-200 flex items-center justify-between text-xs text-slate-400 font-medium">
+            <span class="flex items-center space-x-1 text-amber-600 font-bold">
+              <span>🔒 Oldingi darsni yakunlang</span>
+            </span>
+            <span class="text-slate-400">+30 XP</span>
+          </div>
+        </div>
+      `;
+    }
+
     return `
       <div onclick="openLesson('${lesson.id}')" class="group hover-lift bg-white rounded-3xl border ${isDone ? 'border-emerald-200 bg-emerald-50/10' : 'border-slate-200'} hover:border-blue-500 p-5 shadow-sm transition cursor-pointer flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-3">
             <span class="px-3 py-1 bg-slate-100 group-hover:bg-blue-50 text-slate-600 group-hover:text-blue-600 rounded-xl text-xs font-black">
-              DARS 0${lesson.number} • ${lesson.level}
+              DARS ${numDisplay} • ${lesson.level}
             </span>
             ${isDone 
               ? '<span class="flex items-center space-x-1 text-emerald-600 text-xs font-extrabold"><i data-lucide="check-circle-2" class="w-4 h-4"></i><span>Bajarildi</span></span>'
@@ -534,6 +564,40 @@ function renderLessonsList() {
   initIcons();
 }
 
+function showLockedLessonAlert(title) {
+  playSound('click');
+  const existingAlert = document.getElementById('modal-locked-lesson');
+  if (existingAlert) existingAlert.remove();
+
+  const alertBox = document.createElement('div');
+  alertBox.id = 'modal-locked-lesson';
+  alertBox.className = 'fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in';
+  alertBox.innerHTML = `
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center shadow-2xl border border-slate-100">
+      <div class="w-14 h-14 bg-amber-50 text-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
+        🔒
+      </div>
+      <h3 class="text-lg font-black text-slate-900 mb-1">Dars Qulflangan!</h3>
+      <p class="text-xs text-slate-500 mb-4 font-semibold">${title}</p>
+      <div class="bg-amber-50 border border-amber-200 rounded-2xl p-3 text-xs text-amber-800 text-left mb-5 space-y-1">
+        <p class="font-bold">🎯 Qanday ochish mumkin?</p>
+        <p class="text-[11px] leading-relaxed">1. Ketma-ketlikda avvalgi darsni muvaffaqiyatli yakunlang.</p>
+        <p class="text-[11px] leading-relaxed">2. Yoki <strong>Diagnostika</strong> testini topshirib, o‘z darajangizni birdaniga ochib oling!</p>
+      </div>
+      <div class="space-y-2">
+        <button onclick="document.getElementById('modal-locked-lesson').remove(); navigate('diagnostic');" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-black transition shadow-md shadow-blue-500/20">
+          Diagnostik Test Topshirish ⚡️
+        </button>
+        <button onclick="document.getElementById('modal-locked-lesson').remove();" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">
+          Tushundim
+        </button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(alertBox);
+  initIcons();
+}
+
 async function openLesson(lessonId) {
   try {
     const res = await api(`/api/lessons/${lessonId}`);
@@ -546,7 +610,7 @@ async function openLesson(lessonId) {
       <!-- Header banner -->
       <div class="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 md:p-8 text-white">
         <div class="flex items-center space-x-2 text-xs font-bold text-blue-200 uppercase tracking-wider mb-2">
-          <span>DARS 0${l.number}</span>
+          <span>DARS ${l.number < 10 ? '0' + l.number : l.number}</span>
           <span>•</span>
           <span>${l.level}</span>
         </div>
