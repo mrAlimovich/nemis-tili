@@ -138,15 +138,24 @@ app.get('/api/me', authMiddleware, (req, res) => {
   });
 });
 
+// ----------------- LANGUAGES ROUTE -----------------
+app.get('/api/languages', (req, res) => {
+  res.json({ languages: curriculum.languages });
+});
+
 // ----------------- LESSONS ROUTES -----------------
 app.get('/api/lessons', authMiddleware, (req, res) => {
+  const lang = req.query.lang || 'de';
   const progress = db.getUserProgress(req.user.id);
   const userCompleted = progress.completedLessons || {};
 
-  const lessonsWithStatus = curriculum.lessons.map(lesson => {
+  const lessonList = curriculum[lang] || curriculum.de;
+
+  const lessonsWithStatus = lessonList.map(lesson => {
     const isCompleted = !!userCompleted[lesson.id];
     return {
       id: lesson.id,
+      lang: lesson.lang,
       level: lesson.level,
       number: lesson.number,
       title: lesson.title,
@@ -156,18 +165,27 @@ app.get('/api/lessons', authMiddleware, (req, res) => {
     };
   });
 
-  res.json({ lessons: lessonsWithStatus });
+  res.json({ lessons: lessonsWithStatus, lang });
 });
 
 app.get('/api/lessons/:id', authMiddleware, (req, res) => {
-  const lesson = curriculum.lessons.find(l => l.id === req.params.id);
-  if (!lesson) {
+  let foundLesson = null;
+  for (const lang of ['de', 'en', 'ru', 'ko']) {
+    const list = curriculum[lang] || [];
+    const match = list.find(l => l.id === req.params.id);
+    if (match) {
+      foundLesson = match;
+      break;
+    }
+  }
+
+  if (!foundLesson) {
     return res.status(404).json({ error: 'Dars topilmadi' });
   }
   const progress = db.getUserProgress(req.user.id);
-  const status = progress.completedLessons?.[lesson.id] || null;
+  const status = progress.completedLessons?.[foundLesson.id] || null;
 
-  res.json({ lesson, status });
+  res.json({ lesson: foundLesson, status });
 });
 
 app.post('/api/lessons/:id/submit', authMiddleware, (req, res) => {
@@ -194,12 +212,15 @@ app.post('/api/lessons/:id/submit', authMiddleware, (req, res) => {
 
 // ----------------- DIAGNOSTIC ROUTES -----------------
 app.get('/api/diagnostic/questions', authMiddleware, (req, res) => {
-  res.json({ questions: curriculum.diagnosticQuestions });
+  const lang = req.query.lang || 'de';
+  const questions = curriculum.diagnosticQuestions[lang] || curriculum.diagnosticQuestions.de;
+  res.json({ questions, lang });
 });
 
 app.post('/api/diagnostic/submit', authMiddleware, (req, res) => {
-  const { answers } = req.body; // array of { questionIndex, selectedIndex }
-  const questions = curriculum.diagnosticQuestions;
+  const { answers, lang } = req.body;
+  const targetLang = lang || 'de';
+  const questions = curriculum.diagnosticQuestions[targetLang] || curriculum.diagnosticQuestions.de;
 
   let correctCount = 0;
   let phaseScores = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
@@ -268,10 +289,13 @@ app.post('/api/diagnostic/submit', authMiddleware, (req, res) => {
 
 // ----------------- VOCABULARY & FLASHCARDS -----------------
 app.get('/api/vocabulary', authMiddleware, (req, res) => {
+  const lang = req.query.lang || 'de';
   const userCards = db.getUserFlashcards(req.user.id);
   const now = Date.now();
 
-  const words = vocabularyList.map(w => {
+  const wordsList = vocabularyList[lang] || vocabularyList.de || [];
+
+  const words = wordsList.map(w => {
     const card = userCards[w.id] || { box: 1, reviewsCount: 0, nextReview: 0 };
     const isDue = !card.nextReview || card.nextReview <= now;
     return {
@@ -282,7 +306,7 @@ app.get('/api/vocabulary', authMiddleware, (req, res) => {
     };
   });
 
-  res.json({ words });
+  res.json({ words, lang });
 });
 
 app.post('/api/vocabulary/:id/review', authMiddleware, (req, res) => {
@@ -302,13 +326,14 @@ app.get('/api/chat/history', authMiddleware, (req, res) => {
 });
 
 app.post('/api/chat/message', authMiddleware, async (req, res) => {
-  const { message, scenario, apiKey, geminiKey, groqKey } = req.body;
+  const { message, scenario, apiKey, geminiKey, groqKey, lang } = req.body;
   if (!message || !message.trim()) {
     return res.status(400).json({ error: 'Xabar bo‘sh bo‘lishi mumkin emas' });
   }
 
   const user = db.getUserById(req.user.id);
   const userLevel = user ? user.currentLevel : 'A1';
+  const targetLang = lang || 'de';
 
   // Support both single apiKey or { geminiKey, groqKey }
   const keys = {
@@ -317,7 +342,7 @@ app.post('/api/chat/message', authMiddleware, async (req, res) => {
   };
 
   // Generate response via Gemini or instant Failover to Groq/Grok or smart fallback
-  const aiResult = await aiEngine.generateAiResponse(message, scenario || 'free', userLevel, keys);
+  const aiResult = await aiEngine.generateAiResponse(message, scenario || 'free', userLevel, keys, targetLang);
 
   // Save User message
   db.addChatMessage(req.user.id, {

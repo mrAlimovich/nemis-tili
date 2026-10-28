@@ -39,16 +39,36 @@
       
       <!-- Brand -->
       <div class="flex items-center space-x-3 cursor-pointer" onclick="navigate('lessons')">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-red-500 to-slate-900 flex items-center justify-center text-white shadow-md shadow-red-500/20">
-          <span class="text-xl font-black">DE</span>
+        <div id="brand-flag-badge" class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-500 via-red-500 to-slate-900 flex items-center justify-center text-white shadow-md shadow-red-500/20 text-xl font-black">
+          🇩🇪
         </div>
         <div>
           <div class="flex items-center space-x-1.5">
-            <span class="font-extrabold text-base md:text-lg tracking-tight text-slate-900">GERMAN MASTER</span>
-            <span class="bg-blue-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">AI</span>
+            <span class="font-extrabold text-base md:text-lg tracking-tight text-slate-900">MASTER</span>
+            <span class="bg-blue-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-lg uppercase tracking-wider">AI</span>
           </div>
-          <p class="text-[11px] text-slate-500 hidden sm:block">0 dan C2 gacha Shaxsiy Murabbiy</p>
+          <p id="brand-subtext" class="text-[11px] text-slate-500 hidden sm:block">4 Ta Til: Nemis • Ingliz • Rus • Koreys</p>
         </div>
+      </div>
+
+      <!-- Language Selector Switcher Pills -->
+      <div class="flex items-center bg-slate-100 p-1 rounded-2xl border border-slate-200 text-xs font-bold" id="language-switcher">
+        <button onclick="switchLanguage('de')" id="lang-btn-de" class="lang-pill px-2.5 py-1.5 rounded-xl transition bg-white text-blue-600 shadow-sm flex items-center space-x-1">
+          <span>🇩🇪</span>
+          <span class="hidden md:inline">Nemis</span>
+        </button>
+        <button onclick="switchLanguage('en')" id="lang-btn-en" class="lang-pill px-2.5 py-1.5 rounded-xl transition text-slate-600 hover:text-slate-900 flex items-center space-x-1">
+          <span>🇬🇧</span>
+          <span class="hidden md:inline">Ingliz</span>
+        </button>
+        <button onclick="switchLanguage('ru')" id="lang-btn-ru" class="lang-pill px-2.5 py-1.5 rounded-xl transition text-slate-600 hover:text-slate-900 flex items-center space-x-1">
+          <span>🇷🇺</span>
+          <span class="hidden md:inline">Rus</span>
+        </button>
+        <button onclick="switchLanguage('ko')" id="lang-btn-ko" class="lang-pill px-2.5 py-1.5 rounded-xl transition text-slate-600 hover:text-slate-900 flex items-center space-x-1">
+          <span>🇰🇷</span>
+          <span class="hidden md:inline">Koreys</span>
+        </button>
       </div>
 
       <!-- Controls & User Badges -->
@@ -343,7 +363,7 @@
                   <i data-lucide="mic" class="w-5 h-5"></i>
                 </button>
 
-                <input type="text" id="chat-input" placeholder="Nemischa yozing yoki mikrofondan gapiring..." class="flex-1 px-4 py-2.5 text-sm rounded-2xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="text" id="chat-input" placeholder="Xabar yozing (Nemis, Ingliz, Rus, Koreys) yoki mikrofondan gapiring..." class="flex-1 px-4 py-2.5 text-sm rounded-2xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 
                 <button type="submit" id="btn-chat-send" class="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl text-sm font-bold shadow-sm transition flex items-center space-x-1">
                   <span>Yuborish</span>

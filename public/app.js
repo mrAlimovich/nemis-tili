@@ -7,6 +7,7 @@ const STATE = {
   user: null,
   activeView: 'lessons',
   authMode: 'login',
+  selectedLang: localStorage.getItem('gm_lang') || 'de',
   lessons: [],
   currentLesson: null,
   vocabulary: [],
@@ -26,6 +27,13 @@ const STATE = {
   }
 };
 
+const LANG_CONFIG = {
+  de: { name: 'Nemis tili', flag: '🇩🇪', speech: 'de-DE' },
+  en: { name: 'Ingliz tili', flag: '🇬🇧', speech: 'en-US' },
+  ru: { name: 'Rus tili', flag: '🇷🇺', speech: 'ru-RU' },
+  ko: { name: 'Koreys tili', flag: '🇰🇷', speech: 'ko-KR' }
+};
+
 // ----------------- INITIALIZATION -----------------
 document.addEventListener('DOMContentLoaded', async () => {
   if (STATE.darkMode) {
@@ -33,6 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   updateThemeIcon();
   updateSoundIcon();
+  updateLanguagePills();
 
   initIcons();
   setupSpeechRecognition();
@@ -43,6 +52,42 @@ document.addEventListener('DOMContentLoaded', async () => {
     showAuthView();
   }
 });
+
+function switchLanguage(langCode) {
+  if (!LANG_CONFIG[langCode]) return;
+  STATE.selectedLang = langCode;
+  localStorage.setItem('gm_lang', langCode);
+  playSound('click');
+
+  updateLanguagePills();
+  setupSpeechRecognition();
+
+  // Reload data for the chosen language
+  loadLessons();
+  loadVocabulary();
+
+  if (STATE.activeView === 'ai-tutor') {
+    loadChatHistory();
+  }
+}
+
+function updateLanguagePills() {
+  ['de', 'en', 'ru', 'ko'].forEach(code => {
+    const btn = document.getElementById(`lang-btn-${code}`);
+    if (btn) {
+      if (code === STATE.selectedLang) {
+        btn.className = 'lang-pill px-2.5 py-1.5 rounded-xl transition bg-white text-blue-600 shadow-sm flex items-center space-x-1 font-bold';
+      } else {
+        btn.className = 'lang-pill px-2.5 py-1.5 rounded-xl transition text-slate-600 hover:text-slate-900 flex items-center space-x-1 font-medium';
+      }
+    }
+  });
+
+  const badge = document.getElementById('brand-flag-badge');
+  if (badge) {
+    badge.innerText = LANG_CONFIG[STATE.selectedLang]?.flag || '🇩🇪';
+  }
+}
 
 function initIcons() {
   if (window.lucide) {
@@ -352,7 +397,7 @@ async function loadInitialData() {
 // ----------------- LESSONS ENGINE -----------------
 async function loadLessons() {
   try {
-    const res = await api('/api/lessons');
+    const res = await api(`/api/lessons?lang=${STATE.selectedLang}`);
     STATE.lessons = res.lessons;
 
     const grid = document.getElementById('lessons-grid');
@@ -771,18 +816,39 @@ async function loadLeaderboardView() {
 }
 
 // ----------------- BLITZ 60s GAME ENGINE -----------------
-const blitzQuestions = [
-  { q: '"der Tisch" ning o‘zbekcha ma’nosi nima?', a: ['stol', 'stul', 'eshik', 'deraza'], c: 0 },
-  { q: '"die Lampe" artikli qaysi?', a: ['der', 'die', 'das', 'den'], c: 1 },
-  { q: '"das Haus" nimani anglatadi?', a: ['uy', 'xona', 'daraxt', 'shahar'], c: 0 },
-  { q: '"Danke" ga javob qanday aytiladi?', a: ['Hallo', 'Bitte', 'Tschüss', 'Guten Tag'], c: 1 },
-  { q: 'Erkak jinsidagi ot qaysi?', a: ['die Frau', 'das Auto', 'der Mann', 'die Mutter'], c: 2 },
-  { q: '"Guten Morgen" qachon aytiladi?', a: ['Ertalab', 'Kechqurun', 'Kunduzi', 'Tun'], c: 0 },
-  { q: '"sie" so‘zida "ie" qanday o‘qiladi?', a: ['ay', 'cho‘ziq ii', 'ey', 'uu'], c: 1 },
-  { q: '"Ich habe ______ Apfel" (der Apfel)?', a: ['ein', 'eine', 'einen', 'einem'], c: 2 },
-  { q: '"Wasser" ning artikli nima?', a: ['der', 'die', 'das', 'den'], c: 2 },
-  { q: '"Auf Wiedersehen" degani?', a: ['Salom', 'Xayrli tong', 'Ko‘rishguncha xayr', 'Iltimos'], c: 2 }
-];
+// Multilingual Blitz 60s Questions
+const blitzQuestionsBank = {
+  de: [
+    { q: '"der Tisch" ning o‘zbekcha ma’nosi nima?', a: ['stol', 'stul', 'eshik', 'deraza'], c: 0 },
+    { q: '"die Lampe" artikli qaysi?', a: ['der', 'die', 'das', 'den'], c: 1 },
+    { q: '"das Haus" nimani anglatadi?', a: ['uy', 'xona', 'daraxt', 'shahar'], c: 0 },
+    { q: '"Danke" ga javob qanday aytiladi?', a: ['Hallo', 'Bitte', 'Tschüss', 'Guten Tag'], c: 1 },
+    { q: '"Wasser" ning artikli nima?', a: ['der', 'die', 'das', 'den'], c: 2 }
+  ],
+  en: [
+    { q: '"Book" ning o‘zbekcha ma’nosi nima?', a: ['kitob', 'daftar', 'qalam', 'stol'], c: 0 },
+    { q: '"Good morning" qachon aytiladi?', a: ['Ertalab', 'Kechqurun', 'Tunda', 'Tushda'], c: 0 },
+    { q: '"I ______ a student" to‘g‘ri fe’l:', a: ['am', 'is', 'are', 'be'], c: 0 },
+    { q: '"Thank you" ga javob nima bo‘ladi?', a: ['You are welcome', 'Goodbye', 'Please no', 'Good night'], c: 0 },
+    { q: '"House" so‘zining ma’nosi nima?', a: ['uy', 'ko‘cha', 'mashina', 'shahar'], c: 0 }
+  ],
+  ru: [
+    { q: '"Здравствуйте" qanday salomlashish?', a: ['Rasmiy salom', 'Do‘stona salom', 'Xayrlashuv', 'Kechirim'], c: 0 },
+    { q: '"Книга" (kitob) qaysi jinsga kiradi?', a: ['Женский род (Она)', 'Мужской род (Он)', 'Средний род (Оно)'], c: 0 },
+    { q: '"Дом" (uy) qaysi jinsga kiradi?', a: ['Мужской род (Он)', 'Женский род (Она)', 'Средний род (Оно)'], c: 0 },
+    { q: '"Спасибо большое" nima degani?', a: ['Katta rahmat', 'Arzimaydi', 'Xayr', 'Iltimos'], c: 0 }
+  ],
+  ko: [
+    { q: 'Koreyscha "안녕하세요" [Annyeonghaseyo] nima degani?', a: ['Assalomu alaykum', 'Katta rahmat', 'Xayr', 'Kechirasiz'], c: 0 },
+    { q: '"감사합니다" [Kamsahamnida] degani nima?', a: ['Rahmat', 'Salom', 'Iltimos', 'Kechirasiz'], c: 0 },
+    { q: '"물" [mul] so‘zining ma’nosi nima?', a: ['suv', 'choy', 'non', 'kofe'], c: 0 },
+    { q: '"친구" [chingu] nimani anglatadi?', a: ['do‘st', 'talaba', 'o‘qituvchi', 'ota'], c: 0 }
+  ]
+};
+
+function getActiveBlitzQuestions() {
+  return blitzQuestionsBank[STATE.selectedLang] || blitzQuestionsBank.de;
+}
 
 let blitzCurrentIndex = 0;
 
@@ -843,7 +909,8 @@ function startBlitzGame() {
 
 function renderBlitzQuestion() {
   const container = document.getElementById('blitz-container');
-  const q = blitzQuestions[blitzCurrentIndex % blitzQuestions.length];
+  const qList = getActiveBlitzQuestions();
+  const q = qList[blitzCurrentIndex % qList.length];
 
   container.innerHTML = `
     <div class="space-y-4">
@@ -944,7 +1011,7 @@ async function loadDiagnosticView() {
 
 async function startDiagnosticTest() {
   try {
-    const res = await api('/api/diagnostic/questions');
+    const res = await api(`/api/diagnostic/questions?lang=${STATE.selectedLang}`);
     diagnosticQuestions = res.questions;
     diagnosticAnswers = [];
     renderDiagnosticQuestion(0);
@@ -1006,7 +1073,7 @@ async function submitDiagnosticTest() {
   try {
     const res = await api('/api/diagnostic/submit', {
       method: 'POST',
-      body: JSON.stringify({ answers: diagnosticAnswers })
+      body: JSON.stringify({ answers: diagnosticAnswers, lang: STATE.selectedLang })
     });
 
     const r = res.result;
@@ -1203,7 +1270,8 @@ async function handleSendChatMessage(e) {
         message,
         scenario: STATE.activeScenario,
         geminiKey,
-        groqKey
+        groqKey,
+        lang: STATE.selectedLang
       })
     });
 
@@ -1275,11 +1343,13 @@ function playGermanAudio(text) {
   if (!('speechSynthesis' in window)) return;
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'de-DE';
+  const targetSpeech = LANG_CONFIG[STATE.selectedLang]?.speech || 'de-DE';
+  utterance.lang = targetSpeech;
   utterance.rate = 0.9;
+  
   const voices = window.speechSynthesis.getVoices();
-  const deVoice = voices.find(v => v.lang.startsWith('de') || v.lang === 'de-DE');
-  if (deVoice) utterance.voice = deVoice;
+  const voice = voices.find(v => v.lang.startsWith(targetSpeech.slice(0, 2)) || v.lang === targetSpeech);
+  if (voice) utterance.voice = voice;
   window.speechSynthesis.speak(utterance);
 }
 
@@ -1287,8 +1357,9 @@ function setupSpeechRecognition() {
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!SpeechRecognition) return;
 
+  const targetSpeech = LANG_CONFIG[STATE.selectedLang]?.speech || 'de-DE';
   STATE.speechRecognition = new SpeechRecognition();
-  STATE.speechRecognition.lang = 'de-DE';
+  STATE.speechRecognition.lang = targetSpeech;
   STATE.speechRecognition.continuous = false;
   STATE.speechRecognition.interimResults = false;
 
@@ -1329,7 +1400,7 @@ function toggleSpeechRecognition(forceState) {
 // ----------------- VOCABULARY & FLASHCARDS -----------------
 async function loadVocabulary() {
   try {
-    const res = await api('/api/vocabulary');
+    const res = await api(`/api/vocabulary?lang=${STATE.selectedLang}`);
     STATE.vocabulary = res.words;
   } catch (err) {
     console.error('Error loading vocabulary:', err);
