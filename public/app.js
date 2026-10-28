@@ -108,6 +108,16 @@ function updateLanguagePills() {
   if (navLabel && cfg) {
     navLabel.innerText = `${cfg.flag} Darslar`;
   }
+
+  const chatStatus = document.getElementById('chat-ai-status-text');
+  if (chatStatus && cfg) {
+    chatStatus.innerText = `${cfg.flag} ${cfg.name} AI Murabbiyi faol`;
+  }
+
+  const lbSub = document.getElementById('leaderboard-subtext');
+  if (lbSub && cfg) {
+    lbSub.innerText = `Kim ko‘proq ${cfg.name}ni o‘rganyapti? Kunlik darslar orqali ball to‘plang va peshqadam bo‘ling!`;
+  }
 }
 
 function initIcons() {
@@ -532,7 +542,7 @@ async function openLesson(lessonId) {
         <!-- CULTURAL LIFEHACK (KULTURTIP) -->
         ${l.kulturtip ? `
           <div class="p-5 rounded-3xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200">
-            <span class="text-xs font-black uppercase text-amber-800 tracking-wider block mb-1">GERMANIYA HAYOTI & MASLAHAT</span>
+            <span class="text-xs font-black uppercase text-amber-800 tracking-wider block mb-1">${(l.lang === 'ko' ? 'KOREYA' : (l.lang === 'ru' ? 'ROSSIYA' : (l.lang === 'en' ? 'BUYUK BRITANIYA / AQSH' : 'GERMANIYA')))} HAYOTI & MADANIYATI</span>
             <h4 class="font-extrabold text-slate-900 text-base mb-1.5">${l.kulturtip.title}</h4>
             <p class="text-xs text-slate-600 leading-relaxed">${l.kulturtip.text}</p>
           </div>
@@ -760,6 +770,12 @@ async function loadLeaderboardView() {
   const listEl = document.getElementById('leaderboard-list');
   const podiumEl = document.getElementById('leaderboard-podium');
   if (!listEl || !podiumEl) return;
+
+  const subtextEl = document.getElementById('leaderboard-subtext');
+  const cfg = LANG_CONFIG[STATE.selectedLang] || LANG_CONFIG.de;
+  if (subtextEl) {
+    subtextEl.innerText = `Kim ko‘proq ${cfg.name}ni o‘rganyapti? Kunlik darslar orqali ball to‘plang va peshqadam bo‘ling!`;
+  }
 
   try {
     const res = await api('/api/leaderboard');

@@ -19,7 +19,7 @@
   <!-- Canvas Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=2.5">
 </head>
 <body class="min-h-screen flex flex-col font-sans antialiased transition-colors duration-300 relative">
 
@@ -130,10 +130,10 @@
           <div id="auth-goal-group" class="hidden mb-5">
             <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">Asosiy maqsadingiz</label>
             <select id="auth-goal" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm bg-white">
-              <option value="Ish va Faoliyat">Germaniyada ishlash (Beruf / Job)</option>
-              <option value="Universitet / Studium">O‘qishga kirish (Studium / Ausbildung)</option>
-              <option value="Rasmiy Imtihon">Goethe / telc / ÖSD imtihoni</option>
-              <option value="Erkin muloqot">Erkin gaplashish va sayohat</option>
+              <option value="Ish va Faoliyat">Xorijda ishlash va martaba (Koreya, Germaniya, AQSH, Rossiya)</option>
+              <option value="Universitet / Grant">Xalqaro universitet va grantlar (IELTS, GKS, Studium, TOPIK)</option>
+              <option value="Rasmiy Imtihon">Rasmiy sertifikat imtihonlari (TOPIK, Goethe, IELTS, TRKI)</option>
+              <option value="Erkin muloqot">Erkin muloqot va sayohat</option>
             </select>
           </div>
 
@@ -452,7 +452,7 @@
                   <h4 id="active-scenario-title" class="font-bold text-sm text-slate-900">Erkin Suhbat</h4>
                   <span class="inline-flex items-center text-[11px] text-emerald-600 font-medium">
                     <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span>
-                    German Master AI faol
+                    <span id="chat-ai-status-text">Polyglot Master AI faol</span>
                   </span>
                 </div>
               </div>
@@ -662,6 +662,6 @@
     </div>
   </div>
 
-  <script src="/app.js"></script>
+  <script src="/app.js?v=2.5"></script>
 </body>
 </html>
