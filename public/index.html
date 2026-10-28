@@ -19,15 +19,16 @@
   <!-- Canvas Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   
-  <link rel="stylesheet" href="/styles.css?v=3.1">
+  <link rel="stylesheet" href="/styles.css?v=3.2">
 </head>
 <body class="min-h-screen flex flex-col font-sans antialiased transition-colors duration-300 relative">
 
-  <!-- Ambient Floating Aurora Spheres -->
+  <!-- Ambient Floating Aurora Spheres - Vivid & Dynamic -->
   <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
-    <div class="absolute -top-40 -left-40 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl animate-pulse"></div>
-    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-purple-500/15 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
-    <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 4s;"></div>
+    <div class="absolute -top-40 -left-40 w-[36rem] h-[36rem] bg-indigo-500/20 rounded-full blur-[100px] animate-pulse"></div>
+    <div class="absolute top-1/4 -right-40 w-[36rem] h-[36rem] bg-purple-500/20 rounded-full blur-[100px] animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-10 left-1/4 w-[40rem] h-[40rem] bg-blue-500/18 rounded-full blur-[110px] animate-pulse" style="animation-delay: 4s;"></div>
+    <div class="absolute -bottom-40 right-10 w-[32rem] h-[32rem] bg-amber-500/18 rounded-full blur-[90px] animate-pulse" style="animation-delay: 3s;"></div>
   </div>
 
   <!-- German Flag Ribbon -->
@@ -207,106 +208,154 @@
 
       <!-- SECTION: 4 LANGUAGES PORTAL HUB -->
       <section id="section-language-hub" class="section-view">
-        <div class="text-center max-w-2xl mx-auto mb-8">
-          <span class="text-xs font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1 rounded-full mb-3 inline-block">DUNYO TILLARI AKADEMIYASI</span>
-          <h1 class="text-3xl md:text-4xl font-black text-slate-900 mb-2">Qaysi tilni o‘rganmoqchisiz?</h1>
-          <p class="text-sm text-slate-500">Kerakli tilni tanlang va 0 dan boshlab erkin muloqot darajasigacha shaxsiy AI murabbiyingiz bilan darslarni boshlang!</p>
+        
+        <!-- HERO BANNER (EYE-CATCHING & VIBRANT) -->
+        <div class="text-center max-w-3xl mx-auto mb-10 pt-4">
+          <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 border border-indigo-200/80 text-indigo-700 dark:text-indigo-300 text-xs font-black shadow-sm mb-4">
+            <span class="flex h-2 w-2 rounded-full bg-indigo-600 animate-ping"></span>
+            <span>✨ 2026 Xalqaro AI Ta’lim Standarti</span>
+            <span class="text-slate-300 dark:text-slate-600">•</span>
+            <span class="text-indigo-900 dark:text-indigo-200 font-black">64 Ta Dars & Ovozli AI</span>
+          </div>
+
+          <h1 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-3">
+            Dunyo Tillari Sari <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Eng Qisqa Yo‘l</span>
+          </h1>
+          <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed mb-6 font-medium">
+            Kerakli tilni tanlang va 0 dan boshlab erkin muloqot darajasigacha shaxsiy AI murabbiyingiz bilan qadamma-qadam rivojlaning!
+          </p>
+
+          <!-- Quick Metrics Bar -->
+          <div class="inline-flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl bg-white/90 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-sm text-xs font-bold text-slate-700 dark:text-slate-200">
+            <span class="px-3 py-1.5 rounded-xl bg-slate-100/80 dark:bg-slate-700/60 flex items-center space-x-1.5">
+              <span>🌍</span>
+              <span>4 Ta Til (Nemis, Ingliz, Rus, Koreys)</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-xl bg-slate-100/80 dark:bg-slate-700/60 flex items-center space-x-1.5">
+              <span>🧠</span>
+              <span>Gemini & Groq AI Murabbiy</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-xl bg-slate-100/80 dark:bg-slate-700/60 flex items-center space-x-1.5">
+              <span>🎯</span>
+              <span>A1 dan B2 gacha</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-xl bg-slate-100/80 dark:bg-slate-700/60 flex items-center space-x-1.5">
+              <span>🏆</span>
+              <span>100% Interaktiv Testlar</span>
+            </span>
+          </div>
         </div>
 
-        <!-- 4 Large Language Portal Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+        <!-- 4 VIBRANT & EYE-CATCHING LANGUAGE PORTAL CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           
-          <!-- 1. GERMAN -->
-          <div onclick="chooseLanguageAndEnter('de')" class="lang-hub-card lang-card-de bg-white rounded-3xl border border-slate-200 p-6 md:p-7 shadow-sm cursor-pointer flex flex-col justify-between">
+          <!-- 1. GERMAN (GOLD / AMBER GLOW) -->
+          <div onclick="chooseLanguageAndEnter('de')" class="lang-hub-card lang-card-de bg-gradient-to-br from-amber-500/[0.08] via-white to-amber-500/[0.03] dark:from-amber-950/30 dark:via-slate-900 dark:to-slate-900 border-2 border-amber-200/90 dark:border-amber-800/50 hover:border-amber-500 p-6 md:p-8 shadow-md hover:shadow-2xl hover:shadow-amber-500/20 cursor-pointer flex flex-col justify-between transition-all group">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-4xl p-2.5 rounded-2xl bg-amber-50">🇩🇪</span>
-                <span class="px-3 py-1 rounded-xl text-xs font-bold bg-amber-100 text-amber-900">A0 → C2</span>
+              <div class="flex items-center justify-between mb-5">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 text-white text-3xl flex items-center justify-center shadow-lg shadow-amber-500/30 group-hover:scale-105 transition">
+                  🇩🇪
+                </div>
+                <span class="px-3.5 py-1.5 rounded-xl text-xs font-black bg-amber-500/15 text-amber-900 dark:text-amber-200 border border-amber-300/60">
+                  🟢 A1 → B2 (16 Dars)
+                </span>
               </div>
-              <h2 class="text-2xl font-black text-slate-900 mb-1">Nemis tili (Deutsch)</h2>
-              <p class="text-xs text-slate-500 leading-relaxed mb-4">Germaniyada o‘qish (Studium) va ishlash uchun rasmiy Goethe / telc imtihonlariga tayyorgarlik, artikllar va chuqur grammatika.</p>
+              <h2 class="text-2xl font-black text-slate-900 mb-1.5 group-hover:text-amber-600 transition">Nemis tili (Deutsch)</h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-5">Germaniyada o‘qish (Studium) va ishlash uchun rasmiy Goethe / telc imtihonlariga tayyorgarlik, artikllar va chuqur grammatika.</p>
               
-              <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-semibold text-slate-600">
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">der/die/das</span>
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Präsens & Perfekt</span>
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Ovozli AI</span>
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Goethe Test</span>
+              <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-bold text-amber-950 dark:text-amber-200">
+                <span class="px-3 py-1 rounded-xl bg-amber-100/70 dark:bg-amber-900/40 border border-amber-200/80">der / die / das</span>
+                <span class="px-3 py-1 rounded-xl bg-amber-100/70 dark:bg-amber-900/40 border border-amber-200/80">Perfekt & Dativ</span>
+                <span class="px-3 py-1 rounded-xl bg-amber-100/70 dark:bg-amber-900/40 border border-amber-200/80">Ovozli AI</span>
+                <span class="px-3 py-1 rounded-xl bg-amber-100/70 dark:bg-amber-900/40 border border-amber-200/80">Goethe B2</span>
               </div>
             </div>
 
-            <button class="w-full py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold rounded-2xl text-xs shadow-md shadow-amber-500/20 flex items-center justify-center space-x-1.5 transition">
+            <button class="w-full py-3.5 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 text-white font-black rounded-2xl text-xs shadow-lg shadow-amber-500/30 flex items-center justify-center space-x-2 group-hover:brightness-105 transition">
               <span>Nemis tilini boshlash</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
           </div>
 
-          <!-- 2. ENGLISH -->
-          <div onclick="chooseLanguageAndEnter('en')" class="lang-hub-card lang-card-en bg-white rounded-3xl border border-slate-200 p-6 md:p-7 shadow-sm cursor-pointer flex flex-col justify-between">
+          <!-- 2. ENGLISH (ROYAL SAPPHIRE / INDIGO GLOW) -->
+          <div onclick="chooseLanguageAndEnter('en')" class="lang-hub-card lang-card-en bg-gradient-to-br from-blue-500/[0.08] via-white to-indigo-500/[0.03] dark:from-blue-950/30 dark:via-slate-900 dark:to-slate-900 border-2 border-blue-200/90 dark:border-blue-800/50 hover:border-blue-500 p-6 md:p-8 shadow-md hover:shadow-2xl hover:shadow-blue-500/20 cursor-pointer flex flex-col justify-between transition-all group">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-4xl p-2.5 rounded-2xl bg-blue-50">🇬🇧</span>
-                <span class="px-3 py-1 rounded-xl text-xs font-bold bg-blue-100 text-blue-900">Beginner → Fluent</span>
+              <div class="flex items-center justify-between mb-5">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white text-3xl flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-105 transition">
+                  🇬🇧
+                </div>
+                <span class="px-3.5 py-1.5 rounded-xl text-xs font-black bg-blue-500/15 text-blue-900 dark:text-blue-200 border border-blue-300/60">
+                  🟢 A1 → B2 (16 Dars)
+                </span>
               </div>
-              <h2 class="text-2xl font-black text-slate-900 mb-1">Ingliz tili (English)</h2>
-              <p class="text-xs text-slate-500 leading-relaxed mb-4">Dunyoning #1 xalqaro tili. Ravon gapirish (Speaking), IELTS ga poydevor, zamonlar va xalqaro muloqot erkinligi.</p>
+              <h2 class="text-2xl font-black text-slate-900 mb-1.5 group-hover:text-blue-600 transition">Ingliz tili (English)</h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-5">Dunyoning #1 xalqaro tili. Ravon gapirish (Speaking), IELTS ga poydevor, zamonlar va xalqaro muloqot erkinligi.</p>
               
-              <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-semibold text-slate-600">
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Pronunciation</span>
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">To Be & Tenses</span>
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Daily Routine</span>
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Native Speech</span>
+              <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-bold text-blue-950 dark:text-blue-200">
+                <span class="px-3 py-1 rounded-xl bg-blue-100/70 dark:bg-blue-900/40 border border-blue-200/80">Pronunciation</span>
+                <span class="px-3 py-1 rounded-xl bg-blue-100/70 dark:bg-blue-900/40 border border-blue-200/80">Speaking & IELTS</span>
+                <span class="px-3 py-1 rounded-xl bg-blue-100/70 dark:bg-blue-900/40 border border-blue-200/80">Job Interview</span>
+                <span class="px-3 py-1 rounded-xl bg-blue-100/70 dark:bg-blue-900/40 border border-blue-200/80">Fluency</span>
               </div>
             </div>
 
-            <button class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-2xl text-xs shadow-md shadow-blue-500/20 flex items-center justify-center space-x-1.5 transition">
+            <button class="w-full py-3.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-indigo-700 text-white font-black rounded-2xl text-xs shadow-lg shadow-indigo-500/30 flex items-center justify-center space-x-2 group-hover:brightness-105 transition">
               <span>Ingliz tilini boshlash</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
           </div>
 
-          <!-- 3. RUSSIAN -->
-          <div onclick="chooseLanguageAndEnter('ru')" class="lang-hub-card lang-card-ru bg-white rounded-3xl border border-slate-200 p-6 md:p-7 shadow-sm cursor-pointer flex flex-col justify-between">
+          <!-- 3. RUSSIAN (RUBY / CRIMSON GLOW) -->
+          <div onclick="chooseLanguageAndEnter('ru')" class="lang-hub-card lang-card-ru bg-gradient-to-br from-rose-500/[0.08] via-white to-red-500/[0.03] dark:from-rose-950/30 dark:via-slate-900 dark:to-slate-900 border-2 border-rose-200/90 dark:border-rose-800/50 hover:border-rose-500 p-6 md:p-8 shadow-md hover:shadow-2xl hover:shadow-rose-500/20 cursor-pointer flex flex-col justify-between transition-all group">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-4xl p-2.5 rounded-2xl bg-red-50">🇷🇺</span>
-                <span class="px-3 py-1 rounded-xl text-xs font-bold bg-red-100 text-red-900">А0 → Свободно</span>
+              <div class="flex items-center justify-between mb-5">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500 to-red-600 text-white text-3xl flex items-center justify-center shadow-lg shadow-rose-500/30 group-hover:scale-105 transition">
+                  🇷🇺
+                </div>
+                <span class="px-3.5 py-1.5 rounded-xl text-xs font-black bg-rose-500/15 text-rose-900 dark:text-rose-200 border border-rose-300/60">
+                  🟢 A1 → B2 (16 Dars)
+                </span>
               </div>
-              <h2 class="text-2xl font-black text-slate-900 mb-1">Rus tili (Русский язык)</h2>
-              <p class="text-xs text-slate-500 leading-relaxed mb-4">MDH davlatlari va biznesdagi eng muhim til. Rodlar (он, она, оно), fe’l tuslanishlari va to‘g‘ri erkin talaffuz.</p>
+              <h2 class="text-2xl font-black text-slate-900 mb-1.5 group-hover:text-rose-600 transition">Rus tili (Русский язык)</h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-5">MDH davlatlari va biznesdagi eng muhim til. Rodlar (он, она, оно), barcha 6 ta kelishik (падежи) va to‘g‘ri erkin talaffuz.</p>
               
-              <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-semibold text-slate-600">
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Алфавит (Ы, Ь, Ж)</span>
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">3 та род</span>
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Спряжения</span>
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Живая речь</span>
+              <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-bold text-rose-950 dark:text-rose-200">
+                <span class="px-3 py-1 rounded-xl bg-rose-100/70 dark:bg-rose-900/40 border border-rose-200/80">3 та род & Падежи</span>
+                <span class="px-3 py-1 rounded-xl bg-rose-100/70 dark:bg-rose-900/40 border border-rose-200/80">Спряжения</span>
+                <span class="px-3 py-1 rounded-xl bg-rose-100/70 dark:bg-rose-900/40 border border-rose-200/80">Живая речь</span>
+                <span class="px-3 py-1 rounded-xl bg-rose-100/70 dark:bg-rose-900/40 border border-rose-200/80">ТРКИ-2</span>
               </div>
             </div>
 
-            <button class="w-full py-3 bg-gradient-to-r from-rose-500 to-red-600 text-white font-bold rounded-2xl text-xs shadow-md shadow-red-500/20 flex items-center justify-center space-x-1.5 transition">
+            <button class="w-full py-3.5 bg-gradient-to-r from-rose-500 via-red-600 to-red-700 text-white font-black rounded-2xl text-xs shadow-lg shadow-rose-500/30 flex items-center justify-center space-x-2 group-hover:brightness-105 transition">
               <span>Rus tilini boshlash</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
           </div>
 
-          <!-- 4. KOREAN -->
-          <div onclick="chooseLanguageAndEnter('ko')" class="lang-hub-card lang-card-ko bg-white rounded-3xl border border-slate-200 p-6 md:p-7 shadow-sm cursor-pointer flex flex-col justify-between">
+          <!-- 4. KOREAN (NEON PURPLE / FUCHSIA GLOW) -->
+          <div onclick="chooseLanguageAndEnter('ko')" class="lang-hub-card lang-card-ko bg-gradient-to-br from-purple-500/[0.08] via-white to-fuchsia-500/[0.03] dark:from-purple-950/30 dark:via-slate-900 dark:to-slate-900 border-2 border-purple-200/90 dark:border-purple-800/50 hover:border-purple-500 p-6 md:p-8 shadow-md hover:shadow-2xl hover:shadow-purple-500/20 cursor-pointer flex flex-col justify-between transition-all group">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-4xl p-2.5 rounded-2xl bg-purple-50">🇰🇷</span>
-                <span class="px-3 py-1 rounded-xl text-xs font-bold bg-purple-100 text-purple-900">한글 → TOPIK</span>
+              <div class="flex items-center justify-between mb-5">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-600 to-fuchsia-600 text-white text-3xl flex items-center justify-center shadow-lg shadow-purple-500/30 group-hover:scale-105 transition">
+                  🇰🇷
+                </div>
+                <span class="px-3.5 py-1.5 rounded-xl text-xs font-black bg-purple-500/15 text-purple-900 dark:text-purple-200 border border-purple-300/60">
+                  🟢 A1 → B2 (16 Dars)
+                </span>
               </div>
-              <h2 class="text-2xl font-black text-slate-900 mb-1">Koreys tili (한국어)</h2>
-              <p class="text-xs text-slate-500 leading-relaxed mb-4">Janubiy Koreyada o‘qish (GKS grantlari) va ishlash (EPS-TOPIK). Hangeul alifbosi, hurmat shakllari va talaffuz.</p>
+              <h2 class="text-2xl font-black text-slate-900 mb-1.5 group-hover:text-purple-600 transition">Koreys tili (한국어)</h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-5">Janubiy Koreyada o‘qish (GKS grantlari) va ishlash (EPS-TOPIK). Hangeul alifbosi, hurmat shakllari va rasmiy suhbatlar.</p>
               
-              <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-semibold text-slate-600">
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Hangeul (한글)</span>
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">이에요 / 예요</span>
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Hurmat tili</span>
-                <span class="px-2.5 py-1 rounded-lg bg-slate-100">EPS-TOPIK</span>
+              <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-bold text-purple-950 dark:text-purple-200">
+                <span class="px-3 py-1 rounded-xl bg-purple-100/70 dark:bg-purple-900/40 border border-purple-200/80">Hangeul (한글)</span>
+                <span class="px-3 py-1 rounded-xl bg-purple-100/70 dark:bg-purple-900/40 border border-purple-200/80">Hurmat tili</span>
+                <span class="px-3 py-1 rounded-xl bg-purple-100/70 dark:bg-purple-900/40 border border-purple-200/80">EPS-TOPIK</span>
+                <span class="px-3 py-1 rounded-xl bg-purple-100/70 dark:bg-purple-900/40 border border-purple-200/80">TOPIK II</span>
               </div>
             </div>
 
-            <button class="w-full py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-2xl text-xs shadow-md shadow-purple-500/20 flex items-center justify-center space-x-1.5 transition">
+            <button class="w-full py-3.5 bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-700 text-white font-black rounded-2xl text-xs shadow-lg shadow-purple-500/30 flex items-center justify-center space-x-2 group-hover:brightness-105 transition">
               <span>Koreys tilini boshlash</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
@@ -698,6 +747,6 @@
     </div>
   </div>
 
-  <script src="/app.js?v=3.1"></script>
+  <script src="/app.js?v=3.2"></script>
 </body>
 </html>

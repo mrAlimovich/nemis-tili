@@ -31,19 +31,20 @@
   --accent-glow: rgba(99, 102, 241, 0.25);
 }
 
-/* Base Body Styles */
+/* Base Body Styles - Rich & Eye-Catching Canvas */
 body {
   font-family: var(--font-sans);
   font-weight: 400;
   letter-spacing: -0.015em;
-  background-color: var(--bg-canvas);
-  color: #1e293b;
+  background-color: #f1f5fb;
+  color: #0f172a;
   background-image: 
-    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.04) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(59, 130, 246, 0.04) 0px, transparent 50%),
-    radial-gradient(rgba(148, 163, 184, 0.18) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px;
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.16) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(217, 70, 239, 0.14) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(59, 130, 246, 0.1) 0px, transparent 55%),
+    radial-gradient(at 10% 90%, rgba(245, 158, 11, 0.12) 0px, transparent 50%),
+    radial-gradient(rgba(148, 163, 184, 0.3) 1.2px, transparent 1.2px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 28px 28px;
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -144,14 +145,14 @@ header {
   width: 100%;
 }
 
-/* Language Selection Hub Cards - Apple / Linear Style */
+/* Language Selection Hub Cards - Eye-Catching Luxury Style */
 .lang-hub-card {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
   border-radius: 1.75rem;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .lang-hub-card::before {
@@ -171,22 +172,22 @@ header {
 
 .lang-card-de:hover {
   border-color: #f59e0b !important;
-  box-shadow: 0 20px 35px -10px rgba(245, 158, 11, 0.18), 0 0 0 1px rgba(245, 158, 11, 0.25);
+  box-shadow: 0 25px 45px -12px rgba(245, 158, 11, 0.3), 0 0 0 1px rgba(245, 158, 11, 0.4);
 }
 
 .lang-card-en:hover {
   border-color: #3b82f6 !important;
-  box-shadow: 0 20px 35px -10px rgba(59, 130, 246, 0.18), 0 0 0 1px rgba(59, 130, 246, 0.25);
+  box-shadow: 0 25px 45px -12px rgba(59, 130, 246, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.4);
 }
 
 .lang-card-ru:hover {
   border-color: #ef4444 !important;
-  box-shadow: 0 20px 35px -10px rgba(239, 68, 68, 0.18), 0 0 0 1px rgba(239, 68, 68, 0.25);
+  box-shadow: 0 25px 45px -12px rgba(239, 68, 68, 0.3), 0 0 0 1px rgba(239, 68, 68, 0.4);
 }
 
 .lang-card-ko:hover {
-  border-color: #8b5cf6 !important;
-  box-shadow: 0 20px 35px -10px rgba(139, 92, 246, 0.18), 0 0 0 1px rgba(139, 92, 246, 0.25);
+  border-color: #a855f7 !important;
+  box-shadow: 0 25px 45px -12px rgba(168, 85, 247, 0.3), 0 0 0 1px rgba(168, 85, 247, 0.4);
 }
 
 /* Micro-Lift Hover (Linear style) */
