@@ -38,7 +38,7 @@
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       
       <!-- Brand -->
-      <div class="flex items-center space-x-3 cursor-pointer" onclick="navigate('lessons')">
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="navigate('language-hub')">
         <div id="brand-flag-badge" class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-500 via-red-500 to-slate-900 flex items-center justify-center text-white shadow-md shadow-red-500/20 text-xl font-black">
           🇩🇪
         </div>
@@ -154,20 +154,25 @@
       <!-- Top Navigation (Desktop) -->
       <nav class="hidden md:flex items-center justify-between p-1.5 bg-white border border-slate-200 rounded-2xl shadow-sm mb-6">
         <div class="flex space-x-1">
+          <button onclick="navigate('language-hub')" id="nav-btn-language-hub" class="nav-item flex items-center space-x-2 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition text-slate-600 hover:text-slate-900 hover:bg-slate-50">
+            <i data-lucide="globe" class="w-4 h-4 text-blue-600"></i>
+            <span>4 Ta Til (Hub)</span>
+          </button>
+
           <button onclick="navigate('lessons')" id="nav-btn-lessons" class="nav-item flex items-center space-x-2 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition bg-blue-50 text-blue-700">
             <i data-lucide="book-open" class="w-4 h-4"></i>
-            <span>Darslar</span>
+            <span id="nav-label-lessons">Darslar</span>
           </button>
           
           <button onclick="navigate('leaderboard')" id="nav-btn-leaderboard" class="nav-item flex items-center space-x-2 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition text-slate-600 hover:text-slate-900 hover:bg-slate-50">
             <i data-lucide="trophy" class="w-4 h-4 text-amber-500"></i>
-            <span>Do‘stlar Reytingi</span>
+            <span>Reyting</span>
             <span class="bg-amber-100 text-amber-800 text-[10px] px-1.5 py-0.2 rounded-full font-bold">TOP</span>
           </button>
 
           <button onclick="navigate('blitz')" id="nav-btn-blitz" class="nav-item flex items-center space-x-2 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition text-slate-600 hover:text-slate-900 hover:bg-slate-50">
             <i data-lucide="zap" class="w-4 h-4 text-orange-500"></i>
-            <span>60s Blitz Jangi</span>
+            <span>Blitz Jangi</span>
           </button>
 
           <button onclick="navigate('ai-tutor')" id="nav-btn-ai-tutor" class="nav-item flex items-center space-x-2 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition text-slate-600 hover:text-slate-900 hover:bg-slate-50">
@@ -199,31 +204,140 @@
         </button>
       </nav>
 
-      <!-- DAILY QUESTS BANNER -->
-      <div id="quests-banner" class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl p-5 md:p-6 text-white shadow-lg shadow-indigo-500/15 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <div class="flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-blue-200 mb-1">
-            <span>🎯 KUNLIK VAZIFALAR (DAILY QUESTS)</span>
-            <span>•</span>
-            <span id="quests-progress-text">1/3 Bajarildi</span>
-          </div>
-          <h2 class="text-xl md:text-2xl font-black">Bugungi maqsad sari olg‘a!</h2>
-          <p class="text-xs text-blue-100 max-w-lg mt-0.5">Vazifalarni bajarib, qo‘shimcha +50 XP yig‘ing va do‘stlar reytingida 1-o‘ringa chiqing!</p>
+      <!-- SECTION: 4 LANGUAGES PORTAL HUB -->
+      <section id="section-language-hub" class="section-view">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-xs font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1 rounded-full mb-3 inline-block">DUNYO TILLARI AKADEMIYASI</span>
+          <h1 class="text-3xl md:text-4xl font-black text-slate-900 mb-2">Qaysi tilni o‘rganmoqchisiz?</h1>
+          <p class="text-sm text-slate-500">Kerakli tilni tanlang va 0 dan boshlab erkin muloqot darajasigacha shaxsiy AI murabbiyingiz bilan darslarni boshlang!</p>
         </div>
 
-        <div class="flex items-center space-x-2 bg-white/10 backdrop-blur px-4 py-2.5 rounded-2xl border border-white/20">
-          <button onclick="navigate('blitz')" class="px-3.5 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs rounded-xl transition shadow flex items-center space-x-1">
-            <span>⚡ Blitz O‘ynash</span>
-          </button>
+        <!-- 4 Large Language Portal Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+          
+          <!-- 1. GERMAN -->
+          <div onclick="chooseLanguageAndEnter('de')" class="lang-hub-card lang-card-de bg-white rounded-3xl border border-slate-200 p-6 md:p-7 shadow-sm cursor-pointer flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-4xl p-2.5 rounded-2xl bg-amber-50">🇩🇪</span>
+                <span class="px-3 py-1 rounded-xl text-xs font-bold bg-amber-100 text-amber-900">A0 → C2</span>
+              </div>
+              <h2 class="text-2xl font-black text-slate-900 mb-1">Nemis tili (Deutsch)</h2>
+              <p class="text-xs text-slate-500 leading-relaxed mb-4">Germaniyada o‘qish (Studium) va ishlash uchun rasmiy Goethe / telc imtihonlariga tayyorgarlik, artikllar va chuqur grammatika.</p>
+              
+              <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-semibold text-slate-600">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">der/die/das</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Präsens & Perfekt</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Ovozli AI</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Goethe Test</span>
+              </div>
+            </div>
+
+            <button class="w-full py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold rounded-2xl text-xs shadow-md shadow-amber-500/20 flex items-center justify-center space-x-1.5 transition">
+              <span>Nemis tilini boshlash</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- 2. ENGLISH -->
+          <div onclick="chooseLanguageAndEnter('en')" class="lang-hub-card lang-card-en bg-white rounded-3xl border border-slate-200 p-6 md:p-7 shadow-sm cursor-pointer flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-4xl p-2.5 rounded-2xl bg-blue-50">🇬🇧</span>
+                <span class="px-3 py-1 rounded-xl text-xs font-bold bg-blue-100 text-blue-900">Beginner → Fluent</span>
+              </div>
+              <h2 class="text-2xl font-black text-slate-900 mb-1">Ingliz tili (English)</h2>
+              <p class="text-xs text-slate-500 leading-relaxed mb-4">Dunyoning #1 xalqaro tili. Ravon gapirish (Speaking), IELTS ga poydevor, zamonlar va xalqaro muloqot erkinligi.</p>
+              
+              <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-semibold text-slate-600">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Pronunciation</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">To Be & Tenses</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Daily Routine</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Native Speech</span>
+              </div>
+            </div>
+
+            <button class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-2xl text-xs shadow-md shadow-blue-500/20 flex items-center justify-center space-x-1.5 transition">
+              <span>Ingliz tilini boshlash</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- 3. RUSSIAN -->
+          <div onclick="chooseLanguageAndEnter('ru')" class="lang-hub-card lang-card-ru bg-white rounded-3xl border border-slate-200 p-6 md:p-7 shadow-sm cursor-pointer flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-4xl p-2.5 rounded-2xl bg-red-50">🇷🇺</span>
+                <span class="px-3 py-1 rounded-xl text-xs font-bold bg-red-100 text-red-900">А0 → Свободно</span>
+              </div>
+              <h2 class="text-2xl font-black text-slate-900 mb-1">Rus tili (Русский язык)</h2>
+              <p class="text-xs text-slate-500 leading-relaxed mb-4">MDH davlatlari va biznesdagi eng muhim til. Rodlar (он, она, оно), fe’l tuslanishlari va to‘g‘ri erkin talaffuz.</p>
+              
+              <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-semibold text-slate-600">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Алфавит (Ы, Ь, Ж)</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">3 та род</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Спряжения</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Живая речь</span>
+              </div>
+            </div>
+
+            <button class="w-full py-3 bg-gradient-to-r from-rose-500 to-red-600 text-white font-bold rounded-2xl text-xs shadow-md shadow-red-500/20 flex items-center justify-center space-x-1.5 transition">
+              <span>Rus tilini boshlash</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- 4. KOREAN -->
+          <div onclick="chooseLanguageAndEnter('ko')" class="lang-hub-card lang-card-ko bg-white rounded-3xl border border-slate-200 p-6 md:p-7 shadow-sm cursor-pointer flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-4xl p-2.5 rounded-2xl bg-purple-50">🇰🇷</span>
+                <span class="px-3 py-1 rounded-xl text-xs font-bold bg-purple-100 text-purple-900">한글 → TOPIK</span>
+              </div>
+              <h2 class="text-2xl font-black text-slate-900 mb-1">Koreys tili (한국어)</h2>
+              <p class="text-xs text-slate-500 leading-relaxed mb-4">Janubiy Koreyada o‘qish (GKS grantlari) va ishlash (EPS-TOPIK). Hangeul alifbosi, hurmat shakllari va talaffuz.</p>
+              
+              <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-semibold text-slate-600">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Hangeul (한글)</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">이에요 / 예요</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">Hurmat tili</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-100">EPS-TOPIK</span>
+              </div>
+            </div>
+
+            <button class="w-full py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-2xl text-xs shadow-md shadow-purple-500/20 flex items-center justify-center space-x-1.5 transition">
+              <span>Koreys tilini boshlash</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+
         </div>
-      </div>
+      </section>
 
       <!-- SECTION: LESSONS LIST -->
       <section id="section-lessons" class="section-view">
+        <!-- DAILY QUESTS BANNER -->
+        <div id="quests-banner" class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl p-5 md:p-6 text-white shadow-lg shadow-indigo-500/15 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center space-x-2 text-xs font-extrabold uppercase tracking-wider text-blue-200 mb-1">
+              <span>🎯 KUNLIK VAZIFALAR (DAILY QUESTS)</span>
+              <span>•</span>
+              <span id="quests-progress-text">1/3 Bajarildi</span>
+            </div>
+            <h2 class="text-xl md:text-2xl font-black">Bugungi maqsad sari olg‘a!</h2>
+            <p class="text-xs text-blue-100 max-w-lg mt-0.5">Vazifalarni bajarib, qo‘shimcha +50 XP yig‘ing va do‘stlar reytingida 1-o‘ringa chiqing!</p>
+          </div>
+
+          <div class="flex items-center space-x-2 bg-white/10 backdrop-blur px-4 py-2.5 rounded-2xl border border-white/20">
+            <button onclick="navigate('blitz')" class="px-3.5 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs rounded-xl transition shadow flex items-center space-x-1">
+              <span>⚡ Blitz O‘ynash</span>
+            </button>
+          </div>
+        </div>
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
           <div>
-            <h1 class="text-2xl font-black text-slate-900">O‘quv Xaritasi (Roadmap)</h1>
-            <p class="text-sm text-slate-500">A0 dan C2 gacha interaktiv darslar va hayotiy maslahatlar</p>
+            <h1 id="lessons-heading" class="text-2xl font-black text-slate-900">🇩🇪 Nemis tili O‘quv Dasturi</h1>
+            <p id="lessons-subheading" class="text-sm text-slate-500">Nemis tili bo‘yicha 0 dan boshlab erkin gapirishgacha interaktiv darslar va mashqlar</p>
           </div>
           <div class="flex items-center space-x-2">
             <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Darajangiz:</span>
@@ -459,6 +573,11 @@
   <!-- ================= MOBILE BOTTOM NAVIGATION ================= -->
   <nav id="mobile-nav" class="hidden md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur border-t border-slate-200 shadow-lg px-2 py-1">
     <div class="flex items-center justify-around">
+      <button onclick="navigate('language-hub')" id="m-nav-language-hub" class="flex flex-col items-center py-1.5 px-2 rounded-xl text-slate-500 hover:text-slate-900">
+        <i data-lucide="globe" class="w-5 h-5 text-blue-600"></i>
+        <span class="text-[10px] mt-0.5 font-bold">4 Til</span>
+      </button>
+
       <button onclick="navigate('lessons')" id="m-nav-lessons" class="flex flex-col items-center py-1.5 px-2 rounded-xl text-blue-600 font-bold">
         <i data-lucide="book-open" class="w-5 h-5"></i>
         <span class="text-[10px] mt-0.5">Darslar</span>

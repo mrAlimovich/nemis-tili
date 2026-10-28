@@ -5,7 +5,7 @@
 const STATE = {
   token: localStorage.getItem('gm_token') || null,
   user: null,
-  activeView: 'lessons',
+  activeView: 'language-hub',
   authMode: 'login',
   selectedLang: localStorage.getItem('gm_lang') || 'de',
   lessons: [],
@@ -53,6 +53,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+function chooseLanguageAndEnter(langCode) {
+  switchLanguage(langCode);
+  navigate('lessons');
+}
+
 function switchLanguage(langCode) {
   if (!LANG_CONFIG[langCode]) return;
   STATE.selectedLang = langCode;
@@ -72,6 +77,8 @@ function switchLanguage(langCode) {
 }
 
 function updateLanguagePills() {
+  const cfg = LANG_CONFIG[STATE.selectedLang];
+
   ['de', 'en', 'ru', 'ko'].forEach(code => {
     const btn = document.getElementById(`lang-btn-${code}`);
     if (btn) {
@@ -84,8 +91,22 @@ function updateLanguagePills() {
   });
 
   const badge = document.getElementById('brand-flag-badge');
-  if (badge) {
-    badge.innerText = LANG_CONFIG[STATE.selectedLang]?.flag || '🇩🇪';
+  if (badge && cfg) {
+    badge.innerText = cfg.flag;
+  }
+
+  const heading = document.getElementById('lessons-heading');
+  const subheading = document.getElementById('lessons-subheading');
+  if (heading && cfg) {
+    heading.innerHTML = `${cfg.flag} ${cfg.name} O‘quv Dasturi`;
+  }
+  if (subheading && cfg) {
+    subheading.innerText = `${cfg.name} bo‘yicha 0 dan boshlab erkin gapirishgacha interaktiv darslar va mashqlar`;
+  }
+
+  const navLabel = document.getElementById('nav-label-lessons');
+  if (navLabel && cfg) {
+    navLabel.innerText = `${cfg.flag} Darslar`;
   }
 }
 
@@ -312,7 +333,7 @@ function showAppView() {
   document.getElementById('view-auth').classList.add('hidden');
   document.getElementById('view-app').classList.remove('hidden');
   document.getElementById('mobile-nav').classList.remove('hidden');
-  navigate(STATE.activeView || 'lessons');
+  navigate(STATE.activeView || 'language-hub');
 }
 
 function renderHeaderBadges() {
@@ -360,7 +381,7 @@ function navigate(viewName) {
   }
 
   // Mobile Nav highlight
-  ['lessons', 'leaderboard', 'blitz', 'ai-tutor', 'vocabulary', 'profile'].forEach(name => {
+  ['language-hub', 'lessons', 'leaderboard', 'blitz', 'ai-tutor', 'vocabulary', 'profile'].forEach(name => {
     const mBtn = document.getElementById(`m-nav-${name}`);
     if (mBtn) {
       if (name === viewName) {
@@ -858,14 +879,16 @@ function loadBlitzView() {
 
   if (STATE.blitz.isPlaying) return;
 
+  const cfg = LANG_CONFIG[STATE.selectedLang] || LANG_CONFIG.de;
+
   container.innerHTML = `
     <div class="py-4">
       <div class="w-16 h-16 rounded-3xl bg-orange-100 text-orange-600 text-3xl font-black flex items-center justify-center mx-auto mb-3">
         ⚡
       </div>
-      <h3 class="text-xl font-black text-slate-900 mb-1">60-Soniyalik Lug‘at Jangi</h3>
+      <h3 class="text-xl font-black text-slate-900 mb-1">60-Soniyalik ${cfg.name} Lug‘at Jangi</h3>
       <p class="text-xs text-slate-500 mb-6 max-w-xs mx-auto">
-        60 soniya ichida imkon qadar ko‘p nemischa so‘zlarni toping. Har bir to‘g‘ri javob sizga XP va do‘stlar reytingida ochko keltiradi!
+        60 soniya ichida imkon qadar ko‘p ${cfg.name} so‘zlari va testlarini toping. Har bir to‘g‘ri javob sizga XP va do‘stlar reytingida ochko keltiradi!
       </p>
 
       <button onclick="startBlitzGame()" class="w-full py-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold rounded-2xl shadow-lg shadow-orange-500/25 transition text-sm">
