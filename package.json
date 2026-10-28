@@ -1,7 +1,7 @@
 {
-  "name": "oo-ustoz-ai",
+  "name": "oo-ustozim-ai",
   "version": "1.0.0",
-  "description": "O&O Ustoz AI — Nemis, Ingliz, Rus va Koreys tillarini 0 dan B2 gacha o'rgatuvchi shaxsiy AI akademiyasi",
+  "description": "OO-Ustozim AI — Nemis, Ingliz, Rus va Koreys tillarini 0 dan B2 gacha o'rgatuvchi shaxsiy AI akademiyasi",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
