@@ -101,22 +101,22 @@ module.exports = {
           { de: 'er/sie/es ist', uz: 'u ...dir' },
           { de: 'wir sind', uz: 'biz ...miz' },
           { de: 'ihr seid', uz: 'sizlar ...siz' },
-          { de: 'Sie/sie sind', uz: 'Siz (hurmat) / ular ...dirlar' }
+          { de: 'Sie/sie sind', uz: 'Siz/ular ...lar' }
         ]
       },
       exercises: [
         {
           id: 'de_ex2_1',
           type: 'multiple-choice',
-          question: '"Men O‘zbekistondanman" nemischa qanday aytiladi?',
-          options: ['Ich wohne in Usbekistan.', 'Ich komme aus Usbekistan.', 'Ich bin Usbekistan.'],
+          question: '"Men Toshkentda yashayman" qaysi qatorda to‘g‘ri yozilgan?',
+          options: ['Ich komme in Taschkent', 'Ich wohne in Taschkent', 'Ich bin Taschkent', 'Ich heiße Taschkent'],
           correctIndex: 1,
-          explanation: '"aus" predlogi bilan "kelib chiqish / kelganlik" ifodalanadi.'
+          explanation: '"wohnen in" — biror joyda doimiy yashashni bildiradi.'
         },
         {
           id: 'de_ex2_2',
           type: 'fill-blank',
-          question: 'Du ______ sehr freundlich. (Sen juda xushmuomalasan)',
+          question: 'Du ______ sehr freundlich. ("sein" fe’lining to‘g‘ri shakli)',
           placeholder: 'fe’lni kiriting...',
           correctAnswer: 'bist',
           hint: 'du bilan bist'
@@ -136,6 +136,121 @@ module.exports = {
         audioText: 'Guten Tag, mein Name ist Anna Weber. Ich wohne in Berlin.',
         question: 'Anna qayerda yashaydi?',
         options: ['Toshkentda', 'Berlinda', 'Münchenda'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'de_lesson_3',
+      lang: 'de',
+      level: 'A1',
+      number: 3,
+      title: 'W-Fragen: Nemischa so‘roq so‘zlar va Muloqot',
+      goal: 'Nemis tilida savol berish: Wer, Was, Wo, Woher, Wohin, Wie, Warum.',
+      theory: {
+        introUz: 'Nemis tilida so‘roq gaplarda so‘roq so‘z 1-o‘rinda, fe’l esa DOIMO 2-o‘rinda turadi:',
+        rules: [
+          { pattern: 'Woher ...?', pronunciation: 'Qayerdan ...?', exampleDe: 'Woher kommst du?', exampleUz: 'Qayerdan kelyapsan?' },
+          { pattern: 'Wo ...?', pronunciation: 'Qayerda ...?', exampleDe: 'Wo wohnst du?', exampleUz: 'Qayerda yashaysan?' },
+          { pattern: 'Was ...?', pronunciation: 'Nima ...?', exampleDe: 'Was machst du?', exampleUz: 'Nima qilyapsan?' },
+          { pattern: 'Wer ...?', pronunciation: 'Kim ...?', exampleDe: 'Wer ist das?', exampleUz: 'Bu kim?' },
+          { pattern: 'Wie ...?', pronunciation: 'Qanday ...?', exampleDe: 'Wie heißt du?', exampleUz: 'Isming nima?' }
+        ],
+        table: [
+          { de: 'Woher kommen Sie?', uz: 'Qayerdansiz? (rasmiy)' },
+          { de: 'Wo ist der Bahnhof?', uz: 'Vokzal qayerda?' },
+          { de: 'Was möchten Sie trinken?', uz: 'Nima ichishni xohlaysiz?' },
+          { de: 'Wie viel kostet das?', uz: 'Bu qancha turadi?' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'de_ex3_1',
+          type: 'multiple-choice',
+          question: '"Qayerda yashaysan?" nemischa qanday aytiladi?',
+          options: ['Wo wohnst du?', 'Woher kommst du?', 'Was machst du?', 'Wer bist du?'],
+          correctIndex: 0,
+          explanation: '"Wo" — qayerda (yashash joyini so‘rashda).'
+        },
+        {
+          id: 'de_ex3_2',
+          type: 'fill-blank',
+          question: '______ ist das? — Das ist mein Freund Jasur. (Bu kim?)',
+          placeholder: 'So‘roq so‘zini yozing...',
+          correctAnswer: 'Wer',
+          hint: 'Wer (kim)'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Entschuldigung, wo ist der Supermarkt?',
+        textUz: 'Kechirasiz, supermarket qayerda?',
+        tip: 'Entschuldigung so‘zini ravon talaffuz qiling.'
+      },
+      kulturtip: {
+        title: '🇩🇪 Anrede (Murojaat madaniyati)',
+        text: 'Nemislar rasmiy uchrashuvda "Herr" (Janob) yoki "Frau" (Xonim) so‘zidan keyin familiyani aytishadi: "Guten Tag, Herr Schmidt".'
+      },
+      listening: {
+        title: '🎧 Tinglab tushunish',
+        audioText: 'Hallo! Woher kommst du? — Ich komme aus Usbekistan.',
+        question: 'Suhbatdosh qayerdan kelgan?',
+        options: ['Germaniyadan', 'O‘zbekistondan', 'Avstriyadan'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'de_lesson_4',
+      lang: 'de',
+      level: 'A1',
+      number: 4,
+      title: 'Artikllar (der, die, das) va "haben" (bor bo‘lmoq)',
+      goal: 'Nemis tili 3 ta jinsi (maskulin, feminin, neutrum) va narsalarga egalik qilishni ifodalash.',
+      theory: {
+        introUz: 'Har bir nemischa ot katta harf bilan yoziladi va o‘z artikliga ega:',
+        rules: [
+          { pattern: 'der (Maskulin)', pronunciation: 'Erkak jinsi', exampleDe: 'der Tisch (stol), der Kaffee (kofe)', exampleUz: 'stol, kofe' },
+          { pattern: 'die (Feminin)', pronunciation: 'Ayol jinsi', exampleDe: 'die Lampe (chiroq), die Schule (maktab)', exampleUz: 'chiroq, maktab' },
+          { pattern: 'das (Neutrum)', pronunciation: 'O‘rta jins', exampleDe: 'das Haus (uy), das Buch (kitob)', exampleUz: 'uy, kitob' },
+          { pattern: 'haben tuslanishi', pronunciation: 'ega bo‘lmoq', exampleDe: 'ich habe (menda bor), du hast, er hat, wir haben', exampleUz: 'menda bor, senda bor...' }
+        ],
+        table: [
+          { de: 'Ich habe ein Buch.', uz: 'Menda kitob bor.' },
+          { de: 'Hast du Zeit?', uz: 'Vaqting bormi?' },
+          { de: 'Wir haben eine Frage.', uz: 'Bizda savol bor.' },
+          { de: 'Er hat ein Auto.', uz: 'Unda mashina bor.' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'de_ex4_1',
+          type: 'multiple-choice',
+          question: '"Kitob" (Buch) so‘zining artikli qaysi?',
+          options: ['der', 'die', 'das', 'den'],
+          correctIndex: 2,
+          explanation: '"das Buch" — o‘rta jins (neutrum).'
+        },
+        {
+          id: 'de_ex4_2',
+          type: 'fill-blank',
+          question: 'Hast du Zeit? — Ja, ich ______ Zeit. (Ha, menda vaqt bor)',
+          placeholder: 'fe’lni kiriting...',
+          correctAnswer: 'habe',
+          hint: 'ich bilan habe'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Ich habe einen Tisch und eine Lampe in meinem Zimmer.',
+        textUz: 'Mening xonamda stol va chiroq bor.',
+        tip: 'Zimmer so‘zida "Z" «ts» deb o‘qiladi.'
+      },
+      kulturtip: {
+        title: '🇩🇪 Wortzusammensetzung (Qo‘shma so‘zlar)',
+        text: 'Nemis tilida bir nechta so‘zni qo‘shib yangi so‘z yasash juda mashhur (masalan, das Haus + die Tür = die Haustür - uy eshigi).'
+      },
+      listening: {
+        title: '🎧 Tinglab tushunish',
+        audioText: 'Ich habe ein neues Auto. Das Auto ist sehr schnell.',
+        question: 'Unda nima bor?',
+        options: ['Yangi velosiped', 'Yangi mashina', 'Yangi kitob'],
         correctIndex: 1
       }
     }
@@ -167,34 +282,25 @@ module.exports = {
           { de: 'Good evening', uz: 'Xayrli kech' },
           { de: 'Thank you very much', uz: 'Katta rahmat' },
           { de: 'You are welcome', uz: 'Arzimaydi' },
-          { de: 'Goodbye / Bye', uz: 'Xayr' },
-          { de: 'See you soon', uz: 'Ko‘rishguncha' }
+          { de: 'Goodbye / Bye', uz: 'Xayr' }
         ]
       },
       exercises: [
         {
           id: 'en_ex1_1',
           type: 'multiple-choice',
-          question: '"Good morning" iborasi qachon aytiladi?',
-          options: ['Kechqurun', 'Ertalab', 'Uxlashdan oldin', 'Tushdan keyin'],
-          correctIndex: 1,
-          explanation: '"Morning" — ertalab / tong.'
+          question: 'Kechqurun ko‘rishganda ingliz tilida qanday salom beriladi?',
+          options: ['Good morning', 'Good afternoon', 'Good evening', 'Good night'],
+          correctIndex: 2,
+          explanation: '"Good evening" — xayrli kech. ("Good night" esa faqat uxlashga ketganda xayrlashuvdir).'
         },
         {
           id: 'en_ex1_2',
-          type: 'fill-blank',
-          question: 'Birov sizga "Thank you" desa, nima deb javob berasiz: "You are ______."',
-          placeholder: 'So‘zni yozing...',
-          correctAnswer: 'welcome',
-          hint: 'Arzimaydi ma’nosida'
-        },
-        {
-          id: 'en_ex1_3',
-          type: 'order',
-          question: 'Gap tuzing: "Nice to meet you" (Tanishganimdan xursandman)',
-          words: ['Nice', 'to', 'meet', 'you.'],
-          correctSentence: 'Nice to meet you.',
-          explanation: '"Nice to meet you" — ilk tanishuvdagi eng mashhur ibora.'
+          type: 'multiple-choice',
+          question: '"Thank you" iborasidagi "TH" tovushi qanday talaffuz qilinadi?',
+          options: ['Oddiy "T"', 'Tilni tishlar orasiga qo‘yib "S"', 'Oddiy "K"', 'Oddiy "P"'],
+          correctIndex: 1,
+          explanation: '"TH" ingliz tilida tilsimon tovush hosil qiladi.'
         }
       ],
       speakingPrompt: {
@@ -260,14 +366,128 @@ module.exports = {
         tip: 'Excited [ik-say-tid] so‘ziga urg‘u bering.'
       },
       kulturtip: {
-        title: '🇬🇧 Politeness (Iltimos va Rahmat)',
-        text: 'Inglizlar nutqida "Please", "Thank you" va "Excuse me" so‘zlari juda ko‘p ishlatiladi. Do‘konda yoki ko‘chada bu so‘zlarni ishlatish madaniyat belgisidir.'
+        title: '🇬🇧 Respectful Pronouns',
+        text: 'Ingliz tilida "sen" va "siz" bir xil "You" so‘zi bilan ifodalanadi. Murojaat samimiy bo‘lishi uchun "please", "thank you" va "excuse me" tez-tez ishlatiladi.'
       },
       listening: {
         title: '🎧 Listening (Eshitib tushunish)',
-        audioText: 'We are students and we are learning English together.',
+        audioText: 'They are students at Oxford University.',
         question: 'Ular kimlar?',
         options: ['O‘qituvchilar', 'Talabalar (o‘quvchilar)', 'Shifokorlar'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'en_lesson_3',
+      lang: 'en',
+      level: 'A1',
+      number: 3,
+      title: 'Daily Routine & Present Simple Tense',
+      goal: 'Har kungi odatiy harakatlar haqida gapirish (uyg‘onish, o‘qish, ishlash).',
+      theory: {
+        introUz: 'Present Simple — har doim takrorlanadigan ish-harakatlar uchun ishlatiladi:',
+        rules: [
+          { pattern: 'I / You / We / They', pronunciation: 'Fe’l o‘zgarmaydi', exampleDe: 'I work every day. We live in Tashkent.', exampleUz: 'Men har kuni ishlayman. Biz Toshkentda yashaymiz.' },
+          { pattern: 'He / She / It', pronunciation: 'Fe’lga -s yoki -es qo‘shiladi', exampleDe: 'He works. She speaks English.', exampleUz: 'U ishlaydi. U inglizcha gapiradi.' },
+          { pattern: 'Inkor shakli', pronunciation: 'do not (don\'t) / does not (doesn\'t)', exampleDe: 'I don\'t know. He doesn\'t speak German.', exampleUz: 'Men bilmayman. U nemischa gapirmaydi.' }
+        ],
+        table: [
+          { de: 'I wake up at 7 AM.', uz: 'Men ertalab soat 7 da uyg‘onaman.' },
+          { de: 'I drink coffee every morning.', uz: 'Men har tong qahva ichaman.' },
+          { de: 'She studies at university.', uz: 'U universitetda o‘qiydi.' },
+          { de: 'Do you work here?', uz: 'Siz shu yerda ishlaysizmi?' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'en_ex3_1',
+          type: 'multiple-choice',
+          question: '"He ______ English very well." To‘g‘ri shaklni tanlang:',
+          options: ['speaks', 'speak', 'speaking', 'speaked'],
+          correctIndex: 0,
+          explanation: '"He" bilan fe’lga -s qo‘shimchasi qo‘shiladi: speaks.'
+        },
+        {
+          id: 'en_ex3_2',
+          type: 'fill-blank',
+          question: 'I ______ not speak French. (Men fransuzcha gapirmayman)',
+          placeholder: 'do yoki does...',
+          correctAnswer: 'do',
+          hint: 'I bilan do'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Every day I learn new English words and practice speaking.',
+        textUz: 'Har kuni men yangi inglizcha so‘zlar o‘rganaman va muloqot mashq qilaman.',
+        tip: 'Practice speaking deb ravon ayting.'
+      },
+      kulturtip: {
+        title: '🇬🇧 Punctuality & Apologies',
+        text: 'Buyuk Britaniyada ozgina kechikilsa ham yoki yo‘lda birovga tegib ketilsa, doimo "Sorry!" yoki "Excuse me!" deb uzr so‘rash odatdir.'
+      },
+      listening: {
+        title: '🎧 Listening (Eshitib tushunish)',
+        audioText: 'I work in an office from Monday to Friday. I love my job.',
+        question: 'U qachon ishlaydi?',
+        options: ['Shanba va yakshanba', 'Dushanbadan jumagacha', 'Faqat tunda'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'en_lesson_4',
+      lang: 'en',
+      level: 'A1',
+      number: 4,
+      title: 'Wh-Questions: Savol berish va Muloqot',
+      goal: 'What, Where, When, Who, Why, How so‘roq so‘zlari bilan savollar tuzish.',
+      theory: {
+        introUz: 'Ingliz tilida savol berish uchun maxsus Wh- so‘zlari ishlatiladi:',
+        rules: [
+          { pattern: 'What ...?', pronunciation: 'Nima ...?', exampleDe: 'What is this? What do you want?', exampleUz: 'Bu nima? Nima xohlaysiz?' },
+          { pattern: 'Where ...?', pronunciation: 'Qayerda / Qayerga ...?', exampleDe: 'Where do you live?', exampleUz: 'Qayerda yashaysiz?' },
+          { pattern: 'When ...?', pronunciation: 'Qachon ...?', exampleDe: 'When does the class start?', exampleUz: 'Dars qachon boshlanadi?' },
+          { pattern: 'Who ...?', pronunciation: 'Kim ...?', exampleDe: 'Who is your teacher?', exampleUz: 'O‘qituvchingiz kim?' },
+          { pattern: 'How ...?', pronunciation: 'Qanday ...?', exampleDe: 'How are you today?', exampleUz: 'Bugun ahvolingiz qanday?' }
+        ],
+        table: [
+          { de: 'Where is the nearest bank?', uz: 'Eng yaqin bank qayerda?' },
+          { de: 'How much does it cost?', uz: 'Bu qancha turadi?' },
+          { de: 'What time is it now?', uz: 'Hozir soat necha?' },
+          { de: 'Why are you learning English?', uz: 'Nega ingliz tilini o‘rganayapsiz?' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'en_ex4_1',
+          type: 'multiple-choice',
+          question: '"Qayerda yashaysiz?" inglizcha qanday so‘raladi?',
+          options: ['Where do you live?', 'What do you live?', 'Who do you live?', 'When do you live?'],
+          correctIndex: 0,
+          explanation: '"Where" joyni so‘rash uchun ishlatiladi.'
+        },
+        {
+          id: 'en_ex4_2',
+          type: 'fill-blank',
+          question: '______ much is this coffee? (Bu qahva qancha turadi?)',
+          placeholder: 'So‘roq so‘zini yozing...',
+          correctAnswer: 'How',
+          hint: 'How much'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Excuse me, where can I find a good restaurant around here?',
+        textUz: 'Kechirasiz, bu atrofda yaxshi restoranni qayerdan topsam bo‘ladi?',
+        tip: 'Around here ohangini to‘g‘ri chiqaring.'
+      },
+      kulturtip: {
+        title: '🇬🇧 Queuing (Navbatda turish madaniyati)',
+        text: 'Britaniyada navbatsiz kirish eng katta qo‘pollik sanaladi. Har doim navbat oxiriga o‘tish va sabr qilish talab etiladi.'
+      },
+      listening: {
+        title: '🎧 Listening (Eshitib tushunish)',
+        audioText: 'Excuse me, where is the train station? — Go straight and turn right.',
+        question: 'Vokzalga qanday boriladi?',
+        options: ['Faqat chapga', 'To‘g‘riga borib, o‘ngga buriling', 'Orqaga qayting'],
         correctIndex: 1
       }
     }
@@ -343,54 +563,170 @@ module.exports = {
       lang: 'ru',
       level: 'A1',
       number: 2,
-      title: 'Род имён существительных (Мужской, Женский, Средний)',
-      goal: 'Rus tilida otlarning 3 ta jinsi (он, она, оно) va ularni oxirgi harfiga qarab aniqlash.',
+      title: 'Знакомство и Глаголы первого спряжения',
+      goal: 'O‘zini tanishtirish, kasbni aytish va fe’llarni tuslash (читать, знать, делать).',
       theory: {
-        introUz: 'Rus tilida har bir otning jinsi bor va bu juda oson aniqlanadi:',
+        introUz: 'Rus tilida hozirgi zamonda fe’l shaxs-songa qarab tuslanadi (-ю, -ешь, -ет, -ем, -ете, -ют):',
         rules: [
-          { pattern: 'Мужской род (ОН)', pronunciation: 'Undosh harf bilan tugaydi', exampleDe: 'дом (uy), стол (stol), брат (aka/uka)', exampleUz: 'uy, stol, aka' },
-          { pattern: 'Женский род (ОНА)', pronunciation: '-А yoki -Я bilan tugaydi', exampleDe: 'книга (kitob), машина (mashina), сестра', exampleUz: 'kitob, mashina, opa' },
-          { pattern: 'Средний род (ОНО)', pronunciation: '-О yoki -Е bilan tugaydi', exampleDe: 'окно (deraza), море (dengiz), письмо', exampleUz: 'deraza, dengiz, xat' }
+          { pattern: 'Я', pronunciation: '-ю / -у', exampleDe: 'Я читаю, я знаю, я говорю', exampleUz: 'Men o‘qiyman, men bilaman, gapiraman' },
+          { pattern: 'Ты', pronunciation: '-ешь / -ишь', exampleDe: 'Ты читаешь, ты знаешь', exampleUz: 'Sen o‘qiysan, bilasan' },
+          { pattern: 'Он / Она', pronunciation: '-ет / -ит', exampleDe: 'Он читает, она знает', exampleUz: 'U o‘qiydi, biladi' },
+          { pattern: 'Мы', pronunciation: '-ем / -им', exampleDe: 'Мы читаем, мы знаем', exampleUz: 'Biz o‘qiymiz, bilamiz' }
         ],
         table: [
-          { de: 'мой дом', uz: 'mening uyim (erkak jinsi)' },
-          { de: 'моя книга', uz: 'mening kitobim (ayol jinsi)' },
-          { de: 'моё окно', uz: 'mening derazam (o‘rta jins)' },
-          { de: 'мои друзья', uz: 'mening do‘stlarim (ko‘plik)' }
+          { de: 'Как вас зовут?', uz: 'Ismingiz nima? (rasmiy)' },
+          { de: 'Меня зовут ...', uz: 'Mening ismim ...' },
+          { de: 'Откуда вы?', uz: 'Qayerdansiz?' },
+          { de: 'Я из Узбекистана.', uz: 'Men O‘zbekistondanman.' },
+          { de: 'Я говорю по-русски.', uz: 'Men ruscha gapiraman.' }
         ]
       },
       exercises: [
         {
           id: 'ru_ex2_1',
           type: 'multiple-choice',
-          question: '"Машина" (mashina) so‘zi qaysi jinsga kiradi?',
-          options: ['Мужской род (Он)', 'Женский род (Она)', 'Средний род (Оно)'],
-          correctIndex: 1,
-          explanation: '-А harfi bilan tugagani uchun Женский род (Она).'
+          question: '"Мы ______ по-русски." (говорить fe’lining to‘g‘ri shakli):',
+          options: ['говорю', 'говоришь', 'говорит', 'говорим'],
+          correctIndex: 3,
+          explanation: '"Мы" bilan -им qo‘shiladi: говорим.'
         },
         {
           id: 'ru_ex2_2',
           type: 'fill-blank',
-          question: 'Это ______ дом. (Bu mening uyim - "дом" erkak jinsi)',
-          placeholder: 'мой / моя / моё...',
-          correctAnswer: 'мой',
-          hint: 'erkak jinsi uchun'
+          question: 'Меня ______ Сардор. (Mening ismim Sardor)',
+          placeholder: 'so‘zni yozing...',
+          correctAnswer: 'зовут',
+          hint: 'зовут'
         }
       ],
       speakingPrompt: {
-        textDe: 'Это мой новый дом и моя любимая книга.',
-        textUz: 'Bu mening yangi uyim va sevimli kitobim.',
-        tip: 'мой дом, моя книга so‘zlariga e’tibor bering.'
+        textDe: 'Меня зовут Анвар. Я изучаю русский язык.',
+        textUz: 'Mening ismim Anvar. Men rus tilini o‘rganayapman.',
+        tip: 'Изучаю [izuchayu] so‘zini dona-dona ayting.'
       },
       kulturtip: {
-        title: '🇷🇺 Отчество (Otasining ismi)',
-        text: 'Rossiyada rasmiy munosabatlarda insonning ismi va otasining ismi birga aytiladi (masalan: Иван Иванович, Елена Сергеевна).'
+        title: '🇷🇺 Рукопожатие (Qo‘l berib ko‘rishish)',
+        text: 'Erkaklar uchrashganda va xayrlashganda bir-biriga qo‘l berib so‘rashishadi. Eshik ostonasida qo‘l berib so‘rashish esa irim qilinadi.'
       },
       listening: {
         title: '🎧 Аудирование (Tinglab tushunish)',
-        audioText: 'Это мой брат Антон. Он студент.',
-        question: 'Anton kim va u nima ish qiladi?',
-        options: ['O‘qituvchi', 'Akasi/ukasi va u talaba', 'Shifokor'],
+        audioText: 'Я студент, учусь на первом курсе. Очень приятно!',
+        question: 'U nechanchi kursda o‘qiydi?',
+        options: ['3-kursda', '1-kursda', 'Magistraturada'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'ru_lesson_3',
+      lang: 'ru',
+      level: 'A1',
+      number: 3,
+      title: 'Три рода существительных и Мой / Моя / Моё',
+      goal: 'Rus tilidagi 3 ta rodni (erkak, ayol, o‘rta) farqlash va egalik olmoshlarini to‘g‘ri qo‘llash.',
+      theory: {
+        introUz: 'Rus tilida har bir ot 3 ta roddan biriga tegishli:',
+        rules: [
+          { pattern: 'Мужской род (Он)', pronunciation: 'Undoshga tugaydi', exampleDe: 'дом, стол, брат, телефон', exampleUz: 'uy, stol, uka/aka, telefon' },
+          { pattern: 'Женский род (Она)', pronunciation: '-А yoki -Я ga tugaydi', exampleDe: 'книга, машина, мама, сестра', exampleUz: 'kitob, mashina, ona, opa' },
+          { pattern: 'Средний род (Оно)', pronunciation: '-О yoki -Е ga tugaydi', exampleDe: 'окно, яблоко, море', exampleUz: 'deraza, olma, dengiz' },
+          { pattern: 'Притяжательные', pronunciation: 'Egalik olmoshlari moslashadi', exampleDe: 'мой дом, моя книга, моё окно', exampleUz: 'mening uyim, mening kitobim, derazam' }
+        ],
+        table: [
+          { de: 'Это мой друг.', uz: 'Bu mening do‘stim.' },
+          { de: 'Это моя семья.', uz: 'Bu mening oilam.' },
+          { de: 'Это моё любимое место.', uz: 'Bu mening sevimli joyim.' },
+          { de: 'Чей это телефон?', uz: 'Bu kimning telefoni?' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'ru_ex3_1',
+          type: 'multiple-choice',
+          question: '"Машина" so‘zi bilan qaysi olmosh to‘g‘ri ishlatiladi?',
+          options: ['Мой машина', 'Моя машина', 'Моё машина', 'Мои машина'],
+          correctIndex: 1,
+          explanation: '"Машина" -а ga tugagan, ayol jinsi (женский род), shuning uchun "моя".'
+        },
+        {
+          id: 'ru_ex3_2',
+          type: 'fill-blank',
+          question: 'Это ______ новый дом. (Bu mening yangi uyim)',
+          placeholder: 'мой, моя yoki моё...',
+          correctAnswer: 'мой',
+          hint: 'дом — мужской род'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Это мой город Ташкент. Я очень люблю мой родной край.',
+        textUz: 'Bu mening shahrim Toshkent. Men o‘z ona yurtimni juda yaxshi ko‘raman.',
+        tip: 'Люблю [lyublyu] so‘zini yumshoq ayting.'
+      },
+      kulturtip: {
+        title: '🇷🇺 Отчество (Otasining ismi)',
+        text: 'Rossiyada rasmiy muloqotda kishining ismi va otasining ismi qo‘shib aytiladi (masalan: Иван Сергеевич, Анна Петровна).'
+      },
+      listening: {
+        title: '🎧 Аудирование (Tinglab tushunish)',
+        audioText: 'Познакомьтесь, это моя коллега Елена. Она преподаватель.',
+        question: 'Yelena kim?',
+        options: ['Talaba', 'Hamkasb va o‘qituvchi', 'Shifokor'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'ru_lesson_4',
+      lang: 'ru',
+      level: 'A1',
+      number: 4,
+      title: 'Где? Куда? Ориентация в городе и Предлоги',
+      goal: 'Shaharda yo‘l so‘rash, qayerda joylashganini aytish (в, на predloglari).',
+      theory: {
+        introUz: 'Joylashuvni so‘rash va yo‘nalish ko‘rsatish uchun kerakli asosiy iboralar:',
+        rules: [
+          { pattern: 'Где находится ...?', pronunciation: '... qayerda joylashgan?', exampleDe: 'Где находится аптека?', exampleUz: 'Dorixona qayerda joylashgan?' },
+          { pattern: 'Прямо / Направо / Налево', pronunciation: 'To‘g‘riga / O‘ngga / Chapga', exampleDe: 'Идите прямо, потом направо.', exampleUz: 'To‘g‘riga boring, keyin o‘ngga.' },
+          { pattern: 'В + Предложный падеж', pronunciation: 'ichida (-da)', exampleDe: 'в Ташкенте (Toshkentda), в школе (maktabda)', exampleUz: 'Toshkentda, maktabda' },
+          { pattern: 'На + Предложный падеж', pronunciation: 'ustida / maydonda', exampleDe: 'на столе (stol ustida), на улице (ko‘chada)', exampleUz: 'stolda, ko‘chada' }
+        ],
+        table: [
+          { de: 'Скажите, пожалуйста, где метро?', uz: 'Ayting-chi, iltimos, metro qayerda?' },
+          { de: 'Это далеко отсюда?', uz: 'Bu yerdan uzoqmi?' },
+          { de: 'Нет, это очень близко.', uz: 'Yo‘q, bu juda yaqin.' },
+          { de: 'Сколько стоит проезд?', uz: 'Yo‘l haqi qancha?' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'ru_ex4_1',
+          type: 'multiple-choice',
+          question: '"To‘g‘riga boring" ruscha qanday aytiladi?',
+          options: ['Идите прямо', 'Идите направо', 'Идите налево', 'Стойте здесь'],
+          correctIndex: 0,
+          explanation: '"Прямо" — to‘g‘riga degani.'
+        },
+        {
+          id: 'ru_ex4_2',
+          type: 'fill-blank',
+          question: 'Скажите, пожалуйста, ______ находится банк? (qayerda)',
+          placeholder: 'So‘roq so‘zini yozing...',
+          correctAnswer: 'где',
+          hint: 'где'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Извините, как пройти к ближайшей станции метро?',
+        textUz: 'Kechirasiz, eng yaqin metro bekatiga qanday borsa bo‘ladi?',
+        tip: 'Ближайшей so‘ziga e’tibor bering.'
+      },
+      kulturtip: {
+        title: '🇷🇺 Вежливые слова (Xushmuomalalik)',
+        text: 'Ko‘chada begonalardan yo‘l so‘rashda har doim "Извините, пожалуйста..." deb boshlash eng yaxshi taassurot qoldiradi.'
+      },
+      listening: {
+        title: '🎧 Аудирование (Tinglab tushunish)',
+        audioText: 'Метро находится прямо за углом. Это всего пять минут пешком.',
+        question: 'Metrogacha qancha vaqt ketadi?',
+        options: ['1 soat', 'Piyoda bor-yo‘g‘i 5 daqiqa', 'Avtobusda 30 daqiqa'],
         correctIndex: 1
       }
     }
@@ -416,7 +752,7 @@ module.exports = {
         ],
         table: [
           { de: '안녕하세요', uz: 'Assalomu alaykum / Salom (Annyeonghaseyo)' },
-          { de: '감사합니다', uz: 'Katta rahmat (Kamsahamnida)' },
+          { de: '감사합니다', uz: 'Katta rahmat (Gamsahamnida)' },
           { de: '죄송합니다', uz: 'Kechirasiz / Uzr (Joesonghamnida)' },
           { de: '네', uz: 'Ha (Ne)' },
           { de: '아니요', uz: 'Yo‘q (Aniyo)' },
@@ -439,7 +775,7 @@ module.exports = {
           question: 'Birov sizga yordam bersa, qanday minnatdorchilik bildirasiz?',
           options: ['감사합니다', '안녕히 가세요', '아니요'],
           correctIndex: 0,
-          explanation: '감사합니다 [Kamsahamnida] — Rahmat.'
+          explanation: '감사합니다 [Gamsahamnida] — Rahmat.'
         }
       ],
       speakingPrompt: {
@@ -513,6 +849,119 @@ module.exports = {
         audioText: '저는 학생이에요. 한국어를 좋아해요.',
         question: 'U kim va nimani yoqtiradi?',
         options: ['O‘qituvchi', 'Talaba va u koreys tilini yoqtiradi', 'Shifokor'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'ko_lesson_3',
+      lang: 'ko',
+      level: 'A1',
+      number: 3,
+      title: 'Ko‘rsatish olmoshlari (이, 그, 저) va Joylar (여기, 저기)',
+      goal: 'Yaqin va uzoqdagi narsalarni ko‘rsatish: 이것, 그것, 저것 va joylar: 여기, 저기, 어디.',
+      theory: {
+        introUz: 'Koreys tilida narsalarni ko‘rsatish 3 ta masofaga bo‘linadi:',
+        rules: [
+          { pattern: '이 (i) / 이것 (igeot)', pronunciation: 'Bu narsa (gapiruvchiga yaqin)', exampleDe: '이것은 책이에요.', exampleUz: 'Bu kitob.' },
+          { pattern: '그 (geu) / 그것 (geugeot)', pronunciation: 'U narsa (tinglovchiga yaqin)', exampleDe: '그것은 시계예요.', exampleUz: 'U soat.' },
+          { pattern: '저 (jeo) / 저것 (jeogeot)', pronunciation: 'Anavi narsa (ikkalasidan ham uzoqda)', exampleDe: '저것은 가방이에요.', exampleUz: 'Anavi sumka.' },
+          { pattern: '여기 / 저기 / 어디', pronunciation: 'Bu yer / Anavi yer / Qayer', exampleDe: '여기가 화장실이에요.', exampleUz: 'Bu yer hojatxona.' }
+        ],
+        table: [
+          { de: '이게 뭐예요?', uz: 'Bu nima? (og‘zaki ixcham shakli)' },
+          { de: '화장실이 어디예요?', uz: 'Hojatxona qayerda?' },
+          { de: '여기가 우리 학교예요.', uz: 'Bu yer bizning maktabimiz.' },
+          { de: '저것은 제 컴퓨터예요.', uz: 'Anavi mening kompyuterim.' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'ko_ex3_1',
+          type: 'multiple-choice',
+          question: '"Bu nima?" koreyscha qanday so‘raladi?',
+          options: ['이게 뭐예요?', '어디예요?', '누구예요?', '얼마예요?'],
+          correctIndex: 0,
+          explanation: '"이게 뭐예요?" — Bu nima?'
+        },
+        {
+          id: 'ko_ex3_2',
+          type: 'fill-blank',
+          question: '화장실이 ______ 예요? (Hojatxona qayerda?)',
+          placeholder: '어디 yoki 여기...',
+          correctAnswer: '어디',
+          hint: '어디 (qayer)'
+        }
+      ],
+      speakingPrompt: {
+        textDe: '실례합니다, 여기가 어디예요?',
+        textUz: 'Kechirasiz, bu yer qayer? [Sillyehamnida, yeogiga eodiyeyo?]',
+        tip: '실례합니다 [sillyehamnida] — uzr/kechirasiz.'
+      },
+      kulturtip: {
+        title: '🇰🇷 O‘ng qo‘l odobi',
+        text: 'Koreyada buyum, karta yoki pul berganda va olganda ikki qo‘llab yoki o‘ng qo‘l tirsagini chap qo‘l bilan ushlab uzatiladi. Bu kishiga hurmat ifodasidir.'
+      },
+      listening: {
+        title: '🎧 듣기 (Tinglab tushunish)',
+        audioText: '저기요, 지하철역이 어디예요? — 저기 있어요.',
+        question: 'U nimani so‘radi?',
+        options: ['Restoran qayerdaligini', 'Metro bekati qayerdaligini', 'Do‘kon qayerdaligini'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'ko_lesson_4',
+      lang: 'ko',
+      level: 'A1',
+      number: 4,
+      title: 'Kundalik fe’llar va -아요 / -어요 tuslanishi',
+      goal: 'Koreys tilining eng mashhur hozirgi zamon hurmat fe’l tuslanishi: -아요 / -어요.',
+      theory: {
+        introUz: 'Koreys tilida fe’llar lug‘atda -다 bilan tugaydi (가다, 오다, 먹다). Gapda -아요 yoki -어요 qo‘shiladi:',
+        rules: [
+          { pattern: 'Asosda ㅏ yoki ㅗ bo‘lsa', pronunciation: '-아요 qo‘shiladi', exampleDe: '가다 → 가요 (boraman), 오다 → 와요 (kelaman)', exampleUz: 'boraman, kelaman' },
+          { pattern: 'Boshqa unlilar bo‘lsa', pronunciation: '-어요 qo‘shiladi', exampleDe: '먹다 → 먹어요 (yeyman), 마시다 → 마셔요 (ichaman)', exampleUz: 'yeyman, ichaman' },
+          { pattern: '하다 (bajarmoq) fe’li', pronunciation: '해요 ga aylanadi', exampleDe: '공부하다 → 공부해요 (dars qilaman), 일하다 → 일해요 (ishlayman)', exampleUz: 'o‘qiyman, ishlayman' }
+        ],
+        table: [
+          { de: '저는 지금 학교에 가요.', uz: 'Men hozir maktabga boryapman.' },
+          { de: '밥을 맛있게 먹어요.', uz: 'Ovqat yeyapman.' },
+          { de: '커피를 마셔요.', uz: 'Qahva ichyapman.' },
+          { de: '한국어를 열심히 공부해요.', uz: 'Koreys tilini tirishqoqlik bilan o‘rganyapman.' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'ko_ex4_1',
+          type: 'multiple-choice',
+          question: '"먹다" (yemoq) fe’li -어요 shaklida qanday bo‘ladi?',
+          options: ['먹어요', '먹아요', '먹해요', '먹습니다요'],
+          correctIndex: 0,
+          explanation: '먹 fe’l asosida ㅓ bo‘lgani uchun -어요 qo‘shilib "먹어요" bo‘ladi.'
+        },
+        {
+          id: 'ko_ex4_2',
+          type: 'fill-blank',
+          question: '저는 매일 한국어를 공부______ (공부하다 -> hozirgi zamon)',
+          placeholder: '해요 yoki 가요...',
+          correctAnswer: '해요',
+          hint: '하다 -> 해요'
+        }
+      ],
+      speakingPrompt: {
+        textDe: '저는 매일 아침 따뜻한 커피를 마셔요.',
+        textUz: 'Men har tong issiq qahva ichaman.',
+        tip: '따뜻한 [ttatteutan] — issiq.'
+      },
+      kulturtip: {
+        title: '🇰🇷 식사하셨어요? (Ovqatlandingizmi?)',
+        text: 'Koreyslar "Ahvolingiz qanday?" o‘rniga ko‘pincha "식사하셨어요?" (Ovqatlandingizmi?) deb so‘rashadi. Bu insonning salomatligi va farovonligiga g‘amxo‘rlik ifodasidir.'
+      },
+      listening: {
+        title: '🎧 듣기 (Tinglab tushunish)',
+        audioText: '오늘 뭐 해요? — 친구를 만나요 그리고 영화를 봐요.',
+        question: 'U bugun nima qilmoqchi?',
+        options: ['Uyda uxlamoqchi', 'Do‘sti bilan uchrashib film ko‘rmoqchi', 'Kasalxonaga bormoqchi'],
         correctIndex: 1
       }
     }

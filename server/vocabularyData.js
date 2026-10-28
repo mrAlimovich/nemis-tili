@@ -1,38 +1,126 @@
 // Multi-Language Vocabulary Database (German, English, Russian, Korean)
 module.exports = {
+  // -------------------------------------------------------------
+  // 🇩🇪 GERMAN (DEUTSCH) VOCABULARY (A1-A2)
+  // -------------------------------------------------------------
   de: [
     { id: 'voc_de_1', category: 'Begrüßung', level: 'A1', word: 'Hallo', article: '', gender: 'phrase', plural: '', meaningUz: 'Salom (do‘stona)', exampleDe: 'Hallo, wie geht es dir?', exampleUz: 'Salom, ahvoling qanday?' },
     { id: 'voc_de_2', category: 'Begrüßung', level: 'A1', word: 'Guten Tag', article: '', gender: 'phrase', plural: '', meaningUz: 'Xayrli kun (rasmiy)', exampleDe: 'Guten Tag, Herr Müller!', exampleUz: 'Xayrli kun, janob Myuller!' },
-    { id: 'voc_de_3', category: 'Zuhause', level: 'A1', word: 'Tisch', article: 'der', gender: 'maskulin', plural: 'die Tische', meaningUz: 'stol', exampleDe: 'Das Buch liegt auf dem Tisch.', exampleUz: 'Kitob stol ustida yotibdi.' },
-    { id: 'voc_de_4', category: 'Zuhause', level: 'A1', word: 'Lampe', article: 'die', gender: 'feminin', plural: 'die Lampen', meaningUz: 'chiroq, lampa', exampleDe: 'Die Lampe ist neu.', exampleUz: 'Lampa yangi.' },
-    { id: 'voc_de_5', category: 'Zuhause', level: 'A1', word: 'Haus', article: 'das', gender: 'neutrum', plural: 'die Häuser', meaningUz: 'uy', exampleDe: 'Mein Haus ist schön.', exampleUz: 'Mening uyim chiroyli.' },
-    { id: 'voc_de_6', category: 'Essen', level: 'A1', word: 'Kaffee', article: 'der', gender: 'maskulin', plural: 'die Kaffees', meaningUz: 'qahva (kofe)', exampleDe: 'Ich trinke Kaffee.', exampleUz: 'Men qahva ichaman.' },
-    { id: 'voc_de_7', category: 'Essen', level: 'A1', word: 'Wasser', article: 'das', gender: 'neutrum', plural: '', meaningUz: 'suv', exampleDe: 'Ein Glas Wasser, bitte!', exampleUz: 'Bir stakan suv, iltimos!' }
+    { id: 'voc_de_3', category: 'Begrüßung', level: 'A1', word: 'Auf Wiedersehen', article: '', gender: 'phrase', plural: '', meaningUz: 'Ko‘rishguncha xayr', exampleDe: 'Auf Wiedersehen, bis morgen!', exampleUz: 'Ko‘rishguncha xayr, ertagacha!' },
+    { id: 'voc_de_4', category: 'Begrüßung', level: 'A1', word: 'Danke schön', article: '', gender: 'phrase', plural: '', meaningUz: 'Katta rahmat', exampleDe: 'Danke schön für deine Hilfe!', exampleUz: 'Yordamingiz uchun katta rahmat!' },
+    { id: 'voc_de_5', category: 'Begrüßung', level: 'A1', word: 'Bitte sehr', article: '', gender: 'phrase', plural: '', meaningUz: 'Arzimaydi / Marhamat', exampleDe: 'Bitte sehr, gern geschehen.', exampleUz: 'Arzimaydi, bajonidil.' },
+    { id: 'voc_de_6', category: 'Zuhause', level: 'A1', word: 'Tisch', article: 'der', gender: 'maskulin', plural: 'die Tische', meaningUz: 'stol', exampleDe: 'Das Buch liegt auf dem Tisch.', exampleUz: 'Kitob stol ustida yotibdi.' },
+    { id: 'voc_de_7', category: 'Zuhause', level: 'A1', word: 'Lampe', article: 'die', gender: 'feminin', plural: 'die Lampen', meaningUz: 'chiroq, lampa', exampleDe: 'Die Lampe ist sehr hell.', exampleUz: 'Chiroq juda yorug‘.' },
+    { id: 'voc_de_8', category: 'Zuhause', level: 'A1', word: 'Haus', article: 'das', gender: 'neutrum', plural: 'die Häuser', meaningUz: 'uy', exampleDe: 'Mein Haus ist groß und schön.', exampleUz: 'Mening uyim katta va chiroyli.' },
+    { id: 'voc_de_9', category: 'Zuhause', level: 'A1', word: 'Zimmer', article: 'das', gender: 'neutrum', plural: 'die Zimmer', meaningUz: 'xona', exampleDe: 'Mein Zimmer ist gemütlich.', exampleUz: 'Mening xonam shinam.' },
+    { id: 'voc_de_10', category: 'Zuhause', level: 'A1', word: 'Tür', article: 'die', gender: 'feminin', plural: 'die Türen', meaningUz: 'eshik', exampleDe: 'Bitte schließen Sie die Tür.', exampleUz: 'Iltimos, eshikni yoping.' },
+    { id: 'voc_de_11', category: 'Essen & Trinken', level: 'A1', word: 'Kaffee', article: 'der', gender: 'maskulin', plural: 'die Kaffees', meaningUz: 'qahva (kofe)', exampleDe: 'Ich trinke jeden Morgen Kaffee.', exampleUz: 'Men har tong qahva ichaman.' },
+    { id: 'voc_de_12', category: 'Essen & Trinken', level: 'A1', word: 'Wasser', article: 'das', gender: 'neutrum', plural: '', meaningUz: 'suv', exampleDe: 'Ein kaltes Glas Wasser, bitte!', exampleUz: 'Bir stakan sovuq suv, iltimos!' },
+    { id: 'voc_de_13', category: 'Essen & Trinken', level: 'A1', word: 'Brot', article: 'das', gender: 'neutrum', plural: 'die Brote', meaningUz: 'non', exampleDe: 'Deutsches Brot schmeckt super.', exampleUz: 'Nemis noni juda mazali.' },
+    { id: 'voc_de_14', category: 'Essen & Trinken', level: 'A1', word: 'Apfel', article: 'der', gender: 'maskulin', plural: 'die Äpfel', meaningUz: 'olma', exampleDe: 'Der rote Apfel ist frisch.', exampleUz: 'Qizil olma yangi uzilgan.' },
+    { id: 'voc_de_15', category: 'Essen & Trinken', level: 'A1', word: 'Tee', article: 'der', gender: 'maskulin', plural: 'die Tees', meaningUz: 'choy', exampleDe: 'Möchten Sie grünen Tee?', exampleUz: 'Ko‘k choy ichasizmi?' },
+    { id: 'voc_de_16', category: 'Familie & Menschen', level: 'A1', word: 'Freund', article: 'der', gender: 'maskulin', plural: 'die Freunde', meaningUz: 'do‘st (o‘g‘il bola)', exampleDe: 'Er ist mein bester Freund.', exampleUz: 'U mening eng yaxshi do‘stim.' },
+    { id: 'voc_de_17', category: 'Familie & Menschen', level: 'A1', word: 'Freundin', article: 'die', gender: 'feminin', plural: 'die Freundinnen', meaningUz: 'dugona (qiz bola)', exampleDe: 'Sie ist meine Freundin.', exampleUz: 'U mening dugonam.' },
+    { id: 'voc_de_18', category: 'Familie & Menschen', level: 'A1', word: 'Mutter', article: 'die', gender: 'feminin', plural: 'die Mütter', meaningUz: 'ona', exampleDe: 'Meine Mutter kocht sehr gut.', exampleUz: 'Onam juda yaxshi pishiradi.' },
+    { id: 'voc_de_19', category: 'Familie & Menschen', level: 'A1', word: 'Vater', article: 'der', gender: 'maskulin', plural: 'die Väter', meaningUz: 'ota', exampleDe: 'Mein Vater arbeitet als Ingenieur.', exampleUz: 'Otam muhandis bo‘lib ishlaydi.' },
+    { id: 'voc_de_20', category: 'Stadt & Orte', level: 'A1', word: 'Stadt', article: 'die', gender: 'feminin', plural: 'die Städte', meaningUz: 'shahar', exampleDe: 'Berlin ist eine große Stadt.', exampleUz: 'Berlin — katta shahar.' },
+    { id: 'voc_de_21', category: 'Stadt & Orte', level: 'A1', word: 'Schule', article: 'die', gender: 'feminin', plural: 'die Schulen', meaningUz: 'maktab', exampleDe: 'Die Kinder gehen zur Schule.', exampleUz: 'Bolalar maktabga boryapti.' },
+    { id: 'voc_de_22', category: 'Stadt & Orte', level: 'A1', word: 'Straße', article: 'die', gender: 'feminin', plural: 'die Straßen', meaningUz: 'ko‘cha', exampleDe: 'Wo ist diese Straße?', exampleUz: 'Bu ko‘cha qayerda?' },
+    { id: 'voc_de_23', category: 'Aktivitäten', level: 'A1', word: 'lernen', article: '', gender: 'verb', plural: '', meaningUz: 'o‘rganmoq', exampleDe: 'Ich lerne jeden Tag Deutsch.', exampleUz: 'Men har kuni nemis tilini o‘rganaman.' },
+    { id: 'voc_de_24', category: 'Aktivitäten', level: 'A1', word: 'sprechen', article: '', gender: 'verb', plural: '', meaningUz: 'gapirmoq', exampleDe: 'Sprechen Sie Deutsch?', exampleUz: 'Nemischa gapirasizmi?' },
+    { id: 'voc_de_25', category: 'Aktivitäten', level: 'A1', word: 'wohnen', article: '', gender: 'verb', plural: '', meaningUz: 'yashamoq', exampleDe: 'Ich wohne in Taschkent.', exampleUz: 'Men Toshkentda yashayman.' }
   ],
 
+  // -------------------------------------------------------------
+  // 🇬🇧 ENGLISH VOCABULARY (A1-A2)
+  // -------------------------------------------------------------
   en: [
     { id: 'voc_en_1', category: 'Greetings', level: 'A1', word: 'Hello', article: '', gender: 'phrase', plural: '', meaningUz: 'Salom', exampleDe: 'Hello, nice to meet you!', exampleUz: 'Salom, tanishganimdan xursandman!' },
-    { id: 'voc_en_2', category: 'Greetings', level: 'A1', word: 'Thank you', article: '', gender: 'phrase', plural: '', meaningUz: 'Rahmat', exampleDe: 'Thank you for your help.', exampleUz: 'Yordamingiz uchun rahmat.' },
-    { id: 'voc_en_3', category: 'Home', level: 'A1', word: 'House', article: 'a', gender: 'noun', plural: 'houses', meaningUz: 'uy', exampleDe: 'This is my house.', exampleUz: 'Bu mening uyim.' },
-    { id: 'voc_en_4', category: 'Home', level: 'A1', word: 'Book', article: 'a', gender: 'noun', plural: 'books', meaningUz: 'kitob', exampleDe: 'I am reading an interesting book.', exampleUz: 'Men qiziqarli kitob o‘qiyapman.' },
-    { id: 'voc_en_5', category: 'Food', level: 'A1', word: 'Coffee', article: '', gender: 'noun', plural: '', meaningUz: 'qahva', exampleDe: 'I love drinking black coffee.', exampleUz: 'Men qora qahva ichishni yaxshi ko‘raman.' },
-    { id: 'voc_en_6', category: 'People', level: 'A1', word: 'Friend', article: 'a', gender: 'noun', plural: 'friends', meaningUz: 'do‘st', exampleDe: 'He is my best friend.', exampleUz: 'U mening eng yaxshi do‘stim.' }
+    { id: 'voc_en_2', category: 'Greetings', level: 'A1', word: 'Good morning', article: '', gender: 'phrase', plural: '', meaningUz: 'Xayrli tong', exampleDe: 'Good morning, have a great day!', exampleUz: 'Xayrli tong, kuningiz ajoyib o‘tsin!' },
+    { id: 'voc_en_3', category: 'Greetings', level: 'A1', word: 'Thank you', article: '', gender: 'phrase', plural: '', meaningUz: 'Rahmat', exampleDe: 'Thank you very much for your help.', exampleUz: 'Yordamingiz uchun katta rahmat.' },
+    { id: 'voc_en_4', category: 'Greetings', level: 'A1', word: 'You are welcome', article: '', gender: 'phrase', plural: '', meaningUz: 'Arzimaydi', exampleDe: 'You are welcome, anytime!', exampleUz: 'Arzimaydi, istalgan paytda!' },
+    { id: 'voc_en_5', category: 'Greetings', level: 'A1', word: 'Goodbye', article: '', gender: 'phrase', plural: '', meaningUz: 'Xayr', exampleDe: 'Goodbye, see you tomorrow!', exampleUz: 'Xayr, ertagacha ko‘rishguncha!' },
+    { id: 'voc_en_6', category: 'Home', level: 'A1', word: 'House', article: 'a', gender: 'noun', plural: 'houses', meaningUz: 'uy', exampleDe: 'This is my modern house.', exampleUz: 'Bu mening zamonaviy uyim.' },
+    { id: 'voc_en_7', category: 'Home', level: 'A1', word: 'Room', article: 'a', gender: 'noun', plural: 'rooms', meaningUz: 'xona', exampleDe: 'My room is clean and bright.', exampleUz: 'Mening xonam toza va yorug‘.' },
+    { id: 'voc_en_8', category: 'Home', level: 'A1', word: 'Table', article: 'a', gender: 'noun', plural: 'tables', meaningUz: 'stol', exampleDe: 'The laptop is on the table.', exampleUz: 'Noutbuk stol ustida turibdi.' },
+    { id: 'voc_en_9', category: 'Home', level: 'A1', word: 'Book', article: 'a', gender: 'noun', plural: 'books', meaningUz: 'kitob', exampleDe: 'I am reading an interesting book.', exampleUz: 'Men qiziqarli kitob o‘qiyapman.' },
+    { id: 'voc_en_10', category: 'Home', level: 'A1', word: 'Door', article: 'a', gender: 'noun', plural: 'doors', meaningUz: 'eshik', exampleDe: 'Open the door, please.', exampleUz: 'Iltimos, eshikni oching.' },
+    { id: 'voc_en_11', category: 'Food & Drink', level: 'A1', word: 'Coffee', article: '', gender: 'noun', plural: '', meaningUz: 'qahva', exampleDe: 'I drink hot coffee every morning.', exampleUz: 'Men har tong issiq qahva ichaman.' },
+    { id: 'voc_en_12', category: 'Food & Drink', level: 'A1', word: 'Water', article: '', gender: 'noun', plural: '', meaningUz: 'suv', exampleDe: 'Can I have some cold water?', exampleUz: 'Menga sovuq suv bersangiz bo‘ladimi?' },
+    { id: 'voc_en_13', category: 'Food & Drink', level: 'A1', word: 'Bread', article: '', gender: 'noun', plural: '', meaningUz: 'non', exampleDe: 'Fresh bread smells amazing.', exampleUz: 'Yangi yopilgan non hidi ajoyib.' },
+    { id: 'voc_en_14', category: 'Food & Drink', level: 'A1', word: 'Tea', article: '', gender: 'noun', plural: '', meaningUz: 'choy', exampleDe: 'Do you want black or green tea?', exampleUz: 'Qora choy xohlaysizmi yoki ko‘k choy?' },
+    { id: 'voc_en_15', category: 'Food & Drink', level: 'A1', word: 'Apple', article: 'an', gender: 'noun', plural: 'apples', meaningUz: 'olma', exampleDe: 'An apple a day keeps the doctor away.', exampleUz: 'Har kuni bitta olma salomatlik garovidir.' },
+    { id: 'voc_en_16', category: 'People & Family', level: 'A1', word: 'Friend', article: 'a', gender: 'noun', plural: 'friends', meaningUz: 'do‘st', exampleDe: 'He is my best friend forever.', exampleUz: 'U mening eng yaqin do‘stim.' },
+    { id: 'voc_en_17', category: 'People & Family', level: 'A1', word: 'Mother', article: 'a', gender: 'noun', plural: 'mothers', meaningUz: 'ona', exampleDe: 'My mother is very kind.', exampleUz: 'Mening onam juda mehribon.' },
+    { id: 'voc_en_18', category: 'People & Family', level: 'A1', word: 'Father', article: 'a', gender: 'noun', plural: 'fathers', meaningUz: 'ota', exampleDe: 'My father is a doctor.', exampleUz: 'Mening otam shifokor.' },
+    { id: 'voc_en_19', category: 'People & Family', level: 'A1', word: 'Teacher', article: 'a', gender: 'noun', plural: 'teachers', meaningUz: 'o‘qituvchi', exampleDe: 'Our English teacher is smart.', exampleUz: 'Bizning ingliz tili o‘qituvchimiz bilimdon.' },
+    { id: 'voc_en_20', category: 'City & Places', level: 'A1', word: 'City', article: 'a', gender: 'noun', plural: 'cities', meaningUz: 'shahar', exampleDe: 'London is an ancient city.', exampleUz: 'London — qadimiy shahar.' },
+    { id: 'voc_en_21', category: 'City & Places', level: 'A1', word: 'School', article: 'a', gender: 'noun', plural: 'schools', meaningUz: 'maktab', exampleDe: 'I walk to school every morning.', exampleUz: 'Men har kuni maktabga piyoda boraman.' },
+    { id: 'voc_en_22', category: 'City & Places', level: 'A1', word: 'Street', article: 'a', gender: 'noun', plural: 'streets', meaningUz: 'ko‘cha', exampleDe: 'This street is very quiet.', exampleUz: 'Bu ko‘cha juda sokin.' },
+    { id: 'voc_en_23', category: 'Actions', level: 'A1', word: 'learn', article: '', gender: 'verb', plural: '', meaningUz: 'o‘rganmoq', exampleDe: 'I learn new English words every day.', exampleUz: 'Men har kuni yangi inglizcha so‘zlarni o‘rganaman.' },
+    { id: 'voc_en_24', category: 'Actions', level: 'A1', word: 'speak', article: '', gender: 'verb', plural: '', meaningUz: 'gapirmoq', exampleDe: 'Do you speak English?', exampleUz: 'Siz inglizcha gapirasizmi?' },
+    { id: 'voc_en_25', category: 'Actions', level: 'A1', word: 'work', article: '', gender: 'verb', plural: '', meaningUz: 'ishlamoq', exampleDe: 'They work at an international company.', exampleUz: 'Ular xalqaro kompaniyada ishlaydi.' }
   ],
 
+  // -------------------------------------------------------------
+  // 🇷🇺 RUSSIAN (РУССКИЙ) VOCABULARY (A1-A2)
+  // -------------------------------------------------------------
   ru: [
     { id: 'voc_ru_1', category: 'Приветствие', level: 'A1', word: 'Здравствуйте', article: '', gender: 'phrase', plural: '', meaningUz: 'Assalomu alaykum (rasmiy)', exampleDe: 'Здравствуйте, как ваши дела?', exampleUz: 'Assalomu alaykum, ishlaringiz qanday?' },
-    { id: 'voc_ru_2', category: 'Приветствие', level: 'A1', word: 'Спасибо', article: '', gender: 'phrase', plural: '', meaningUz: 'Rahmat', exampleDe: 'Большое спасибо за внимание.', exampleUz: 'E’tibor uchun katta rahmat.' },
-    { id: 'voc_ru_3', category: 'Дом', level: 'A1', word: 'Дом', article: 'он', gender: 'maskulin', plural: 'дома', meaningUz: 'uy', exampleDe: 'Это наш новый дом.', exampleUz: 'Bu bizning yangi uyimiz.' },
-    { id: 'voc_ru_4', category: 'Дом', level: 'A1', word: 'Книга', article: 'она', gender: 'feminin', plural: 'книги', meaningUz: 'kitob', exampleDe: 'Она читает книгу каждый день.', exampleUz: 'U har kuni kitob o‘qiydi.' },
-    { id: 'voc_ru_5', category: 'Еда', level: 'A1', word: 'Кофе', article: 'он', gender: 'maskulin', plural: '', meaningUz: 'qahva', exampleDe: 'Горячий кофе по утрам.', exampleUz: 'Ertalabki issiq qahva.' }
+    { id: 'voc_ru_2', category: 'Приветствие', level: 'A1', word: 'Привет', article: '', gender: 'phrase', plural: '', meaningUz: 'Salom (do‘stona)', exampleDe: 'Привет! Рад тебя видеть.', exampleUz: 'Salom! Seni ko‘rganimdan xursandman.' },
+    { id: 'voc_ru_3', category: 'Приветствие', level: 'A1', word: 'Спасибо', article: '', gender: 'phrase', plural: '', meaningUz: 'Rahmat', exampleDe: 'Большое спасибо за помощь.', exampleUz: 'Yordam uchun katta rahmat.' },
+    { id: 'voc_ru_4', category: 'Приветствие', level: 'A1', word: 'Пожалуйста', article: '', gender: 'phrase', plural: '', meaningUz: 'Iltimos / Arzimaydi', exampleDe: 'Пожалуйста, проходите.', exampleUz: 'Marhamat, o‘ting.' },
+    { id: 'voc_ru_5', category: 'Приветствие', level: 'A1', word: 'До свидания', article: '', gender: 'phrase', plural: '', meaningUz: 'Xayr / Ko‘rishguncha', exampleDe: 'До свидания, хорошего вечера!', exampleUz: 'Xayr, yaxshi oqshom tilayman!' },
+    { id: 'voc_ru_6', category: 'Дом', level: 'A1', word: 'Дом', article: 'он', gender: 'maskulin', plural: 'дома', meaningUz: 'uy', exampleDe: 'Это наш новый дом.', exampleUz: 'Bu bizning yangi uyimiz.' },
+    { id: 'voc_ru_7', category: 'Дом', level: 'A1', word: 'Квартира', article: 'она', gender: 'feminin', plural: 'квартиры', meaningUz: 'xonadon, kvartira', exampleDe: 'Моя квартира очень светлая.', exampleUz: 'Mening xonadonim juda yorug‘.' },
+    { id: 'voc_ru_8', category: 'Дом', level: 'A1', word: 'Стол', article: 'он', gender: 'maskulin', plural: 'столы', meaningUz: 'stol', exampleDe: 'Книга лежит на столе.', exampleUz: 'Kitob stol ustida yotibdi.' },
+    { id: 'voc_ru_9', category: 'Дом', level: 'A1', word: 'Книга', article: 'она', gender: 'feminin', plural: 'книги', meaningUz: 'kitob', exampleDe: 'Она читает интересную книгу.', exampleUz: 'U qiziqarli kitob o‘qiyapti.' },
+    { id: 'voc_ru_10', category: 'Дом', level: 'A1', word: 'Окно', article: 'оно', gender: 'neutrum', plural: 'окна', meaningUz: 'deraza', exampleDe: 'Открой окно, пожалуйста.', exampleUz: 'Iltimos, derazani och.' },
+    { id: 'voc_ru_11', category: 'Еда и напитки', level: 'A1', word: 'Кофе', article: 'он', gender: 'maskulin', plural: '', meaningUz: 'qahva (kofe)', exampleDe: 'Я пью чёрный кофе без сахара.', exampleUz: 'Men shakarsiz qora qahva ichaman.' },
+    { id: 'voc_ru_12', category: 'Еда и напитки', level: 'A1', word: 'Вода', article: 'она', gender: 'feminin', plural: '', meaningUz: 'suv', exampleDe: 'Дайте стакан холодной воды.', exampleUz: 'Bir stakan sovuq suv bering.' },
+    { id: 'voc_ru_13', category: 'Еда и напитки', level: 'A1', word: 'Хлеб', article: 'он', gender: 'maskulin', plural: '', meaningUz: 'non', exampleDe: 'Свежий хлеб очень вкусный.', exampleUz: 'Yangi yopilgan non juda shirin.' },
+    { id: 'voc_ru_14', category: 'Еда и напитки', level: 'A1', word: 'Чай', article: 'он', gender: 'maskulin', plural: '', meaningUz: 'choy', exampleDe: 'Вы любите зелёный чай?', exampleUz: 'Siz ko‘k choyni yoqtirasizmi?' },
+    { id: 'voc_ru_15', category: 'Еда и напитки', level: 'A1', word: 'Яблоко', article: 'оно', gender: 'neutrum', plural: 'яблоки', meaningUz: 'olma', exampleDe: 'Сладкое красное яблоко.', exampleUz: 'Shirin qizil olma.' },
+    { id: 'voc_ru_16', category: 'Семья и люди', level: 'A1', word: 'Друг', article: 'он', gender: 'maskulin', plural: 'друзья', meaningUz: 'do‘st', exampleDe: 'Он мой верный друг.', exampleUz: 'U mening sadoqatli do‘stim.' },
+    { id: 'voc_ru_17', category: 'Семья и люди', level: 'A1', word: 'Мама', article: 'она', gender: 'feminin', plural: 'мамы', meaningUz: 'ona', exampleDe: 'Моя мама вкусно готовит.', exampleUz: 'Onam juda shirin taom tayyorlaydi.' },
+    { id: 'voc_ru_18', category: 'Семья и люди', level: 'A1', word: 'Папа', article: 'он', gender: 'maskulin', plural: 'папы', meaningUz: 'ota', exampleDe: 'Папа работает инженером.', exampleUz: 'Otam muhandis bo‘lib ishlaydi.' },
+    { id: 'voc_ru_19', category: 'Семья и люди', level: 'A1', word: 'Учитель', article: 'он', gender: 'maskulin', plural: 'учителя', meaningUz: 'o‘qituvchi', exampleDe: 'Наш учитель очень добрый.', exampleUz: 'O‘qituvchimiz juda mehribon.' },
+    { id: 'voc_ru_20', category: 'Город и места', level: 'A1', word: 'Город', article: 'он', gender: 'maskulin', plural: 'города', meaningUz: 'shahar', exampleDe: 'Ташкент — красивый город.', exampleUz: 'Toshkent — go‘zal shahar.' },
+    { id: 'voc_ru_21', category: 'Город и места', level: 'A1', word: 'Школа', article: 'она', gender: 'feminin', plural: 'школы', meaningUz: 'maktab', exampleDe: 'Дети идут в школу утром.', exampleUz: 'Bolalar ertalab maktabga borishadi.' },
+    { id: 'voc_ru_22', category: 'Город и места', level: 'A1', word: 'Улица', article: 'она', gender: 'feminin', plural: 'улицы', meaningUz: 'ko‘cha', exampleDe: 'На этой улице много магазинов.', exampleUz: 'Bu ko‘chada ko‘plab do‘konlar bor.' },
+    { id: 'voc_ru_23', category: 'Действия', level: 'A1', word: 'читать', article: '', gender: 'verb', plural: '', meaningUz: 'o‘qimoq', exampleDe: 'Я читаю книги каждый вечер.', exampleUz: 'Men har oqshom kitob o‘qiyman.' },
+    { id: 'voc_ru_24', category: 'Действия', level: 'A1', word: 'говорить', article: '', gender: 'verb', plural: '', meaningUz: 'gapirmoq', exampleDe: 'Вы говорите по-русски?', exampleUz: 'Siz ruscha gapirasizmi?' },
+    { id: 'voc_ru_25', category: 'Действия', level: 'A1', word: 'жить', article: '', gender: 'verb', plural: '', meaningUz: 'yashamoq', exampleDe: 'Я живу в Узбекистане.', exampleUz: 'Men O‘zbekistonda yashayman.' }
   ],
 
+  // -------------------------------------------------------------
+  // 🇰🇷 KOREAN (한국어) VOCABULARY (A1-A2)
+  // -------------------------------------------------------------
   ko: [
-    { id: 'voc_ko_1', category: '인사 (Salomlashish)', level: 'A1', word: '안녕하세요', article: '', gender: 'phrase', plural: '', meaningUz: 'Assalomu alaykum [Annyeonghaseyo]', exampleDe: '안녕하세요! 반갑습니다.', exampleUz: 'Salom! Xursandman.' },
-    { id: 'voc_ko_2', category: '인사 (Salomlashish)', level: 'A1', word: '감사합니다', article: '', gender: 'phrase', plural: '', meaningUz: 'Katta rahmat [Kamsahamnida]', exampleDe: '도와주셔서 감사합니다.', exampleUz: 'Yordamingiz uchun rahmat.' },
-    { id: 'voc_ko_3', category: '사람 (Insonlar)', level: 'A1', word: '친구', article: '', gender: 'noun', plural: '', meaningUz: 'do‘st [chingu]', exampleDe: '제 친구예요.', exampleUz: 'Bu mening do‘stim.' },
-    { id: 'voc_ko_4', category: '음식 (Taomlar)', level: 'A1', word: '물', article: '', gender: 'noun', plural: '', meaningUz: 'suv [mul]', exampleDe: '물 좀 주세요.', exampleUz: 'Iltimos, ozgina suv bering.' },
-    { id: 'voc_ko_5', category: '음식 (Taomlar)', level: 'A1', word: '커피', article: '', gender: 'noun', plural: '', meaningUz: 'qahva [kheophi]', exampleDe: '따뜻한 커피를 마셔요.', exampleUz: 'Issiq qahva ichyapman.' },
-    { id: 'voc_ko_6', category: '사물 (Narsalar)', level: 'A1', word: '책', article: '', gender: 'noun', plural: '', meaningUz: 'kitob [chaek]', exampleDe: '책을 읽어요.', exampleUz: 'Kitob o‘qiyapman.' }
+    { id: 'voc_ko_1', category: '인사 (Salomlashish)', level: 'A1', word: '안녕하세요', article: '', gender: 'phrase', plural: '', meaningUz: 'Assalomu alaykum [Annyeonghaseyo]', exampleDe: '안녕하세요! 반갑습니다.', exampleUz: 'Salom! Tanishganimdan xursandman.' },
+    { id: 'voc_ko_2', category: '인사 (Salomlashish)', level: 'A1', word: '감사합니다', article: '', gender: 'phrase', plural: '', meaningUz: 'Katta rahmat [Gamsahamnida]', exampleDe: '도와주셔서 감사합니다.', exampleUz: 'Yordamingiz uchun rahmat.' },
+    { id: 'voc_ko_3', category: '인사 (Salomlashish)', level: 'A1', word: '죄송합니다', article: '', gender: 'phrase', plural: '', meaningUz: 'Kechirasiz / Uzr [Joesonghamnida]', exampleDe: '늦어서 죄송합니다.', exampleUz: 'Kech qolganim uchun uzr so‘rayman.' },
+    { id: 'voc_ko_4', category: '인사 (Salomlashish)', level: 'A1', word: '안녕히 계세요', article: '', gender: 'phrase', plural: '', meaningUz: 'Yaxshi qoling [Annyeonghi gyeseyo]', exampleDe: '먼저 가겠습니다. 안녕히 계세요!', exampleUz: 'Men avval ketaman. Yaxshi qoling!' },
+    { id: 'voc_ko_5', category: '인사 (Salomlashish)', level: 'A1', word: '안녕히 가세요', article: '', gender: 'phrase', plural: '', meaningUz: 'Yaxshi boring [Annyeonghi gaseyo]', exampleDe: '조심히 가세요. 안녕히 가세요!', exampleUz: 'Ehtiyot bo‘lib boring. Yaxshi boring!' },
+    { id: 'voc_ko_6', category: '집과 물건 (Uy va narsalar)', level: 'A1', word: '집', article: '', gender: 'noun', plural: '', meaningUz: 'uy [jip]', exampleDe: '우리 집은 깨끗해요.', exampleUz: 'Bizning uyimiz toza.' },
+    { id: 'voc_ko_7', category: '집과 물건 (Uy va narsalar)', level: 'A1', word: '책', article: '', gender: 'noun', plural: '', meaningUz: 'kitob [chaek]', exampleDe: '책을 읽고 있어요.', exampleUz: 'Kitob o‘qiyapman.' },
+    { id: 'voc_ko_8', category: '집과 물건 (Uy va narsalar)', level: 'A1', word: '책상', article: '', gender: 'noun', plural: '', meaningUz: 'yozuv stoli [chaeksang]', exampleDe: '책상 위에 노트북이 있어요.', exampleUz: 'Stol ustida noutbuk bor.' },
+    { id: 'voc_ko_9', category: '집과 물건 (Uy va narsalar)', level: 'A1', word: '의자', article: '', gender: 'noun', plural: '', meaningUz: 'stul [uija]', exampleDe: '의자에 앉으세요.', exampleUz: 'Stulga o‘tiring.' },
+    { id: 'voc_ko_10', category: '집과 물건 (Uy va narsalar)', level: 'A1', word: '문', article: '', gender: 'noun', plural: '', meaningUz: 'eshik [mun]', exampleDe: '문을 닫아 주세요.', exampleUz: 'Iltimos, eshikni yoping.' },
+    { id: 'voc_ko_11', category: '음식과 음료 (Oziq-ovqat)', level: 'A1', word: '물', article: '', gender: 'noun', plural: '', meaningUz: 'suv [mul]', exampleDe: '시원한 물 좀 주세요.', exampleUz: 'Iltimos, muzday suv bering.' },
+    { id: 'voc_ko_12', category: '음식과 음료 (Oziq-ovqat)', level: 'A1', word: '밥', article: '', gender: 'noun', plural: '', meaningUz: 'ovqat / guruch [bap]', exampleDe: '밥을 맛있게 먹었어요.', exampleUz: 'Ovqatni mazza qilib yedim.' },
+    { id: 'voc_ko_13', category: '음식과 음료 (Oziq-ovqat)', level: 'A1', word: '커피', article: '', gender: 'noun', plural: '', meaningUz: 'qahva [kheophi]', exampleDe: '아이스 커피 좋아해요.', exampleUz: 'Muzli qahvani yoqtiraman.' },
+    { id: 'voc_ko_14', category: '음식과 음료 (Oziq-ovqat)', level: 'A1', word: '차', article: '', gender: 'noun', plural: '', meaningUz: 'choy [cha]', exampleDe: '따뜻한 녹차 한 잔이요.', exampleUz: 'Bir piyola issiq ko‘k choy.' },
+    { id: 'voc_ko_15', category: '음식과 음료 (Oziq-ovqat)', level: 'A1', word: '사과', article: '', gender: 'noun', plural: '', meaningUz: 'olma [sagwa]', exampleDe: '빨간 사과가 맛있어요.', exampleUz: 'Qizil olma mazali.' },
+    { id: 'voc_ko_16', category: '사람과 가족 (Odamlar)', level: 'A1', word: '친구', article: '', gender: 'noun', plural: '', meaningUz: 'do‘st [chingu]', exampleDe: '제 한국인 친구예요.', exampleUz: 'U mening koreys do‘stim.' },
+    { id: 'voc_ko_17', category: '사람과 가족 (Odamlar)', level: 'A1', word: '선생님', article: '', gender: 'noun', plural: '', meaningUz: 'o‘qituvchi / ustoz [seonsaengnim]', exampleDe: '선생님, 질문이 있어요.', exampleUz: 'Ustoz, savolim bor.' },
+    { id: 'voc_ko_18', category: '사람과 가족 (Odamlar)', level: 'A1', word: '학생', article: '', gender: 'noun', plural: '', meaningUz: 'talaba / o‘quvchi [haksaeng]', exampleDe: '저는 대학교 학생이에요.', exampleUz: 'Men universitet talabasiman.' },
+    { id: 'voc_ko_19', category: '사람과 가족 (Odamlar)', level: 'A1', word: '어머니', article: '', gender: 'noun', plural: '', meaningUz: 'ona [eomeoni]', exampleDe: '우리 어머니는 친절해요.', exampleUz: 'Bizning onamiz mehribon.' },
+    { id: 'voc_ko_20', category: '사람과 가족 (Odamlar)', level: 'A1', word: '아버지', article: '', gender: 'noun', plural: '', meaningUz: 'ota [abeoji]', exampleDe: '아버지는 회사원이에요.', exampleUz: 'Otam kompaniya xodimi.' },
+    { id: 'voc_ko_21', category: '도시와 장소 (Joylar)', level: 'A1', word: '학교', article: '', gender: 'noun', plural: '', meaningUz: 'maktab [hakgyo]', exampleDe: '학교에 버스로 가요.', exampleUz: 'Maktabga avtobusda boraman.' },
+    { id: 'voc_ko_22', category: '도시와 장소 (Joylar)', level: 'A1', word: '식당', article: '', gender: 'noun', plural: '', meaningUz: 'oshxona / restoran [sikdang]', exampleDe: '이 식당 음식은 맛있어요.', exampleUz: 'Bu restoran taomi mazali.' },
+    { id: 'voc_ko_23', category: '동사 (Fe’llar)', level: 'A1', word: '가다', article: '', gender: 'verb', plural: '', meaningUz: 'bormoq [gada]', exampleDe: '내일 도서관에 가요.', exampleUz: 'Ertaga kutubxonaga boraman.' },
+    { id: 'voc_ko_24', category: '동사 (Fe’llar)', level: 'A1', word: '오다', article: '', gender: 'verb', plural: '', meaningUz: 'kelmoq [oda]', exampleDe: '친구가 우리 집에 와요.', exampleUz: 'Do‘stim uyimizga kelyapti.' },
+    { id: 'voc_ko_25', category: '동사 (Fe’llar)', level: 'A1', word: '공부하다', article: '', gender: 'verb', plural: '', meaningUz: 'dars qilmoq [gongbuhada]', exampleDe: '열심히 한국어를 공부해요.', exampleUz: 'Koreys tilini tirishqoqlik bilan o‘rganyapman.' }
   ]
 };

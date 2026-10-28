@@ -837,33 +837,126 @@ async function loadLeaderboardView() {
 }
 
 // ----------------- BLITZ 60s GAME ENGINE -----------------
-// Multilingual Blitz 60s Questions
+// ----------------- BLITZ 60s GAME ENGINE -----------------
+// Helper to shuffle any array
+function shuffleArray(arr) {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+// Multilingual Blitz 60s Questions (25+ rich questions per language)
 const blitzQuestionsBank = {
   de: [
     { q: '"der Tisch" ning o‘zbekcha ma’nosi nima?', a: ['stol', 'stul', 'eshik', 'deraza'], c: 0 },
-    { q: '"die Lampe" artikli qaysi?', a: ['der', 'die', 'das', 'den'], c: 1 },
+    { q: '"die Lampe" artikli qaysi?', a: ['die', 'der', 'das', 'den'], c: 0 },
     { q: '"das Haus" nimani anglatadi?', a: ['uy', 'xona', 'daraxt', 'shahar'], c: 0 },
-    { q: '"Danke" ga javob qanday aytiladi?', a: ['Hallo', 'Bitte', 'Tschüss', 'Guten Tag'], c: 1 },
-    { q: '"Wasser" ning artikli nima?', a: ['der', 'die', 'das', 'den'], c: 2 }
+    { q: '"Danke" ga javoban nima deyiladi?', a: ['Bitte', 'Hallo', 'Tschüss', 'Guten Tag'], c: 0 },
+    { q: '"Wasser" ning artikli nima?', a: ['das', 'der', 'die', 'den'], c: 0 },
+    { q: '"Ich ______ Deutsch." (o‘rganmoqdaman):', a: ['lerne', 'lernst', 'lernt', 'lernen'], c: 0 },
+    { q: '"Woher kommst du?" savolining ma’nosi:', a: ['Qayerdansan?', 'Qayerga ketyapsan?', 'Qayerda yashaysan?', 'Kimsan?'], c: 0 },
+    { q: '"Guten Morgen" qachon aytiladi?', a: ['Ertalab', 'Kechqurun', 'Tushda', 'Tunda'], c: 0 },
+    { q: '"sein" fe’lining "du" shakli:', a: ['bist', 'bin', 'ist', 'sind'], c: 0 },
+    { q: '"sein" fe’lining "wir" shakli:', a: ['sind', 'seid', 'ist', 'bin'], c: 0 },
+    { q: '"haben" fe’li nimani anglatadi?', a: ['ega bo‘lmoq (bor)', 'bo‘lmoq', 'bormoq', 'kelmoq'], c: 0 },
+    { q: '"Apfel" (olma) ning artikli qaysi?', a: ['der', 'die', 'das', 'den'], c: 0 },
+    { q: 'Nemischa "nein" so‘zining ma’nosi:', a: ['yo‘q', 'ha', 'balki', 'rahmat'], c: 0 },
+    { q: '"Auf Wiedersehen" nimani bildiradi?', a: ['Ko‘rishguncha xayr', 'Salom', 'Xush kelibsiz', 'Kechirasiz'], c: 0 },
+    { q: '"zehn" soni nechchiga teng?', a: ['10', '5', '12', '20'], c: 0 },
+    { q: '"Ich habe eine Frage" nimani anglatadi?', a: ['Menda savol bor', 'Menda kitob bor', 'Men bilaman', 'Men tushunmadim'], c: 0 },
+    { q: '"der Junge" so‘zining ma’nosi:', a: ['o‘g‘il bola', 'qiz bola', 'erkak', 'ayol'], c: 0 },
+    { q: '"das Mädchen" so‘zining ma’nosi:', a: ['qiz bola', 'bola', 'ona', 'opa'], c: 0 },
+    { q: '"Wo wohnst du?" nimani anglatadi?', a: ['Qayerda yashaysan?', 'Qayerdan kelding?', 'Qayerga borasan?', 'Isming nima?'], c: 0 },
+    { q: '"Sehr gut!" iborasi ma’nosi:', a: ['Juda yaxshi!', 'Yomon emas', 'Rahmat', 'Xayr'], c: 0 },
+    { q: '"Entschuldigung" so‘zining ma’nosi:', a: ['Kechirasiz', 'Rahmat', 'Iltimos', 'Mayli'], c: 0 },
+    { q: '"rot" qaysi rang?', a: ['qizil', 'ko‘k', 'yashil', 'sariq'], c: 0 },
+    { q: '"blau" qaysi rang?', a: ['ko‘k', 'qora', 'oq', 'qizil'], c: 0 },
+    { q: '"Wie viel kostet das?" nimani so‘raydi?', a: ['Bu qancha turadi?', 'Bu nima?', 'Qayerda bu?', 'Kimniki bu?'], c: 0 },
+    { q: '"Ich weiß nicht" nimani anglatadi?', a: ['Men bilmayman', 'Men bilaman', 'Menga yoqadi', 'Tushundim'], c: 0 }
   ],
   en: [
     { q: '"Book" ning o‘zbekcha ma’nosi nima?', a: ['kitob', 'daftar', 'qalam', 'stol'], c: 0 },
     { q: '"Good morning" qachon aytiladi?', a: ['Ertalab', 'Kechqurun', 'Tunda', 'Tushda'], c: 0 },
     { q: '"I ______ a student" to‘g‘ri fe’l:', a: ['am', 'is', 'are', 'be'], c: 0 },
     { q: '"Thank you" ga javob nima bo‘ladi?', a: ['You are welcome', 'Goodbye', 'Please no', 'Good night'], c: 0 },
-    { q: '"House" so‘zining ma’nosi nima?', a: ['uy', 'ko‘cha', 'mashina', 'shahar'], c: 0 }
+    { q: '"House" so‘zining ma’nosi nima?', a: ['uy', 'ko‘cha', 'mashina', 'shahar'], c: 0 },
+    { q: '"They ______ football every day."', a: ['play', 'plays', 'playing', 'played'], c: 0 },
+    { q: '"She ______ English fluently."', a: ['speaks', 'speak', 'speaking', 'speaked'], c: 0 },
+    { q: '"Where are you from?" nimani bildiradi?', a: ['Qayerdansiz?', 'Qayerga ketyapsiz?', 'Qayerda yashaysiz?', 'Kim bilan siz?'], c: 0 },
+    { q: '"Water" so‘zining ma’nosi nima?', a: ['suv', 'choy', 'sharbat', 'sut'], c: 0 },
+    { q: '"Friend" so‘zining ko‘pligi qanday yoziladi?', a: ['friends', 'friendes', 'friendies', 'friend'], c: 0 },
+    { q: '"Yesterday I ______ a movie."', a: ['watched', 'watch', 'watches', 'watching'], c: 0 },
+    { q: '"What is your name?" savoliga javob:', a: ['My name is...', 'I am from...', 'I am fine', 'Yes, I do'], c: 0 },
+    { q: '"Excuse me" iborasi qachon ishlatiladi?', a: ['Kechirasiz / Uzr so‘raganda', 'Xayrlashganda', 'Salomlashganda', 'Rahmat aytganda'], c: 0 },
+    { q: '"Car" so‘zining ma’nosi nima?', a: ['mashina', 'samolyot', 'poezd', 'velosiped'], c: 0 },
+    { q: '"Big" so‘zining qarama-qarshisi (antonimi):', a: ['small', 'fast', 'tall', 'hot'], c: 0 },
+    { q: '"How are you?" nimani anglatadi?', a: ['Ahvollaringiz qanday?', 'Ismingiz nima?', 'Qayerdansiz?', 'Yoshingiz nechida?'], c: 0 },
+    { q: '"Do you speak English?" savoliga ijobiy javob:', a: ['Yes, I do', 'Yes, I am', 'Yes, I have', 'Yes, I can do'], c: 0 },
+    { q: '"Apple" nimani anglatadi?', a: ['olma', 'nok', 'uzum', 'anor'], c: 0 },
+    { q: '"Family" so‘zining ma’nosi nima?', a: ['oila', 'do‘stlar', 'maktab', 'shahar'], c: 0 },
+    { q: '"See you later" nimani bildiradi?', a: ['Keyinroq ko‘rishguncha', 'Xayrli tun', 'Xush kelibsiz', 'Ertagacha'], c: 0 },
+    { q: '"One, two, three..." keyingi son qaysi?', a: ['four', 'five', 'six', 'ten'], c: 0 },
+    { q: '"Green" qaysi rang?', a: ['yashil', 'qizil', 'sariq', 'ko‘k'], c: 0 },
+    { q: '"I don\'t know" nimani anglatadi?', a: ['Men bilmayman', 'Men bilaman', 'Men bormayman', 'Men tushundim'], c: 0 },
+    { q: '"Today is a ______ day." (chiroyli):', a: ['beautiful', 'badly', 'beauty', 'beautify'], c: 0 },
+    { q: '"Help me, please" nimani bildiradi?', a: ['Iltimos, menga yordam bering', 'Menga bering', 'Menga qarang', 'Keling'], c: 0 }
   ],
   ru: [
     { q: '"Здравствуйте" qanday salomlashish?', a: ['Rasmiy salom', 'Do‘stona salom', 'Xayrlashuv', 'Kechirim'], c: 0 },
     { q: '"Книга" (kitob) qaysi jinsga kiradi?', a: ['Женский род (Она)', 'Мужской род (Он)', 'Средний род (Оно)'], c: 0 },
     { q: '"Дом" (uy) qaysi jinsga kiradi?', a: ['Мужской род (Он)', 'Женский род (Она)', 'Средний род (Оно)'], c: 0 },
-    { q: '"Спасибо большое" nima degani?', a: ['Katta rahmat', 'Arzimaydi', 'Xayr', 'Iltimos'], c: 0 }
+    { q: '"Окно" (deraza) qaysi jinsga kiradi?', a: ['Средний род (Оно)', 'Мужской род (Он)', 'Женский род (Она)'], c: 0 },
+    { q: '"Спасибо большое" nima degani?', a: ['Katta rahmat', 'Arzimaydi', 'Xayr', 'Iltimos'], c: 0 },
+    { q: '"Я ______ по-русски." (gapiraman fe’li):', a: ['говорю', 'говоришь', 'говорит', 'говорим'], c: 0 },
+    { q: '"Как вас зовут?" nimani so‘raydi?', a: ['Ismingiz nima?', 'Qayerdansiz?', 'Ahvolingiz qanday?', 'Yoshingiz nechida?'], c: 0 },
+    { q: '"До свидания" iborasi ma’nosi:', a: ['Xayr / Ko‘rishguncha', 'Salom', 'Xush kelibsiz', 'Kechirasiz'], c: 0 },
+    { q: '"Вода" so‘zining o‘zbekcha tarjimasi:', a: ['suv', 'choy', 'sharbat', 'non'], c: 0 },
+    { q: '"Хлеб" nimani anglatadi?', a: ['non', 'osh', 'gosht', 'tuxum'], c: 0 },
+    { q: '"Мы ______ в Ташкенте." (yashaymiz):', a: ['живём', 'живу', 'живёт', 'живут'], c: 0 },
+    { q: '"Пожалуйста" so‘zining ma’nosi:', a: ['Iltimos / Arzimaydi', 'Rahmat', 'Salom', 'Kechirasiz'], c: 0 },
+    { q: '"Извините" qachon aytiladi?', a: ['Kechirim so‘raganda', 'Salomlashganda', 'Xayrlashganda', 'Minnatdorchilikda'], c: 0 },
+    { q: '"Друг" so‘zining ko‘pligi qanday bo‘ladi?', a: ['друзья', 'други', 'друзьями', 'другам'], c: 0 },
+    { q: '"Где находится аптека?" nimani so‘raydi?', a: ['Dorixona qayerda joylashgan?', 'Dorixona bormi?', 'Bu dori qancha?', 'Shifoxona qayerda?'], c: 0 },
+    { q: '"Сколько это стоит?" savolining ma’nosi:', a: ['Bu qancha turadi?', 'Bu nima?', 'Kimniki bu?', 'Qachon bo‘ladi?'], c: 0 },
+    { q: '"Хорошо" so‘zining antonimi nima?', a: ['Плохо', 'Отлично', 'Красиво', 'Быстро'], c: 0 },
+    { q: '"Один, два, три, ______" keyingi son:', a: ['четыре', 'пять', 'шесть', 'десять'], c: 0 },
+    { q: '"Красный" qaysi rang?', a: ['qizil', 'ko‘k', 'sariq', 'oq'], c: 0 },
+    { q: '"Я не понимаю" iborasi nimani bildiradi?', a: ['Men tushunmayapman', 'Men bilmayman', 'Men bormayman', 'Men xohlamayman'], c: 0 },
+    { q: '"Работа" so‘zining ma’nosi:', a: ['ish', 'uy', 'maktab', 'bozor'], c: 0 },
+    { q: '"Машина" qaysi rodga kiradi?', a: ['Женский род (Она)', 'Мужской род (Он)', 'Средний род (Оно)'], c: 0 },
+    { q: '"Доброе утро" qachon tilanadi?', a: ['Ertalab', 'Kechqurun', 'Kunduzi', 'Tunda'], c: 0 },
+    { q: '"У меня есть вопрос" nimani bildiradi?', a: ['Menda savol bor', 'Menda dars bor', 'Menda kitob bor', 'Men bilaman'], c: 0 },
+    { q: '"Конечно" so‘zining tarjimasi:', a: ['Albatta', 'Hech qachon', 'Balki', 'Yo‘q'], c: 0 }
   ],
   ko: [
-    { q: 'Koreyscha "안녕하세요" [Annyeonghaseyo] nima degani?', a: ['Assalomu alaykum', 'Katta rahmat', 'Xayr', 'Kechirasiz'], c: 0 },
-    { q: '"감사합니다" [Kamsahamnida] degani nima?', a: ['Rahmat', 'Salom', 'Iltimos', 'Kechirasiz'], c: 0 },
+    { q: '"안녕하세요" [Annyeonghaseyo] nima degani?', a: ['Assalomu alaykum / Salom', 'Katta rahmat', 'Xayr', 'Kechirasiz'], c: 0 },
+    { q: '"감사합니다" [Gamsahamnida] degani nima?', a: ['Rahmat', 'Salom', 'Iltimos', 'Kechirasiz'], c: 0 },
     { q: '"물" [mul] so‘zining ma’nosi nima?', a: ['suv', 'choy', 'non', 'kofe'], c: 0 },
-    { q: '"친구" [chingu] nimani anglatadi?', a: ['do‘st', 'talaba', 'o‘qituvchi', 'ota'], c: 0 }
+    { q: '"친구" [chingu] nimani anglatadi?', a: ['do‘st', 'talaba', 'o‘qituvchi', 'ota'], c: 0 },
+    { q: '"죄송합니다" [Joesonghamnida] qachon aytiladi?', a: ['Uzr / Kechirasiz deganda', 'Rahmat aytganda', 'Salomlashganda', 'Xayrlashganda'], c: 0 },
+    { q: '"네" [ne] so‘zi nimani bildiradi?', a: ['Ha / Mayli', 'Yo‘q', 'Rahmat', 'Salom'], c: 0 },
+    { q: '"아니요" [aniyo] nima degani?', a: ['Yo‘q', 'Ha', 'Iltimos', 'Xayr'], c: 0 },
+    { q: '"책" [chaek] so‘zining o‘zbekcha ma’nosi:', a: ['kitob', 'daftar', 'qalam', 'stol'], c: 0 },
+    { q: '"집" [jip] nimani bildiradi?', a: ['uy', 'maktab', 'magazin', 'shahar'], c: 0 },
+    { q: '"학교" [hakgyo] so‘zi nima?', a: ['maktab', 'universitet', 'kasalxona', 'idoralar'], c: 0 },
+    { q: '"밥" [bap] nimani anglatadi?', a: ['guruch / ovqat', 'choy', 'suv', 'shakar'], c: 0 },
+    { q: '"선생님" [seonsaengnim] kim?', a: ['o‘qituvchi / ustoz', 'talaba', 'shifokor', 'haydovchi'], c: 0 },
+    { q: '"학생" [haksaeng] so‘zining ma’nosi:', a: ['talaba / o‘quvchi', 'o‘qituvchi', 'do‘st', 'bola'], c: 0 },
+    { q: '"커피" [kheophi] nimani bildiradi?', a: ['qahva (kofe)', 'choy', 'sharbat', 'suv'], c: 0 },
+    { q: '"가다" [gada] fe’li nima?', a: ['bormoq', 'kelmoq', 'yemoq', 'ichmoq'], c: 0 },
+    { q: '"오다" [oda] fe’li nima?', a: ['kelmoq', 'bormoq', 'yotmoq', 'ko‘rmoq'], c: 0 },
+    { q: '"먹다" [meokda] nimani bildiradi?', a: ['yemoq', 'ichmoq', 'gapirmoq', 'uxlamoq'], c: 0 },
+    { q: '"마시다" [masida] qaysi harakat?', a: ['ichmoq', 'yemoq', 'yugurmoq', 'o‘tirmoq'], c: 0 },
+    { q: 'Koreys alifbosi nima deb ataladi?', a: ['Hangeul (한글)', 'Katakana', 'Iyeroglif', 'Pinyin'], c: 0 },
+    { q: '"하나, 둘, 셋" [hana, dul, set] qaysi sonlar?', a: ['1, 2, 3', '4, 5, 6', '10, 20, 30', '100, 200, 300'], c: 0 },
+    { q: '"어디" [eodi] so‘rog‘i nimani anglatadi?', a: ['qayer?', 'qachon?', 'kim?', 'nima?'], c: 0 },
+    { q: '"누구" [nugu] so‘rog‘i nimani bildiradi?', a: ['kim?', 'nima?', 'qayer?', 'qancha?'], c: 0 },
+    { q: '"얼마예요?" [eolmayeyo] nimani so‘raydi?', a: ['Narxi qancha?', 'Soat necha?', 'Ismingiz nima?', 'Qayerdasiz?'], c: 0 },
+    { q: '"맛있어요" [masisseoyo] nimani bildiradi?', a: ['Juda mazali', 'Achchiq', 'Shirin emas', 'Issiq'], c: 0 },
+    { q: '"주세요" [juseyo] so‘zining ma’nosi:', a: ['...bering / iltimos', 'oling', 'keting', 'bormang'], c: 0 }
   ]
 };
 
@@ -871,6 +964,7 @@ function getActiveBlitzQuestions() {
   return blitzQuestionsBank[STATE.selectedLang] || blitzQuestionsBank.de;
 }
 
+let blitzShuffledList = [];
 let blitzCurrentIndex = 0;
 
 function loadBlitzView() {
@@ -902,6 +996,7 @@ function startBlitzGame() {
   STATE.blitz.isPlaying = true;
   STATE.blitz.score = 0;
   STATE.blitz.timer = 60;
+  blitzShuffledList = shuffleArray(getActiveBlitzQuestions());
   blitzCurrentIndex = 0;
   playSound('fanfare');
 
@@ -932,18 +1027,34 @@ function startBlitzGame() {
 
 function renderBlitzQuestion() {
   const container = document.getElementById('blitz-container');
-  const qList = getActiveBlitzQuestions();
-  const q = qList[blitzCurrentIndex % qList.length];
+  if (!container) return;
+
+  if (!blitzShuffledList || blitzShuffledList.length === 0 || blitzCurrentIndex >= blitzShuffledList.length) {
+    blitzShuffledList = shuffleArray(getActiveBlitzQuestions());
+    blitzCurrentIndex = 0;
+  }
+
+  const q = blitzShuffledList[blitzCurrentIndex];
+
+  // Map each option with isCorrect, then SHUFFLE the options so the correct answer is NEVER always the 1st variant!
+  const mappedOptions = q.a.map((optText, origIdx) => ({
+    text: optText,
+    isCorrect: origIdx === q.c
+  }));
+  const shuffledOptions = shuffleArray(mappedOptions);
 
   container.innerHTML = `
     <div class="space-y-4">
-      <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Qolgan vaqt: ${STATE.blitz.timer}s</span>
-      <h4 class="text-lg font-black text-slate-900">${q.q}</h4>
+      <div class="flex items-center justify-between text-xs font-bold text-slate-400 uppercase tracking-widest">
+        <span>⚡ Savol: ${blitzCurrentIndex + 1}</span>
+        <span>Qolgan vaqt: ${STATE.blitz.timer}s</span>
+      </div>
+      <h4 class="text-lg md:text-xl font-black text-slate-900 leading-snug">${q.q}</h4>
 
       <div class="grid grid-cols-2 gap-2.5">
-        ${q.a.map((opt, oIdx) => `
-          <button onclick="handleBlitzAnswer(${oIdx}, ${q.c})" class="p-3.5 rounded-2xl border border-slate-200 hover:border-orange-500 hover:bg-orange-50 font-bold text-sm text-slate-800 transition">
-            ${opt}
+        ${shuffledOptions.map((opt) => `
+          <button onclick="handleBlitzAnswer(${opt.isCorrect})" class="p-3.5 rounded-2xl border border-slate-200 hover:border-orange-500 hover:bg-orange-50 font-bold text-sm text-slate-800 transition active:scale-95 text-center shadow-sm">
+            ${opt.text}
           </button>
         `).join('')}
       </div>
@@ -951,8 +1062,8 @@ function renderBlitzQuestion() {
   `;
 }
 
-async function handleBlitzAnswer(selected, correct) {
-  if (selected === correct) {
+async function handleBlitzAnswer(isCorrect) {
+  if (isCorrect) {
     playSound('correct');
     STATE.blitz.score += 10;
   } else {
