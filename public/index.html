@@ -19,7 +19,7 @@
   <!-- Canvas Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   
-  <link rel="stylesheet" href="/styles.css?v=3.2">
+  <link rel="stylesheet" href="/styles.css?v=4.1">
 </head>
 <body class="min-h-screen flex flex-col font-sans antialiased transition-colors duration-300 relative">
 
@@ -449,23 +449,31 @@
 
       <!-- SECTION: LEADERBOARD (DO'STLAR REYTINGI) -->
       <section id="section-leaderboard" class="section-view hidden">
-        <div class="max-w-3xl mx-auto">
+        <div class="max-w-3xl mx-auto space-y-6">
           
-          <div class="text-center mb-8">
-            <span class="text-xs font-black uppercase tracking-widest text-amber-500 block mb-1">CHAMPIONS LEAGUE</span>
-            <h2 class="text-3xl font-black text-slate-900">Do‘stlar Reytingi (Leaderboard)</h2>
-            <p class="text-xs text-slate-500 mt-1">Kim ko‘proq til o‘rganyapti? Kunlik darslar va mashqlar orqali ball to‘plang va peshqadam bo‘ling!</p>
+          <div class="text-center relative">
+            <span class="inline-flex items-center space-x-1.5 px-3.5 py-1 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 text-xs font-black uppercase tracking-wider shadow-md shadow-amber-500/20 mb-2">
+              <span>🏆</span>
+              <span>CHAMPIONS LEAGUE</span>
+            </span>
+            <h2 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Do‘stlar Reytingi</h2>
+            <p id="leaderboard-subtext" class="text-xs md:text-sm text-slate-500 max-w-md mx-auto mt-1">Kim ko‘proq til o‘rganyapti? Kunlik darslar va mashqlar orqali ball to‘plang va 1-o‘rinni egallang!</p>
           </div>
 
           <!-- Podium Top 3 -->
-          <div id="leaderboard-podium" class="grid grid-cols-3 gap-3 max-w-lg mx-auto mb-8 items-end">
+          <div id="leaderboard-podium" class="grid grid-cols-3 gap-3 md:gap-4 max-w-lg mx-auto pt-6 pb-2 items-end">
             <!-- Top 2, Top 1, Top 3 inserted by JS -->
           </div>
 
-          <!-- All Ranks List -->
-          <div class="bg-white rounded-3xl border border-slate-200 p-4 md:p-6 shadow-sm">
-            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Barcha Ishtirokchilar</h3>
-            <div id="leaderboard-list" class="divide-y divide-slate-100">
+          <!-- All Ranks List Container -->
+          <div class="bg-white/95 backdrop-blur-xl rounded-3xl border border-indigo-100 p-4 md:p-6 shadow-xl shadow-indigo-950/5">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+              <h3 class="text-xs font-black text-slate-600 uppercase tracking-wider flex items-center space-x-2">
+                <span>⚡ Barcha Ishtirokchilar</span>
+              </h3>
+              <span class="text-[11px] font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-xl">Jonli hisob</span>
+            </div>
+            <div id="leaderboard-list" class="space-y-2">
               <!-- Filled by JS -->
             </div>
           </div>
@@ -475,20 +483,27 @@
 
       <!-- SECTION: BLITZ 60s GAME -->
       <section id="section-blitz" class="section-view hidden">
-        <div class="max-w-md mx-auto bg-white rounded-3xl border border-slate-200 p-6 shadow-xl text-center">
+        <div class="max-w-lg mx-auto bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 rounded-3xl border border-indigo-500/30 p-6 md:p-8 shadow-2xl shadow-indigo-950/40 text-center text-white relative overflow-hidden">
           
+          <!-- Ambient Neon Flare -->
+          <div class="absolute -top-20 -right-20 w-44 h-44 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-20 -left-20 w-44 h-44 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
           <!-- Blitz Header -->
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-xs font-black uppercase text-orange-600 tracking-wider">⚡ 60-SONIYALIK BLITZ</span>
-            <span id="blitz-score-badge" class="px-2.5 py-1 bg-amber-50 text-amber-700 rounded-xl font-black text-xs">Ball: 0</span>
+          <div class="flex items-center justify-between mb-4 relative z-10">
+            <div class="flex items-center space-x-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping"></span>
+              <span class="text-xs font-black uppercase text-amber-400 tracking-wider">⚡ 60-SONIYALIK BLITZ JANG</span>
+            </div>
+            <span id="blitz-score-badge" class="px-3.5 py-1.5 bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 rounded-full font-black text-xs shadow-lg shadow-orange-500/30">Ball: 0</span>
           </div>
 
           <!-- Timer Bar -->
-          <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden mb-6">
-            <div id="blitz-timer-bar" class="bg-gradient-to-r from-emerald-500 to-amber-500 h-full w-full transition-all duration-1000 ease-linear"></div>
+          <div class="w-full bg-white/10 h-3 rounded-full overflow-hidden mb-6 p-0.5 border border-white/10 relative z-10">
+            <div id="blitz-timer-bar" class="bg-gradient-to-r from-emerald-400 via-amber-400 to-rose-500 h-full w-full rounded-full transition-all duration-1000 ease-linear shadow"></div>
           </div>
 
-          <div id="blitz-container">
+          <div id="blitz-container" class="relative z-10">
             <!-- Initial screen / active game / game over screen -->
           </div>
 
@@ -747,6 +762,6 @@
     </div>
   </div>
 
-  <script src="/app.js?v=3.2"></script>
+  <script src="/app.js?v=4.1"></script>
 </body>
 </html>

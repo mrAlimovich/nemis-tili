@@ -908,66 +908,118 @@ async function loadLeaderboardView() {
     const res = await api('/api/leaderboard');
     const leaders = res.leaderboard || [];
 
+    // Keep user's XP in sync if in leaderboard
+    if (STATE.user) {
+      const myRow = leaders.find(u => u.id === STATE.user.id);
+      if (myRow && myRow.xp !== undefined) {
+        STATE.user.xp = myRow.xp;
+        renderHeaderBadges();
+      }
+    }
+
     // Render Podium (Rank 2, Rank 1, Rank 3)
     const top1 = leaders[0] || null;
     const top2 = leaders[1] || null;
     const top3 = leaders[2] || null;
 
     podiumEl.innerHTML = `
-      <!-- TOP 2 -->
+      <!-- TOP 2 (KUMUSH) -->
       <div class="flex flex-col items-center">
-        <div class="w-12 h-12 rounded-2xl rank-badge-2 flex items-center justify-center font-black text-sm mb-1 shadow-md">
+        <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-tr from-slate-200 via-slate-300 to-indigo-100 flex items-center justify-center font-black text-sm md:text-base text-slate-800 mb-1.5 shadow-md border-2 border-white ring-2 ring-slate-300/40">
           ${top2 ? top2.name.charAt(0).toUpperCase() : '2'}
         </div>
-        <span class="text-xs font-bold truncate max-w-[80px] text-slate-800">${top2 ? top2.name : '—'}</span>
-        <span class="text-[10px] text-slate-400 font-extrabold">${top2 ? top2.xp + ' XP' : ''}</span>
-        <div class="w-full bg-slate-200 h-16 rounded-t-2xl mt-2 flex items-center justify-center font-black text-slate-500 text-sm">2</div>
+        <span class="text-xs font-bold truncate max-w-[80px] md:max-w-[100px] text-slate-800 text-center">${top2 ? top2.name : '—'}</span>
+        <span class="text-[10px] text-slate-500 font-extrabold bg-slate-100 px-2 py-0.5 rounded-full mt-0.5">${top2 ? top2.xp + ' XP' : ''}</span>
+        <div class="w-full bg-gradient-to-b from-slate-300 via-slate-400 to-slate-500 h-20 rounded-t-2xl mt-2 flex flex-col items-center justify-center font-black text-white text-base shadow border-t-2 border-slate-200">
+          2
+          <span class="text-[9px] uppercase font-bold text-slate-200">Kumush</span>
+        </div>
       </div>
 
-      <!-- TOP 1 (CHAMPION) -->
+      <!-- TOP 1 (OLTIN CHAMPION) -->
       <div class="flex flex-col items-center">
         <div class="relative">
-          <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-lg">👑</span>
-          <div class="w-16 h-16 rounded-3xl rank-badge-1 flex items-center justify-center font-black text-xl mb-1 shadow-lg">
+          <span class="absolute -top-4 left-1/2 -translate-x-1/2 text-2xl animate-bounce">👑</span>
+          <div class="w-16 h-16 md:w-20 md:h-20 rounded-3xl bg-gradient-to-tr from-amber-400 via-amber-500 to-yellow-500 flex items-center justify-center font-black text-xl md:text-2xl text-slate-950 mb-1.5 shadow-xl shadow-amber-500/35 border-2 border-amber-200 ring-4 ring-amber-300/60">
             ${top1 ? top1.name.charAt(0).toUpperCase() : '1'}
           </div>
         </div>
-        <span class="text-xs font-black truncate max-w-[100px] text-slate-900">${top1 ? top1.name : '—'}</span>
-        <span class="text-[11px] text-amber-600 font-extrabold">${top1 ? top1.xp + ' XP' : ''}</span>
-        <div class="w-full bg-amber-300 h-24 rounded-t-2xl mt-2 flex items-center justify-center font-black text-amber-900 text-lg">1</div>
+        <span class="text-xs md:text-sm font-black truncate max-w-[100px] md:max-w-[120px] text-slate-900 text-center">${top1 ? top1.name : '—'}</span>
+        <span class="text-[11px] text-amber-800 font-black bg-amber-100 px-2.5 py-0.5 rounded-full mt-0.5 border border-amber-200">${top1 ? top1.xp + ' XP' : ''}</span>
+        <div class="w-full bg-gradient-to-b from-amber-400 via-amber-500 to-amber-600 h-28 rounded-t-3xl mt-2 flex flex-col items-center justify-center font-black text-white text-2xl shadow-lg shadow-amber-500/25 border-t-2 border-amber-300">
+          1
+          <span class="text-[10px] tracking-wider uppercase font-black text-amber-100">Oltin</span>
+        </div>
       </div>
 
-      <!-- TOP 3 -->
+      <!-- TOP 3 (BRONZA) -->
       <div class="flex flex-col items-center">
-        <div class="w-12 h-12 rounded-2xl rank-badge-3 flex items-center justify-center font-black text-sm mb-1 shadow-md">
+        <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-tr from-amber-600 via-orange-600 to-amber-700 flex items-center justify-center font-black text-sm md:text-base text-white mb-1.5 shadow-md border-2 border-white ring-2 ring-orange-300/40">
           ${top3 ? top3.name.charAt(0).toUpperCase() : '3'}
         </div>
-        <span class="text-xs font-bold truncate max-w-[80px] text-slate-800">${top3 ? top3.name : '—'}</span>
-        <span class="text-[10px] text-slate-400 font-extrabold">${top3 ? top3.xp + ' XP' : ''}</span>
-        <div class="w-full bg-orange-200 h-12 rounded-t-2xl mt-2 flex items-center justify-center font-black text-orange-800 text-xs">3</div>
+        <span class="text-xs font-bold truncate max-w-[80px] md:max-w-[100px] text-slate-800 text-center">${top3 ? top3.name : '—'}</span>
+        <span class="text-[10px] text-orange-800 font-extrabold bg-orange-100 px-2 py-0.5 rounded-full mt-0.5">${top3 ? top3.xp + ' XP' : ''}</span>
+        <div class="w-full bg-gradient-to-b from-amber-600 via-orange-600 to-amber-800 h-16 rounded-t-2xl mt-2 flex flex-col items-center justify-center font-black text-white text-sm shadow border-t-2 border-orange-300">
+          3
+          <span class="text-[9px] uppercase font-bold text-orange-200">Bronza</span>
+        </div>
       </div>
     `;
 
     // Render Full List
     listEl.innerHTML = leaders.map((u, idx) => {
       const isMe = STATE.user && STATE.user.id === u.id;
+      if (isMe) {
+        return `
+          <div class="p-3.5 md:p-4 rounded-2xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white shadow-lg shadow-indigo-500/25 ring-2 ring-indigo-300/50 flex items-center justify-between transform transition hover:scale-[1.01]">
+            <div class="flex items-center space-x-3.5">
+              <div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center font-black text-xs text-white">
+                ${idx + 1}
+              </div>
+              <div class="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center font-black text-sm text-white shadow-inner">
+                ${u.name.charAt(0).toUpperCase()}
+              </div>
+              <div>
+                <div class="flex items-center space-x-2">
+                  <span class="text-sm font-black text-white">${u.name}</span>
+                  <span class="px-2 py-0.5 rounded-full bg-amber-400 text-slate-950 text-[10px] font-black uppercase tracking-wider shadow">SIZ</span>
+                </div>
+                <div class="text-[11px] text-indigo-100 flex items-center space-x-2 font-medium">
+                  <span>${u.currentLevel}</span>
+                  <span>•</span>
+                  <span>🔥 ${u.streak} kunlik streak</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="px-3 py-1 rounded-xl bg-white/20 text-white font-black text-sm tracking-tight flex items-center space-x-1 shadow-inner">
+                <span>⚡</span>
+                <span>${u.xp} XP</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
       return `
-        <div class="py-3 px-2 flex items-center justify-between ${isMe ? 'bg-blue-50/70 rounded-2xl font-bold' : ''}">
-          <div class="flex items-center space-x-3">
-            <span class="w-6 text-center font-black text-xs ${idx < 3 ? 'text-amber-500' : 'text-slate-400'}">${idx + 1}</span>
-            <div class="w-9 h-9 rounded-xl bg-slate-200 flex items-center justify-center font-bold text-xs text-slate-700">
+        <div class="p-3 md:p-3.5 rounded-2xl bg-white hover:bg-slate-50/80 border border-slate-200/80 shadow-xs flex items-center justify-between transition">
+          <div class="flex items-center space-x-3.5">
+            <div class="w-7 h-7 rounded-full flex items-center justify-center font-black text-xs ${idx === 0 ? 'bg-amber-100 text-amber-700' : idx === 1 ? 'bg-slate-200 text-slate-700' : idx === 2 ? 'bg-orange-100 text-orange-700' : 'text-slate-400'}">
+              ${idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : idx + 1}
+            </div>
+            <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-slate-100 to-indigo-50 border border-slate-200 flex items-center justify-center font-bold text-sm text-slate-700 shadow-xs">
               ${u.name.charAt(0).toUpperCase()}
             </div>
             <div>
-              <span class="text-sm font-bold text-slate-900 flex items-center space-x-1">
-                <span>${u.name}</span>
-                ${isMe ? '<span class="text-[10px] bg-blue-600 text-white px-1.5 py-0.2 rounded font-extrabold">SIZ</span>' : ''}
-              </span>
+              <span class="text-sm font-bold text-slate-800 block">${u.name}</span>
               <span class="text-[11px] text-slate-400 block">${u.currentLevel} • 🔥 ${u.streak} kun</span>
             </div>
           </div>
           <div class="text-right">
-            <span class="text-sm font-black text-amber-600">${u.xp} XP</span>
+            <span class="px-3 py-1 rounded-xl bg-amber-50 text-amber-800 border border-amber-200/60 font-black text-xs inline-flex items-center space-x-1">
+              <span>⚡</span>
+              <span>${u.xp} XP</span>
+            </span>
           </div>
         </div>
       `;
@@ -1119,16 +1171,18 @@ function loadBlitzView() {
   const cfg = LANG_CONFIG[STATE.selectedLang] || LANG_CONFIG.de;
 
   container.innerHTML = `
-    <div class="py-4">
-      <div class="w-16 h-16 rounded-3xl bg-orange-100 text-orange-600 text-3xl font-black flex items-center justify-center mx-auto mb-3">
+    <div class="py-6 space-y-5">
+      <div class="w-16 h-16 mx-auto rounded-3xl bg-gradient-to-tr from-amber-400 via-orange-500 to-rose-500 text-slate-950 flex items-center justify-center text-3xl shadow-xl shadow-orange-500/30">
         ⚡
       </div>
-      <h3 class="text-xl font-black text-slate-900 mb-1">60-Soniyalik ${cfg.name} Lug‘at Jangi</h3>
-      <p class="text-xs text-slate-500 mb-6 max-w-xs mx-auto">
-        60 soniya ichida imkon qadar ko‘p ${cfg.name} so‘zlari va testlarini toping. Har bir to‘g‘ri javob sizga XP va do‘stlar reytingida ochko keltiradi!
-      </p>
+      <div>
+        <h3 class="text-2xl font-black text-white mb-2">60-Soniyalik ${cfg.name} Lug‘at Jangi</h3>
+        <p class="text-xs text-indigo-200/80 mb-6 max-w-sm mx-auto leading-relaxed">
+          60 soniya ichida imkon qadar ko‘p ${cfg.name} so‘zlari va testlarini toping. Har bir to‘g‘ri javob sizga XP va do‘stlar reytingida ochko keltiradi!
+        </p>
+      </div>
 
-      <button onclick="startBlitzGame()" class="w-full py-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold rounded-2xl shadow-lg shadow-orange-500/25 transition text-sm">
+      <button onclick="startBlitzGame()" class="w-full py-4 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 hover:brightness-110 text-slate-950 font-black rounded-2xl shadow-xl shadow-orange-500/35 transition text-base tracking-wide active:scale-98">
         Jangni Boshlash! 🚀
       </button>
     </div>
@@ -1187,16 +1241,19 @@ function renderBlitzQuestion() {
   const shuffledOptions = shuffleArray(mappedOptions);
 
   container.innerHTML = `
-    <div class="space-y-4">
-      <div class="flex items-center justify-between text-xs font-bold text-slate-400 uppercase tracking-widest">
-        <span>⚡ Savol: ${blitzCurrentIndex + 1}</span>
-        <span>Qolgan vaqt: ${STATE.blitz.timer}s</span>
+    <div class="space-y-5 text-left">
+      <div class="flex items-center justify-between text-xs font-bold text-indigo-300 uppercase tracking-widest border-b border-white/10 pb-2.5">
+        <span class="flex items-center space-x-1.5">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <span>Savol: ${blitzCurrentIndex + 1}</span>
+        </span>
+        <span class="text-amber-400 font-black">⏱ ${STATE.blitz.timer}s</span>
       </div>
-      <h4 class="text-lg md:text-xl font-black text-slate-900 leading-snug">${q.q}</h4>
+      <h4 class="text-lg md:text-xl font-black text-white leading-snug">${q.q}</h4>
 
-      <div class="grid grid-cols-2 gap-2.5">
+      <div class="grid grid-cols-2 gap-3">
         ${shuffledOptions.map((opt) => `
-          <button onclick="handleBlitzAnswer(${opt.isCorrect})" class="p-3.5 rounded-2xl border border-slate-200 hover:border-orange-500 hover:bg-orange-50 font-bold text-sm text-slate-800 transition active:scale-95 text-center shadow-sm">
+          <button onclick="handleBlitzAnswer(${opt.isCorrect})" class="p-3.5 md:p-4 rounded-2xl bg-white/10 hover:bg-gradient-to-r hover:from-amber-400 hover:to-orange-500 hover:text-slate-950 border border-white/15 text-white font-black text-sm md:text-base transition duration-150 active:scale-95 text-center shadow">
             ${opt.text}
           </button>
         `).join('')}
@@ -1226,35 +1283,54 @@ async function endBlitzGame() {
   playSound('fanfare');
 
   const container = document.getElementById('blitz-container');
-  const earnedXp = Math.round(STATE.blitz.score / 2);
+  const earnedXp = Math.max(5, Math.min(100, Math.round(STATE.blitz.score / 2)));
 
   // Submit score to backend
   try {
-    await api('/api/blitz/score', {
+    const res = await api('/api/blitz/score', {
       method: 'POST',
-      body: JSON.stringify({ correctCount: STATE.blitz.score / 10, score: STATE.blitz.score })
+      body: JSON.stringify({ correctCount: Math.round(STATE.blitz.score / 10), score: STATE.blitz.score })
     });
-    if (STATE.user) {
+    if (res && res.totalXp !== undefined) {
+      if (STATE.user) {
+        STATE.user.xp = res.totalXp;
+        renderHeaderBadges();
+      }
+    } else if (STATE.user) {
       STATE.user.xp = (STATE.user.xp || 0) + earnedXp;
       renderHeaderBadges();
     }
-  } catch (e) {}
+  } catch (e) {
+    console.error('Blitz score sync error:', e);
+  }
 
-  if (window.confetti) window.confetti({ particleCount: 100, spread: 70 });
+  if (window.confetti) window.confetti({ particleCount: 120, spread: 80 });
 
   container.innerHTML = `
-    <div class="py-4 space-y-4">
-      <div class="text-3xl">🏆</div>
-      <h3 class="text-2xl font-black text-slate-900">Vaqt Tugadi!</h3>
-      <p class="text-sm font-bold text-amber-600">Jami to‘plagan ballingiz: ${STATE.blitz.score}</p>
-      <p class="text-xs text-slate-500">+${earnedXp} XP hisobingizga qo‘shildi!</p>
+    <div class="py-6 space-y-5">
+      <div class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-tr from-amber-400 to-yellow-500 flex items-center justify-center text-4xl shadow-xl shadow-amber-500/40 animate-bounce">
+        🏆
+      </div>
+      <div>
+        <h3 class="text-2xl md:text-3xl font-black text-white mb-1">Vaqt Tugadi!</h3>
+        <p class="text-xs text-indigo-200">Ajoyib natija! Ballaringiz hisobingizga muvaffaqiyatli saqlandi.</p>
+      </div>
 
-      <div class="flex gap-2">
-        <button onclick="startBlitzGame()" class="flex-1 py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-2xl text-xs transition">
-          Yana o‘ynash
+      <div class="bg-white/10 border border-white/15 rounded-2xl p-4 max-w-xs mx-auto">
+        <div class="text-xs text-indigo-200 uppercase font-bold tracking-wider">To‘plangan Ball</div>
+        <div class="text-3xl font-black text-amber-400 my-1">${STATE.blitz.score} Ball</div>
+        <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-black">
+          <span>⚡</span>
+          <span>+${earnedXp} XP hisobga qo‘shildi!</span>
+        </div>
+      </div>
+
+      <div class="flex gap-3 pt-2">
+        <button onclick="startBlitzGame()" class="flex-1 py-3.5 bg-gradient-to-r from-amber-400 to-orange-500 hover:brightness-110 text-slate-950 font-black rounded-2xl text-xs md:text-sm transition shadow-lg shadow-orange-500/30">
+          🔄 Yana O‘ynash
         </button>
-        <button onclick="navigate('leaderboard')" class="flex-1 py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-2xl text-xs transition">
-          Reytingni ko‘rish
+        <button onclick="navigate('leaderboard')" class="flex-1 py-3.5 bg-white/15 hover:bg-white/25 text-white font-black rounded-2xl text-xs md:text-sm transition border border-white/20">
+          🏆 Reytingni Ko‘rish
         </button>
       </div>
     </div>

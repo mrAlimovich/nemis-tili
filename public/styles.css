@@ -303,3 +303,14 @@ body.dark-mode ::-webkit-scrollbar-thumb {
 * {
   -webkit-tap-highlight-color: transparent;
 }
+
+/* Pulsing Timer for Blitz */
+.timer-critical {
+  background: linear-gradient(to right, #f43f5e, #e11d48) !important;
+  animation: pulseTimer 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulseTimer {
+  0% { opacity: 1; filter: drop-shadow(0 0 4px rgba(244, 63, 94, 0.8)); }
+  100% { opacity: 0.7; filter: drop-shadow(0 0 14px rgba(244, 63, 94, 1)); }
+}

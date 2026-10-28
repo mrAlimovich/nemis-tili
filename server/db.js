@@ -140,6 +140,24 @@ module.exports = {
     return prog;
   },
 
+  addXp(userId, earnedXp) {
+    const db = readDb();
+    if (!db.progress[userId]) {
+      db.progress[userId] = {
+        completedLessons: {},
+        diagnostic: null,
+        xp: 0,
+        streak: 1,
+        lastStudyDate: new Date().toISOString().split('T')[0],
+        mistakes: []
+      };
+    }
+    const safeAmount = Math.max(0, Number(earnedXp) || 0);
+    db.progress[userId].xp = (db.progress[userId].xp || 0) + safeAmount;
+    writeDb(db);
+    return db.progress[userId].xp;
+  },
+
   saveDiagnostic(userId, diagnosticData) {
     const db = readDb();
     if (!db.progress[userId]) {

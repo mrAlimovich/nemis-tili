@@ -412,11 +412,10 @@ app.get('/api/leaderboard', authMiddleware, (req, res) => {
 // ----------------- BLITZ GAME ROUTE -----------------
 app.post('/api/blitz/score', authMiddleware, (req, res) => {
   const { correctCount, score } = req.body;
-  const earnedXp = Math.max(5, Math.min(50, Math.round(correctCount * 3)));
-  const progress = db.getUserProgress(req.user.id);
-  progress.xp = (progress.xp || 0) + earnedXp;
-  db.writeDb(db.readDb()); // or write progress
-  res.json({ success: true, earnedXp, totalXp: progress.xp });
+  const rawScore = Number(score) || ((Number(correctCount) || 0) * 10);
+  const earnedXp = Math.max(5, Math.min(100, Math.round(rawScore / 2)));
+  const newTotalXp = db.addXp(req.user.id, earnedXp);
+  res.json({ success: true, earnedXp, totalXp: newTotalXp });
 });
 
 // ----------------- MISTAKES ROUTE -----------------
