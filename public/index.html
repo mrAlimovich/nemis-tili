@@ -19,7 +19,7 @@
   <!-- Canvas Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   
-  <link rel="stylesheet" href="/styles.css?v=2.5">
+  <link rel="stylesheet" href="/styles.css?v=2.6">
 </head>
 <body class="min-h-screen flex flex-col font-sans antialiased transition-colors duration-300 relative">
 
@@ -334,7 +334,7 @@
             </button>
           </div>
         </div>
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
           <div>
             <h1 id="lessons-heading" class="text-2xl font-black text-slate-900">🇩🇪 Nemis tili O‘quv Dasturi</h1>
             <p id="lessons-subheading" class="text-sm text-slate-500">Nemis tili bo‘yicha 0 dan boshlab erkin gapirishgacha interaktiv darslar va mashqlar</p>
@@ -342,6 +342,41 @@
           <div class="flex items-center space-x-2">
             <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Darajangiz:</span>
             <span id="badge-current-level" class="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-black rounded-xl">A0 (Boshlang‘ich)</span>
+          </div>
+        </div>
+
+        <!-- LEVEL FILTER TABS (A1 -> B2) -->
+        <div class="flex items-center space-x-1.5 overflow-x-auto pb-2 mb-4 no-scrollbar">
+          <button onclick="filterLessonsByLevel('all')" id="lvl-tab-all" class="lvl-filter-btn px-4 py-2 rounded-xl text-xs font-black transition bg-blue-600 text-white shadow-sm shrink-0">
+            Barcha Darslar
+          </button>
+          <button onclick="filterLessonsByLevel('A1')" id="lvl-tab-A1" class="lvl-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 shrink-0">
+            🟢 A1 Boshlang‘ich
+          </button>
+          <button onclick="filterLessonsByLevel('A2')" id="lvl-tab-A2" class="lvl-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 shrink-0">
+            🟡 A2 Kundalik Muloqot
+          </button>
+          <button onclick="filterLessonsByLevel('B1')" id="lvl-tab-B1" class="lvl-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 shrink-0">
+            🔵 B1 Mustaqil Til
+          </button>
+          <button onclick="filterLessonsByLevel('B2')" id="lvl-tab-B2" class="lvl-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 shrink-0">
+            🟣 B2 Kasbiy / Yuqori
+          </button>
+        </div>
+
+        <!-- LEVEL PROGRESS STATUS CARD -->
+        <div id="level-progress-card" class="bg-white rounded-2xl border border-slate-200 p-4 mb-5 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div class="flex items-center space-x-3">
+            <div id="lvl-card-icon" class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-black text-sm">
+              📚
+            </div>
+            <div>
+              <h4 id="lvl-progress-title" class="font-bold text-sm text-slate-900">O‘quv kursi jarayoni</h4>
+              <p id="lvl-progress-sub" class="text-xs text-slate-500">0 / 8 dars bajarildi (0%)</p>
+            </div>
+          </div>
+          <div class="w-full md:w-64 bg-slate-100 h-2.5 rounded-full overflow-hidden">
+            <div id="lvl-progress-bar" class="bg-gradient-to-r from-blue-600 to-indigo-600 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
           </div>
         </div>
 
@@ -662,6 +697,6 @@
     </div>
   </div>
 
-  <script src="/app.js?v=2.5"></script>
+  <script src="/app.js?v=2.6"></script>
 </body>
 </html>

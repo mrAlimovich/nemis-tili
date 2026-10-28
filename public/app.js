@@ -8,6 +8,7 @@ const STATE = {
   activeView: 'language-hub',
   authMode: 'login',
   selectedLang: localStorage.getItem('gm_lang') || 'de',
+  levelFilter: 'all',
   lessons: [],
   currentLesson: null,
   vocabulary: [],
@@ -430,45 +431,107 @@ async function loadLessons() {
   try {
     const res = await api(`/api/lessons?lang=${STATE.selectedLang}`);
     STATE.lessons = res.lessons;
-
-    const grid = document.getElementById('lessons-grid');
-    if (!grid) return;
-
-    const currentLevelBadge = document.getElementById('badge-current-level');
-    if (currentLevelBadge && STATE.user) {
-      currentLevelBadge.innerText = `${STATE.user.currentLevel || 'A0'} (${STATE.user.targetLevel || 'B1'} gacha)`;
-    }
-
-    grid.innerHTML = STATE.lessons.map(lesson => {
-      const isDone = lesson.isCompleted;
-      return `
-        <div onclick="openLesson('${lesson.id}')" class="group hover-lift bg-white rounded-3xl border ${isDone ? 'border-emerald-200 bg-emerald-50/10' : 'border-slate-200'} hover:border-blue-500 p-5 shadow-sm transition cursor-pointer flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="px-3 py-1 bg-slate-100 group-hover:bg-blue-50 text-slate-600 group-hover:text-blue-600 rounded-xl text-xs font-black">
-                DARS 0${lesson.number} • ${lesson.level}
-              </span>
-              ${isDone 
-                ? '<span class="flex items-center space-x-1 text-emerald-600 text-xs font-extrabold"><i data-lucide="check-circle-2" class="w-4 h-4"></i><span>Bajarildi</span></span>'
-                : '<span class="text-xs font-extrabold text-blue-600 flex items-center space-x-1"><span>Boshlash</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>'
-              }
-            </div>
-            <h3 class="font-extrabold text-slate-900 text-base group-hover:text-blue-600 transition mb-1">${lesson.title}</h3>
-            <p class="text-xs text-slate-500 leading-relaxed mb-4">${lesson.goal}</p>
-          </div>
-
-          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-medium">
-            <span>⏱ 15 daqiqa</span>
-            <span class="text-amber-600 font-bold">+30 XP</span>
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    initIcons();
+    renderLessonsList();
   } catch (err) {
     console.error('Error loading lessons:', err);
   }
+}
+
+function filterLessonsByLevel(lvl) {
+  STATE.levelFilter = lvl;
+  const tabs = ['all', 'A1', 'A2', 'B1', 'B2'];
+  tabs.forEach(tabKey => {
+    const btn = document.getElementById(`lvl-tab-${tabKey}`);
+    if (!btn) return;
+    if (tabKey === lvl) {
+      btn.className = 'lvl-filter-btn px-4 py-2 rounded-xl text-xs font-black transition bg-blue-600 text-white shadow-sm shrink-0';
+    } else {
+      btn.className = 'lvl-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 shrink-0';
+    }
+  });
+  renderLessonsList();
+}
+
+function renderLessonsList() {
+  const grid = document.getElementById('lessons-grid');
+  if (!grid) return;
+
+  const currentLevelBadge = document.getElementById('badge-current-level');
+  if (currentLevelBadge && STATE.user) {
+    currentLevelBadge.innerText = `${STATE.user.currentLevel || 'A0'} (${STATE.user.targetLevel || 'B1'} gacha)`;
+  }
+
+  // Filter lessons
+  const filtered = STATE.levelFilter === 'all'
+    ? STATE.lessons
+    : STATE.lessons.filter(l => l.level && l.level.includes(STATE.levelFilter));
+
+  // Update progress card
+  const completedInView = filtered.filter(l => l.isCompleted).length;
+  const totalInView = filtered.length;
+  const percent = totalInView > 0 ? Math.round((completedInView / totalInView) * 100) : 0;
+
+  const lvlTitle = document.getElementById('lvl-progress-title');
+  const lvlSub = document.getElementById('lvl-progress-sub');
+  const lvlBar = document.getElementById('lvl-progress-bar');
+  const lvlIcon = document.getElementById('lvl-card-icon');
+
+  if (lvlTitle && lvlSub && lvlBar) {
+    const langCfg = LANG_CONFIG[STATE.selectedLang] || LANG_CONFIG.de;
+    if (STATE.levelFilter === 'all') {
+      lvlTitle.innerText = `${langCfg.flag} ${langCfg.name} — Umumiy O‘quv Kursi`;
+      lvlSub.innerText = `${completedInView} / ${totalInView} dars o‘zlashtirildi (${percent}%)`;
+      if (lvlIcon) lvlIcon.innerText = '📚';
+    } else {
+      lvlTitle.innerText = `${langCfg.flag} ${langCfg.name} — ${STATE.levelFilter} Bosqichi`;
+      lvlSub.innerText = `${completedInView} / ${totalInView} dars o‘zlashtirildi (${percent}%)`;
+      if (lvlIcon) {
+        const icons = { A1: '🟢', A2: '🟡', B1: '🔵', B2: '🟣' };
+        lvlIcon.innerText = icons[STATE.levelFilter] || '🎯';
+      }
+    }
+    lvlBar.style.width = `${percent}%`;
+  }
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `
+      <div class="col-span-full py-12 text-center bg-white rounded-3xl border border-dashed border-slate-200 p-8">
+        <div class="text-3xl mb-2">🚀</div>
+        <h4 class="font-bold text-slate-800 text-sm mb-1">${STATE.levelFilter} darajasidagi darslar tez kunda!</h4>
+        <p class="text-xs text-slate-500 max-w-md mx-auto">Tez orada ushbu bosqich bo'yicha yangi darslar va xalqaro imtihon materiallari qo'shiladi.</p>
+        <button onclick="filterLessonsByLevel('all')" class="mt-4 px-4 py-2 bg-blue-50 text-blue-600 rounded-xl font-bold text-xs hover:bg-blue-100 transition">Barcha darslarni ko'rish</button>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = filtered.map(lesson => {
+    const isDone = lesson.isCompleted;
+    return `
+      <div onclick="openLesson('${lesson.id}')" class="group hover-lift bg-white rounded-3xl border ${isDone ? 'border-emerald-200 bg-emerald-50/10' : 'border-slate-200'} hover:border-blue-500 p-5 shadow-sm transition cursor-pointer flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-3 py-1 bg-slate-100 group-hover:bg-blue-50 text-slate-600 group-hover:text-blue-600 rounded-xl text-xs font-black">
+              DARS 0${lesson.number} • ${lesson.level}
+            </span>
+            ${isDone 
+              ? '<span class="flex items-center space-x-1 text-emerald-600 text-xs font-extrabold"><i data-lucide="check-circle-2" class="w-4 h-4"></i><span>Bajarildi</span></span>'
+              : '<span class="text-xs font-extrabold text-blue-600 flex items-center space-x-1"><span>Boshlash</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>'
+            }
+          </div>
+          <h3 class="font-extrabold text-slate-900 text-base group-hover:text-blue-600 transition mb-1">${lesson.title}</h3>
+          <p class="text-xs text-slate-500 leading-relaxed mb-4">${lesson.goal}</p>
+        </div>
+
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-medium">
+          <span>⏱ 15 daqiqa</span>
+          <span class="text-amber-600 font-bold">+30 XP</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  initIcons();
 }
 
 async function openLesson(lessonId) {

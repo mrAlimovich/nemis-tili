@@ -1,4 +1,5 @@
 // Multi-language Curriculum Data (German, English, Russian, Korean)
+// Comprehensive CEFR-aligned lessons from A1 to B1
 module.exports = {
   // Supported languages config
   languages: [
@@ -9,18 +10,18 @@ module.exports = {
   ],
 
   // ------------------------------------------------------------------
-  // 🇩🇪 GERMAN (DEUTSCH) LESSONS
+  // 🇩🇪 GERMAN (DEUTSCH) LESSONS (Goethe / telc Standarti)
   // ------------------------------------------------------------------
   de: [
     {
       id: 'de_lesson_1',
       lang: 'de',
-      level: 'A0/A1',
+      level: 'A1',
       number: 1,
       title: 'Talaffuzning 3 siri va Ilk salomlashish',
       goal: 'Nemischa o‘qish qoidalarini anglash, begona va do‘stona salomlashish/xayrlashishni o‘rganish.',
       theory: {
-        introUz: 'Nemis tili o‘qilishi bo‘yicha o‘zbek tiliga yaqin — yozilganidek o‘qiladi. Faqat 3 ta qoidani bilsangiz kifoya:',
+        introUz: 'Nemis tili o‘qilishi bo‘yicha o‘zbek tiliga juda yaqin. 4 ta muhim qoidani bilsangiz, bexato o‘qiysiz:',
         rules: [
           { pattern: 'EI', pronunciation: '«AY»', exampleDe: 'mein [mayn], nein [nayn]', exampleUz: 'mening, yo‘q' },
           { pattern: 'IE', pronunciation: '«cho‘ziq II»', exampleDe: 'sie [zii], wie [vii]', exampleUz: 'u/ular, qanday' },
@@ -59,7 +60,6 @@ module.exports = {
           question: 'Do‘stingiz bilan xayrlashayotganda: "______, bis morgen!"',
           placeholder: 'So‘zni kiriting...',
           correctAnswer: 'Tschüss',
-          altAnswers: ['tschüss', 'Tschuess', 'tschuess'],
           hint: 'Chyus deb talaffuz qilinadi'
         }
       ],
@@ -69,7 +69,7 @@ module.exports = {
         tip: 'Tugmani bosing va ushbu gapni baland ovozda talaffuz qiling.'
       },
       kulturtip: {
-        title: '🇩🇪 Pünktlichkeit (O‘z vaqtida bo‘lish)',
+        title: '🇩🇪 Pünktlichkeit (Vaqtga qat’iy rioya)',
         text: 'Germaniyada vaqtga qat’iy rioya qilish — eng oliy hurmat belgisi. Uchrashuvga 5-10 daqiqa oldin borish odat tusiga kirgan.'
       },
       listening: {
@@ -129,7 +129,7 @@ module.exports = {
       },
       kulturtip: {
         title: '🇩🇪 Siezen vs. Duzen',
-        text: 'Kattalarga "Sie" (Siz), tengdosh va do‘stlarga "Du" (Sen) deb murojaat qilinadi.'
+        text: 'Kattalarga va notanishlarga "Sie" (Siz), tengdosh va do‘stlarga "Du" (Sen) deb murojaat qilinadi.'
       },
       listening: {
         title: '🎧 Tinglab tushunish',
@@ -144,7 +144,7 @@ module.exports = {
       lang: 'de',
       level: 'A1',
       number: 3,
-      title: 'W-Fragen: Nemischa so‘roq so‘zlar va Muloqot',
+      title: 'W-Fragen: So‘roq so‘zlar va Muloqot',
       goal: 'Nemis tilida savol berish: Wer, Was, Wo, Woher, Wohin, Wie, Warum.',
       theory: {
         introUz: 'Nemis tilida so‘roq gaplarda so‘roq so‘z 1-o‘rinda, fe’l esa DOIMO 2-o‘rinda turadi:',
@@ -243,8 +243,8 @@ module.exports = {
         tip: 'Zimmer so‘zida "Z" «ts» deb o‘qiladi.'
       },
       kulturtip: {
-        title: '🇩🇪 Wortzusammensetzung (Qo‘shma so‘zlar)',
-        text: 'Nemis tilida bir nechta so‘zni qo‘shib yangi so‘z yasash juda mashhur (masalan, das Haus + die Tür = die Haustür - uy eshigi).'
+        title: '🇩🇪 Qo‘shma so‘zlar sehri',
+        text: 'Nemis tilida bir nechta so‘z qo‘shilib yangi so‘z yasaladi: das Haus + die Tür = die Haustür (uy eshigi). Oxirgi so‘zning artikli asosiy bo‘ladi.'
       },
       listening: {
         title: '🎧 Tinglab tushunish',
@@ -253,17 +253,241 @@ module.exports = {
         options: ['Yangi velosiped', 'Yangi mashina', 'Yangi kitob'],
         correctIndex: 1
       }
+    },
+    {
+      id: 'de_lesson_5',
+      lang: 'de',
+      level: 'A1',
+      number: 5,
+      title: 'Do‘konda xarid, Raqamlar va Pul (Euro)',
+      goal: 'Raqamlar (1-100), narx so‘rash va kafeda buyurtma berish.',
+      theory: {
+        introUz: 'Xarid qilishda eng ko‘p ishlatiladigan iboralar va sonlar:',
+        rules: [
+          { pattern: 'Sonlar 20 dan keyin', pronunciation: 'birlik oldin o‘qiladi', exampleDe: 'einundzwanzig (21) = bir va yigirma', exampleUz: '21, 35, 48...' },
+          { pattern: 'Wie viel kostet ...?', pronunciation: 'Qancha turadi?', exampleDe: 'Wie viel kostet das Brot?', exampleUz: 'Non qancha turadi?' },
+          { pattern: 'Ich möchte ...', pronunciation: 'Men xohlardim (xushmuomala)', exampleDe: 'Ich möchte einen Kaffee, bitte.', exampleUz: 'Men bir chashka kofe xohlardim.' }
+        ],
+        table: [
+          { de: 'eins, zwei, drei, vier, fünf', uz: '1, 2, 3, 4, 5' },
+          { de: 'zehn, zwanzig, dreißig, hundert', uz: '10, 20, 30, 100' },
+          { de: 'Das macht 5 Euro, bitte.', uz: 'Jami 5 yevro bo‘ldi, marhamat.' },
+          { de: 'Zusammen oder getrennt?', uz: 'Birgami yoki alohidami? (to‘lov)' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'de_ex5_1',
+          type: 'multiple-choice',
+          question: '"Kafeda hisob-kitob qilishda "Birgami yoki alohida to‘laysizmi?" nemischa:',
+          options: ['Zusammen oder getrennt?', 'Wie viel kostet das?', 'Was möchten Sie?', 'Auf Wiedersehen'],
+          correctIndex: 0,
+          explanation: '"Zusammen oder getrennt?" — Germaniya restoranlarida har doim beriladigan savol.'
+        },
+        {
+          id: 'de_ex5_2',
+          type: 'fill-blank',
+          question: 'Ich ______ bitte ein Glas Wasser. (xohlayman)',
+          placeholder: 'möchte...',
+          correctAnswer: 'möchte',
+          hint: 'möchte'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Einen Kaffee und ein Stück Kuchen, bitte!',
+        textUz: 'Bir chashka kofe va bir bo‘lak pirojnoe, iltimos!',
+        tip: 'Stück so‘zidagi ü ni labni cho‘chaytirib ayting.'
+      },
+      kulturtip: {
+        title: '🇩🇪 Trinkgeld (Choychaqa odobi)',
+        text: 'Germaniyada xizmat ko‘rsatish uchun odatda hisobning 5-10 foizi miqdorida choychaqa (Trinkgeld) qoldiriladi.'
+      },
+      listening: {
+        title: '🎧 Tinglab tushunish',
+        audioText: 'Das macht zusammen zehn Euro und fünfzig Cent.',
+        question: 'Jami to‘lov qancha bo‘ldi?',
+        options: ['5 yevro', '10 yevro 50 sent', '20 yevro'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'de_lesson_6',
+      lang: 'de',
+      level: 'A2',
+      number: 6,
+      title: 'O‘tgan zamon (Perfekt) va Partizip II',
+      goal: 'Og‘zaki nutqda o‘tgan voqealarni aytish (haben/sein + ge-...-t).',
+      theory: {
+        introUz: 'Nemis tilida og‘zaki o‘tgan zamon "haben" yoki "sein" yordamchi fe’li va asosiy fe’lning Partizip II shaklidan yasaladi:',
+        rules: [
+          { pattern: 'Muntazam fe’llar', pronunciation: 'ge + asos + t', exampleDe: 'lernen → gelernt, machen → gemacht', exampleUz: 'o‘rgangan, qilgan' },
+          { pattern: 'Harakat fe’llari', pronunciation: 'sein bilan ishlatiladi', exampleDe: 'Ich bin nach Berlin gefahren.', exampleUz: 'Men Berlinga borganman.' },
+          { pattern: 'Tinch holatdagi fe’llar', pronunciation: 'haben bilan ishlatiladi', exampleDe: 'Ich habe Deutsch gelernt.', exampleUz: 'Men nemis tilini o‘rgandim.' }
+        ],
+        table: [
+          { de: 'Was hast du gestern gemacht?', uz: 'Kecha nima qilding?' },
+          { de: 'Ich habe Fußball gespielt.', uz: 'Men futbol o‘ynadim.' },
+          { de: 'Ich bin zu Hause geblieben.', uz: 'Men uyda qoldim.' },
+          { de: 'Wir haben gut geschlafen.', uz: 'Biz yaxshi uxladik.' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'de_ex6_1',
+          type: 'multiple-choice',
+          question: '"Gestern ______ ich meine Freunde getroffen (Kecha do‘stlarim bilan ko‘rishdim).":',
+          options: ['habe', 'bin', 'hat', 'ist'],
+          correctIndex: 0,
+          explanation: '"treffen" (uchrashmoq) fe’li haben bilan o‘tgan zamon yasaydi.'
+        },
+        {
+          id: 'de_ex6_2',
+          type: 'fill-blank',
+          question: 'Ich bin gestern nach Deutschland ______ (gefahren).',
+          placeholder: 'Partizip II shakli...',
+          correctAnswer: 'gefahren',
+          hint: 'gefahren'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Gestern habe ich viel Deutsch gelernt und geübt.',
+        textUz: 'Kecha men ko‘p nemis tili o‘rgandim va mashq qildim.',
+        tip: 'Gelernt und geübt [gelernt unt ge-yupt] deb toza talaffuz qiling.'
+      },
+      kulturtip: {
+        title: '🇩🇪 Feierabend (Ishdan keyingi hordiq)',
+        text: 'Nemis madaniyatida ish soati tugagach, ish haqida o‘ylamaslik (Feierabend) va oila davrasida dam olish muqaddas hisoblanadi.'
+      },
+      listening: {
+        title: '🎧 Tinglab tushunish',
+        audioText: 'Am Wochenende bin ich ins Kino gegangen und habe einen Film gesehen.',
+        question: 'U dam olish kunida nima qildi?',
+        options: ['Ishga bordi', 'Kinoga borib film ko‘rdi', 'Uy tozaladi'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'de_lesson_7',
+      lang: 'de',
+      level: 'A2',
+      number: 7,
+      title: 'Dativ kelishigi va Shaharda yo‘l so‘rash',
+      goal: 'Dativ (kimga/qayerda) kelishigi va harakat predloglari (nach, zu, mit, von).',
+      theory: {
+        introUz: 'Dativ kelishigida artikllar quyidagicha o‘zgaradi: der → dem, das → dem, die → der, Plural → den (+n):',
+        rules: [
+          { pattern: 'mit (bilan)', pronunciation: 'Doimo Dativ talab qiladi', exampleDe: 'mit dem Bus (avtobus bilan), mit dem Zug', exampleUz: 'avtobusda, poezdda' },
+          { pattern: 'zu (tomon / ga)', pronunciation: 'Doimo Dativ', exampleDe: 'zum Bahnhof (vokzalga), zur Schule', exampleUz: 'vokzalga, maktabga' },
+          { pattern: 'nach (shahar / mamlakatga)', pronunciation: 'artiklsiz joylar', exampleDe: 'nach Deutschland, nach Taschkent', exampleUz: 'Germaniyaga, Toshkentga' }
+        ],
+        table: [
+          { de: 'Ich fahre mit dem Auto.', uz: 'Men mashinada ketyapman.' },
+          { de: 'Wie komme ich zum Bahnhof?', uz: 'Vokzalga qanday borsam bo‘ladi?' },
+          { de: 'Gehen Sie geradeaus, dann links.', uz: 'To‘g‘riga boring, keyin chapga.' },
+          { de: 'Ich helfe der Mutter.', uz: 'Men onamga yordam beryapman.' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'de_ex7_1',
+          type: 'multiple-choice',
+          question: '"Ich fahre mit ______ Bus (der Bus).":',
+          options: ['dem', 'den', 'der', 'das'],
+          correctIndex: 0,
+          explanation: '"mit" predlogidan keyin "der" artikli Dativda "dem" ga aylanadi.'
+        },
+        {
+          id: 'de_ex7_2',
+          type: 'fill-blank',
+          question: 'Wie komme ich ______ Bahnhof? (zu + dem)',
+          placeholder: 'zum yoki zur...',
+          correctAnswer: 'zum',
+          hint: 'zum'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Entschuldigung, wie komme ich am besten zur Universität?',
+        textUz: 'Kechirasiz, universitetga eng qulay yo‘l bilan qanday borsa bo‘ladi?',
+        tip: 'Universität [uni-ver-zi-tet] deb ravon ayting.'
+      },
+      kulturtip: {
+        title: '🇩🇪 Fahrradkultur (Velosiped madaniyati)',
+        text: 'Germaniyada shahar ichida harakatlanish uchun velosiped eng ommabop transport. Maxsus veloyo‘laklarda piyodalar yurishi qat’iyan man etiladi.'
+      },
+      listening: {
+        title: '🎧 Tinglab tushunish',
+        audioText: 'Nehmen Sie die U-Bahn Linie 2 und steigen Sie am Alexanderplatz aus.',
+        question: 'Qaysi metro liniyasiga o‘tirish kerak?',
+        options: ['Liniya 5', 'Liniya 2', 'Liniya 10'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'de_lesson_8',
+      lang: 'de',
+      level: 'B1',
+      number: 8,
+      title: 'Bog‘lovchilar (weil, dass, obwohl) va Rasmiy maktub',
+      goal: 'Ergashgan gaplar tuzish, sabab va to‘siqsizlikni ifodalash, rasmiy xat yozish.',
+      theory: {
+        introUz: 'Nemis tilida "weil" (chunki), "dass" (ki), "obwohl" (garchi) bog‘lovchilaridan keyin FE’L GAPNING ENG OXIRIGA sakraydi:',
+        rules: [
+          { pattern: 'weil (chunki)', pronunciation: 'fe’l gap oxirida', exampleDe: 'Ich lerne Deutsch, weil ich in Berlin studieren möchte.', exampleUz: 'Nemis tilini o‘rganyapman, chunki Berlinda o‘qishni xohlayman.' },
+          { pattern: 'obwohl (garchand)', pronunciation: 'to‘siqsizlik', exampleDe: 'Obwohl es regnet, gehe ich spazieren.', exampleUz: 'Yomg‘ir yog‘ayotganiga qaramay, aylanib kelaman.' },
+          { pattern: 'Rasmiy murojaat', pronunciation: 'xat yozishda', exampleDe: 'Sehr geehrte Damen und Herren, ...', exampleUz: 'Hurmatli xonimlar va janoblar...' }
+        ],
+        table: [
+          { de: 'Ich weiß, dass du Recht hast.', uz: 'Bilmanki, sen haqlisan.' },
+          { de: 'Ich kann nicht kommen, weil ich krank bin.', uz: 'Kela olmayman, chunki kasalman.' },
+          { de: 'Mit freundlichen Grüßen', uz: 'Hurmat bilan (xat yakuni)' },
+          { de: 'Ich bewerbe mich um diese Stelle.', uz: 'Ushbu bo‘sh ish o‘rniga hujjat topshiryapman.' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'de_ex8_1',
+          type: 'multiple-choice',
+          question: '"Ich lerne Deutsch, weil es mir Spaß ______ (menga yoqadi).":',
+          options: ['macht', 'machen', 'machte', 'gemacht'],
+          correctIndex: 0,
+          explanation: '"weil" dan keyin fe’l shaxs-sonda tuslanib, gapning eng oxirida turadi: macht.'
+        },
+        {
+          id: 'de_ex8_2',
+          type: 'fill-blank',
+          question: 'Sehr ______ Damen und Herren, (Hurmatli)',
+          placeholder: 'geehrte...',
+          correctAnswer: 'geehrte',
+          hint: 'geehrte'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Ich möchte in Deutschland arbeiten, weil es dort viele Möglichkeiten gibt.',
+        textUz: 'Men Germaniyada ishlamoqchiman, chunki u yerda ko‘plab imkoniyatlar bor.',
+        tip: 'Möglichkeiten [moek-likh-kay-ten] so‘ziga urg‘u bering.'
+      },
+      kulturtip: {
+        title: '🇩🇪 Bewerbung (Ishga topshirish standarti)',
+        text: 'Nemis ish beruvchilariga hujjat topshirganda rezyume (Lebenslauf) rasm bilan xronologik tartibda va motivatsion maktub aniq dalillar bilan yozilishi shart.'
+      },
+      listening: {
+        title: '🎧 Tinglab tushunish',
+        audioText: 'Ich rufe an, weil ich mich für die Stelle als Web-Entwickler bewerben möchte.',
+        question: 'U nima maqsadda qo‘ng‘iroq qildi?',
+        options: ['Mahsulot sotib olish uchun', 'Veb-dasturchi lavozimiga ariza topshirish uchun', 'Kechirim so‘rash uchun'],
+        correctIndex: 1
+      }
     }
   ],
 
   // ------------------------------------------------------------------
-  // 🇬🇧 ENGLISH LESSONS
+  // 🇬🇧 ENGLISH LESSONS (Cambridge / IELTS Standarti)
   // ------------------------------------------------------------------
   en: [
     {
       id: 'en_lesson_1',
       lang: 'en',
-      level: 'A0/A1',
+      level: 'A1',
       number: 1,
       title: 'English Alphabet, Pronunciation & Greetings',
       goal: 'Ingliz tili talaffuz sirlari (TH, SH, CH, PH) va kundalik salomlashishlarni o‘rganish.',
@@ -490,17 +714,241 @@ module.exports = {
         options: ['Faqat chapga', 'To‘g‘riga borib, o‘ngga buriling', 'Orqaga qayting'],
         correctIndex: 1
       }
+    },
+    {
+      id: 'en_lesson_5',
+      lang: 'en',
+      level: 'A1',
+      number: 5,
+      title: 'At the Restaurant & Ordering Food',
+      goal: 'Restoranda taom buyurtma qilish va hisob so‘rash (Can I have, I would like).',
+      theory: {
+        introUz: 'Kafe va restoranda xushmuomalalik bilan buyurtma berish qoidalari:',
+        rules: [
+          { pattern: 'I would like ... (I\'d like)', pronunciation: 'Men ...ni xohlardim', exampleDe: 'I\'d like a chicken sandwich, please.', exampleUz: 'Menga tovuqli sendvich bering, iltimos.' },
+          { pattern: 'Can I have ...?', pronunciation: '... olsam bo‘ladimi?', exampleDe: 'Can I have a glass of water?', exampleUz: 'Bir stakan suv olsam bo‘ladimi?' },
+          { pattern: 'Could we have the bill?', pronunciation: 'Hisobni bersangiz', exampleDe: 'Could we have the bill, please?', exampleUz: 'Hisobni keltirsangiz, iltimos.' }
+        ],
+        table: [
+          { de: 'Are you ready to order?', uz: 'Buyurtma berishga tayyormisiz?' },
+          { de: 'What do you recommend?', uz: 'Nimani tavsiya qilasiz?' },
+          { de: 'For here or to go?', uz: 'Shu yerdami yoki olib ketishgami?' },
+          { de: 'Keep the change.', uz: 'Qaytimi kerak emas (choychaqa).' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'en_ex5_1',
+          type: 'multiple-choice',
+          question: '"Hisobni keltirsangiz, iltimos" inglizcha qanday aytiladi?',
+          options: ['Could we have the bill, please?', 'Where is the kitchen?', 'I want to eat now.', 'Goodbye!'],
+          correctIndex: 0,
+          explanation: '"Could we have the bill, please?" — eng xushmuomala hisob so‘rash usuli.'
+        },
+        {
+          id: 'en_ex5_2',
+          type: 'fill-blank',
+          question: 'I would ______ a cup of coffee, please.',
+          placeholder: 'so‘zni yozing...',
+          correctAnswer: 'like',
+          hint: 'like'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Can I have the menu and a bottle of sparkling water, please?',
+        textUz: 'Menga menyu va bir shisha gazli suv keltira olasizmi, iltimos?',
+        tip: 'Sparkling water [spa:kling wo:tə] deb ravon ayting.'
+      },
+      kulturtip: {
+        title: '🇺🇸 Tipping Culture (AQSHda choychaqa)',
+        text: 'AQSH restoranlarida ofitsiantga hisobning kamida 15-20 foizi miqdorida "tip" (choychaqa) qoldirish majburiy etiket hisoblanadi.'
+      },
+      listening: {
+        title: '🎧 Listening (Eshitib tushunish)',
+        audioText: 'Hi, are you ready to order? — Yes, I would like the grilled salmon with vegetables.',
+        question: 'U qanday taom buyurtma qildi?',
+        options: ['Gamburger va fri', 'Sabzavotlar bilan qovurilgan losos balig‘i', 'Pitsa'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'en_lesson_6',
+      lang: 'en',
+      level: 'A2',
+      number: 6,
+      title: 'Past Simple Tense (O‘tgan zamon)',
+      goal: 'O‘tgan voqealarni aytish, to‘g‘ri (-ed) va noto‘g‘ri fe’llar (irregular verbs).',
+      theory: {
+        introUz: 'Past Simple — o‘tgan zamonda aniq vaqtda sodir bo‘lib tugagan ish-harakatlar:',
+        rules: [
+          { pattern: 'To‘g‘ri fe’llar', pronunciation: 'fe’l + ed', exampleDe: 'work → worked, play → played, visit → visited', exampleUz: 'ishladi, o‘ynadi, ziyorat qildi' },
+          { pattern: 'Noto‘g‘ri fe’llar (Irregular)', pronunciation: 'ildizdan o‘zgaradi', exampleDe: 'go → went, see → saw, buy → bought', exampleUz: 'bordi, ko‘rdi, sotib oldi' },
+          { pattern: 'Savol va inkor', pronunciation: 'did / didn\'t + fe’l 1-shaklda', exampleDe: 'Did you see him? — I didn\'t see him.', exampleUz: 'Uni ko‘rdingizmi? — Men uni ko‘rmadim.' }
+        ],
+        table: [
+          { de: 'I went to London last summer.', uz: 'O‘tgan yozda Londonga bordim.' },
+          { de: 'What did you do yesterday?', uz: 'Kecha nima qildingiz?' },
+          { de: 'We saw a fantastic movie.', uz: 'Biz ajoyib film ko‘rdik.' },
+          { de: 'She bought a new laptop.', uz: 'U yangi noutbuk sotib oldi.' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'en_ex6_1',
+          type: 'multiple-choice',
+          question: '"Yesterday I ______ to the supermarket." (go fe’lining o‘tgan zamoni):',
+          options: ['goed', 'went', 'gone', 'going'],
+          correctIndex: 1,
+          explanation: '"go" noto‘g‘ri fe’l bo‘lib, o‘tgan zamoni "went" bo‘ladi.'
+        },
+        {
+          id: 'en_ex6_2',
+          type: 'fill-blank',
+          question: 'Did you ______ your homework? (do fe’li so‘roqda 1-shaklda qoladi)',
+          placeholder: 'do yoki did...',
+          correctAnswer: 'do',
+          hint: 'did bor joyda fe’l o‘zgarmaydi'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Last year I visited several European countries and improved my English.',
+        textUz: 'O‘tgan yili men bir nechta Yevropa mamlakatlariga sayohat qildim va ingliz tilimni yaxshiladim.',
+        tip: 'Improved [im-pru:vd] deb ohang bilan ayting.'
+      },
+      kulturtip: {
+        title: '🇬🇧 British vs. American English',
+        text: 'Masalan: Britaniyada "flat" (kvartira), AQSHda "apartment"; Britaniyada "lift", AQSHda "elevator" deb aytiladi.'
+      },
+      listening: {
+        title: '🎧 Listening (Eshitib tushunish)',
+        audioText: 'Last weekend I stayed at home and read a book because the weather was terrible.',
+        question: 'U o‘tgan dam olish kunida nima qildi va nega?',
+        options: ['Do‘stlari bilan tog‘ga chiqdi', 'Ob-havo yomonligi sababli uyda kitob o‘qidi', 'Maktabga bordi'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'en_lesson_7',
+      lang: 'en',
+      level: 'A2',
+      number: 7,
+      title: 'Future Plans: "going to" vs "will"',
+      goal: 'Kelasi zamon rejalari (be going to) va kutilmagan qarorlar / bashoratlar (will).',
+      theory: {
+        introUz: 'Kelajak haqida gapirganda 2 ta asosiy konstruksiya ishlatiladi:',
+        rules: [
+          { pattern: 'be going to + fe’l', pronunciation: 'oldindan rejalashtirilgan niyat', exampleDe: 'I am going to study abroad next year.', exampleUz: 'Kelasi yil chet elda o‘qimoqchiman (rejada bor).' },
+          { pattern: 'will + fe’l', pronunciation: 'gapirish paytida berilgan qaror / va’da', exampleDe: 'I will help you with your bags!', exampleUz: 'Sumkalaringizga yordam beraman!' },
+          { pattern: 'Inkor shakllari', pronunciation: 'not going to / won\'t', exampleDe: 'I won\'t forget this.', exampleUz: 'Buni unutmayman.' }
+        ],
+        table: [
+          { de: 'What are you going to do this weekend?', uz: 'Bu dam olish kunida nima qilmoqchisiz?' },
+          { de: 'I think it will rain tomorrow.', uz: 'Menimcha, ertaga yomg‘ir yog‘adi.' },
+          { de: 'I will call you tonight.', uz: 'Bugun oqshom sizga qo‘ng‘iroq qilaman.' },
+          { de: 'We are going to buy a new car.', uz: 'Biz yangi mashina sotib olmoqchimiz.' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'en_ex7_1',
+          type: 'multiple-choice',
+          question: '"The phone is ringing! — Don\'t worry, I ______ answer it." (Hozir qaror qabul qilindi):',
+          options: ['will', 'am going to', 'did', 'was'],
+          correctIndex: 0,
+          explanation: 'Hozirgi paytdagi tezkor qarorlar uchun "will" ishlatiladi.'
+        },
+        {
+          id: 'en_ex7_2',
+          type: 'fill-blank',
+          question: 'I am ______ to visit my grandparents this Sunday.',
+          placeholder: 'going...',
+          correctAnswer: 'going',
+          hint: 'going to'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Next month I am going to take an official English exam to test my level.',
+        textUz: 'Kelasi oy men o‘z darajamni tekshirish uchun rasmiy ingliz tili imtihonini topshirmoqchiman.',
+        tip: 'Next month [nekst manth] ravon ayting.'
+      },
+      kulturtip: {
+        title: '🇬🇧 Idiom: "Piece of cake"',
+        text: 'Agar inglizlar "It is a piece of cake!" deyishsa, bu keks haqida emas, balki "Bu juda oson, suvdek gap!" degan ma’noni anglatadi.'
+      },
+      listening: {
+        title: '🎧 Listening (Eshitib tushunish)',
+        audioText: 'I am going to fly to New York on Monday for an international business conference.',
+        question: 'U dushanba kuni qayerga va nima uchun uchmoqda?',
+        options: ['Ta’tilga Londonga', 'Biznes konferensiya uchun New Yorkka', 'O‘qish uchun Parijga'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'en_lesson_8',
+      lang: 'en',
+      level: 'B1',
+      number: 8,
+      title: 'Present Perfect & Expressing Opinions',
+      goal: 'Hayotiy tajribalar (have + V3), o‘z fikrini asoslash (In my opinion, I believe).',
+      theory: {
+        introUz: 'Present Perfect — o‘tmishda boshlanib, natijasi hozirga ta’sir qilayotgan yoki hayotiy tajriba bo‘lgan voqealar:',
+        rules: [
+          { pattern: 'have / has + V3', pronunciation: 'shaxsga qarab', exampleDe: 'I have visited 10 countries. She has finished her degree.', exampleUz: 'Men 10 ta davlatda bo‘lganman. U diplomini bitirdi.' },
+          { pattern: 'ever / never', pronunciation: 'savol va inkorda', exampleDe: 'Have you ever eaten sushi? — I have never tried it.', exampleUz: 'Hech sushi yeganmisiz? — Hech qachon tatib ko‘rmaganman.' },
+          { pattern: 'Fikr bildirish', pronunciation: 'IELTS speaking uchun', exampleDe: 'In my opinion, learning languages opens many doors.', exampleUz: 'Mening fikrimcha, tillarni o‘rganish ko‘p eshiklarni ochadi.' }
+        ],
+        table: [
+          { de: 'Have you finished your homework yet?', uz: 'Vazifangizni tugatdingizmi?' },
+          { de: 'I have already sent the email.', uz: 'Men xatni allaqachon yubordim.' },
+          { de: 'As far as I am concerned, ...', uz: 'Menimcha / Mening nazarimda...' },
+          { de: 'I completely agree with you.', uz: 'Sizga to‘liq qo‘shilaman.' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'en_ex8_1',
+          type: 'multiple-choice',
+          question: '"Have you ever ______ to New York?" (be fe’lining 3-shakli):',
+          options: ['been', 'be', 'was', 'being'],
+          correctIndex: 0,
+          explanation: '"Have you ever been to..." — biror joyda bo‘lganlik tajribasini so‘rashda ishlatiladi.'
+        },
+        {
+          id: 'en_ex8_2',
+          type: 'fill-blank',
+          question: 'In my ______, English is essential for global business. (fikrimcha)',
+          placeholder: 'opinion...',
+          correctAnswer: 'opinion',
+          hint: 'opinion'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'In my opinion, consistency is the key to mastering any foreign language.',
+        textUz: 'Mening fikrimcha, har qanday chet tilini mukammal o‘rganishning kaliti — bu muntazamlikdir.',
+        tip: 'Consistency [kənˈsɪstənsi] so‘ziga urg‘u bering.'
+      },
+      kulturtip: {
+        title: '🇬🇧 Agree to Disagree',
+        text: 'Munozaralarda inglizlar to‘g‘ridan-to‘g‘ri "You are wrong!" (Siz nohaqsiz) demaydilar, balki "I see your point, but..." deb o‘z fikrini muloyim bayon qilishadi.'
+      },
+      listening: {
+        title: '🎧 Listening (Eshitib tushunish)',
+        audioText: 'I have worked as a software engineer for five years, and I believe artificial intelligence will change education forever.',
+        question: 'U necha yil muhandis bo‘lib ishlagan va nima haqida fikr bildirdi?',
+        options: ['1 yil, maktablar haqida', '5 yil, sun’iy intellekt ta’limni o‘zgartirishi haqida', '10 yil, robotlar haqida'],
+        correctIndex: 1
+      }
     }
   ],
 
   // ------------------------------------------------------------------
-  // 🇷🇺 RUSSIAN (РУССКИЙ) LESSONS
+  // 🇷🇺 RUSSIAN (РУССКИЙ) LESSONS (ТРКИ Standarti)
   // ------------------------------------------------------------------
   ru: [
     {
       id: 'ru_lesson_1',
       lang: 'ru',
-      level: 'A0/A1',
+      level: 'A1',
       number: 1,
       title: 'Русский алфавит и Первые фразы',
       goal: 'Rus tili alifbosi, maxsus harflar (Ы, Ь, Ъ, Ж, Ш, Щ) va salomlashish iboralari.',
@@ -729,17 +1177,242 @@ module.exports = {
         options: ['1 soat', 'Piyoda bor-yo‘g‘i 5 daqiqa', 'Avtobusda 30 daqiqa'],
         correctIndex: 1
       }
+    },
+    {
+      id: 'ru_lesson_5',
+      lang: 'ru',
+      level: 'A1',
+      number: 5,
+      title: 'Числа, Время и Покупки в магазине',
+      goal: 'Raqamlar, narx so‘rash va magazinda xarid qilish (Сколько стоит, дайте пожалуйста).',
+      theory: {
+        introUz: 'Magazinda xarid qilish va hisob-kitob qilish uchun zarur jumlalar:',
+        rules: [
+          { pattern: 'Сколько стоит ...?', pronunciation: 'Narxi qancha?', exampleDe: 'Сколько стоит этот хлеб?', exampleUz: 'Bu non qancha turadi?' },
+          { pattern: 'Дайте, пожалуйста ...', pronunciation: 'Bering, iltimos', exampleDe: 'Дайте, пожалуйста, килограмм яблок.', exampleUz: 'Iltimos, bir kilo olma bering.' },
+          { pattern: 'Один рубль / два рубля / пять рублей', pronunciation: 'pul birliklarining o‘zgarishi', exampleDe: '1 рубль, 2-4 рубля, 5-20 рублей', exampleUz: '1 rubl, 2 rubl, 5 rubl...' }
+        ],
+        table: [
+          { de: 'один, два, три, четыре, пять', uz: '1, 2, 3, 4, 5' },
+          { de: 'десять, двадцать, пятьдесят, сто', uz: '10, 20, 50, 100' },
+          { de: 'С вас пятьсот рублей.', uz: 'Sizdan 500 rubl bo‘ldi.' },
+          { de: 'Вы принимаете карты?', uz: 'Karta qabul qilasizmi?' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'ru_ex5_1',
+          type: 'multiple-choice',
+          question: '"Karta orqali to‘lasam bo‘ladimi?" ruscha qanday so‘raladi?',
+          options: ['Можно оплатить картой?', 'Где карта?', 'Сколько стоит карта?', 'Это моя карта'],
+          correctIndex: 0,
+          explanation: '"Можно оплатить картой?" — to‘lov paytidagi eng ko‘p ishlatiladigan jumla.'
+        },
+        {
+          id: 'ru_ex5_2',
+          type: 'fill-blank',
+          question: 'Дайте, ______, бутылку минеральной воды.',
+          placeholder: 'пожалуйста...',
+          correctAnswer: 'пожалуйста',
+          hint: 'пожалуйста'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Здравствуйте, взвесьте, пожалуйста, два килограмма картошки.',
+        textUz: 'Assalomu alaykum, iltimos, ikki kilo kartoshka tortib bering.',
+        tip: 'Взвесьте [vzveste] deb talaffuz qilinadi.'
+      },
+      kulturtip: {
+        title: '🇷🇺 Чаевые в кафе (Choychaqa)',
+        text: 'Rossiya restoran va kafelarida odatda xizmat ko‘rsatish uchun 10% atrofida choychaqa (чаевые) qoldiriladi.'
+      },
+      listening: {
+        title: '🎧 Аудирование (Tinglab tushunish)',
+        audioText: 'С вас триста пятьдесят рублей. Пакет нужен?',
+        question: 'Kassir nima deb so‘radi?',
+        options: ['Sizga mashina kerakmi?', 'Paket kerakmi?', 'Kechirasizmi?'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'ru_lesson_6',
+      lang: 'ru',
+      level: 'A2',
+      number: 6,
+      title: 'Прошедшее и будущее время глаголов',
+      goal: 'O‘tgan zamon (-л, -ла, -ло, -ли) va murakkab kelasi zamon (буду + fe’l).',
+      theory: {
+        introUz: 'Rus tilida o‘tgan zamon rodlarga qarab yasaladi, bu o‘rganish uchun juda oson:',
+        rules: [
+          { pattern: 'Мужской род (Он)', pronunciation: '-л qo‘shiladi', exampleDe: 'Он читал, он работал, он жил', exampleUz: 'U o‘qidi, ishladi, yashadi' },
+          { pattern: 'Женский род (Она)', pronunciation: '-ла qo‘shiladi', exampleDe: 'Она читала, она работала', exampleUz: 'U (qiz) o‘qidi, ishladi' },
+          { pattern: 'Множественное (Они)', pronunciation: '-ли qo‘shiladi', exampleDe: 'Мы читали, они работали', exampleUz: 'Biz o‘qidik, ular ishlashdi' },
+          { pattern: 'Будущее время', pronunciation: 'буду + infintiv', exampleDe: 'Я буду изучать русский язык.', exampleUz: 'Men rus tilini o‘rganaman.' }
+        ],
+        table: [
+          { de: 'Что вы делали вчера?', uz: 'Kecha nima qildingiz?' },
+          { de: 'Вчера я весь день отдыхал.', uz: 'Kecha kun bo‘yi dam oldim.' },
+          { de: 'Завтра мы будем работать.', uz: 'Ertaga biz ishlaymiz.' },
+          { de: 'Она была очень рада.', uz: 'U juda xursand bo‘ldi.' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'ru_ex6_1',
+          type: 'multiple-choice',
+          question: '"Вчера Анна ______ новую книгу." (читать fe’li ayol kishiga):',
+          options: ['читал', 'читала', 'читало', 'читали'],
+          correctIndex: 1,
+          explanation: '"Анна" ayol jinsi bo‘lgani uchun fe’lga -ла qo‘shiladi: читала.'
+        },
+        {
+          id: 'ru_ex6_2',
+          type: 'fill-blank',
+          question: 'Завтра я ______ учить новые слова. (буду)',
+          placeholder: 'fe’lni yozing...',
+          correctAnswer: 'буду',
+          hint: 'буду'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'В прошлые выходные мы гуляли в парке и пили вкусный чай.',
+        textUz: 'O‘tgan dam olish kunlarida biz bog‘da sayr qildik va mazali choy ichdik.',
+        tip: 'Гуляли [gulyali] deb ravon ayting.'
+      },
+      kulturtip: {
+        title: '🇷🇺 Дача (Shahar tashqarisidagi hovli)',
+        text: 'Rossiyada yoz oylarida shahar aholisi dam olish kunlarini tabiat qo‘ynida, o‘z shahar tashqarisidagi hovlisida (дача) o‘tkazishni yaxshi ko‘radi.'
+      },
+      listening: {
+        title: '🎧 Аудирование (Tinglab tushunish)',
+        audioText: 'Вчера вечером мы с друзьями смотрели интересный исторический фильм.',
+        question: 'Ular kecha nima qilishdi?',
+        options: ['Kitob o‘qishdi', 'Do‘stlari bilan tarixiy film ko‘rishdi', 'Dars qilishdi'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'ru_lesson_7',
+      lang: 'ru',
+      level: 'A2',
+      number: 7,
+      title: 'Родительный падеж (Кого? Чего?) и Отрицание',
+      goal: 'Qaratqich kelishigi, inkor (нет ...), sanash va miqdor ifodalash.',
+      theory: {
+        introUz: 'Родительный падеж — rus tilidagi eng muhim kelishiklardan biri. Yo‘qlikni (нет) bildirishda ishlatiladi:',
+        rules: [
+          { pattern: 'нет + Родительный падеж', pronunciation: 'yo‘q bo‘lsa', exampleDe: 'У меня нет времени (vaqtim yo‘q). У него нет машины.', exampleUz: 'vaqtim yo‘q, mashinasi yo‘q' },
+          { pattern: 'Мужской род', pronunciation: '-а / -я ga o‘zgaradi', exampleDe: 'брат → брата, стакан чая', exampleUz: 'bir stakan choy' },
+          { pattern: 'Женский род', pronunciation: '-ы / -и ga o‘zgaradi', exampleDe: 'вода → воды, стакан воды', exampleUz: 'bir stakan suv' }
+        ],
+        table: [
+          { de: 'Чашку кофе, пожалуйста.', uz: 'Bir chashka kofe, iltimos.' },
+          { de: 'У вас есть сахар? — Нет сахара.', uz: 'Shakar bormi? — Shakar yo‘q.' },
+          { de: 'Без проблем!', uz: 'Muammosiz! / Hechqisi yo‘q!' },
+          { de: 'После работы я иду домой.', uz: 'Ishdan keyin uyga boraman.' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'ru_ex7_1',
+          type: 'multiple-choice',
+          question: '"У меня сейчас нет ______ (время).":',
+          options: ['время', 'времени', 'временем', 'времените'],
+          correctIndex: 1,
+          explanation: '"нет" so‘zidan keyin Родительный падеж keladi: нет времени.'
+        },
+        {
+          id: 'ru_ex7_2',
+          type: 'fill-blank',
+          question: 'Дайте мне стакан холодной ______ (вода -> воды).',
+          placeholder: 'воды...',
+          correctAnswer: 'воды',
+          hint: 'воды'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Извините, у вас есть свободная минутка? — Да, конечно!',
+        textUz: 'Kechirasiz, bo‘sh daqiqangiz bormi? — Ha, albatta!',
+        tip: 'Минутка [minutka] so‘ziga urg‘u bering.'
+      },
+      kulturtip: {
+        title: '🇷🇺 Чаепитие (Choy ichish madaniyati)',
+        text: 'Rossiyada mehmonga borganda mezbon albatta choy taklif qiladi va dasturxonga shirinliklar (пряники, конфеты, варенье) qo‘yiladi.'
+      },
+      listening: {
+        title: '🎧 Аудирование (Tinglab tushunish)',
+        audioText: 'Я пью зелёный чай без сахара, но с лимоном.',
+        question: 'U choyni qanday ichadi?',
+        options: ['Sut bilan', 'Shakarsiz, lekin limon bilan', 'Shakar bilan'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'ru_lesson_8',
+      lang: 'ru',
+      level: 'B1',
+      number: 8,
+      title: 'Глаголы движения (Идти vs Ехать) и Деловая речь',
+      goal: 'Piyoda (идти/ходить) va transportda (ехать/ездить) harakatlanish, rasmiy muloqot.',
+      theory: {
+        introUz: 'Rus tilida harakat fe’llari harakatning yo‘nalishi va transportiga qarab qat’iy farqlanadi:',
+        rules: [
+          { pattern: 'Идти (hozir piyoda)', pronunciation: 'bir yo‘nalishda', exampleDe: 'Я сейчас иду на работу пешком.', exampleUz: 'Hozir ishga piyoda ketyapman.' },
+          { pattern: 'Ходить (doimiy piyoda)', pronunciation: 'odat tusidagi harakat', exampleDe: 'Я каждый день хожу в школу.', exampleUz: 'Har kuni maktabga piyoda boraman.' },
+          { pattern: 'Ехать / Ездить', pronunciation: 'transport bilan', exampleDe: 'Мы едем на машине. Я часто езжу на метро.', exampleUz: 'Mashinada ketyapmiz. Metroda ko‘p yuraman.' }
+        ],
+        table: [
+          { de: 'Куда вы идёте?', uz: 'Qayerga ketyapsiz? (piyoda)' },
+          { de: 'Куда вы едете?', uz: 'Qayerga ketyapsiz? (transportda)' },
+          { de: 'С уважением, ...', uz: 'Hurmat bilan (rasmiy xat yakuni)' },
+          { de: 'Я хотел бы обсудить проект.', uz: 'Loyiha haqida muhokama qilmoqchi edim.' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'ru_ex8_1',
+          type: 'multiple-choice',
+          question: '"Мы сейчас ______ на поезде в Самарканд." (transportda bir yo‘nalish):',
+          options: ['идём', 'едем', 'ходим', 'ездим'],
+          correctIndex: 1,
+          explanation: 'Poezdda harakatlanayotganda "ехать" (мы едем) fe’li ishlatiladi.'
+        },
+        {
+          id: 'ru_ex8_2',
+          type: 'fill-blank',
+          question: 'Я каждый день ______ в спортзал пешком. (ходить -> я хожу)',
+          placeholder: 'хожу...',
+          correctAnswer: 'хожу',
+          hint: 'хожу'
+        }
+      ],
+      speakingPrompt: {
+        textDe: 'Я хотел бы назначить деловую встречу на следующую неделю.',
+        textUz: 'Men kelasi haftaga rasmiy ishchi uchrashuv belgilamoqchi edim.',
+        tip: 'Назначить [naznachit\'] so‘zini aniq talaffuz qiling.'
+      },
+      kulturtip: {
+        title: '🇷🇺 Деловая переписка (Ishchi yozishmalar)',
+        text: 'Rasmiy yozishmalarda xat doimo "Уважаемый/Уважаемая..." deb boshlanadi va oxirida "С уважением, [Ism Familiya]" deb imzolanadi.'
+      },
+      listening: {
+        title: '🎧 Аудирование (Tinglab tushunish)',
+        audioText: 'Завтра утром я еду в аэропорт, чтобы встретить наших зарубежных партнёров.',
+        question: 'U ertaga ertalab aeroportga nima uchun boryapti?',
+        options: ['O‘zi uchib ketish uchun', 'Xorijiy hamkorlarni kutib olish uchun', 'Chipta olish uchun'],
+        correctIndex: 1
+      }
     }
   ],
 
   // ------------------------------------------------------------------
-  // 🇰🇷 KOREAN (한국어) LESSONS
+  // 🇰🇷 KOREAN (한국어) LESSONS (TOPIK Standarti)
   // ------------------------------------------------------------------
   ko: [
     {
       id: 'ko_lesson_1',
       lang: 'ko',
-      level: 'A0/A1',
+      level: 'A1',
       number: 1,
       title: 'Hangeul (한글) Alifbosi va Salomlashish',
       goal: 'Dunyoning eng mukammal alifbosi Hangeul unli va undoshlari, birinchi salomlashish.',
@@ -747,7 +1420,7 @@ module.exports = {
         introUz: 'Koreys alifbosi Hangeul (한글) 1443 yilda qirol Sejong tomonidan yaratilgan bo‘lib, o‘rganish juda oson:',
         rules: [
           { pattern: 'Asosiy unlilar', pronunciation: 'ㅏ (a), ㅓ (o), ㅗ (o\'), ㅜ (u), ㅡ (i), ㅣ (i)', exampleDe: '아이 [ai] (bola), 오이 [oi] (bodring)', exampleUz: 'bola, bodring' },
-          { pattern: 'Asosiy undoshlar', pronunciation: 'ㄱ (k/g), ㄴ (n), ㄷ (t/d), ㄹ (r/l), ㅁ (m), ㅂ (p/b), ㅅ (s), ㅇ (ng/boshida o‘qilmaydi)', exampleDe: '나무 [namu] (daraxt)', exampleUz: 'daraxt' },
+          { pattern: 'Asosiy undoshlar', pronunciation: 'ㄱ (k/g), ㄴ (n), ㄷ (t/d), ㄹ (r/l), ㅁ (m), ㅂ (p/b), ㅅ (s), ㅇ (ng)', exampleDe: '나무 [namu] (daraxt)', exampleUz: 'daraxt' },
           { pattern: 'So‘z tuzilishi', pronunciation: 'Harflar bo‘g‘in qilib to‘rtburchak bloklarga yig‘iladi', exampleDe: '한 (han) + 글 (geul) = 한글', exampleUz: 'Hangeul' }
         ],
         table: [
@@ -962,6 +1635,230 @@ module.exports = {
         audioText: '오늘 뭐 해요? — 친구를 만나요 그리고 영화를 봐요.',
         question: 'U bugun nima qilmoqchi?',
         options: ['Uyda uxlamoqchi', 'Do‘sti bilan uchrashib film ko‘rmoqchi', 'Kasalxonaga bormoqchi'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'ko_lesson_5',
+      lang: 'ko',
+      level: 'A1',
+      number: 5,
+      title: 'Raqamlar (Sino vs Native), Narx va ...주세요',
+      goal: 'Koreys tilidagi 2 xil raqamlar tizimi, narx so‘rash va buyurtma berish.',
+      theory: {
+        introUz: 'Koreys tilida 2 xil raqamlar ishlatiladi: Sino-koreys (pul, sana, daqiqa) va Asl koreys (soat, dona sanash):',
+        rules: [
+          { pattern: 'Sino-koreys (pul, minut)', pronunciation: '일 (1), 이 (2), 삼 (3), 사 (4), 오 (5), 십 (10), 백 (100), 천 (1000), 만 (10,000)', exampleDe: '천 원 [cheon won] = 1000 von', exampleUz: '1000 von, 5 daqiqa...' },
+          { pattern: 'Asl koreys (dona, soat)', pronunciation: '하나 (1), 둘 (2), 셋 (3), 넷 (4), 다섯 (5)', exampleDe: '한 개 (bitta), 두 개 (ikkita)', exampleUz: '1 dona, 2 dona...' },
+          { pattern: '...주세요 [juseyo]', pronunciation: '...bering (iltimos)', exampleDe: '물 좀 주세요 (suv bering), 커피 두 잔 주세요', exampleUz: 'suv bering, 2 ta kofe bering' }
+        ],
+        table: [
+          { de: '이거 얼마예요?', uz: 'Bu qancha turadi?' },
+          { de: '오천 원이에요.', uz: '5000 von.' },
+          { de: '사과 세 개 주세요.', uz: '3 dona olma bering.' },
+          { de: '카드 돼요?', uz: 'Karta o‘tadimi?' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'ko_ex5_1',
+          type: 'multiple-choice',
+          question: '"Bu qancha turadi?" koreyscha qanday aytiladi?',
+          options: ['이거 얼마예요?', '이게 뭐예요?', '어디 가요?', '누구예요?'],
+          correctIndex: 0,
+          explanation: '"얼마예요?" — narx so‘rash ifodasi.'
+        },
+        {
+          id: 'ko_ex5_2',
+          type: 'fill-blank',
+          question: '아메리카노 한 잔 ______ (iltimos, bir chashka amerikano bering).',
+          placeholder: '주세요...',
+          correctAnswer: '주세요',
+          hint: '주세요'
+        }
+      ],
+      speakingPrompt: {
+        textDe: '사장님, 물하고 밥 좀 더 주세요.',
+        textUz: 'Xo‘jayin, suv va ozgina guruch keltirib bering, iltimos.',
+        tip: '사장님 [sajangnim] — korxona rahbari yoki oshxona egasiga murojaat.'
+      },
+      kulturtip: {
+        title: '🇰🇷 Von (Koreya milliy valyutasi)',
+        text: 'Janubiy Koreyada valyuta "Won" (원) deb ataladi. Mayda tangalar kam ishlatiladi, deyarli hamma joyda (hatto taksida ham) plastik karta orqali to‘lanadi.'
+      },
+      listening: {
+        title: '🎧 듣기 (Tinglab tushunish)',
+        audioText: '사과 한 개에 천 원이에요. 세 개 드릴까요?',
+        question: 'Olma donasi qancha ekan va u nechta taklif qildi?',
+        options: ['100 von, 1 ta', '1000 von, 3 ta', '5000 von, 10 ta'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'ko_lesson_6',
+      lang: 'ko',
+      level: 'A2',
+      number: 6,
+      title: 'O‘tgan zamon: -았/었어요 va Joy qo‘shimchasi -에서',
+      goal: 'O‘tgan harakatlarni ifodalash (-았/었어요) va ish-harakat bajariladigan joy (-에서).',
+      theory: {
+        introUz: 'Koreys tilida o‘tgan zamon fe’l asosiga qarab -았어요 yoki -었어요 qo‘shish orqali yasaladi:',
+        rules: [
+          { pattern: 'Asosda ㅏ yoki ㅗ bo‘lsa', pronunciation: '-았어요 qo‘shiladi', exampleDe: '가다 → 갔어요 (bordim), 오다 → 왔어요 (keldim)', exampleUz: 'bordim, keldim' },
+          { pattern: 'Boshqa unlilar bo‘lsa', pronunciation: '-었어요 qo‘shiladi', exampleDe: '먹다 → 먹었어요 (yedim), 마시다 → 마셨어요 (ichdim)', exampleUz: 'yedim, ichdim' },
+          { pattern: '-에서 (joyda)', pronunciation: 'harakat sodir bo‘ladigan joy', exampleDe: '도서관에서 공부했어요 (kutubxonada o‘qidim)', exampleUz: 'kutubxonada, uyda, ishda' }
+        ],
+        table: [
+          { de: '어제 뭐 했어요?', uz: 'Kecha nima qildingiz?' },
+          { de: '집에서 쉬었어요.', uz: 'Uyda dam oldim.' },
+          { de: '식당에서 친구를 만났어요.', uz: 'Oshxonada do‘stim bilan uchrashdim.' },
+          { de: '한국 드라마를 봤어요.', uz: 'Koreys dramasini ko‘rdim.' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'ko_ex6_1',
+          type: 'multiple-choice',
+          question: '"Kecha kitob o‘qidim" (읽다 fe’li) o‘tgan zamonda qanday bo‘ladi?',
+          options: ['읽었어요', '읽았어요', '읽해요', '읽겠어요'],
+          correctIndex: 0,
+          explanation: '"읽다" fe’l asosida ㅣ (boshqa unli) bo‘lgani uchun -었어요 qo‘shiladi: 읽었어요.'
+        },
+        {
+          id: 'ko_ex6_2',
+          type: 'fill-blank',
+          question: '저는 어제 한국 식당______ 불고기를 먹었어요. (restoranda - joy qo‘shimchasi)',
+          placeholder: '에서 yoki 에...',
+          correctAnswer: '에서',
+          hint: '에서'
+        }
+      ],
+      speakingPrompt: {
+        textDe: '어제 한국인 친구하고 같이 한국 음식을 먹었어요.',
+        textUz: 'Kecha koreys do‘stim bilan birga koreys taomini yedim.',
+        tip: '음식을 [eumsigeul] ravon ayting.'
+      },
+      kulturtip: {
+        title: '🇰🇷 Koreys taomlari (한식)',
+        text: 'Koreys taomlarining ajralmas qismi — Kimchi (김치). Koreyada deyarli har bir uyda kimchi saqlash uchun maxsus maxsus muzlatkichlar bo‘ladi.'
+      },
+      listening: {
+        title: '🎧 듣기 (Tinglab tushunish)',
+        audioText: '주말에 뭐 했어요? — 백화점에서 옷을 샀어요.',
+        question: 'U dam olish kunida nima qildi?',
+        options: ['Kinoga bordi', 'Universamda kiyim sotib oldi', 'Uyda uxladi'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'ko_lesson_7',
+      lang: 'ko',
+      level: 'A2',
+      number: 7,
+      title: 'Iltimos va taklif: -(으)세요 va -(으)ㄹ까요?',
+      goal: 'Xushmuomala iltimos qilish (-(으)세요) va birgalikda biror ish qilishni taklif etish (-(으)ㄹ까요?).',
+      theory: {
+        introUz: 'Kundalik muloqotda buyruq berish o‘rniga hurmat bilan iltimos qilish va taklif bildirish qoidalari:',
+        rules: [
+          { pattern: '-(으)세요 (bajar-ing)', pronunciation: 'hurmatli iltimos', exampleDe: '앉으세요 (o‘tiring), 기다리세요 (kuting)', exampleUz: 'o‘tiring, kuting, kiring' },
+          { pattern: '-(으)ㄹ까요? (qilaylikmi?)', pronunciation: 'birgalikda taklif', exampleDe: '같이 밥 먹을까요? (birga ovqatlanaylikmi?)', exampleUz: 'ovqatlanaylikmi?, boraylikmi?' },
+          { pattern: '좋아요 (yaxshi / mayli)', pronunciation: 'taklifga ijobiy javob', exampleDe: '네, 좋아요! (Ha, ajoyib!)', exampleUz: 'ha, mayli' }
+        ],
+        table: [
+          { de: '여기에 이름을 쓰세요.', uz: 'Bu yerga ismingizni yozing.' },
+          { de: '조금만 기다려 주세요.', uz: 'Ozgina kutib turing, iltimos.' },
+          { de: '내일 몇 시에 만날까요?', uz: 'Ertaga soat nechada uchrashamiz?' },
+          { de: '커피 한 잔 마실까요?', uz: 'Bir piyola kofe ichamizmi?' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'ko_ex7_1',
+          type: 'multiple-choice',
+          question: '"Iltimos, bu yerga o‘tiring" (앉다 fe’li / undoshga tugaydi):',
+          options: ['앉으세요', '앉세요', '앉아요요', '앉었어요'],
+          correctIndex: 0,
+          explanation: '"앉다" undosh bilan tugagani uchun "-으세요" qo‘shilib "앉으세요" bo‘ladi.'
+        },
+        {
+          id: 'ko_ex7_2',
+          type: 'fill-blank',
+          question: '우리 내일 영화를 ______? (ko‘ramizmi? - 보다 fe’li)',
+          placeholder: '볼까요 yoki 봐요...',
+          correctAnswer: '볼까요',
+          hint: '볼까요'
+        }
+      ],
+      speakingPrompt: {
+        textDe: '시간이 있으면 오늘 저녁에 같이 영화 볼까요?',
+        textUz: 'Vaqtingiz bo‘lsa, bugun kechqurun birga film ko‘ramizmi?',
+        tip: '저녁에 [jeonyeoge] ravon o‘qiladi.'
+      },
+      kulturtip: {
+        title: '🇰🇷 Dutch Pay (Nppang - N빵)',
+        text: 'Zamonaviy Janubiy Koreya yoshlari orasida restoranda hisobni teng bo‘lib to‘lash odati keng tarqalgan (buni "Datchi pei" yoki "N-ppang" deyishadi).'
+      },
+      listening: {
+        title: '🎧 듣기 (Tinglab tushunish)',
+        audioText: '오늘 날씨가 너무 좋아요. 공원에 갈까요? — 네, 좋아요!',
+        question: 'Ular qayerga borishga kelishib olishdi?',
+        options: ['Kutubxonaga', 'Bog‘ga (공원)', 'Kasalxonaga'],
+        correctIndex: 1
+      }
+    },
+    {
+      id: 'ko_lesson_8',
+      lang: 'ko',
+      level: 'B1',
+      number: 8,
+      title: 'Bog‘lovchilar: -지만 (ammo) va Sabab: -(으)니까 (chunki)',
+      goal: 'Murakkab gaplar tuzish, qarama-qarshilik (-지만) va sabab-natija (-(으)니까) grammatikasi.',
+      theory: {
+        introUz: 'TOPIK va erkin muloqot uchun zarur bo‘lgan eng mashhur bog‘lovchi qo‘shimchalar:',
+        rules: [
+          { pattern: '-지만 (lekin / ammo)', pronunciation: 'qarama-qarshi fikr', exampleDe: '한국어는 어렵지만 재미있어요.', exampleUz: 'Koreys tili qiyin, lekin juda qiziqarli.' },
+          { pattern: '-(으)니까 (chunki / ...sababli)', pronunciation: 'sabab va taklif', exampleDe: '비가 오니까 우산을 쓰세요.', exampleUz: 'Yomg‘ir yog‘yapti, shuning uchun soyabondan foydalaning.' },
+          { pattern: '-(으)면 (agar)', pronunciation: 'shart mayli', exampleDe: '시간이 있으면 연락하세요.', exampleUz: 'Vaqtingiz bo‘lsa, aloqaga chiqing.' }
+        ],
+        table: [
+          { de: '바쁘지만 갈게요.', uz: 'Bandman, lekin boraman.' },
+          { de: '날씨가 추우니까 따뜻하게 입으세요.', uz: 'Havo sovuq, shuning uchun issiq kiyining.' },
+          { de: '모르면 질문하세요.', uz: 'Bilmasangiz, savol bering.' },
+          { de: '한국에서 일하고 싶어요.', uz: 'Koreyada ishlamoqchiman.' }
+        ]
+      },
+      exercises: [
+        {
+          id: 'ko_ex8_1',
+          type: 'multiple-choice',
+          question: '"Bu taom achchiq, lekin mazali" koreyscha qanday bo‘ladi?',
+          options: ['맵지만 맛있어요', '매우니까 맛있어요', '매우면 맛있어요', '맵고 맛있어요'],
+          correctIndex: 0,
+          explanation: '"맵다" (achchiq) + "-지만" (lekin) = 맵지만 맛있어요.'
+        },
+        {
+          id: 'ko_ex8_2',
+          type: 'fill-blank',
+          question: '지금 바쁘______ 나중에 전화해 주세요. (chunki / sababli)',
+          placeholder: '니까...',
+          correctAnswer: '니까',
+          hint: '니까'
+        }
+      ],
+      speakingPrompt: {
+        textDe: '한국어 공부는 어렵지만 매일 열심히 하면 잘할 수 있어요.',
+        textUz: 'Koreys tilini o‘rganish qiyin bo‘lishi mumkin, ammo har kuni astoydil harakat qilsangiz, albatta uddalaysiz.',
+        tip: '잘할 수 있어요 [jal-hal su isseoyo] — uddalay olasiz.'
+      },
+      kulturtip: {
+        title: '🇰🇷 EPS-TOPIK & GKS Grantlari',
+        text: 'Janubiy Koreyada qonuniy ishlash (E-9 vizasi) uchun EPS-TOPIK imtihonidan o‘tish kerak. Universitetlarda 100% bepul o‘qish uchun esa GKS (Global Korea Scholarship) davlat granti mavjud.'
+      },
+      listening: {
+        title: '🎧 듣기 (Tinglab tushunish)',
+        audioText: '한국에서 대학교에 가고 싶어서 매일 네 시간씩 한국어를 열심히 공부하고 있어요.',
+        question: 'U nima maqsadda har kuni 4 soatdan koreys tilini o‘rganyapti?',
+        options: ['Sayohat qilish uchun', 'Koreyada universitetga kirish uchun', 'Kino ko‘rish uchun'],
         correctIndex: 1
       }
     }
