@@ -262,11 +262,20 @@ app.post('/api/diagnostic/submit', authMiddleware, (req, res) => {
   if (vocabularyPct > 50) strongAreas.push('Boshlang‘ich so‘z boyligi');
   else weakAreas.push('Muntazam yangi leksika yodlash');
 
+  const selectedLang = lang || 'de';
+  const langNames = {
+    de: 'nemis',
+    en: 'ingliz',
+    ru: 'rus',
+    ko: 'koreys'
+  };
+  const langNameUz = langNames[selectedLang] || 'nemis';
+
   if (grammarPct > 50) strongAreas.push('Grammatika mantiqini tushunish');
-  else weakAreas.push('Artikllar (der/die/das) va fe’l o‘rni');
+  else weakAreas.push(selectedLang === 'de' ? 'Artikllar (der/die/das) va fe’l o‘rni' : (selectedLang === 'ru' ? 'Rodlar va kelishiklar' : (selectedLang === 'ko' ? 'Qo‘shimchalar va hurmat darajasi' : 'Zamonlar va to be fe’li')));
 
   if (speakingPct < 40) weakAreas.push('Jonli og‘zaki nutq va talaffuz');
-  if (listeningPct < 40) weakAreas.push('Nemischa nutqni eshitib ilg‘ash');
+  if (listeningPct < 40) weakAreas.push(`${langNameUz.charAt(0).toUpperCase() + langNameUz.slice(1)}cha nutqni eshitib ilg‘ash`);
 
   const diagnosticResult = {
     level: calculatedLevel,
@@ -279,7 +288,7 @@ app.post('/api/diagnostic/submit', authMiddleware, (req, res) => {
     listeningPct,
     strongAreas,
     weakAreas,
-    mainProblems: 'Nemischa o‘ylash odatini shakllantirish va faol so‘zlarni ko‘paytirish zarur.'
+    mainProblems: `${langNameUz.charAt(0).toUpperCase() + langNameUz.slice(1)}cha fikrlash odatini shakllantirish va faol so‘zlarni ko‘paytirish zarur.`
   };
 
   db.saveDiagnostic(req.user.id, diagnosticResult);

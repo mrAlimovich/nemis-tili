@@ -1126,14 +1126,16 @@ async function loadDiagnosticView() {
   const container = document.getElementById('diagnostic-content');
   if (!container) return;
 
+  const cfg = LANG_CONFIG[STATE.selectedLang] || LANG_CONFIG.de;
+
   container.innerHTML = `
     <div class="text-center py-6">
       <div class="w-16 h-16 rounded-3xl bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-4 text-2xl font-black">
         🎯
       </div>
-      <h3 class="text-xl font-black text-slate-900 mb-2">Nemis Tili Darajangizni Aniqlang</h3>
+      <h3 class="text-xl font-black text-slate-900 mb-2">${cfg.flag} ${cfg.name} Darajangizni Aniqlang</h3>
       <p class="text-sm text-slate-500 max-w-md mx-auto mb-6">
-        Test A0 dan C1 gacha bo‘lgan 10 ta saralangan savoldan iborat. Qiyin savollardan qo‘rqmang, bilmaganingizni taxmin qilmang — bu sizga mos darslarni aniqlab beradi.
+        ${cfg.name} bo‘yicha A0 dan B2 gacha bo‘lgan 10 ta saralangan diagnostika savollari. Bu sizning darajangizni aniqlab, shaxsiy o‘quv yo‘nalishini tuzib beradi.
       </p>
 
       <button onclick="startDiagnosticTest()" class="py-3 px-8 bg-blue-600 hover:bg-blue-700 text-white font-extrabold rounded-2xl shadow-lg shadow-blue-500/25 transition text-sm">
@@ -1311,11 +1313,19 @@ async function loadChatHistory() {
     STATE.chatMessages = res.chats;
 
     if (STATE.chatMessages.length === 0) {
+      const cfg = LANG_CONFIG[STATE.selectedLang] || LANG_CONFIG.de;
+      const exampleText = {
+        de: '"Hallo, wie geht es dir?"',
+        en: '"Hello, how are you today?"',
+        ru: '"Здравствуйте, как ваши дела?"',
+        ko: '"안녕하세요! 반갑습니다."'
+      }[STATE.selectedLang] || '"Salom!"';
+
       container.innerHTML = `
         <div class="text-center py-12 text-slate-400">
           <i data-lucide="message-square" class="w-8 h-8 mx-auto mb-2 opacity-40"></i>
-          <p class="text-xs">Nemis tilida birinchi xabaringizni yozing yoki mikrofondan gapiring!</p>
-          <p class="text-[11px] text-slate-400 mt-1">Masalan: <em>"Hallo, ich heiße..."</em></p>
+          <p class="text-xs">${cfg.flag} ${cfg.name}da birinchi xabaringizni yozing yoki mikrofondan gapiring!</p>
+          <p class="text-[11px] text-slate-400 mt-1">Masalan: <em>${exampleText}</em></p>
         </div>
       `;
       initIcons();
@@ -1521,9 +1531,13 @@ function toggleSpeechRecognition(forceState) {
   const micStatus = document.getElementById('mic-status');
 
   if (STATE.isRecording) {
+    const cfg = LANG_CONFIG[STATE.selectedLang] || LANG_CONFIG.de;
     STATE.speechRecognition.start();
     if (btnMic) btnMic.className = 'p-2.5 rounded-2xl bg-red-500 text-white animate-pulse transition';
-    if (micStatus) micStatus.classList.remove('hidden');
+    if (micStatus) {
+      micStatus.innerHTML = `<span class="w-2 h-2 rounded-full bg-red-500 animate-ping mr-1.5 inline-block"></span>Tinglanmoqda... ${cfg.name}da gapiring!`;
+      micStatus.classList.remove('hidden');
+    }
   } else {
     try { STATE.speechRecognition.stop(); } catch (e) {}
     if (btnMic) btnMic.className = 'p-2.5 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition';

@@ -1,7 +1,8 @@
 // Multi-Language Vocabulary Database (German, English, Russian, Korean)
+// 40 Comprehensive Words Per Language
 module.exports = {
   // -------------------------------------------------------------
-  // 🇩🇪 GERMAN (DEUTSCH) VOCABULARY (A1-A2)
+  // 🇩🇪 GERMAN (DEUTSCH) VOCABULARY (A1-B1)
   // -------------------------------------------------------------
   de: [
     { id: 'voc_de_1', category: 'Begrüßung', level: 'A1', word: 'Hallo', article: '', gender: 'phrase', plural: '', meaningUz: 'Salom (do‘stona)', exampleDe: 'Hallo, wie geht es dir?', exampleUz: 'Salom, ahvoling qanday?' },
@@ -28,11 +29,26 @@ module.exports = {
     { id: 'voc_de_22', category: 'Stadt & Orte', level: 'A1', word: 'Straße', article: 'die', gender: 'feminin', plural: 'die Straßen', meaningUz: 'ko‘cha', exampleDe: 'Wo ist diese Straße?', exampleUz: 'Bu ko‘cha qayerda?' },
     { id: 'voc_de_23', category: 'Aktivitäten', level: 'A1', word: 'lernen', article: '', gender: 'verb', plural: '', meaningUz: 'o‘rganmoq', exampleDe: 'Ich lerne jeden Tag Deutsch.', exampleUz: 'Men har kuni nemis tilini o‘rganaman.' },
     { id: 'voc_de_24', category: 'Aktivitäten', level: 'A1', word: 'sprechen', article: '', gender: 'verb', plural: '', meaningUz: 'gapirmoq', exampleDe: 'Sprechen Sie Deutsch?', exampleUz: 'Nemischa gapirasizmi?' },
-    { id: 'voc_de_25', category: 'Aktivitäten', level: 'A1', word: 'wohnen', article: '', gender: 'verb', plural: '', meaningUz: 'yashamoq', exampleDe: 'Ich wohne in Taschkent.', exampleUz: 'Men Toshkentda yashayman.' }
+    { id: 'voc_de_25', category: 'Aktivitäten', level: 'A1', word: 'wohnen', article: '', gender: 'verb', plural: '', meaningUz: 'yashamoq', exampleDe: 'Ich wohne in Taschkent.', exampleUz: 'Men Toshkentda yashayman.' },
+    { id: 'voc_de_26', category: 'Transport', level: 'A1', word: 'Zug', article: 'der', gender: 'maskulin', plural: 'die Züge', meaningUz: 'poezd', exampleDe: 'Der Zug fährt pünktlich ab.', exampleUz: 'Poezd o‘z vaqtida jo‘naydi.' },
+    { id: 'voc_de_27', category: 'Transport', level: 'A1', word: 'Bus', article: 'der', gender: 'maskulin', plural: 'die Busse', meaningUz: 'avtobus', exampleDe: 'Ich nehme den Bus zur Uni.', exampleUz: 'Men universitetga avtobusda boraman.' },
+    { id: 'voc_de_28', category: 'Transport', level: 'A1', word: 'Bahnhof', article: 'der', gender: 'maskulin', plural: 'die Bahnhöfe', meaningUz: 'vokzal', exampleDe: 'Der Bahnhof ist in der Nähe.', exampleUz: 'Vokzal yaqin joyda.' },
+    { id: 'voc_de_29', category: 'Arbeit & Beruf', level: 'A2', word: 'Arbeit', article: 'die', gender: 'feminin', plural: '', meaningUz: 'ish', exampleDe: 'Ich habe heute viel Arbeit.', exampleUz: 'Bugun ishim juda ko‘p.' },
+    { id: 'voc_de_30', category: 'Arbeit & Beruf', level: 'A2', word: 'Arzt', article: 'der', gender: 'maskulin', plural: 'die Ärzte', meaningUz: 'shifokor (erkak)', exampleDe: 'Der Arzt hilft den Patienten.', exampleUz: 'Shifokor bemorlarga yordam beradi.' },
+    { id: 'voc_de_31', category: 'Einkaufen', level: 'A1', word: 'Geld', article: 'das', gender: 'neutrum', plural: '', meaningUz: 'pul', exampleDe: 'Das kostet nicht viel Geld.', exampleUz: 'Bu ko‘p pul turmaydi.' },
+    { id: 'voc_de_32', category: 'Einkaufen', level: 'A1', word: 'Supermarkt', article: 'der', gender: 'maskulin', plural: 'die Supermärkte', meaningUz: 'supermarket', exampleDe: 'Wir kaufen im Supermarkt ein.', exampleUz: 'Biz supermarketda xarid qilamiz.' },
+    { id: 'voc_de_33', category: 'Zeit & Tage', level: 'A1', word: 'heute', article: '', gender: 'adverb', plural: '', meaningUz: 'bugun', exampleDe: 'Heute habe ich einen Deutschkurs.', exampleUz: 'Bugun nemis tili darsim bor.' },
+    { id: 'voc_de_34', category: 'Zeit & Tage', level: 'A1', word: 'morgen', article: '', gender: 'adverb', plural: '', meaningUz: 'ertaga', exampleDe: 'Bis morgen um 9 Uhr!', exampleUz: 'Ertaga soat 9 gacha ko‘rishguncha!' },
+    { id: 'voc_de_35', category: 'Zeit & Tage', level: 'A1', word: 'Zeit', article: 'die', gender: 'feminin', plural: '', meaningUz: 'vaqt', exampleDe: 'Ich habe leider keine Zeit.', exampleUz: 'Afsuski, vaqtim yo‘q.' },
+    { id: 'voc_de_36', category: 'Gesundheit', level: 'A2', word: 'Kopf', article: 'der', gender: 'maskulin', plural: 'die Köpfe', meaningUz: 'bosh', exampleDe: 'Mein Kopf tut weh.', exampleUz: 'Boshim og‘riyapti.' },
+    { id: 'voc_de_37', category: 'Gesundheit', level: 'A2', word: 'Krankenhaus', article: 'das', gender: 'neutrum', plural: 'die Krankenhäuser', meaningUz: 'shifoxona', exampleDe: 'Das Krankenhaus ist modern.', exampleUz: 'Shifoxona zamonaviy.' },
+    { id: 'voc_de_38', category: 'Aktivitäten', level: 'A1', word: 'verstehen', article: '', gender: 'verb', plural: '', meaningUz: 'tushunmoq', exampleDe: 'Ich verstehe alles auf Deutsch.', exampleUz: 'Men nemischa hamma narsani tushunaman.' },
+    { id: 'voc_de_39', category: 'Aktivitäten', level: 'A1', word: 'schreiben', article: '', gender: 'verb', plural: '', meaningUz: 'yozmoq', exampleDe: 'Ich schreibe eine E-Mail.', exampleUz: 'Men elektron xat yozayapman.' },
+    { id: 'voc_de_40', category: 'Aktivitäten', level: 'A1', word: 'lesen', article: '', gender: 'verb', plural: '', meaningUz: 'o‘qimoq', exampleDe: 'Ich lese gerne Bücher.', exampleUz: 'Men kitob o‘qishni yaxshi ko‘raman.' }
   ],
 
   // -------------------------------------------------------------
-  // 🇬🇧 ENGLISH VOCABULARY (A1-A2)
+  // 🇬🇧 ENGLISH VOCABULARY (A1-B1)
   // -------------------------------------------------------------
   en: [
     { id: 'voc_en_1', category: 'Greetings', level: 'A1', word: 'Hello', article: '', gender: 'phrase', plural: '', meaningUz: 'Salom', exampleDe: 'Hello, nice to meet you!', exampleUz: 'Salom, tanishganimdan xursandman!' },
@@ -59,11 +75,26 @@ module.exports = {
     { id: 'voc_en_22', category: 'City & Places', level: 'A1', word: 'Street', article: 'a', gender: 'noun', plural: 'streets', meaningUz: 'ko‘cha', exampleDe: 'This street is very quiet.', exampleUz: 'Bu ko‘cha juda sokin.' },
     { id: 'voc_en_23', category: 'Actions', level: 'A1', word: 'learn', article: '', gender: 'verb', plural: '', meaningUz: 'o‘rganmoq', exampleDe: 'I learn new English words every day.', exampleUz: 'Men har kuni yangi inglizcha so‘zlarni o‘rganaman.' },
     { id: 'voc_en_24', category: 'Actions', level: 'A1', word: 'speak', article: '', gender: 'verb', plural: '', meaningUz: 'gapirmoq', exampleDe: 'Do you speak English?', exampleUz: 'Siz inglizcha gapirasizmi?' },
-    { id: 'voc_en_25', category: 'Actions', level: 'A1', word: 'work', article: '', gender: 'verb', plural: '', meaningUz: 'ishlamoq', exampleDe: 'They work at an international company.', exampleUz: 'Ular xalqaro kompaniyada ishlaydi.' }
+    { id: 'voc_en_25', category: 'Actions', level: 'A1', word: 'work', article: '', gender: 'verb', plural: '', meaningUz: 'ishlamoq', exampleDe: 'They work at an international company.', exampleUz: 'Ular xalqaro kompaniyada ishlaydi.' },
+    { id: 'voc_en_26', category: 'Transport', level: 'A1', word: 'Train', article: 'a', gender: 'noun', plural: 'trains', meaningUz: 'poezd', exampleDe: 'The train arrives on time.', exampleUz: 'Poezd o‘z vaqtida yetib keladi.' },
+    { id: 'voc_en_27', category: 'Transport', level: 'A1', word: 'Airport', article: 'an', gender: 'noun', plural: 'airports', meaningUz: 'aeroport', exampleDe: 'We are going to the airport.', exampleUz: 'Biz aeroportga ketyapmiz.' },
+    { id: 'voc_en_28', category: 'Transport', level: 'A1', word: 'Ticket', article: 'a', gender: 'noun', plural: 'tickets', meaningUz: 'chipta', exampleDe: 'Where can I buy a ticket?', exampleUz: 'Chiptani qayerdan sotib olsam bo‘ladi?' },
+    { id: 'voc_en_29', category: 'Shopping', level: 'A1', word: 'Money', article: '', gender: 'noun', plural: '', meaningUz: 'pul', exampleDe: 'I have enough money for lunch.', exampleUz: 'Tushlik uchun yetarli pulim bor.' },
+    { id: 'voc_en_30', category: 'Shopping', level: 'A1', word: 'Expensive', article: '', gender: 'adjective', plural: '', meaningUz: 'qimmat', exampleDe: 'This hotel is too expensive.', exampleUz: 'Bu mehmonxona juda qimmat.' },
+    { id: 'voc_en_31', category: 'Shopping', level: 'A1', word: 'Cheap', article: '', gender: 'adjective', plural: '', meaningUz: 'arzon', exampleDe: 'You can find cheap fruit here.', exampleUz: 'Bu yerda arzon meva topishingiz mumkin.' },
+    { id: 'voc_en_32', category: 'Time', level: 'A1', word: 'Today', article: '', gender: 'adverb', plural: '', meaningUz: 'bugun', exampleDe: 'Today is a sunny day.', exampleUz: 'Bugun quyoshli kun.' },
+    { id: 'voc_en_33', category: 'Time', level: 'A1', word: 'Tomorrow', article: '', gender: 'adverb', plural: '', meaningUz: 'ertaga', exampleDe: 'See you tomorrow morning!', exampleUz: 'Ertaga ertalab ko‘rishguncha!' },
+    { id: 'voc_en_34', category: 'Time', level: 'A1', word: 'Time', article: '', gender: 'noun', plural: '', meaningUz: 'vaqt', exampleDe: 'What time does the lesson start?', exampleUz: 'Dars soat nechada boshlanadi?' },
+    { id: 'voc_en_35', category: 'Health', level: 'A2', word: 'Hospital', article: 'a', gender: 'noun', plural: 'hospitals', meaningUz: 'shifoxona', exampleDe: 'The central hospital is nearby.', exampleUz: 'Markaziy shifoxona yaqin joylashgan.' },
+    { id: 'voc_en_36', category: 'Health', level: 'A2', word: 'Doctor', article: 'a', gender: 'noun', plural: 'doctors', meaningUz: 'shifokor', exampleDe: 'The doctor examined the patient.', exampleUz: 'Shifokor bemorni tekshirdi.' },
+    { id: 'voc_en_37', category: 'Actions', level: 'A1', word: 'understand', article: '', gender: 'verb', plural: '', meaningUz: 'tushunmoq', exampleDe: 'I understand what you mean.', exampleUz: 'Siz nima demoqchi ekaningizni tushunyapman.' },
+    { id: 'voc_en_38', category: 'Actions', level: 'A1', word: 'write', article: '', gender: 'verb', plural: '', meaningUz: 'yozmoq', exampleDe: 'I write essays every week.', exampleUz: 'Men har hafta insho yozaman.' },
+    { id: 'voc_en_39', category: 'Actions', level: 'A1', word: 'read', article: '', gender: 'verb', plural: '', meaningUz: 'o‘qimoq', exampleDe: 'She reads books in English.', exampleUz: 'U ingliz tilida kitoblar o‘qiydi.' },
+    { id: 'voc_en_40', category: 'Actions', level: 'A1', word: 'listen', article: '', gender: 'verb', plural: '', meaningUz: 'tinglamoq', exampleDe: 'Listen carefully to the teacher.', exampleUz: 'O‘qituvchini diqqat bilan tinglang.' }
   ],
 
   // -------------------------------------------------------------
-  // 🇷🇺 RUSSIAN (РУССКИЙ) VOCABULARY (A1-A2)
+  // 🇷🇺 RUSSIAN (РУССКИЙ) VOCABULARY (A1-B1)
   // -------------------------------------------------------------
   ru: [
     { id: 'voc_ru_1', category: 'Приветствие', level: 'A1', word: 'Здравствуйте', article: '', gender: 'phrase', plural: '', meaningUz: 'Assalomu alaykum (rasmiy)', exampleDe: 'Здравствуйте, как ваши дела?', exampleUz: 'Assalomu alaykum, ishlaringiz qanday?' },
@@ -90,11 +121,26 @@ module.exports = {
     { id: 'voc_ru_22', category: 'Город и места', level: 'A1', word: 'Улица', article: 'она', gender: 'feminin', plural: 'улицы', meaningUz: 'ko‘cha', exampleDe: 'На этой улице много магазинов.', exampleUz: 'Bu ko‘chada ko‘plab do‘konlar bor.' },
     { id: 'voc_ru_23', category: 'Действия', level: 'A1', word: 'читать', article: '', gender: 'verb', plural: '', meaningUz: 'o‘qimoq', exampleDe: 'Я читаю книги каждый вечер.', exampleUz: 'Men har oqshom kitob o‘qiyman.' },
     { id: 'voc_ru_24', category: 'Действия', level: 'A1', word: 'говорить', article: '', gender: 'verb', plural: '', meaningUz: 'gapirmoq', exampleDe: 'Вы говорите по-русски?', exampleUz: 'Siz ruscha gapirasizmi?' },
-    { id: 'voc_ru_25', category: 'Действия', level: 'A1', word: 'жить', article: '', gender: 'verb', plural: '', meaningUz: 'yashamoq', exampleDe: 'Я живу в Узбекистане.', exampleUz: 'Men O‘zbekistonda yashayman.' }
+    { id: 'voc_ru_25', category: 'Действия', level: 'A1', word: 'жить', article: '', gender: 'verb', plural: '', meaningUz: 'yashamoq', exampleDe: 'Я живу в Узбекистане.', exampleUz: 'Men O‘zbekistonda yashayman.' },
+    { id: 'voc_ru_26', category: 'Транспорт', level: 'A1', word: 'Поезд', article: 'он', gender: 'maskulin', plural: 'поезда', meaningUz: 'poezd', exampleDe: 'Поезд отправляется вовремя.', exampleUz: 'Poezd o‘z vaqtida jo‘naydi.' },
+    { id: 'voc_ru_27', category: 'Транспорт', level: 'A1', word: 'Метро', article: 'оно', gender: 'neutrum', plural: '', meaningUz: 'metro', exampleDe: 'В Ташкенте красивое метро.', exampleUz: 'Toshkentda go‘zal metro bor.' },
+    { id: 'voc_ru_28', category: 'Транспорт', level: 'A1', word: 'Билет', article: 'он', gender: 'maskulin', plural: 'билеты', meaningUz: 'chipta', exampleDe: 'Купите билет в кассе.', exampleUz: 'Kassadan chipta oling.' },
+    { id: 'voc_ru_29', category: 'Работа', level: 'A2', word: 'Работа', article: 'она', gender: 'feminin', plural: '', meaningUz: 'ish', exampleDe: 'Я люблю свою работу.', exampleUz: 'Men o‘z ishimni yaxshi ko‘raman.' },
+    { id: 'voc_ru_30', category: 'Работа', level: 'A2', word: 'Врач', article: 'он', gender: 'maskulin', plural: 'врачи', meaningUz: 'shifokor', exampleDe: 'Врач выписал лекарство.', exampleUz: 'Shifokor dori yozib berdi.' },
+    { id: 'voc_ru_31', category: 'Покупки', level: 'A1', word: 'Деньги', article: '', gender: 'plural', plural: 'деньги', meaningUz: 'pul', exampleDe: 'Сколько денег это стоит?', exampleUz: 'Bu qancha pul turadi?' },
+    { id: 'voc_ru_32', category: 'Покупки', level: 'A1', word: 'Магазин', article: 'он', gender: 'maskulin', plural: 'магазины', meaningUz: 'do‘kon, magazin', exampleDe: 'Магазин открывается в 9.', exampleUz: 'Do‘kon soat 9 da ochiladi.' },
+    { id: 'voc_ru_33', category: 'Время', level: 'A1', word: 'Сегодня', article: '', gender: 'adverb', plural: '', meaningUz: 'bugun', exampleDe: 'Сегодня отличная погода.', exampleUz: 'Bugun ajoyib ob-havo.' },
+    { id: 'voc_ru_34', category: 'Время', level: 'A1', word: 'Завтра', article: '', gender: 'adverb', plural: '', meaningUz: 'ertaga', exampleDe: 'Увидимся завтра утром.', exampleUz: 'Ertaga ertalab ko‘rishamiz.' },
+    { id: 'voc_ru_35', category: 'Время', level: 'A1', word: 'Время', article: 'оно', gender: 'neutrum', plural: 'времена', meaningUz: 'vaqt', exampleDe: 'Сколько сейчас времени?', exampleUz: 'Hozir soat necha?' },
+    { id: 'voc_ru_36', category: 'Здоровье', level: 'A2', word: 'Аптека', article: 'она', gender: 'feminin', plural: 'аптеки', meaningUz: 'dorixona', exampleDe: 'Аптека работает круглосуточно.', exampleUz: 'Dorixona tunu-kun ishlaydi.' },
+    { id: 'voc_ru_37', category: 'Действия', level: 'A1', word: 'понимать', article: '', gender: 'verb', plural: '', meaningUz: 'tushunmoq', exampleDe: 'Я всё прекрасно понимаю.', exampleUz: 'Men hammasini a’lo darajada tushunyapman.' },
+    { id: 'voc_ru_38', category: 'Действия', level: 'A1', word: 'писать', article: '', gender: 'verb', plural: '', meaningUz: 'yozmoq', exampleDe: 'Я пишу письмо другу.', exampleUz: 'Men do‘stimga xat yozyapman.' },
+    { id: 'voc_ru_39', category: 'Действия', level: 'A1', word: 'смотреть', article: '', gender: 'verb', plural: '', meaningUz: 'tomosha qilmoq / qaramoq', exampleDe: 'Мы смотрим интересный фильм.', exampleUz: 'Biz qiziqarli film ko‘ryapmiz.' },
+    { id: 'voc_ru_40', category: 'Действия', level: 'A1', word: 'слушать', article: '', gender: 'verb', plural: '', meaningUz: 'tinglamoq', exampleDe: 'Я слушаю подкаст на русском.', exampleUz: 'Men rus tilidagi podkastni tinglayapman.' }
   ],
 
   // -------------------------------------------------------------
-  // 🇰🇷 KOREAN (한국어) VOCABULARY (A1-A2)
+  // 🇰🇷 KOREAN (한국어) VOCABULARY (A1-B1)
   // -------------------------------------------------------------
   ko: [
     { id: 'voc_ko_1', category: '인사 (Salomlashish)', level: 'A1', word: '안녕하세요', article: '', gender: 'phrase', plural: '', meaningUz: 'Assalomu alaykum [Annyeonghaseyo]', exampleDe: '안녕하세요! 반갑습니다.', exampleUz: 'Salom! Tanishganimdan xursandman.' },
@@ -121,6 +167,21 @@ module.exports = {
     { id: 'voc_ko_22', category: '도시와 장소 (Joylar)', level: 'A1', word: '식당', article: '', gender: 'noun', plural: '', meaningUz: 'oshxona / restoran [sikdang]', exampleDe: '이 식당 음식은 맛있어요.', exampleUz: 'Bu restoran taomi mazali.' },
     { id: 'voc_ko_23', category: '동사 (Fe’llar)', level: 'A1', word: '가다', article: '', gender: 'verb', plural: '', meaningUz: 'bormoq [gada]', exampleDe: '내일 도서관에 가요.', exampleUz: 'Ertaga kutubxonaga boraman.' },
     { id: 'voc_ko_24', category: '동사 (Fe’llar)', level: 'A1', word: '오다', article: '', gender: 'verb', plural: '', meaningUz: 'kelmoq [oda]', exampleDe: '친구가 우리 집에 와요.', exampleUz: 'Do‘stim uyimizga kelyapti.' },
-    { id: 'voc_ko_25', category: '동사 (Fe’llar)', level: 'A1', word: '공부하다', article: '', gender: 'verb', plural: '', meaningUz: 'dars qilmoq [gongbuhada]', exampleDe: '열심히 한국어를 공부해요.', exampleUz: 'Koreys tilini tirishqoqlik bilan o‘rganyapman.' }
+    { id: 'voc_ko_25', category: '동사 (Fe’llar)', level: 'A1', word: '공부하다', article: '', gender: 'verb', plural: '', meaningUz: 'dars qilmoq [gongbuhada]', exampleDe: '열심히 한국어를 공부해요.', exampleUz: 'Koreys tilini tirishqoqlik bilan o‘rganyapman.' },
+    { id: 'voc_ko_26', category: '교통 (Transport)', level: 'A1', word: '지하철', article: '', gender: 'noun', plural: '', meaningUz: 'metro [jihacheol]', exampleDe: '지하철을 타고 출근해요.', exampleUz: 'Metroga o‘tirib ishga boraman.' },
+    { id: 'voc_ko_27', category: '교통 (Transport)', level: 'A1', word: '공항', article: '', gender: 'noun', plural: '', meaningUz: 'aeroport [gonghang]', exampleDe: '인천 공항에 도착했어요.', exampleUz: 'Incheon aeroportiga yetib keldim.' },
+    { id: 'voc_ko_28', category: '교통 (Transport)', level: 'A1', word: '표', article: '', gender: 'noun', plural: '', meaningUz: 'chipta [pyo]', exampleDe: '비행기 표를 예매했어요.', exampleUz: 'Samolyot chiptasini band qildim.' },
+    { id: 'voc_ko_29', category: '쇼핑 (Xarid)', level: 'A1', word: '돈', article: '', gender: 'noun', plural: '', meaningUz: 'pul [don]', exampleDe: '돈을 아껴 써요.', exampleUz: 'Pulni tejab ishlataman.' },
+    { id: 'voc_ko_30', category: '쇼핑 (Xarid)', level: 'A1', word: '비싸다', article: '', gender: 'adjective', plural: '', meaningUz: 'qimmat [bissada]', exampleDe: '이 옷은 너무 비싸요.', exampleUz: 'Bu kiyim juda qimmat.' },
+    { id: 'voc_ko_31', category: '쇼핑 (Xarid)', level: 'A1', word: '싸다', article: '', gender: 'adjective', plural: '', meaningUz: 'arzon [ssada]', exampleDe: '시장은 물건이 싸요.', exampleUz: 'Bozorda mahsulotlar arzon.' },
+    { id: 'voc_ko_32', category: '시간 (Vaqt)', level: 'A1', word: '오늘', article: '', gender: 'noun', plural: '', meaningUz: 'bugun [oneul]', exampleDe: '오늘 날씨가 좋아요.', exampleUz: 'Bugun ob-havo yaxshi.' },
+    { id: 'voc_ko_33', category: '시간 (Vaqt)', level: 'A1', word: '내일', article: '', gender: 'noun', plural: '', meaningUz: 'ertaga [naeil]', exampleDe: '내일 시험이 있어요.', exampleUz: 'Ertaga imtihonim bor.' },
+    { id: 'voc_ko_34', category: '시간 (Vaqt)', level: 'A1', word: '시간', article: '', gender: 'noun', plural: '', meaningUz: 'vaqt / soat [sigan]', exampleDe: '지금 몇 시예요?', exampleUz: 'Hozir soat necha?' },
+    { id: 'voc_ko_35', category: '건강 (Salomatlik)', level: 'A2', word: '병원', article: '', gender: 'noun', plural: '', meaningUz: 'shifoxona [byeongwon]', exampleDe: '감기 때문에 병원에 가요.', exampleUz: 'Shamollash sababli shifoxonaga boryapman.' },
+    { id: 'voc_ko_36', category: '건강 (Salomatlik)', level: 'A2', word: '약국', article: '', gender: 'noun', plural: '', meaningUz: 'dorixona [yakguk]', exampleDe: '약국에서 약을 샀어요.', exampleUz: 'Dorixonadan dori sotib oldim.' },
+    { id: 'voc_ko_37', category: '동사 (Fe’llar)', level: 'A1', word: '알다', article: '', gender: 'verb', plural: '', meaningUz: 'bilmoq [alda]', exampleDe: '그 사람을 잘 알아요.', exampleUz: 'U insonni yaxshi bilaman.' },
+    { id: 'voc_ko_38', category: '동사 (Fe’llar)', level: 'A1', word: '모르다', article: '', gender: 'verb', plural: '', meaningUz: 'bilmaslik [moreuda]', exampleDe: '한국어를 아직 잘 몰라요.', exampleUz: 'Koreys tilini hali uncha yaxshi bilmayman.' },
+    { id: 'voc_ko_39', category: '동사 (Fe’llar)', level: 'A1', word: '보다', article: '', gender: 'verb', plural: '', meaningUz: 'ko‘rmoq / qaramoq [boda]', exampleDe: '주말에 한국 드라마를 봐요.', exampleUz: 'Dam olish kunida koreys dramasini ko‘raman.' },
+    { id: 'voc_ko_40', category: '동사 (Fe’llar)', level: 'A1', word: '듣다', article: '', gender: 'verb', plural: '', meaningUz: 'eshitmoq / tinglamoq [deutda]', exampleDe: '한국 음악을 자주 들어요.', exampleUz: 'Koreys musiqasini tez-tez tinglayman.' }
   ]
 };

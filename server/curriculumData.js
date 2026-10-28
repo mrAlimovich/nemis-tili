@@ -967,31 +967,55 @@ module.exports = {
     }
   ],
 
-  // Diagnostic questions database across languages
+  // Diagnostic questions database across languages (10 comprehensive questions each)
   diagnosticQuestions: {
     de: [
-      { phase: 1, level: 'A1', category: 'Vocabulary', question: '"Guten Abend" iborasining ma’nosi nima?', options: ['Xayrli tong', 'Xayrli kun', 'Xayrli kech', 'Xayrli tun'], correctIndex: 2 },
-      { phase: 1, level: 'A1', category: 'Pronunciation', question: '"nein" so‘zida "ei" qanday o‘qiladi?', options: ['ey', 'ayn', 'iin', 'on'], correctIndex: 1 },
-      { phase: 2, level: 'A1', category: 'Grammar', question: '"Wir ______ Deutsch." to‘g‘ri fe’lni tanlang:', options: ['lerne', 'lernst', 'lernt', 'lernen'], correctIndex: 3 },
-      { phase: 3, level: 'A2', category: 'Tenses', question: 'Perfekt zamon: "Gestern habe ich einen Film ______."', options: ['sehen', 'gesehen', 'sah', 'sieht'], correctIndex: 1 }
+      { phase: 1, level: 'A1', category: 'Vocabulary', question: '"Guten Abend" iborasining ma’nosi nima?', options: ['Xayrli tong', 'Xayrli kech', 'Xayrli kun', 'Xayrli tun'], correctIndex: 1 },
+      { phase: 1, level: 'A1', category: 'Pronunciation', question: '"nein" so‘zida "ei" birikmasi qanday o‘qiladi?', options: ['ey', 'ayn', 'iin', 'on'], correctIndex: 1 },
+      { phase: 1, level: 'A1', category: 'Articles', question: '"das Haus" so‘zining artikli va jinsi qaysi?', options: ['der (maskulin)', 'die (feminin)', 'das (neutrum)', 'den (akkusativ)'], correctIndex: 2 },
+      { phase: 2, level: 'A1', category: 'Grammar', question: '"Wir ______ Deutsch in der Schule." to‘g‘ri fe’l shakli:', options: ['lerne', 'lernst', 'lernt', 'lernen'], correctIndex: 3 },
+      { phase: 2, level: 'A1', category: 'Conjugation', question: '"sein" fe’lining "du" shakli qaysi?', options: ['bist', 'bin', 'ist', 'sind'], correctIndex: 0 },
+      { phase: 2, level: 'A2', category: 'Modal Verbs', question: '"Ich ______ heute leider nicht kommen (kela olmayman).":', options: ['kann', 'muss', 'will', 'darf'], correctIndex: 0 },
+      { phase: 3, level: 'A2', category: 'Akkusativ', question: '"Ich kaufe ______ Tisch (stol - der Tisch).":', options: ['den', 'der', 'die', 'das'], correctIndex: 0 },
+      { phase: 3, level: 'A2', category: 'Tenses', question: 'Perfekt zamon: "Gestern habe ich einen Film ______."', options: ['sehen', 'gesehen', 'sah', 'sieht'], correctIndex: 1 },
+      { phase: 4, level: 'B1', category: 'Prepositions', question: '"Ich fahre ______ dem Bus zur Arbeit (avtobus bilan).":', options: ['mit', 'nach', 'zu', 'von'], correctIndex: 0 },
+      { phase: 4, level: 'B1', category: 'Subordinate Clauses', question: '"Ich lerne Deutsch, ______ ich in Deutschland studieren möchte (chunki).":', options: ['weil', 'denn', 'dass', 'obwohl'], correctIndex: 0 }
     ],
     en: [
       { phase: 1, level: 'A1', category: 'Vocabulary', question: '"Good evening" nimani anglatadi?', options: ['Xayrli tong', 'Xayrli kech', 'Xayrli tun', 'Xayrli kun'], correctIndex: 1 },
       { phase: 1, level: 'A1', category: 'Grammar', question: '"She ______ from London." to‘g‘ri fe’l:', options: ['am', 'is', 'are', 'be'], correctIndex: 1 },
-      { phase: 2, level: 'A2', category: 'Tenses', question: 'Past Simple: "Yesterday I ______ to school."', options: ['go', 'went', 'gone', 'going'], correctIndex: 1 },
-      { phase: 3, level: 'B1', category: 'Modal Verbs', question: '"You ______ wear a seatbelt while driving."', options: ['must', 'might', 'could', 'may'], correctIndex: 0 }
+      { phase: 1, level: 'A1', category: 'Plural', question: '"child" (bola) so‘zining to‘g‘ri ko‘plik shakli:', options: ['childs', 'children', 'childrens', 'childes'], correctIndex: 1 },
+      { phase: 2, level: 'A1', category: 'Present Simple', question: '"My brother ______ in a software company.":', options: ['work', 'works', 'working', 'worked'], correctIndex: 1 },
+      { phase: 2, level: 'A1', category: 'Wh-Questions', question: '"______ is your favourite teacher?" (Kim):', options: ['What', 'Who', 'Where', 'When'], correctIndex: 1 },
+      { phase: 2, level: 'A2', category: 'Past Simple', question: 'Past Simple: "Yesterday I ______ to school."', options: ['go', 'went', 'gone', 'going'], correctIndex: 1 },
+      { phase: 3, level: 'A2', category: 'Comparison', question: '"An airplane is ______ than a car.":', options: ['faster', 'fastest', 'more fast', 'fast'], correctIndex: 0 },
+      { phase: 3, level: 'B1', category: 'Modal Verbs', question: '"You ______ wear a seatbelt while driving."', options: ['must', 'might', 'could', 'may'], correctIndex: 0 },
+      { phase: 4, level: 'B1', category: 'Present Perfect', question: '"I have never ______ to Japan.":', options: ['be', 'been', 'was', 'being'], correctIndex: 1 },
+      { phase: 4, level: 'B1', category: 'Conditionals', question: '"If it rains tomorrow, we ______ at home.":', options: ['will stay', 'stay', 'stayed', 'would stay'], correctIndex: 0 }
     ],
     ru: [
       { phase: 1, level: 'A1', category: 'Vocabulary', question: '"Доброе утро" ma’nosi nima?', options: ['Xayrli tong', 'Xayrli kun', 'Xayrli kech', 'Xayrli tun'], correctIndex: 0 },
       { phase: 1, level: 'A1', category: 'Grammar', question: '"Машина" qaysi jinsga mansub?', options: ['Мужской род', 'Женский род', 'Средний род'], correctIndex: 1 },
-      { phase: 2, level: 'A2', category: 'Grammar', question: '"Я часто ______ книги." (читать fe’lini qo‘ying):', options: ['читаю', 'читаешь', 'читает', 'читаем'], correctIndex: 0 },
-      { phase: 3, level: 'B1', category: 'Cases', question: '"Я подарил цветы ______ (мама - Dativ):"', options: ['маму', 'маме', 'мамой', 'мама'], correctIndex: 1 }
+      { phase: 1, level: 'A1', category: 'Pronouns', question: '"Это ______ книга (mening kitobim).":', options: ['мой', 'моя', 'моё', 'мои'], correctIndex: 1 },
+      { phase: 2, level: 'A1', category: 'Grammar', question: '"Я часто ______ книги." (читать fe’lini qo‘ying):', options: ['читаю', 'читаешь', 'читает', 'читаем'], correctIndex: 0 },
+      { phase: 2, level: 'A1', category: 'Plural', question: '"Город" so‘zining to‘g‘ri ko‘pligi:', options: ['города', 'городы', 'городе', 'городов'], correctIndex: 0 },
+      { phase: 2, level: 'A2', category: 'Past Tense', question: '"Вчера Анна ______ в библиотеке (ishladi).":', options: ['работал', 'работала', 'работало', 'работали'], correctIndex: 1 },
+      { phase: 3, level: 'A2', category: 'Prepositions', question: '"Мы живём ______ Ташкенте.":', options: ['в', 'на', 'с', 'из'], correctIndex: 0 },
+      { phase: 3, level: 'B1', category: 'Cases', question: '"Я подарил цветы ______ (мама - Dativ):"', options: ['маму', 'маме', 'мамой', 'мама'], correctIndex: 1 },
+      { phase: 4, level: 'B1', category: 'Motion Verbs', question: '"Каждое утро я ______ на работу на метро (har kuni qatnayman).":', options: ['езжу', 'еду', 'поеду', 'ходил'], correctIndex: 0 },
+      { phase: 4, level: 'B1', category: 'Conjunctions', question: '"Он не пришёл, ______ заболел (chunki).":', options: ['потому что', 'хотя', 'чтобы', 'поэтому'], correctIndex: 0 }
     ],
     ko: [
       { phase: 1, level: 'A1', category: 'Vocabulary', question: 'Koreyscha "감사합니다" nima degani?', options: ['Salom', 'Rahmat', 'Kechirasiz', 'Xayr'], correctIndex: 1 },
       { phase: 1, level: 'A1', category: 'Alphabet', question: '"한글" so‘zining o‘qilishi nima?', options: ['Hangeul', 'Namu', 'Saram', 'Annyeong'], correctIndex: 0 },
-      { phase: 2, level: 'A1', category: 'Grammar', question: '"저는 학생______" (talabaman - undoshga tugaydi):', options: ['이에요', '예요', '입니다예요'], correctIndex: 0 },
-      { phase: 3, level: 'A2', category: 'Vocabulary', question: '"한국어를 배워요" nimani anglatadi?', options: ['Koreys tilini o‘rganyapman', 'Ovqat yeyapman', 'Uyga ketyapman'], correctIndex: 0 }
+      { phase: 1, level: 'A1', category: 'Grammar', question: '"저는 학생______" (talabaman - undoshga tugaydi):', options: ['이에요', '예요', '입니다예요'], correctIndex: 0 },
+      { phase: 2, level: 'A1', category: 'Demonstratives', question: '"Bu kitob" koreyscha qanday bo‘ladi?', options: ['이 책', '그 책', '저 책', '어디 책'], correctIndex: 0 },
+      { phase: 2, level: 'A1', category: 'Verbs', question: '"가다" (bormoq) fe’lining hozirgi zamon hurmat shakli:', options: ['가요', '와요', '먹어요', '해요'], correctIndex: 0 },
+      { phase: 2, level: 'A2', category: 'Particles', question: '"학교______ 가요." (maktabga boraman - yo‘nalish):', options: ['에', '를', '은', '이'], correctIndex: 0 },
+      { phase: 3, level: 'A2', category: 'Vocabulary', question: '"한국어를 배워요" nimani anglatadi?', options: ['Koreys tilini o‘rganyapman', 'Ovqat yeyapman', 'Uyga ketyapman'], correctIndex: 0 },
+      { phase: 3, level: 'A2', category: 'Negation', question: '"Men koreys tilini bilmayman" inkor shakli:', options: ['한국어를 몰라요', '한국어를 알아요', '한국어를 좋아해요', '한국어를 가요'], correctIndex: 0 },
+      { phase: 4, level: 'B1', category: 'Polite Request', question: '"Iltimos, suv bering" iborasi:', options: ['물 좀 주세요', '물 마셔요', '물 있어요', '물 먹어요'], correctIndex: 0 },
+      { phase: 4, level: 'B1', category: 'Conjunctions', question: '"Dars qilyapman, shuning uchun bandman" (-아서/어서):', options: ['공부해서 바빠요', '공부하고 바빠요', '공부하지만 바빠요', '공부하면 바빠요'], correctIndex: 0 }
     ]
   }
 };
