@@ -1,7 +1,7 @@
 {
-  "name": "german-master-ai",
+  "name": "oo-ustoz-ai",
   "version": "1.0.0",
-  "description": "0 dan C2 gacha nemis tilini o'rgatuvchi shaxsiy AI murabbiy platformasi",
+  "description": "O&O Ustoz AI — Nemis, Ingliz, Rus va Koreys tillarini 0 dan B2 gacha o'rgatuvchi shaxsiy AI akademiyasi",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",

@@ -1,5 +1,5 @@
 // ==========================================
-// GERMAN MASTER AI — CLIENT CONTROLLER
+// O&O USTOZ AI — CLIENT CONTROLLER
 // ==========================================
 
 const STATE = {

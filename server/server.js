@@ -412,7 +412,7 @@ app.get('/api/mistakes', authMiddleware, (req, res) => {
 app.get('/api/info', (req, res) => {
   const localIp = getLocalIp();
   res.json({
-    appName: 'German Master AI',
+    appName: 'O&O Ustoz AI',
     localUrl: `http://localhost:${PORT}`,
     networkUrl: `http://${localIp}:${PORT}`,
     ip: localIp,
@@ -424,7 +424,7 @@ app.get('/api/info', (req, res) => {
 app.listen(PORT, '0.0.0.0', () => {
   const localIp = getLocalIp();
   console.log(`\n======================================================`);
-  console.log(`🚀 GERMAN MASTER AI PLATFORMASI ISHGA TUSHDI!`);
+  console.log(`🚀 O&O USTOZ AI PLATFORMASI ISHGA TUSHDI!`);
   console.log(`💻 Kompyuterda ochish uchun : http://localhost:${PORT}`);
   console.log(`📱 Telefonda ochish uchun   : http://${localIp}:${PORT}`);
   console.log(`   (Telefon va kompyuter bitta Wi-Fi tarmog‘iga ulangan bo‘lishi kerak)`);
