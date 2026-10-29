@@ -523,39 +523,39 @@ function renderLessonsList() {
                 <span>Qulflangan</span>
               </span>
             </div>
-            <h3 class="font-bold text-slate-600 text-base mb-1">${lesson.title}</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">${lesson.goal}</p>
+            <h3 class="font-bold text-slate-700 text-base mb-1.5 leading-snug">${lesson.title}</h3>
+            <p class="text-xs md:text-sm text-slate-500 font-medium leading-relaxed mb-4">${lesson.goal}</p>
           </div>
 
-          <div class="pt-3 border-t border-slate-200 flex items-center justify-between text-xs text-slate-400 font-medium">
-            <span class="flex items-center space-x-1 text-amber-600 font-bold">
+          <div class="pt-3 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500 font-bold">
+            <span class="flex items-center space-x-1 text-amber-700">
               <span>🔒 Oldingi darsni yakunlang</span>
             </span>
-            <span class="text-slate-400">+30 XP</span>
+            <span class="text-slate-500 font-black">+30 XP</span>
           </div>
         </div>
       `;
     }
 
     return `
-      <div onclick="openLesson('${lesson.id}')" class="group hover-lift bg-white rounded-3xl border ${isDone ? 'border-emerald-200 bg-emerald-50/10' : 'border-slate-200'} hover:border-blue-500 p-5 shadow-sm transition cursor-pointer flex flex-col justify-between">
+      <div onclick="openLesson('${lesson.id}')" class="group hover-lift bg-white rounded-3xl border ${isDone ? 'border-emerald-300 bg-emerald-50/15' : 'border-slate-200/90'} hover:border-indigo-500 p-5 shadow-xs hover:shadow-md transition cursor-pointer flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-3">
-            <span class="px-3 py-1 bg-slate-100 group-hover:bg-blue-50 text-slate-600 group-hover:text-blue-600 rounded-xl text-xs font-black">
+            <span class="px-3 py-1 bg-slate-100 group-hover:bg-indigo-50 text-slate-700 group-hover:text-indigo-700 rounded-xl text-xs font-black tracking-wide">
               DARS ${numDisplay} • ${lesson.level}
             </span>
             ${isDone 
-              ? '<span class="flex items-center space-x-1 text-emerald-600 text-xs font-extrabold"><i data-lucide="check-circle-2" class="w-4 h-4"></i><span>Bajarildi</span></span>'
-              : '<span class="text-xs font-extrabold text-blue-600 flex items-center space-x-1"><span>Boshlash</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>'
+              ? '<span class="flex items-center space-x-1 text-emerald-600 text-xs font-black"><i data-lucide="check-circle-2" class="w-4 h-4"></i><span>Bajarildi</span></span>'
+              : '<span class="text-xs font-black text-indigo-600 flex items-center space-x-1"><span>Boshlash</span><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>'
             }
           </div>
-          <h3 class="font-extrabold text-slate-900 text-base group-hover:text-blue-600 transition mb-1">${lesson.title}</h3>
-          <p class="text-xs text-slate-500 leading-relaxed mb-4">${lesson.goal}</p>
+          <h3 class="font-black text-slate-900 text-base group-hover:text-indigo-600 transition mb-1.5 leading-snug">${lesson.title}</h3>
+          <p class="text-xs md:text-sm text-slate-600 font-medium leading-relaxed mb-4">${lesson.goal}</p>
         </div>
 
-        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-medium">
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-bold">
           <span>⏱ 15 daqiqa</span>
-          <span class="text-amber-600 font-bold">+30 XP</span>
+          <span class="text-amber-700 font-black">+30 XP</span>
         </div>
       </div>
     `;
@@ -608,57 +608,59 @@ async function openLesson(lessonId) {
 
     container.innerHTML = `
       <!-- Header banner -->
-      <div class="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 md:p-8 text-white">
-        <div class="flex items-center space-x-2 text-xs font-bold text-blue-200 uppercase tracking-wider mb-2">
+      <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 p-6 md:p-8 text-white">
+        <div class="flex items-center space-x-2 text-xs font-black text-blue-200 uppercase tracking-wider mb-2">
           <span>DARS ${l.number < 10 ? '0' + l.number : l.number}</span>
           <span>•</span>
           <span>${l.level}</span>
         </div>
-        <h2 class="text-2xl md:text-3xl font-black mb-2">${l.title}</h2>
-        <p class="text-blue-100 text-sm max-w-2xl">${l.goal}</p>
+        <h2 class="text-2xl md:text-3xl font-black mb-2 tracking-tight">${l.title}</h2>
+        <p class="text-blue-100 text-sm md:text-base max-w-2xl font-medium leading-relaxed">${l.goal}</p>
       </div>
 
       <div class="p-6 md:p-8 space-y-8">
         
         <!-- STEP 1: THEORY -->
         <div>
-          <div class="flex items-center space-x-2 text-blue-600 font-black text-sm uppercase tracking-wider mb-3">
+          <div class="flex items-center space-x-2 text-indigo-600 font-black text-sm uppercase tracking-wider mb-3">
             <i data-lucide="book-marked" class="w-5 h-5"></i>
             <span>1. Grammatika va Mantiq</span>
           </div>
-          <p class="text-sm text-slate-700 leading-relaxed mb-4">${l.theory.introUz}</p>
+          <p class="text-base text-slate-800 font-medium leading-relaxed mb-5">${l.theory.introUz}</p>
 
           <!-- Rules list -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             ${l.theory.rules.map(r => `
-              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                <div class="flex items-center justify-between mb-1.5">
-                  <span class="font-bold text-slate-900 text-sm font-mono">${r.pattern}</span>
-                  <span class="text-xs px-2 py-0.5 rounded-lg bg-blue-100 text-blue-800 font-bold">${r.pronunciation}</span>
+              <div class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:border-indigo-300 hover:shadow-md transition">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-black text-slate-900 text-base md:text-lg tracking-tight">${r.pattern}</span>
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-indigo-50 text-indigo-700 font-extrabold border border-indigo-200/60 shadow-xs">${r.pronunciation}</span>
                 </div>
-                <div class="text-xs text-slate-600 flex items-center justify-between mt-2">
-                  <span class="font-semibold text-slate-800">${r.exampleDe}</span>
-                  <button onclick="playGermanAudio('${r.exampleDe.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg text-blue-600 hover:bg-blue-100 transition" title="Tinglash">
-                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                <div class="flex items-center justify-between pt-2.5 border-t border-slate-100">
+                  <span class="text-sm md:text-base font-bold text-slate-900">${r.exampleDe}</span>
+                  <button onclick="playGermanAudio('${r.exampleDe.replace(/'/g, "\\'")}')" class="p-2 rounded-xl text-indigo-600 hover:bg-indigo-50 transition" title="Tinglash">
+                    <i data-lucide="volume-2" class="w-5 h-5"></i>
                   </button>
                 </div>
-                <span class="text-[11px] text-slate-400 block">${r.exampleUz}</span>
+                <span class="text-xs md:text-sm text-slate-600 font-medium block mt-1">${r.exampleUz}</span>
               </div>
             `).join('')}
           </div>
 
           <!-- Phrases Table -->
-          <div class="border border-slate-200 rounded-2xl overflow-hidden">
-            <div class="bg-slate-100 px-4 py-2.5 text-xs font-bold text-slate-600 uppercase">Asosiy Iboralar & Misollar</div>
+          <div class="border border-slate-200 rounded-3xl overflow-hidden bg-white shadow-sm">
+            <div class="bg-gradient-to-r from-slate-100 to-indigo-50/50 px-5 py-3.5 text-xs font-black text-slate-700 uppercase tracking-wider border-b border-slate-200">
+              Asosiy Iboralar & Misollar
+            </div>
             <div class="divide-y divide-slate-100">
               ${l.theory.table.map(row => `
-                <div class="px-4 py-3 flex items-center justify-between hover:bg-slate-50 transition text-sm">
-                  <div>
-                    <span class="font-bold text-slate-900">${row.de}</span>
-                    <span class="text-slate-400 text-xs block md:inline md:ml-3">${row.uz}</span>
+                <div class="px-5 py-3.5 flex items-center justify-between hover:bg-slate-50/80 transition">
+                  <div class="flex flex-col sm:flex-row sm:items-baseline sm:space-x-3">
+                    <span class="font-extrabold text-slate-900 text-base md:text-lg">${row.de}</span>
+                    <span class="text-slate-600 font-medium text-xs md:text-sm mt-0.5 sm:mt-0">${row.uz}</span>
                   </div>
-                  <button onclick="playGermanAudio('${row.de.replace(/'/g, "\\'")}')" class="p-2 text-blue-600 hover:bg-blue-50 rounded-xl transition" title="Tinglash">
-                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  <button onclick="playGermanAudio('${row.de.replace(/'/g, "\\'")}')" class="p-2 text-indigo-600 hover:bg-indigo-50 rounded-xl transition shrink-0" title="Tinglash">
+                    <i data-lucide="volume-2" class="w-5 h-5"></i>
                   </button>
                 </div>
               `).join('')}
@@ -668,49 +670,49 @@ async function openLesson(lessonId) {
 
         <!-- CULTURAL LIFEHACK (KULTURTIP) -->
         ${l.kulturtip ? `
-          <div class="p-5 rounded-3xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200">
+          <div class="p-6 rounded-3xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 shadow-sm">
             <span class="text-xs font-black uppercase text-amber-800 tracking-wider block mb-1">${(l.lang === 'ko' ? 'KOREYA' : (l.lang === 'ru' ? 'ROSSIYA' : (l.lang === 'en' ? 'BUYUK BRITANIYA / AQSH' : 'GERMANIYA')))} HAYOTI & MADANIYATI</span>
-            <h4 class="font-extrabold text-slate-900 text-base mb-1.5">${l.kulturtip.title}</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">${l.kulturtip.text}</p>
+            <h4 class="font-extrabold text-slate-900 text-lg mb-2">${l.kulturtip.title}</h4>
+            <p class="text-sm text-slate-700 leading-relaxed font-normal">${l.kulturtip.text}</p>
           </div>
         ` : ''}
 
         <!-- LISTENING COMPREHENSION (HÖRVERSTEHEN) -->
         ${l.listening ? `
-          <div class="p-5 rounded-3xl bg-indigo-50 border border-indigo-200">
+          <div class="p-6 rounded-3xl bg-indigo-50/70 border border-indigo-200 shadow-sm">
             <div class="flex items-center justify-between mb-3">
               <span class="text-xs font-black uppercase text-indigo-800 tracking-wider">${l.listening.title}</span>
-              <button onclick="playGermanAudio('${l.listening.audioText.replace(/'/g, "\\'")}')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold flex items-center space-x-1.5 transition shadow-sm">
+              <button onclick="playGermanAudio('${l.listening.audioText.replace(/'/g, "\\'")}')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-black flex items-center space-x-1.5 transition shadow">
                 <i data-lucide="volume-2" class="w-4 h-4"></i>
                 <span>Audioni Tinglash</span>
               </button>
             </div>
-            <h5 class="font-bold text-sm text-slate-900 mb-2">${l.listening.question}</h5>
-            <div class="space-y-1.5">
+            <h5 class="font-bold text-base text-slate-900 mb-3">${l.listening.question}</h5>
+            <div class="space-y-2">
               ${l.listening.options.map((opt, oIdx) => `
-                <button onclick="checkListeningAnswer(${oIdx}, ${l.listening.correctIndex})" class="w-full text-left p-3 rounded-xl bg-white border border-indigo-100 hover:border-indigo-400 text-xs font-medium text-slate-800 transition">
+                <button onclick="checkListeningAnswer(${oIdx}, ${l.listening.correctIndex})" class="w-full text-left p-3.5 rounded-xl bg-white border border-indigo-100 hover:border-indigo-400 text-sm font-semibold text-slate-800 transition shadow-xs">
                   ${opt}
                 </button>
               `).join('')}
             </div>
-            <div id="listening-feedback" class="hidden mt-2 p-2.5 rounded-xl text-xs font-bold"></div>
+            <div id="listening-feedback" class="hidden mt-3 p-3 rounded-xl text-xs font-bold"></div>
           </div>
         ` : ''}
 
         <!-- STEP 2: SPEAKING PROMPT -->
         ${l.speakingPrompt ? `
-          <div class="p-5 rounded-3xl bg-amber-50 border border-amber-200">
-            <div class="flex items-center space-x-2 text-amber-800 font-bold text-sm mb-2">
+          <div class="p-6 rounded-3xl bg-amber-50/70 border border-amber-200 shadow-sm">
+            <div class="flex items-center space-x-2 text-amber-900 font-black text-sm uppercase tracking-wider mb-3">
               <i data-lucide="mic" class="w-5 h-5 text-amber-600"></i>
               <span>Speaking Mashqi (Ovoz bilan ayting)</span>
             </div>
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white p-4 rounded-2xl border border-amber-100">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-5 rounded-2xl border border-amber-100 shadow-xs">
               <div>
-                <p class="text-lg font-black text-slate-900">${l.speakingPrompt.textDe}</p>
-                <p class="text-xs text-slate-500">${l.speakingPrompt.textUz}</p>
-                <p class="text-[11px] text-amber-700 font-medium mt-1">💡 ${l.speakingPrompt.tip}</p>
+                <p class="text-xl font-black text-slate-900 leading-snug">${l.speakingPrompt.textDe}</p>
+                <p class="text-sm text-slate-600 font-medium mt-1">${l.speakingPrompt.textUz}</p>
+                <p class="text-xs text-amber-800 font-semibold mt-2 bg-amber-50 px-2.5 py-1 rounded-lg inline-block">💡 ${l.speakingPrompt.tip}</p>
               </div>
-              <button onclick="playGermanAudio('${l.speakingPrompt.textDe.replace(/'/g, "\\'")}')" class="self-start md:self-center px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-xs font-bold flex items-center space-x-1.5 transition shadow-sm">
+              <button onclick="playGermanAudio('${l.speakingPrompt.textDe.replace(/'/g, "\\'")}')" class="self-start md:self-center px-4 py-2.5 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-xs font-black flex items-center space-x-1.5 transition shadow">
                 <i data-lucide="volume-2" class="w-4 h-4"></i>
                 <span>Namunani Tinglash</span>
               </button>
@@ -720,24 +722,24 @@ async function openLesson(lessonId) {
 
         <!-- STEP 3: INTERACTIVE EXERCISES -->
         <div>
-          <div class="flex items-center space-x-2 text-blue-600 font-black text-sm uppercase tracking-wider mb-4">
+          <div class="flex items-center space-x-2 text-indigo-600 font-black text-sm uppercase tracking-wider mb-4">
             <i data-lucide="check-square" class="w-5 h-5"></i>
             <span>Interaktiv Mashqlar & Mini Test</span>
           </div>
 
           <form id="lesson-quiz-form" onsubmit="handleLessonQuizSubmit(event, '${l.id}')" class="space-y-6">
             ${l.exercises.map((ex, idx) => `
-              <div class="p-5 rounded-3xl border border-slate-200 bg-white shadow-sm" id="ex-card-${ex.id}">
-                <span class="text-xs font-bold text-blue-600 uppercase mb-1 block">Savol ${idx + 1}</span>
-                <h4 class="font-bold text-slate-900 text-sm mb-3">${ex.question}</h4>
+              <div class="p-5 md:p-6 rounded-3xl border border-slate-200/90 bg-white shadow-sm" id="ex-card-${ex.id}">
+                <span class="text-xs font-black text-indigo-600 uppercase mb-1.5 block tracking-wider">Savol ${idx + 1}</span>
+                <h4 class="font-bold text-slate-900 text-base mb-3.5 leading-snug">${ex.question}</h4>
 
                 ${renderExerciseInput(ex)}
 
-                <div id="ex-feedback-${ex.id}" class="hidden mt-3 p-3 rounded-2xl text-xs font-medium"></div>
+                <div id="ex-feedback-${ex.id}" class="hidden mt-3 p-3.5 rounded-2xl text-xs font-semibold"></div>
               </div>
             `).join('')}
 
-            <button type="submit" id="btn-submit-lesson" class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-extrabold rounded-2xl shadow-lg shadow-blue-500/25 transition text-sm">
+            <button type="submit" id="btn-submit-lesson" class="w-full py-4 bg-indigo-600 hover:bg-indigo-700 active:scale-[0.99] text-white font-black rounded-2xl shadow-xl shadow-indigo-500/25 transition text-base">
               Javoblarni Tekshirish va Darsni Yakunlash
             </button>
           </form>
@@ -773,10 +775,10 @@ function checkListeningAnswer(selected, correct) {
 function renderExerciseInput(ex) {
   if (ex.type === 'multiple-choice') {
     return `
-      <div class="space-y-2">
+      <div class="space-y-2.5">
         ${ex.options.map((opt, oIdx) => `
-          <label class="flex items-center space-x-3 p-3 rounded-2xl border border-slate-200 hover:border-blue-400 hover:bg-blue-50/20 cursor-pointer transition text-sm">
-            <input type="radio" name="answer_${ex.id}" value="${oIdx}" class="text-blue-600 focus:ring-blue-500" required>
+          <label class="flex items-center space-x-3.5 p-3.5 rounded-2xl border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/30 cursor-pointer transition text-sm md:text-base font-semibold shadow-xs">
+            <input type="radio" name="answer_${ex.id}" value="${oIdx}" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500" required>
             <span class="text-slate-800">${opt}</span>
           </label>
         `).join('')}
@@ -787,8 +789,8 @@ function renderExerciseInput(ex) {
   if (ex.type === 'fill-blank') {
     return `
       <div>
-        <input type="text" name="answer_${ex.id}" placeholder="${ex.placeholder || 'Javobingizni yozing...'}" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" required>
-        ${ex.hint ? `<span class="text-[11px] text-slate-400 mt-1 block">💡 Yordam: ${ex.hint}</span>` : ''}
+        <input type="text" name="answer_${ex.id}" placeholder="${ex.placeholder || 'Javobingizni yozing...'}" class="w-full px-4 py-3 rounded-2xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base font-semibold text-slate-800" required>
+        ${ex.hint ? `<span class="text-xs text-slate-500 mt-1.5 block font-medium">💡 Yordam: ${ex.hint}</span>` : ''}
       </div>
     `;
   }
@@ -796,10 +798,10 @@ function renderExerciseInput(ex) {
   if (ex.type === 'order') {
     return `
       <div>
-        <input type="text" name="answer_${ex.id}" placeholder="${ex.correctSentence}" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" required>
-        <div class="flex flex-wrap gap-2 mt-2">
+        <input type="text" name="answer_${ex.id}" placeholder="${ex.correctSentence}" class="w-full px-4 py-3 rounded-2xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base font-semibold text-slate-800" required>
+        <div class="flex flex-wrap gap-2 mt-2.5">
           ${ex.words.map(w => `
-            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg select-none">${w}</span>
+            <span class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 text-xs md:text-sm font-bold rounded-xl select-none transition">${w}</span>
           `).join('')}
         </div>
       </div>
