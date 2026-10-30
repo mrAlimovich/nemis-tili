@@ -10,27 +10,43 @@ const languageMeta = {
 const scenarios = {
   free: {
     name: 'Erkin Suhbat',
+    icon: '💬',
     description: 'Har qanday mavzuda do‘stona va o‘rgatuvchi muloqot'
   },
+  airport: {
+    name: '✈️ Aeroport & Bojxona',
+    icon: '✈️',
+    description: 'Pasport nazorati, viza, chipta va yuk topshirish/qabul qilish'
+  },
+  embassy_job: {
+    name: '💼 Elchixona & Ish suhbati',
+    icon: '💼',
+    description: 'Viza intervyusi, rezyume, Ausbildung va ishga qabul savollari'
+  },
+  hospital: {
+    name: '🏥 Kasalxona & Apteka',
+    icon: '🏥',
+    description: 'Shikoyat, og‘riqni tushuntirish, shifokor ko‘rigi va dori sotib olish'
+  },
+  housing_bank: {
+    name: '🏢 Uy ijarasi & Bank',
+    icon: '🏢',
+    description: 'Kvartira ijarasi, propiska va bankda hisob raqam ochish'
+  },
   supermarket: {
-    name: '🛒 Supermarketda',
+    name: '🛒 Supermarket & Do‘kon',
+    icon: '🛒',
     description: 'Xarid qilish, narx so‘rash va kassada to‘lov qilish'
   },
   restaurant: {
     name: '☕ Restoran / Kafe',
+    icon: '☕',
     description: 'Menyu so‘rash, ovqat buyurtma qilish va hisob-kitob'
   },
-  doctor: {
-    name: '🏥 Shifokor qabulida',
-    description: 'Shikoyatlarni aytish, retsept va maslahat olish'
-  },
   station: {
-    name: '🚆 Vokzal / Aeroport',
-    description: 'Jadval, chipta va yo‘nalish so‘rash'
-  },
-  interview: {
-    name: '💼 Ish suhbati',
-    description: 'O‘zingiz, tajribangiz va maqsadingiz haqida gapirish'
+    name: '🚆 Vokzal & Shahar transporti',
+    icon: '🚆',
+    description: 'Poyezd/avtobus jadvali, chipta va yo‘nalish so‘rash'
   }
 };
 

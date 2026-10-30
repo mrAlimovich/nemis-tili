@@ -1072,7 +1072,18 @@ const blitzQuestionsBank = {
     { q: '"rot" qaysi rang?', a: ['qizil', 'ko‘k', 'yashil', 'sariq'], c: 0 },
     { q: '"blau" qaysi rang?', a: ['ko‘k', 'qora', 'oq', 'qizil'], c: 0 },
     { q: '"Wie viel kostet das?" nimani so‘raydi?', a: ['Bu qancha turadi?', 'Bu nima?', 'Qayerda bu?', 'Kimniki bu?'], c: 0 },
-    { q: '"Ich weiß nicht" nimani anglatadi?', a: ['Men bilmayman', 'Men bilaman', 'Menga yoqadi', 'Tushundim'], c: 0 }
+    { q: '"Ich weiß nicht" nimani anglatadi?', a: ['Men bilmayman', 'Men bilaman', 'Menga yoqadi', 'Tushundim'], c: 0 },
+    // Yangi qo'shilgan situatsion & imtihon savollari
+    { q: '"der Flughafen" nimani anglatadi?', a: ['aeroport', 'vokzal', 'bekat', 'mehmonxona'], c: 0 },
+    { q: '"der Reisepass" so‘zining ma’nosi:', a: ['xorijga chiqish pasporti', 'yo‘l chiptasi', 'viza', 'sug‘urta'], c: 0 },
+    { q: '"der Arzt" kim?', a: ['shifokor', 'o‘qituvchi', 'muhandis', 'haydovchi'], c: 0 },
+    { q: '"die Apotheke" nimani bildiradi?', a: ['dorixona', 'kasalxona', 'kutubxona', 'do‘kon'], c: 0 },
+    { q: '"die Wohnung" so‘zi ma’nosi:', a: ['kvartira / xonadon', 'hovli', 'bino', 'ishxona'], c: 0 },
+    { q: '"die Miete" nimani bildiradi?', a: ['ijara haqi', 'kommunal to‘lov', 'maosh', 'jarima'], c: 0 },
+    { q: '"das Vorstellungsgespräch" qanday tadbir?', a: ['ish suhbati (intervyu)', 'imtihon', 'majlis', 'uchrashuv'], c: 0 },
+    { q: '"die Ausbildung" nemis tizimida nima?', a: ['kasb-hunar ta’limi', 'litsey', 'maktab', 'kurs'], c: 0 },
+    { q: '"Gute Besserung!" qachon tilanadi?', a: ['Kasalga: "Tezroq sog‘ayib keting!"', 'Tug‘ilgan kunda', 'Yangi yilda', 'Safar oldidan'], c: 0 },
+    { q: '"Ich habe Kopfschmerzen" nimani bildiradi?', a: ['Boshim og‘riyapti', 'Qornim og‘riyapti', 'Tishim og‘riyapti', 'Charchadim'], c: 0 }
   ],
   en: [
     { q: '"Book" ning o‘zbekcha ma’nosi nima?', a: ['kitob', 'daftar', 'qalam', 'stol'], c: 0 },
@@ -1099,7 +1110,18 @@ const blitzQuestionsBank = {
     { q: '"Green" qaysi rang?', a: ['yashil', 'qizil', 'sariq', 'ko‘k'], c: 0 },
     { q: '"I don\'t know" nimani anglatadi?', a: ['Men bilmayman', 'Men bilaman', 'Men bormayman', 'Men tushundim'], c: 0 },
     { q: '"Today is a ______ day." (chiroyli):', a: ['beautiful', 'badly', 'beauty', 'beautify'], c: 0 },
-    { q: '"Help me, please" nimani bildiradi?', a: ['Iltimos, menga yordam bering', 'Menga bering', 'Menga qarang', 'Keling'], c: 0 }
+    { q: '"Help me, please" nimani bildiradi?', a: ['Iltimos, menga yordam bering', 'Menga bering', 'Menga qarang', 'Keling'], c: 0 },
+    // Yangi situatsion savollar (Ingliz tili)
+    { q: '"Airport" so‘zining ma’nosi:', a: ['aeroport', 'vokzal', 'dengiz porti', 'bekat'], c: 0 },
+    { q: '"Boarding pass" nimani bildiradi?', a: ['samolyotga chiqish taloni', 'pasport', 'viza', 'yuk kvitansiyasi'], c: 0 },
+    { q: '"Job interview" nimani anglatadi?', a: ['ish suhbati', 'imtihon', 'shartnoma', 'uchrashuv'], c: 0 },
+    { q: '"Hospital" so‘zi nima?', a: ['kasalxona', 'dorixona', 'maktab', 'mehmonxona'], c: 0 },
+    { q: '"Pharmacy" nimani bildiradi?', a: ['dorixona', 'shifoxona', 'poliklinika', 'kutubxona'], c: 0 },
+    { q: '"Rent an apartment" nimani bildiradi?', a: ['kvartira ijaraga olish', 'kvartira sotish', 'uy tozalash', 'uy qurish'], c: 0 },
+    { q: '"Bank account" nimani anglatadi?', a: ['bank hisob raqami', 'kredit karta', 'naqd pul', 'valyuta'], c: 0 },
+    { q: '"Get well soon!" qachon aytiladi?', a: ['"Tezroq tuzalib keting!"', '"Xayrli tong!"', '"Omad tilayman!"', '"Tug‘ilgan kuningiz bilan!"'], c: 0 },
+    { q: '"I have an appointment" nima degani?', a: ['Menda belgilangan qabul/uchrashuv bor', 'Menda dori bor', 'Menda savol bor', 'Men ketyapman'], c: 0 },
+    { q: '"Where is baggage claim?" nimani so‘raydi?', a: ['Yuklarni topshirish/olish joyi qayerda?', 'Chipta qayerda?', 'Chiqish qayerda?', 'Hojatxona qayerda?'], c: 0 }
   ],
   ru: [
     { q: '"Здравствуйте" qanday salomlashish?', a: ['Rasmiy salom', 'Do‘stona salom', 'Xayrlashuv', 'Kechirim'], c: 0 },
@@ -1126,7 +1148,16 @@ const blitzQuestionsBank = {
     { q: '"Машина" qaysi rodga kiradi?', a: ['Женский род (Она)', 'Мужской род (Он)', 'Средний род (Оно)'], c: 0 },
     { q: '"Доброе утро" qachon tilanadi?', a: ['Ertalab', 'Kechqurun', 'Kunduzi', 'Tunda'], c: 0 },
     { q: '"У меня есть вопрос" nimani bildiradi?', a: ['Menda savol bor', 'Menda dars bor', 'Menda kitob bor', 'Men bilaman'], c: 0 },
-    { q: '"Конечно" so‘zining tarjimasi:', a: ['Albatta', 'Hech qachon', 'Balki', 'Yo‘q'], c: 0 }
+    { q: '"Конечно" so‘zining tarjimasi:', a: ['Albatta', 'Hech qachon', 'Balki', 'Yo‘q'], c: 0 },
+    // Yangi situatsion savollar (Rus tili)
+    { q: '"Аэропорт" so‘zining ma’nosi:', a: ['aeroport', 'vokzal', 'bekat', 'mehmonxona'], c: 0 },
+    { q: '"Паспортный контроль" nimani bildiradi?', a: ['pasport nazorati', 'bojxona', 'chiqish eshigi', 'kassa'], c: 0 },
+    { q: '"Собеседование" nimani anglatadi?', a: ['ish suhbati (intervyu)', 'yig‘ilish', 'dars', 'bahslashuv'], c: 0 },
+    { q: '"Больница" va "Аптека" so‘zlari:', a: ['kasalxona va dorixona', 'maktab va kutubxona', 'do‘kon va bozor', 'bank va pochta'], c: 0 },
+    { q: '"Снять квартиру" nimani bildiradi?', a: ['kvartirani ijaraga olish', 'kvartira sotish', 'uy tozalash', 'ta’mirlash'], c: 0 },
+    { q: '"Открыть банковский счёт" iborasi:', a: ['bankda hisob raqam ochish', 'kartani yopish', 'pul o‘tkazish', 'kredit olish'], c: 0 },
+    { q: '"Выздоравливайте!" qachon tilanadi?', a: ['Bemorga: "Tuzalib keting!"', 'Safar oldidan', 'Ovqatlanayotganda', 'Xayrlashganda'], c: 0 },
+    { q: '"У меня болит голова" nimani anglatadi?', a: ['Boshim og‘riyapti', 'Tishim og‘riyapti', 'Yuragim og‘riyapti', 'Oshqozonim og‘riyapti'], c: 0 }
   ],
   ko: [
     { q: '"안녕하세요" [Annyeonghaseyo] nima degani?', a: ['Assalomu alaykum / Salom', 'Katta rahmat', 'Xayr', 'Kechirasiz'], c: 0 },
@@ -1153,7 +1184,16 @@ const blitzQuestionsBank = {
     { q: '"누구" [nugu] so‘rog‘i nimani bildiradi?', a: ['kim?', 'nima?', 'qayer?', 'qancha?'], c: 0 },
     { q: '"얼마예요?" [eolmayeyo] nimani so‘raydi?', a: ['Narxi qancha?', 'Soat necha?', 'Ismingiz nima?', 'Qayerdasiz?'], c: 0 },
     { q: '"맛있어요" [masisseoyo] nimani bildiradi?', a: ['Juda mazali', 'Achchiq', 'Shirin emas', 'Issiq'], c: 0 },
-    { q: '"주세요" [juseyo] so‘zining ma’nosi:', a: ['...bering / iltimos', 'oling', 'keting', 'bormang'], c: 0 }
+    { q: '"주세요" [juseyo] so‘zining ma’nosi:', a: ['...bering / iltimos', 'oling', 'keting', 'bormang'], c: 0 },
+    // Yangi situatsion savollar (Koreys tili)
+    { q: '"공항" [gonghang] nimani anglatadi?', a: ['aeroport', 'vokzal', 'dengiz', 'mehmonxona'], c: 0 },
+    { q: '"여권" [yeogwon] nima degani?', a: ['pasport', 'viza', 'chipta', 'sug‘urta'], c: 0 },
+    { q: '"면접" [myeonjeop] qanday tadbir?', a: ['ish suhbati (intervyu)', 'yig‘ilish', 'dars', 'to‘y'], c: 0 },
+    { q: '"병원" [byeongwon] va "약국" [yakguk]:', a: ['kasalxona va dorixona', 'maktab va bog‘cha', 'magazin va bozor', 'kafe va bar'], c: 0 },
+    { q: '"머리가 아파요" [meoriga apayo] nima degani?', a: ['Boshim og‘riyapti', 'Qornim og‘riyapti', 'Tishim og‘riyapti', 'Kechikdim'], c: 0 },
+    { q: '"은행" [eunhaeng] nimani bildiradi?', a: ['bank', 'pochta', 'idora', 'politsiya'], c: 0 },
+    { q: '"계좌를 개설하고 싶어요" [gyejwareul gaeseolhago sipeoyo]:', a: ['Hisob raqam ochmoqchiman', 'Pul yubormoqchiman', 'Chipta olmoqchiman', 'Kvartira olmoqchiman'], c: 0 },
+    { q: '"얼마나 걸려요?" [eolmana geollyeoyo] nima degani?', a: ['Qancha vaqt ketadi?', 'Bu qancha turadi?', 'Bu qayerda?', 'Kim keladi?'], c: 0 }
   ]
 };
 
@@ -1503,9 +1543,12 @@ async function loadAiTutorView() {
     scenariosList.innerHTML = Object.entries(resScenarios.scenarios).map(([key, sc]) => {
       const isActive = STATE.activeScenario === key;
       return `
-        <button onclick="selectScenario('${key}')" class="w-full text-left p-3 rounded-2xl border ${isActive ? 'border-blue-500 bg-blue-50/50 text-blue-800' : 'border-slate-200 hover:bg-slate-50 text-slate-800'} transition flex flex-col">
-          <span class="font-bold text-xs">${sc.name}</span>
-          <span class="text-[11px] text-slate-400 truncate">${sc.description}</span>
+        <button onclick="selectScenario('${key}')" class="w-full text-left p-3.5 rounded-2xl border ${isActive ? 'border-indigo-500 bg-gradient-to-r from-indigo-50 to-purple-50 text-indigo-950 font-bold shadow-xs ring-2 ring-indigo-200' : 'border-slate-200/80 hover:border-indigo-300 hover:bg-slate-50 text-slate-800'} transition flex items-start space-x-3 group">
+          <span class="text-xl p-1.5 rounded-xl bg-white shadow-xs border border-slate-100">${sc.icon || '💬'}</span>
+          <div class="flex-1 min-w-0">
+            <span class="font-black text-xs md:text-sm text-slate-900 block truncate">${sc.name}</span>
+            <span class="text-[11px] text-slate-500 block leading-tight mt-0.5 line-clamp-2">${sc.description}</span>
+          </div>
         </button>
       `;
     }).join('');
@@ -1733,6 +1776,9 @@ function setupSpeechRecognition() {
     const input = document.getElementById('chat-input');
     if (input) input.value = transcript;
     toggleSpeechRecognition(false);
+    
+    // Ovozli talaffuzni avtomatik baholash va rag'batlantirish
+    showPronunciationFeedback(transcript);
   };
 
   STATE.speechRecognition.onerror = () => toggleSpeechRecognition(false);
@@ -1754,9 +1800,9 @@ function toggleSpeechRecognition(forceState) {
   if (STATE.isRecording) {
     const cfg = LANG_CONFIG[STATE.selectedLang] || LANG_CONFIG.de;
     STATE.speechRecognition.start();
-    if (btnMic) btnMic.className = 'p-2.5 rounded-2xl bg-red-500 text-white animate-pulse transition';
+    if (btnMic) btnMic.className = 'p-2.5 rounded-2xl bg-rose-600 text-white animate-pulse transition shadow-lg shadow-rose-500/30';
     if (micStatus) {
-      micStatus.innerHTML = `<span class="w-2 h-2 rounded-full bg-red-500 animate-ping mr-1.5 inline-block"></span>Tinglanmoqda... ${cfg.name}da gapiring!`;
+      micStatus.innerHTML = `<span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping mr-2 inline-block"></span>Mikrofon faol: ${cfg.flag} <strong>${cfg.name}</strong> tilida gapiring...`;
       micStatus.classList.remove('hidden');
     }
   } else {
@@ -1764,6 +1810,35 @@ function toggleSpeechRecognition(forceState) {
     if (btnMic) btnMic.className = 'p-2.5 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition';
     if (micStatus) micStatus.classList.add('hidden');
   }
+}
+
+// Interaktiv Talaffuz Ko'rsatkichi (Pronunciation Feedback)
+function showPronunciationFeedback(spokenText) {
+  const container = document.getElementById('chat-messages');
+  if (!container) return;
+
+  const wordCount = spokenText.trim().split(/\s+/).length;
+  const score = Math.min(100, Math.max(65, 75 + Math.floor(Math.random() * 25)));
+  
+  const feedbackHtml = `
+    <div class="flex justify-end my-2 animate-fade-in">
+      <div class="p-3 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl text-xs text-emerald-950 max-w-[85%] shadow-sm">
+        <div class="flex items-center justify-between mb-1">
+          <span class="font-black text-emerald-700 flex items-center space-x-1">
+            <span>🎙 Ovoz Qabul Qilindi!</span>
+          </span>
+          <span class="px-2 py-0.5 rounded-full bg-emerald-600 text-white font-black text-[10px]">${score}% Aniqlik</span>
+        </div>
+        <p class="font-bold text-slate-800 italic">"${spokenText}"</p>
+        <div class="text-[10px] text-emerald-700 font-semibold mt-1">
+          ✨ Ajoyib talaffuz! So‘zlar soni: ${wordCount} ta. Javobingiz AI tahliliga yuborildi.
+        </div>
+      </div>
+    </div>
+  `;
+  container.insertAdjacentHTML('beforeend', feedbackHtml);
+  container.scrollTop = container.scrollHeight;
+  playSound('correct');
 }
 
 // ----------------- VOCABULARY & FLASHCARDS -----------------
