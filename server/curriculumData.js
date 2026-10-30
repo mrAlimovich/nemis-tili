@@ -3515,9 +3515,6 @@ module.exports = {
             "exampleDe": "мы [mı] (biz), ты [tı] (sen)",
             "exampleUz": "biz, sen"
           },
-            "exampleDe": "мы [mı] (biz), ты [tı] (sen)",
-            "exampleUz": "biz, sen"
-          },
           {
             "pattern": "Ь (yumshatish)",
             "pronunciation": "Oldidagi undoshni yumshatadi",
@@ -5230,7 +5227,8 @@ module.exports = {
             "pronunciation": "Undosh + Unli kvadrat blok qilinadi",
             "exampleDe": "한 (h+a+n) + 글 (g+eu+l) = 한글",
             "exampleUz": "Hangeul (koreys yozuvi)"
-          },
+          }
+        ],
         "table": [
           {
             "de": "안녕하세요",
