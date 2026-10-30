@@ -41,32 +41,74 @@ module.exports = {
       "lang": "de",
       "level": "A1",
       "number": 1,
-      "title": "Talaffuzning 3 siri va Ilk salomlashish",
-      "goal": "Nemischa o‘qish qoidalarini anglash, begona va do‘stona salomlashish/xayrlashishni o‘rganish.",
+      "title": "To‘liq Nemis Alifbosi (Das Alphabet) va Salomlashish",
+      "goal": "Nemis tilidagi barcha 26 ta asosiy harf + 4 ta maxsus harf (Ä, Ö, Ü, ß)ni to‘liq o‘rganish, to‘g‘ri o‘qish va salomlashish.",
       "theory": {
-        "introUz": "Nemis tili o‘qilishi bo‘yicha o‘zbek tiliga juda yaqin. 4 ta muhim qoidani bilsangiz, bexato o‘qiysiz:",
+        "introUz": "Nemis alifbosi (Das deutsche Alphabet) 26 ta asosiy lotin harfi hamda 4 ta maxsus harfdan (Ä, Ö, Ü va ß — Eszett) iborat. Har bir harf ustiga bosib, uning sof nemischa talaffuzini tinglang:",
+        "alphabet": {
+          "title": "Das deutsche Alphabet (30 ta Harf)",
+          "description": "Harf ustiga bosing — sof nemis tilidagi talaffuzini eshitasiz!",
+          "letters": [
+            { "letter": "A a", "name": "a", "example": "Apfel (olma)", "audio": "A, Apfel" },
+            { "letter": "B b", "name": "be", "example": "Buch (kitob)", "audio": "B, Buch" },
+            { "letter": "C c", "name": "tse", "example": "Café (kafe)", "audio": "C, Café" },
+            { "letter": "D d", "name": "de", "example": "Danke (rahmat)", "audio": "D, Danke" },
+            { "letter": "E e", "name": "e", "example": "Elefant (fil)", "audio": "E, Elefant" },
+            { "letter": "F f", "name": "ef", "example": "Freund (do‘st)", "audio": "F, Freund" },
+            { "letter": "G g", "name": "ge", "example": "Gut (yaxshi)", "audio": "G, Gut" },
+            { "letter": "H h", "name": "ha", "example": "Haus (uy)", "audio": "H, Haus" },
+            { "letter": "I i", "name": "i", "example": "Igel (tipratikan)", "audio": "I, Igel" },
+            { "letter": "J j", "name": "yot", "example": "Ja (ha)", "audio": "J, Ja" },
+            { "letter": "K k", "name": "ka", "example": "Kind (bola)", "audio": "K, Kind" },
+            { "letter": "L l", "name": "el", "example": "Lampe (chiroq)", "audio": "L, Lampe" },
+            { "letter": "M m", "name": "em", "example": "Mann (erkak)", "audio": "M, Mann" },
+            { "letter": "N n", "name": "en", "example": "Nein (yo‘q)", "audio": "N, Nein" },
+            { "letter": "O o", "name": "o", "example": "Opa (bobo)", "audio": "O, Opa" },
+            { "letter": "P p", "name": "pe", "example": "Papa (ota)", "audio": "P, Papa" },
+            { "letter": "Q q", "name": "ku", "example": "Quelle (buloq)", "audio": "Q, Quelle" },
+            { "letter": "R r", "name": "er", "example": "Rot (qizil)", "audio": "R, Rot" },
+            { "letter": "S s", "name": "es", "example": "Sonne (quyosh)", "audio": "S, Sonne" },
+            { "letter": "T t", "name": "te", "example": "Tisch (stol)", "audio": "T, Tisch" },
+            { "letter": "U u", "name": "u", "example": "Uhr (soat)", "audio": "U, Uhr" },
+            { "letter": "V v", "name": "fau", "example": "Vater (ota)", "audio": "V, Vater" },
+            { "letter": "W w", "name": "ve", "example": "Wasser (suv)", "audio": "W, Wasser" },
+            { "letter": "X x", "name": "iks", "example": "Taxi (taksi)", "audio": "X, Taxi" },
+            { "letter": "Y y", "name": "ypsilon", "example": "Yoga (yoga)", "audio": "Y, Yoga" },
+            { "letter": "Z z", "name": "tset", "example": "Zug (poyezd)", "audio": "Z, Zug" },
+            { "letter": "Ä ä", "name": "a-umlaut [e]", "example": "Äpfel (olmalar)", "audio": "Ä, Äpfel" },
+            { "letter": "Ö ö", "name": "o-umlaut", "example": "Öl (yog‘)", "audio": "Ö, Öl" },
+            { "letter": "Ü ü", "name": "u-umlaut", "example": "Über (ustida)", "audio": "Ü, Über" },
+            { "letter": "ß", "name": "eszett [qo‘shaloq s]", "example": "Straße (ko‘cha)", "audio": "Eszett, Straße" }
+          ]
+        },
         "rules": [
           {
-            "pattern": "EI",
-            "pronunciation": "«AY»",
+            "pattern": "Umlautlar (Ä, Ö, Ü)",
+            "pronunciation": "Labni oldinga cho‘zib yumshoq aytiladi",
+            "exampleDe": "schön [sho'n] (chiroyli), für [fur] (uchun)",
+            "exampleUz": "chiroyli, uchun"
+          },
+          {
+            "pattern": "EI birikmasi",
+            "pronunciation": "«AY» deb o‘qiladi",
             "exampleDe": "mein [mayn], nein [nayn]",
             "exampleUz": "mening, yo‘q"
           },
           {
-            "pattern": "IE",
-            "pronunciation": "«cho‘ziq II»",
+            "pattern": "IE birikmasi",
+            "pronunciation": "cho‘ziq «II» deb o‘qiladi",
             "exampleDe": "sie [zii], wie [vii]",
             "exampleUz": "u/ular, qanday"
           },
           {
             "pattern": "S + unli",
-            "pronunciation": "«Z»",
+            "pronunciation": "«Z» deb o‘qiladi",
             "exampleDe": "Sie [zii], Super [zuper]",
             "exampleUz": "Siz, ajoyib"
           },
           {
             "pattern": "W harfi",
-            "pronunciation": "«V»",
+            "pronunciation": "«V» deb o‘qiladi",
             "exampleDe": "Wasser [vasser]",
             "exampleUz": "suv"
           }
@@ -1726,10 +1768,42 @@ module.exports = {
       "lang": "en",
       "level": "A1",
       "number": 1,
-      "title": "English Alphabet, Pronunciation & Greetings",
-      "goal": "Ingliz tili talaffuz sirlari (TH, SH, CH, PH) va kundalik salomlashishlarni o‘rganish.",
+      "title": "To‘liq Ingliz Alifbosi (The English Alphabet) & Greetings",
+      "goal": "Ingliz tilidagi 26 ta harfning nomlanishi, to‘g‘ri talaffuzi va kundalik salomlashishlarni to‘liq o‘rganish.",
       "theory": {
-        "introUz": "Ingliz tilida harflar alohida va so‘z ichida turlicha o‘qiladi. Eng muhim qoidalar:",
+        "introUz": "Ingliz tili alifbosida 26 ta harf mavjud. Har bir harf ustiga bosib, sof inglizcha talaffuzini eshiting:",
+        "alphabet": {
+          "title": "The English Alphabet (26 ta Harf)",
+          "description": "Harf ustiga bosing — sof ingliz tilidagi talaffuzini eshitasiz!",
+          "letters": [
+            { "letter": "A a", "name": "ey", "example": "Apple (olma)", "audio": "A, Apple" },
+            { "letter": "B b", "name": "bi", "example": "Book (kitob)", "audio": "B, Book" },
+            { "letter": "C c", "name": "si", "example": "Cat (mushuk)", "audio": "C, Cat" },
+            { "letter": "D d", "name": "di", "example": "Dog (kuchuk)", "audio": "D, Dog" },
+            { "letter": "E e", "name": "i", "example": "Egg (tuxum)", "audio": "E, Egg" },
+            { "letter": "F f", "name": "ef", "example": "Fish (baliq)", "audio": "F, Fish" },
+            { "letter": "G g", "name": "ji", "example": "Good (yaxshi)", "audio": "G, Good" },
+            { "letter": "H h", "name": "eych", "example": "House (uy)", "audio": "H, House" },
+            { "letter": "I i", "name": "ay", "example": "Ice (muz)", "audio": "I, Ice" },
+            { "letter": "J j", "name": "jey", "example": "Job (ish)", "audio": "J, Job" },
+            { "letter": "K k", "name": "key", "example": "King (qirol)", "audio": "K, King" },
+            { "letter": "L l", "name": "el", "example": "Life (hayot)", "audio": "L, Life" },
+            { "letter": "M m", "name": "em", "example": "Moon (oy)", "audio": "M, Moon" },
+            { "letter": "N n", "name": "en", "example": "Name (ism)", "audio": "N, Name" },
+            { "letter": "O o", "name": "ou", "example": "Open (ochiq)", "audio": "O, Open" },
+            { "letter": "P p", "name": "pi", "example": "Pen (ruchka)", "audio": "P, Pen" },
+            { "letter": "Q q", "name": "kyu", "example": "Queen (qirolicha)", "audio": "Q, Queen" },
+            { "letter": "R r", "name": "ar", "example": "Red (qizil)", "audio": "R, Red" },
+            { "letter": "S s", "name": "es", "example": "Sun (quyosh)", "audio": "S, Sun" },
+            { "letter": "T t", "name": "ti", "example": "Time (vaqt)", "audio": "T, Time" },
+            { "letter": "U u", "name": "yu", "example": "Music (musiqa)", "audio": "U, Music" },
+            { "letter": "V v", "name": "vi", "example": "Voice (ovoz)", "audio": "V, Voice" },
+            { "letter": "W w", "name": "dabl-yu", "example": "Water (suv)", "audio": "W, Water" },
+            { "letter": "X x", "name": "eks", "example": "Box (quti)", "audio": "X, Box" },
+            { "letter": "Y y", "name": "way", "example": "Yes (ha)", "audio": "Y, Yes" },
+            { "letter": "Z z", "name": "zed / zi", "example": "Zoo (hayvonot bog‘i)", "audio": "Z, Zoo" }
+          ]
+        },
         "rules": [
           {
             "pattern": "TH",
@@ -3391,14 +3465,56 @@ module.exports = {
       "lang": "ru",
       "level": "A1",
       "number": 1,
-      "title": "Русский алфавит и Первые фразы",
-      "goal": "Rus tili alifbosi, maxsus harflar (Ы, Ь, Ъ, Ж, Ш, Щ) va salomlashish iboralari.",
+      "title": "To‘liq Rus Alifbosi (Русский алфавит) va Salomlashish",
+      "goal": "Rus tilidagi barcha 33 ta harfning to‘g‘ri talaffuzi, unli/undoshlar, qattiq/yumshatish belgilari va salomlashish.",
       "theory": {
-        "introUz": "Rus tili kirill alifbosiga asoslangan. Eng ko‘p e’tibor talab qiladigan harflar:",
+        "introUz": "Rus alifbosi (Русский алфавит) 33 ta harfdan iborat: 10 ta unli, 21 ta undosh va 2 ta tovushsiz belgi (Ъ va Ь). Har bir harf ustiga bosib, sof talaffuzini eshiting:",
+        "alphabet": {
+          "title": "Русский алфавит (33 ta Harf)",
+          "description": "Harf ustiga bosing — sof ruscha talaffuzini eshitasiz!",
+          "letters": [
+            { "letter": "А а", "name": "а", "example": "Арбуз (tarvuz)", "audio": "А, Арбуз" },
+            { "letter": "Б б", "name": "бэ", "example": "Брат (aka/uka)", "audio": "Б, Брат" },
+            { "letter": "В в", "name": "вэ", "example": "Вода (suv)", "audio": "В, Вода" },
+            { "letter": "Г г", "name": "гэ", "example": "Город (shahar)", "audio": "Г, Город" },
+            { "letter": "Д д", "name": "дэ", "example": "Дом (uy)", "audio": "Д, Дом" },
+            { "letter": "Е е", "name": "е", "example": "Еда (ovqat)", "audio": "Е, Еда" },
+            { "letter": "Ё ё", "name": "ё", "example": "Ёлка (archasi)", "audio": "Ё, Ёлка" },
+            { "letter": "Ж ж", "name": "жэ", "example": "Жизнь (hayot)", "audio": "Ж, Жизнь" },
+            { "letter": "З з", "name": "зэ", "example": "Зима (qish)", "audio": "З, Зима" },
+            { "letter": "И и", "name": "и", "example": "Имя (ism)", "audio": "И, Имя" },
+            { "letter": "Й й", "name": "и краткое", "example": "Чай (choy)", "audio": "Й, Чай" },
+            { "letter": "К к", "name": "ка", "example": "Книга (kitob)", "audio": "К, Книга" },
+            { "letter": "Л л", "name": "эль", "example": "Лето (yoz)", "audio": "Л, Лето" },
+            { "letter": "М м", "name": "эм", "example": "Мама (ona)", "audio": "М, Мама" },
+            { "letter": "Н н", "name": "эн", "example": "Нос (burun)", "audio": "Н, Нос" },
+            { "letter": "О о", "name": "о", "example": "Окно (deraza)", "audio": "О, Окно" },
+            { "letter": "П п", "name": "пэ", "example": "Папа (ota)", "audio": "П, Папа" },
+            { "letter": "Р р", "name": "эр", "example": "Рука (qo‘l)", "audio": "Р, Рука" },
+            { "letter": "С с", "name": "эс", "example": "Солнце (quyosh)", "audio": "С, Солнце" },
+            { "letter": "Т т", "name": "тэ", "example": "Ташкент (Toshkent)", "audio": "Т, Ташкент" },
+            { "letter": "У у", "name": "у", "example": "Утро (tong)", "audio": "У, Утро" },
+            { "letter": "Ф ф", "name": "эф", "example": "Фото (surat)", "audio": "Ф, Фото" },
+            { "letter": "Х х", "name": "ха", "example": "Хлеб (non)", "audio": "Х, Хлеб" },
+            { "letter": "Ц ц", "name": "цэ", "example": "Центр (markaz)", "audio": "Ц, Центр" },
+            { "letter": "Ч ч", "name": "че", "example": "Час (soat)", "audio": "Ч, Час" },
+            { "letter": "Ш ш", "name": "ша", "example": "Школа (maktab)", "audio": "Ш, Школа" },
+            { "letter": "Щ щ", "name": "ща", "example": "Щётка (cho‘tka)", "audio": "Щ, Щётка" },
+            { "letter": "Ъ", "name": "твёрдый знак", "example": "Объект (obyekt)", "audio": "Твёрдый знак, Объект" },
+            { "letter": "Ы", "name": "ы", "example": "Мы (biz)", "audio": "Ы, Мы" },
+            { "letter": "Ь", "name": "мягкий знак", "example": "День (kun)", "audio": "Мягкий знак, День" },
+            { "letter": "Э э", "name": "э", "example": "Этот (bu)", "audio": "Э, Этот" },
+            { "letter": "Ю ю", "name": "ю", "example": "Юг (janub)", "audio": "Ю, Юг" },
+            { "letter": "Я я", "name": "я", "example": "Яблоко (olma)", "audio": "Я, Яблоко" }
+          ]
+        },
         "rules": [
           {
             "pattern": "Ы harfi",
             "pronunciation": "Bo‘g‘izdan chiquvchi qattiq «I»",
+            "exampleDe": "мы [mı] (biz), ты [tı] (sen)",
+            "exampleUz": "biz, sen"
+          },
             "exampleDe": "мы [mı] (biz), ты [tı] (sen)",
             "exampleUz": "biz, sen"
           },
@@ -5067,30 +5183,54 @@ module.exports = {
       "lang": "ko",
       "level": "A1",
       "number": 1,
-      "title": "Hangeul (한글) Alifbosi va Salomlashish",
-      "goal": "Dunyoning eng mukammal alifbosi Hangeul unli va undoshlari, birinchi salomlashish.",
+      "title": "To‘liq Hangeul (한글) Alifbosi va Salomlashish",
+      "goal": "Dunyoning eng mukammal va mantiqiy alifbosi Hangeul (40 ta unli, undosh va qo‘shaloq harflar)ni to‘liq o‘rganish va salomlashish.",
       "theory": {
-        "introUz": "Koreys alifbosi Hangeul (한글) 1443 yilda qirol Sejong tomonidan yaratilgan bo‘lib, o‘rganish juda oson:",
+        "introUz": "Koreys alifbosi Hangeul (한글) 1443 yilda qirol Sejong tomonidan yaratilgan. U 14 ta asosiy undosh, 5 ta qo‘shaloq undosh, 10 ta asosiy unli va 11 ta murakkab unlidan (jami 40 ta harf) iborat. Har bir harf ustiga bosib, sof talaffuzini eshiting:",
+        "alphabet": {
+          "title": "Hangeul (한글) — To‘liq 40 ta Harf",
+          "description": "Harf ustiga bosing — sof koreyscha talaffuzini eshitasiz!",
+          "letters": [
+            { "letter": "ㄱ", "name": "giyeok [k/g]", "example": "가방 (sumka)", "audio": "ㄱ, 가방" },
+            { "letter": "ㄴ", "name": "nieun [n]", "example": "나무 (daraxt)", "audio": "ㄴ, 나무" },
+            { "letter": "ㄷ", "name": "digeut [t/d]", "example": "다리 (oyoq/ko‘prik)", "audio": "ㄷ, 다리" },
+            { "letter": "ㄹ", "name": "rieul [r/l]", "example": "라디오 (radio)", "audio": "ㄹ, 라디오" },
+            { "letter": "ㅁ", "name": "mieum [m]", "example": "마음 (yurak/ko‘ngil)", "audio": "ㅁ, 마음" },
+            { "letter": "ㅂ", "name": "bieup [p/b]", "example": "바지 (shim)", "audio": "ㅂ, 바지" },
+            { "letter": "ㅅ", "name": "siot [s]", "example": "사과 (olma)", "audio": "ㅅ, 사과" },
+            { "letter": "ㅇ", "name": "ieung [ng / tovushsiz]", "example": "아이 (bola)", "audio": "ㅇ, 아이" },
+            { "letter": "ㅈ", "name": "jieut [j/ch]", "example": "지도 (xarita)", "audio": "ㅈ, 지도" },
+            { "letter": "ㅊ", "name": "chieut [ch]", "example": "차 (choy/mashina)", "audio": "ㅊ, 차" },
+            { "letter": "ㅋ", "name": "khieuk [kh]", "example": "커피 (qahva)", "audio": "ㅋ, 커피" },
+            { "letter": "ㅌ", "name": "thieut [th]", "example": "토마토 (pomidor)", "audio": "ㅌ, 토마토" },
+            { "letter": "ㅍ", "name": "phieup [ph]", "example": "포도 (uzum)", "audio": "ㅍ, 포도" },
+            { "letter": "ㅎ", "name": "hieut [h]", "example": "하늘 (osmon)", "audio": "ㅎ, 하늘" },
+            { "letter": "ㄲ", "name": "ssang-giyeok [jarangsiz k]", "example": "꼬리 (dum)", "audio": "ㄲ, 꼬리" },
+            { "letter": "ㄸ", "name": "ssang-digeut [jarangsiz t]", "example": "딸기 (qulupnay)", "audio": "ㄸ, 딸기" },
+            { "letter": "ㅃ", "name": "ssang-bieup [jarangsiz p]", "example": "빵 (non)", "audio": "ㅃ, 빵" },
+            { "letter": "ㅆ", "name": "ssang-siot [jarangsiz s]", "example": "씨앗 (urug‘)", "audio": "ㅆ, 씨앗" },
+            { "letter": "ㅉ", "name": "ssang-jieut [jarangsiz j]", "example": "찌개 (sho‘rva)", "audio": "ㅉ, 찌개" },
+            { "letter": "ㅏ", "name": "a", "example": "아이 (bola)", "audio": "ㅏ, 아이" },
+            { "letter": "ㅑ", "name": "ya", "example": "야구 (beysbol)", "audio": "ㅑ, 야구" },
+            { "letter": "ㅓ", "name": "eo [ochiq o]", "example": "어머니 (ona)", "audio": "ㅓ, 어머니" },
+            { "letter": "ㅕ", "name": "yeo [ochiq yo]", "example": "여자 (ayol)", "audio": "ㅕ, 여자" },
+            { "letter": "ㅗ", "name": "o [yumaloq o]", "example": "오이 (bodring)", "audio": "ㅗ, 오이" },
+            { "letter": "ㅛ", "name": "yo [yumaloq yo]", "example": "요리 (taom)", "audio": "ㅛ, 요리" },
+            { "letter": "ㅜ", "name": "u", "example": "우유 (sut)", "audio": "ㅜ, 우유" },
+            { "letter": "ㅠ", "name": "yu", "example": "유리 (shisha)", "audio": "ㅠ, 유리" },
+            { "letter": "ㅡ", "name": "eu [chuqur i]", "example": "음식 (ovqat)", "audio": "ㅡ, 음식" },
+            { "letter": "ㅣ", "name": "i", "example": "이 (tish)", "audio": "ㅣ, 이" },
+            { "letter": "ㅐ", "name": "ae [e]", "example": "새 (qush)", "audio": "ㅐ, 새" },
+            { "letter": "ㅔ", "name": "e", "example": "베개 (yostiq)", "audio": "ㅔ, 베개" }
+          ]
+        },
         "rules": [
           {
-            "pattern": "Asosiy unlilar",
-            "pronunciation": "ㅏ (a), ㅓ (o), ㅗ (o'), ㅜ (u), ㅡ (i), ㅣ (i)",
-            "exampleDe": "아이 [ai] (bola), 오이 [oi] (bodring)",
-            "exampleUz": "bola, bodring"
+            "pattern": "Bo‘g‘in yig‘ish",
+            "pronunciation": "Undosh + Unli kvadrat blok qilinadi",
+            "exampleDe": "한 (h+a+n) + 글 (g+eu+l) = 한글",
+            "exampleUz": "Hangeul (koreys yozuvi)"
           },
-          {
-            "pattern": "Asosiy undoshlar",
-            "pronunciation": "ㄱ (k/g), ㄴ (n), ㄷ (t/d), ㄹ (r/l), ㅁ (m), ㅂ (p/b), ㅅ (s), ㅇ (ng)",
-            "exampleDe": "나무 [namu] (daraxt)",
-            "exampleUz": "daraxt"
-          },
-          {
-            "pattern": "So‘z tuzilishi",
-            "pronunciation": "Harflar bo‘g‘in qilib to‘rtburchak bloklarga yig‘iladi",
-            "exampleDe": "한 (han) + 글 (geul) = 한글",
-            "exampleUz": "Hangeul"
-          }
-        ],
         "table": [
           {
             "de": "안녕하세요",

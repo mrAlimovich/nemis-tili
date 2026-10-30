@@ -628,6 +628,35 @@ async function openLesson(lessonId) {
           </div>
           <p class="text-base text-slate-800 font-medium leading-relaxed mb-5">${l.theory.introUz}</p>
 
+          <!-- INTERACTIVE FULL ALPHABET BOARD (agar darsda alifbo bo'lsa) -->
+          ${l.theory.alphabet ? `
+            <div class="mb-8 p-5 md:p-6 rounded-3xl bg-gradient-to-br from-indigo-50/80 via-white to-purple-50/80 border-2 border-indigo-200 shadow-md">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 mb-4 border-b border-indigo-100">
+                <div>
+                  <h4 class="font-black text-slate-900 text-lg flex items-center space-x-2">
+                    <span>🔤 ${l.theory.alphabet.title || 'To‘liq Alifbo (Das Alphabet)'}</span>
+                    <span class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-600 text-white font-extrabold">${l.theory.alphabet.letters.length} ta Harf</span>
+                  </h4>
+                  <p class="text-xs text-slate-500 font-medium mt-0.5">${l.theory.alphabet.description || 'Har bir harf ustiga bosing — sof nemischa/chet tili talaffuzini eshitasiz!'}</p>
+                </div>
+                <div class="text-[11px] font-bold text-indigo-600 bg-white px-3 py-1.5 rounded-xl border border-indigo-200 self-start sm:self-auto shadow-xs">
+                  🎧 Bosib tinglang
+                </div>
+              </div>
+
+              <!-- Alphabet Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-2.5 md:gap-3">
+                ${l.theory.alphabet.letters.map(item => `
+                  <div onclick="playGermanAudio('${item.audio || item.letter}')" class="group cursor-pointer p-3 rounded-2xl bg-white hover:bg-gradient-to-b hover:from-indigo-600 hover:to-purple-600 border border-slate-200 hover:border-indigo-600 shadow-xs hover:shadow-lg transition-all duration-200 flex flex-col items-center justify-center text-center transform hover:-translate-y-1">
+                    <span class="text-2xl font-black text-slate-900 group-hover:text-white transition leading-none mb-1">${item.letter}</span>
+                    <span class="text-xs font-bold text-indigo-600 group-hover:text-amber-300 transition">[${item.name}]</span>
+                    <span class="text-[10px] text-slate-400 group-hover:text-indigo-100 transition truncate max-w-full mt-0.5 font-medium">${item.example}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+
           <!-- Rules list -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             ${l.theory.rules.map(r => `
@@ -1746,18 +1775,71 @@ async function clearChat() {
   await loadChatHistory();
 }
 
-// ----------------- WEB SPEECH AUDIO -----------------
+// ----------------- PREMIUM NATURAL TTS ENGINE -----------------
+// Pre-load browser voices smoothly
+let cachedVoices = [];
+function initVoices() {
+  if ('speechSynthesis' in window) {
+    cachedVoices = window.speechSynthesis.getVoices();
+    window.speechSynthesis.onvoiceschanged = () => {
+      cachedVoices = window.speechSynthesis.getVoices();
+    };
+  }
+}
+initVoices();
+
+function getBestNaturalVoice(targetLangCode) {
+  if (!cachedVoices || cachedVoices.length === 0) {
+    cachedVoices = window.speechSynthesis.getVoices();
+  }
+  const prefix = targetLangCode.slice(0, 2).toLowerCase();
+
+  // 1. Google High-Quality Natural Voices (Chrome Android & Desktop)
+  const googleVoice = cachedVoices.find(v => 
+    (v.lang.toLowerCase().startsWith(prefix) || v.lang.toLowerCase().replace('_', '-') === targetLangCode.toLowerCase()) &&
+    /Google|Natural|Online/i.test(v.name)
+  );
+  if (googleVoice) return googleVoice;
+
+  // 2. Microsoft Neural / Premium Natural Voices (Edge & Windows 10/11)
+  const msNeural = cachedVoices.find(v => 
+    (v.lang.toLowerCase().startsWith(prefix) || v.lang.toLowerCase().replace('_', '-') === targetLangCode.toLowerCase()) &&
+    /Neural|Online|Natural|Katja|Hedda|Stefan|Jenny|Guy|Daria|Svetlana|SunHi|InJoon/i.test(v.name)
+  );
+  if (msNeural) return msNeural;
+
+  // 3. Apple Siri / Enhanced Voice (Safari / iOS / macOS)
+  const appleVoice = cachedVoices.find(v => 
+    (v.lang.toLowerCase().startsWith(prefix) || v.lang.toLowerCase().replace('_', '-') === targetLangCode.toLowerCase()) &&
+    /Siri|Enhanced|Compact|Anna|Milena|Yuna|Samantha/i.test(v.name)
+  );
+  if (appleVoice) return appleVoice;
+
+  // 4. Any native language voice matching prefix
+  return cachedVoices.find(v => v.lang.toLowerCase().startsWith(prefix));
+}
+
 function playGermanAudio(text) {
   if (!('speechSynthesis' in window)) return;
   window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
+
+  // Toza matn: qavslar va fonetik belgilarni olib tashlash (tabiiy o'qishi uchun)
+  const cleanSpeechText = text.replace(/\[.*?\]/g, '').replace(/[\(\)]/g, '').trim();
+  if (!cleanSpeechText) return;
+
+  const utterance = new SpeechSynthesisUtterance(cleanSpeechText);
   const targetSpeech = LANG_CONFIG[STATE.selectedLang]?.speech || 'de-DE';
   utterance.lang = targetSpeech;
-  utterance.rate = 0.9;
-  
-  const voices = window.speechSynthesis.getVoices();
-  const voice = voices.find(v => v.lang.startsWith(targetSpeech.slice(0, 2)) || v.lang === targetSpeech);
-  if (voice) utterance.voice = voice;
+
+  // Tabiiy insoniy intonatsiya ko'rsatkichlari:
+  utterance.rate = 0.95; // 0.9 emas, 0.95 — tabiiy jonli odam tezligi
+  utterance.pitch = 1.0;  // Tabiiy tembr balandligi
+
+  const bestVoice = getBestNaturalVoice(targetSpeech);
+  if (bestVoice) {
+    utterance.voice = bestVoice;
+  }
+
   window.speechSynthesis.speak(utterance);
 }
 
