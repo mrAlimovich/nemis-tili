@@ -677,24 +677,112 @@ async function openLesson(lessonId) {
           </div>
 
           <!-- Phrases Table -->
-          <div class="border border-slate-200 rounded-3xl overflow-hidden bg-white shadow-sm">
+          <div class="border border-slate-200 rounded-3xl overflow-hidden bg-white shadow-sm mb-6">
             <div class="bg-gradient-to-r from-slate-100 to-indigo-50/50 px-5 py-3.5 text-xs font-black text-slate-700 uppercase tracking-wider border-b border-slate-200">
-              Asosiy Iboralar & Misollar
+              Asosiy Iboralar & Misollar (Bosib tinglang)
             </div>
             <div class="divide-y divide-slate-100">
               ${l.theory.table.map(row => `
-                <div class="px-5 py-3.5 flex items-center justify-between hover:bg-slate-50/80 transition">
+                <div class="px-5 py-3.5 flex items-center justify-between hover:bg-slate-50/80 transition group">
                   <div class="flex flex-col sm:flex-row sm:items-baseline sm:space-x-3">
-                    <span class="font-extrabold text-slate-900 text-base md:text-lg">${row.de}</span>
+                    <span class="font-extrabold text-slate-900 text-base md:text-lg group-hover:text-indigo-600 transition">${row.de}</span>
                     <span class="text-slate-600 font-medium text-xs md:text-sm mt-0.5 sm:mt-0">${row.uz}</span>
                   </div>
-                  <button onclick="playGermanAudio('${row.de.replace(/'/g, "\\'")}')" class="p-2 text-indigo-600 hover:bg-indigo-50 rounded-xl transition shrink-0" title="Tinglash">
+                  <button type="button" onclick="playGermanAudio('${row.de.replace(/'/g, "\\'")}')" class="p-2 text-indigo-600 hover:bg-indigo-50 rounded-xl transition shrink-0" title="Tinglash">
                     <i data-lucide="volume-2" class="w-5 h-5"></i>
                   </button>
                 </div>
               `).join('')}
             </div>
           </div>
+
+          <!-- REAL LIFE SITUATIONAL CARDS (Hayotiy Amaliy Vaziyatlar) -->
+          ${l.situations && l.situations.length > 0 ? `
+            <div class="mb-8">
+              <div class="flex items-center space-x-2 text-indigo-600 font-black text-sm uppercase tracking-wider mb-3">
+                <i data-lucide="compass" class="w-5 h-5"></i>
+                <span>Hayotiy Vaziyatlar & Qayerda Ishlatiladi?</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                ${l.situations.map(s => `
+                  <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:border-indigo-400 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                      <div class="flex items-center space-x-2 mb-2">
+                        <span class="text-2xl">${s.icon || '📍'}</span>
+                        <h5 class="font-black text-sm text-slate-900">${s.title}</h5>
+                      </div>
+                      <p class="text-xs text-slate-600 font-medium mb-3 leading-relaxed">${s.desc}</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-100 bg-slate-50/80 p-2.5 rounded-xl flex items-center justify-between">
+                      <div class="min-w-0 pr-2">
+                        <span class="font-black text-xs text-indigo-950 block truncate">${s.phrase}</span>
+                        <span class="text-[11px] text-slate-500 block truncate">${s.meaning}</span>
+                      </div>
+                      <button type="button" onclick="playGermanAudio('${s.phrase.replace(/'/g, "\\'")}')" class="p-1.5 text-indigo-600 hover:bg-white rounded-lg transition shrink-0 shadow-2xs" title="Tinglash">
+                        <i data-lucide="volume-2" class="w-4 h-4"></i>
+                      </button>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- INTERACTIVE REAL-LIFE DIALOGUE (Jonli Suhbat) -->
+          ${l.dialogue && l.dialogue.lines ? `
+            <div class="mb-8 p-5 md:p-6 rounded-3xl bg-gradient-to-br from-indigo-50/70 via-white to-purple-50/70 border-2 border-indigo-200/80 shadow-md">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-4 border-b border-indigo-100">
+                <div class="flex items-center space-x-3">
+                  <div class="w-10 h-10 rounded-2xl bg-indigo-600 text-white flex items-center justify-center font-black text-lg shadow-sm">
+                    💬
+                  </div>
+                  <div>
+                    <h4 class="font-black text-slate-900 text-base md:text-lg">${l.dialogue.title || 'Jonli Qahramonlar Dialogi'}</h4>
+                    <p class="text-xs text-slate-500 font-medium">${l.dialogue.context || 'Qahramonlar nutqini eshiting va takrorlang'}</p>
+                  </div>
+                </div>
+                <button type="button" onclick="playFullDialogue(${JSON.stringify(l.dialogue.lines).replace(/"/g, '&quot;')})" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white rounded-xl text-xs font-black flex items-center space-x-1.5 transition shadow">
+                  <i data-lucide="play-circle" class="w-4 h-4"></i>
+                  <span>Butun Dialogni Tinglash 🎧</span>
+                </button>
+              </div>
+
+              <!-- Dialogue Lines -->
+              <div class="space-y-3">
+                ${l.dialogue.lines.map((line, idx) => `
+                  <div class="flex items-start space-x-3 p-3.5 rounded-2xl ${idx % 2 === 0 ? 'bg-white border border-indigo-100/90 ml-0 mr-4 sm:mr-12' : 'bg-indigo-50/80 border border-indigo-200 ml-4 sm:ml-12 mr-0'} shadow-2xs hover:shadow-xs transition">
+                    <div class="w-9 h-9 rounded-xl ${idx % 2 === 0 ? 'bg-gradient-to-tr from-blue-600 to-indigo-600' : 'bg-gradient-to-tr from-purple-600 to-pink-600'} text-white font-black text-xs flex items-center justify-center shrink-0 shadow-xs">
+                      ${line.speaker ? line.speaker.substring(0, 2).toUpperCase() : '👤'}
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-black text-indigo-950">${line.speaker}</span>
+                        <button type="button" onclick="playGermanAudio('${line.text.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg text-indigo-600 hover:bg-white transition" title="Tinglash">
+                          <i data-lucide="volume-2" class="w-4 h-4"></i>
+                        </button>
+                      </div>
+                      <p class="text-sm md:text-base font-extrabold text-slate-900 mt-0.5 leading-snug">${line.text}</p>
+                      <p class="text-xs font-medium text-slate-600 mt-1">${line.uz}</p>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- MNEMONIC / MEMORY LIFEHACK (Esda saqlash layfxaki) -->
+          ${l.mnemonic ? `
+            <div class="mb-8 p-5 rounded-3xl bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 border border-emerald-200 shadow-sm flex items-start space-x-3.5">
+              <div class="w-10 h-10 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-xl shrink-0 shadow-xs">
+                💡
+              </div>
+              <div>
+                <span class="text-[11px] font-black uppercase text-emerald-800 tracking-wider block mb-0.5">Xotira Layfxaki & Esda Saqlash Siri</span>
+                <h5 class="font-black text-slate-900 text-sm md:text-base mb-1">${l.mnemonic.title}</h5>
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed font-medium">${l.mnemonic.tip}</p>
+              </div>
+            </div>
+          ` : ''}
         </div>
 
         <!-- CULTURAL LIFEHACK (KULTURTIP) -->
@@ -751,22 +839,40 @@ async function openLesson(lessonId) {
 
         <!-- STEP 3: INTERACTIVE EXERCISES -->
         <div>
-          <div class="flex items-center space-x-2 text-indigo-600 font-black text-sm uppercase tracking-wider mb-4">
-            <i data-lucide="check-square" class="w-5 h-5"></i>
-            <span>Interaktiv Mashqlar & Mini Test</span>
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-2 text-indigo-600 font-black text-sm uppercase tracking-wider">
+              <i data-lucide="check-square" class="w-5 h-5"></i>
+              <span>Interaktiv Mashqlar & Mini Test</span>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-black">
+              ${l.exercises.length} ta Savol
+            </span>
           </div>
 
           <form id="lesson-quiz-form" onsubmit="handleLessonQuizSubmit(event, '${l.id}')" class="space-y-6">
-            ${l.exercises.map((ex, idx) => `
-              <div class="p-5 md:p-6 rounded-3xl border border-slate-200/90 bg-white shadow-sm" id="ex-card-${ex.id}">
-                <span class="text-xs font-black text-indigo-600 uppercase mb-1.5 block tracking-wider">Savol ${idx + 1}</span>
+            ${l.exercises.map((ex, idx) => {
+              const typeLabels = {
+                'multiple-choice': '🎯 Variantli Savol',
+                'listening-choice': '🎧 Tinglab Topish',
+                'fill-blank': '✍️ Yozma Bo‘shliq',
+                'order': '🧩 Gap Tuzish',
+                'true-false': '⚡ To‘g‘ri yoki Noto‘g‘ri'
+              };
+              const typeBadge = typeLabels[ex.type] || 'Savol';
+              return `
+              <div class="p-5 md:p-6 rounded-3xl border border-slate-200/90 bg-white shadow-sm hover:border-indigo-300 transition" id="ex-card-${ex.id}">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-black text-indigo-600 uppercase tracking-wider">SAVOL ${idx + 1} / ${l.exercises.length}</span>
+                  <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">${typeBadge}</span>
+                </div>
                 <h4 class="font-bold text-slate-900 text-base mb-3.5 leading-snug">${ex.question}</h4>
 
                 ${renderExerciseInput(ex)}
 
                 <div id="ex-feedback-${ex.id}" class="hidden mt-3 p-3.5 rounded-2xl text-xs font-semibold"></div>
               </div>
-            `).join('')}
+              `;
+            }).join('')}
 
             <button type="submit" id="btn-submit-lesson" class="w-full py-4 bg-indigo-600 hover:bg-indigo-700 active:scale-[0.99] text-white font-black rounded-2xl shadow-xl shadow-indigo-500/25 transition text-base">
               Javoblarni Tekshirish va Darsni Yakunlash
@@ -802,15 +908,44 @@ function checkListeningAnswer(selected, correct) {
 }
 
 function renderExerciseInput(ex) {
-  if (ex.type === 'multiple-choice') {
+  if (ex.type === 'multiple-choice' || ex.type === 'listening-choice') {
     return `
-      <div class="space-y-2.5">
-        ${ex.options.map((opt, oIdx) => `
-          <label class="flex items-center space-x-3.5 p-3.5 rounded-2xl border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/30 cursor-pointer transition text-sm md:text-base font-semibold shadow-xs">
-            <input type="radio" name="answer_${ex.id}" value="${oIdx}" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500" required>
-            <span class="text-slate-800">${opt}</span>
-          </label>
-        `).join('')}
+      <div>
+        ${ex.audioText ? `
+          <div class="mb-3.5 p-3.5 rounded-2xl bg-indigo-50/80 border border-indigo-200 flex items-center justify-between shadow-2xs">
+            <div class="flex items-center space-x-2 text-indigo-900 font-bold text-xs">
+              <span class="text-base">🎧</span>
+              <span>Audioni diqqat bilan eshiting va to‘g‘ri javobni tanlang:</span>
+            </div>
+            <button type="button" onclick="playGermanAudio('${ex.audioText.replace(/'/g, "\\'")}')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white text-xs font-black rounded-xl flex items-center space-x-1.5 transition shadow-xs shrink-0">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+              <span>Ovozni Tinglash</span>
+            </button>
+          </div>
+        ` : ''}
+        <div class="space-y-2.5">
+          ${ex.options.map((opt, oIdx) => `
+            <label class="flex items-center space-x-3.5 p-3.5 rounded-2xl border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/30 cursor-pointer transition text-sm md:text-base font-semibold shadow-xs">
+              <input type="radio" name="answer_${ex.id}" value="${oIdx}" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500" required>
+              <span class="text-slate-800">${opt}</span>
+            </label>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  if (ex.type === 'true-false') {
+    return `
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <label class="flex items-center justify-center space-x-2.5 p-4 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 cursor-pointer transition font-bold text-sm text-slate-800 text-center shadow-xs">
+          <input type="radio" name="answer_${ex.id}" value="true" class="w-4 h-4 text-emerald-600 focus:ring-emerald-500" required>
+          <span class="text-emerald-700 font-extrabold text-base">✅ ${ex.trueLabel || 'To‘g‘ri (Richtig)'}</span>
+        </label>
+        <label class="flex items-center justify-center space-x-2.5 p-4 rounded-2xl border-2 border-slate-200 hover:border-rose-500 hover:bg-rose-50/50 cursor-pointer transition font-bold text-sm text-slate-800 text-center shadow-xs">
+          <input type="radio" name="answer_${ex.id}" value="false" class="w-4 h-4 text-rose-600 focus:ring-rose-500" required>
+          <span class="text-rose-700 font-extrabold text-base">❌ ${ex.falseLabel || 'Noto‘g‘ri (Falsch)'}</span>
+        </label>
       </div>
     `;
   }
@@ -818,7 +953,7 @@ function renderExerciseInput(ex) {
   if (ex.type === 'fill-blank') {
     return `
       <div>
-        <input type="text" name="answer_${ex.id}" placeholder="${ex.placeholder || 'Javobingizni yozing...'}" class="w-full px-4 py-3 rounded-2xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base font-semibold text-slate-800" required>
+        <input type="text" name="answer_${ex.id}" placeholder="${ex.placeholder || 'Javobingizni yozing...'}" class="w-full px-4 py-3 rounded-2xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base font-semibold text-slate-800" required autocomplete="off">
         ${ex.hint ? `<span class="text-xs text-slate-500 mt-1.5 block font-medium">💡 Yordam: ${ex.hint}</span>` : ''}
       </div>
     `;
@@ -827,11 +962,16 @@ function renderExerciseInput(ex) {
   if (ex.type === 'order') {
     return `
       <div>
-        <input type="text" name="answer_${ex.id}" placeholder="${ex.correctSentence}" class="w-full px-4 py-3 rounded-2xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base font-semibold text-slate-800" required>
-        <div class="flex flex-wrap gap-2 mt-2.5">
+        <input type="text" id="order-input-${ex.id}" name="answer_${ex.id}" placeholder="${ex.placeholder || 'So‘zlarni bosib ketma-ket yig‘ing...'}" class="w-full px-4 py-3 rounded-2xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base font-semibold text-slate-800 mb-2.5" required autocomplete="off">
+        <div class="flex flex-wrap items-center gap-2">
           ${ex.words.map(w => `
-            <span class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 text-xs md:text-sm font-bold rounded-xl select-none transition">${w}</span>
+            <button type="button" onclick="appendWordToInput('order-input-${ex.id}', '${w.replace(/'/g, "\\'")}')" class="px-3.5 py-1.5 bg-slate-100 hover:bg-indigo-100 hover:text-indigo-700 border border-slate-200 text-slate-800 text-xs md:text-sm font-bold rounded-xl select-none transition active:scale-95 shadow-2xs">
+              ${w}
+            </button>
           `).join('')}
+          <button type="button" onclick="clearOrderInput('order-input-${ex.id}')" class="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 text-xs font-bold rounded-xl transition border border-rose-200 ml-auto">
+            Tozalash ↺
+          </button>
         </div>
       </div>
     `;
@@ -839,6 +979,44 @@ function renderExerciseInput(ex) {
 
   return '';
 }
+
+window.appendWordToInput = function(inputId, word) {
+  const el = document.getElementById(inputId);
+  if (!el) return;
+  const current = el.value.trim();
+  el.value = current ? current + ' ' + word : word;
+};
+
+window.clearOrderInput = function(inputId) {
+  const el = document.getElementById(inputId);
+  if (el) el.value = '';
+};
+
+window.playFullDialogue = async function(lines) {
+  if (!lines || !Array.isArray(lines)) return;
+  for (const line of lines) {
+    playGermanAudio(line.text);
+    // Pause between speakers for natural human dialogue pacing
+    const ms = Math.max(2200, line.text.length * 95);
+    await new Promise(r => setTimeout(r, ms));
+  }
+};
+
+window.goToNextLesson = async function() {
+  const cur = STATE.currentLesson;
+  if (!cur) {
+    navigate('dashboard');
+    return;
+  }
+  const nextNumber = cur.number + 1;
+  const list = STATE.lessons || [];
+  const nextLesson = list.find(l => l.number === nextNumber);
+  if (nextLesson) {
+    openLesson(nextLesson.id);
+  } else {
+    navigate('dashboard');
+  }
+};
 
 async function handleLessonQuizSubmit(e, lessonId) {
   e.preventDefault();
@@ -855,32 +1033,36 @@ async function handleLessonQuizSubmit(e, lessonId) {
     const feedbackEl = document.getElementById(`ex-feedback-${ex.id}`);
     let isCorrect = false;
 
-    if (ex.type === 'multiple-choice') {
+    if (ex.type === 'multiple-choice' || ex.type === 'listening-choice') {
       if (parseInt(val, 10) === ex.correctIndex) isCorrect = true;
+    } else if (ex.type === 'true-false') {
+      const boolVal = (val === 'true');
+      if (boolVal === ex.correctValue) isCorrect = true;
     } else if (ex.type === 'fill-blank') {
       const cleanVal = (val || '').trim().toLowerCase();
-      const expected = ex.correctAnswer.toLowerCase();
+      const expected = (ex.correctAnswer || '').toLowerCase();
       const alts = (ex.altAnswers || []).map(a => a.toLowerCase());
       if (cleanVal === expected || alts.includes(cleanVal)) isCorrect = true;
     } else if (ex.type === 'order') {
       const cleanVal = (val || '').trim().replace(/[.,!?]/g, '').toLowerCase();
-      const expected = ex.correctSentence.replace(/[.,!?]/g, '').toLowerCase();
+      const expected = (ex.correctSentence || '').replace(/[.,!?]/g, '').toLowerCase();
       if (cleanVal === expected) isCorrect = true;
     }
 
     feedbackEl.classList.remove('hidden');
     if (isCorrect) {
       correctCount++;
-      feedbackEl.className = 'mt-3 p-3 rounded-2xl text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200';
-      feedbackEl.innerHTML = `✅ To‘g‘ri! ${ex.explanation || ''}`;
+      feedbackEl.className = 'mt-3 p-3.5 rounded-2xl text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200';
+      feedbackEl.innerHTML = `✅ <strong>To‘g‘ri!</strong> ${ex.explanation || ''}`;
     } else {
-      feedbackEl.className = 'mt-3 p-3 rounded-2xl text-xs font-semibold bg-red-50 text-red-800 border border-red-200';
-      feedbackEl.innerHTML = `❌ Noto‘g‘ri. To‘g‘ri javob: <strong>${ex.correctAnswer || ex.correctSentence || ex.options[ex.correctIndex]}</strong>. ${ex.explanation || ''}`;
+      feedbackEl.className = 'mt-3 p-3.5 rounded-2xl text-xs font-semibold bg-red-50 text-red-800 border border-red-200';
+      const ansDisplay = ex.correctAnswer || ex.correctSentence || (ex.options ? ex.options[ex.correctIndex] : (ex.correctValue ? 'To‘g‘ri' : 'Noto‘g‘ri'));
+      feedbackEl.innerHTML = `❌ <strong>Noto‘g‘ri.</strong> To‘g‘ri javob: <strong>${ansDisplay}</strong>. ${ex.explanation || ''}`;
       mistakes.push({
         type: ex.type,
         question: ex.question,
         userAnswer: val,
-        correctAnswer: ex.correctAnswer || ex.correctSentence || ex.options[ex.correctIndex],
+        correctAnswer: ansDisplay,
         reason: ex.explanation || 'Qoidani qayta ko‘rib chiqing'
       });
     }
@@ -906,7 +1088,7 @@ async function handleLessonQuizSubmit(e, lessonId) {
     });
 
     if (window.confetti && correctCount === lesson.exercises.length) {
-      window.confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+      window.confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
     }
 
     if (STATE.user) {
@@ -915,8 +1097,30 @@ async function handleLessonQuizSubmit(e, lessonId) {
       renderHeaderBadges();
     }
 
-    submitBtn.className = 'w-full py-3.5 bg-emerald-600 text-white font-extrabold rounded-2xl shadow-lg transition text-sm';
-    submitBtn.innerHTML = `🎉 Dars yakunlandi! Natija: ${correctCount}/${lesson.exercises.length} (+${res.earnedXp} XP)`;
+    const pct = Math.round((correctCount / lesson.exercises.length) * 100);
+    const container = document.getElementById('lesson-quiz-form');
+    
+    // Append Celebration and Next Action Bar
+    const celebrationBox = document.createElement('div');
+    celebrationBox.className = 'mt-6 p-6 rounded-3xl bg-gradient-to-r from-emerald-500 via-teal-600 to-indigo-600 text-white shadow-xl text-center space-y-3 animate-in fade-in zoom-in duration-300';
+    celebrationBox.innerHTML = `
+      <div class="text-3xl">🎉</div>
+      <h3 class="text-xl font-black">Ajoyib natija! Dars o‘zlashtirildi</h3>
+      <p class="text-xs text-emerald-100 font-medium">To‘g‘ri javoblar: <strong>${correctCount} / ${lesson.exercises.length} (${pct}%)</strong> | Topshiriq uchun <strong>+${res.earnedXp} XP</strong> qo‘shildi!</p>
+      <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2.5">
+        <button type="button" onclick="goToNextLesson()" class="w-full sm:w-auto px-6 py-3 bg-white hover:bg-slate-100 text-emerald-800 font-black rounded-2xl shadow-md transition text-sm flex items-center justify-center space-x-1.5 active:scale-95">
+          <span>Keyingi darsga o‘tish</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+        <button type="button" onclick="navigate('dashboard')" class="w-full sm:w-auto px-5 py-3 bg-white/20 hover:bg-white/30 text-white font-bold rounded-2xl transition text-sm">
+          Bosh sahifaga qaytish
+        </button>
+      </div>
+    `;
+    container.appendChild(celebrationBox);
+    initIcons();
+
+    submitBtn.style.display = 'none';
 
   } catch (err) {
     console.error('Error submitting lesson:', err);

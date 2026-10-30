@@ -1,7 +1,7 @@
 // ==========================================
 // OO-USTOZIM AI — COMPREHENSIVE CURRICULUM DATABASE
 // 4 Languages: Nemis, Ingliz, Rus, Koreys (64 Full Lessons: A1 -> B2)
-// Diagnostic Tests (40 questions) & Cultural Lifehacks
+// High-Engagement Interactive Pedagogy: Situations, Dialogues, Mnemonics & 6-8 Varied Exercises per Lesson
 // ==========================================
 
 module.exports = {
@@ -49,36 +49,186 @@ module.exports = {
           "title": "Das deutsche Alphabet (30 ta Harf)",
           "description": "Harf ustiga bosing — sof nemis tilidagi talaffuzini eshitasiz!",
           "letters": [
-            { "letter": "A a", "name": "a", "example": "Apfel (olma)", "audio": "A, Apfel" },
-            { "letter": "B b", "name": "be", "example": "Buch (kitob)", "audio": "B, Buch" },
-            { "letter": "C c", "name": "tse", "example": "Café (kafe)", "audio": "C, Café" },
-            { "letter": "D d", "name": "de", "example": "Danke (rahmat)", "audio": "D, Danke" },
-            { "letter": "E e", "name": "e", "example": "Elefant (fil)", "audio": "E, Elefant" },
-            { "letter": "F f", "name": "ef", "example": "Freund (do‘st)", "audio": "F, Freund" },
-            { "letter": "G g", "name": "ge", "example": "Gut (yaxshi)", "audio": "G, Gut" },
-            { "letter": "H h", "name": "ha", "example": "Haus (uy)", "audio": "H, Haus" },
-            { "letter": "I i", "name": "i", "example": "Igel (tipratikan)", "audio": "I, Igel" },
-            { "letter": "J j", "name": "yot", "example": "Ja (ha)", "audio": "J, Ja" },
-            { "letter": "K k", "name": "ka", "example": "Kind (bola)", "audio": "K, Kind" },
-            { "letter": "L l", "name": "el", "example": "Lampe (chiroq)", "audio": "L, Lampe" },
-            { "letter": "M m", "name": "em", "example": "Mann (erkak)", "audio": "M, Mann" },
-            { "letter": "N n", "name": "en", "example": "Nein (yo‘q)", "audio": "N, Nein" },
-            { "letter": "O o", "name": "o", "example": "Opa (bobo)", "audio": "O, Opa" },
-            { "letter": "P p", "name": "pe", "example": "Papa (ota)", "audio": "P, Papa" },
-            { "letter": "Q q", "name": "ku", "example": "Quelle (buloq)", "audio": "Q, Quelle" },
-            { "letter": "R r", "name": "er", "example": "Rot (qizil)", "audio": "R, Rot" },
-            { "letter": "S s", "name": "es", "example": "Sonne (quyosh)", "audio": "S, Sonne" },
-            { "letter": "T t", "name": "te", "example": "Tisch (stol)", "audio": "T, Tisch" },
-            { "letter": "U u", "name": "u", "example": "Uhr (soat)", "audio": "U, Uhr" },
-            { "letter": "V v", "name": "fau", "example": "Vater (ota)", "audio": "V, Vater" },
-            { "letter": "W w", "name": "ve", "example": "Wasser (suv)", "audio": "W, Wasser" },
-            { "letter": "X x", "name": "iks", "example": "Taxi (taksi)", "audio": "X, Taxi" },
-            { "letter": "Y y", "name": "ypsilon", "example": "Yoga (yoga)", "audio": "Y, Yoga" },
-            { "letter": "Z z", "name": "tset", "example": "Zug (poyezd)", "audio": "Z, Zug" },
-            { "letter": "Ä ä", "name": "a-umlaut [e]", "example": "Äpfel (olmalar)", "audio": "Ä, Äpfel" },
-            { "letter": "Ö ö", "name": "o-umlaut", "example": "Öl (yog‘)", "audio": "Ö, Öl" },
-            { "letter": "Ü ü", "name": "u-umlaut", "example": "Über (ustida)", "audio": "Ü, Über" },
-            { "letter": "ß", "name": "eszett [qo‘shaloq s]", "example": "Straße (ko‘cha)", "audio": "Eszett, Straße" }
+            {
+              "letter": "A a",
+              "name": "a",
+              "example": "Apfel (olma)",
+              "audio": "A, Apfel"
+            },
+            {
+              "letter": "B b",
+              "name": "be",
+              "example": "Buch (kitob)",
+              "audio": "B, Buch"
+            },
+            {
+              "letter": "C c",
+              "name": "tse",
+              "example": "Café (kafe)",
+              "audio": "C, Café"
+            },
+            {
+              "letter": "D d",
+              "name": "de",
+              "example": "Danke (rahmat)",
+              "audio": "D, Danke"
+            },
+            {
+              "letter": "E e",
+              "name": "e",
+              "example": "Elefant (fil)",
+              "audio": "E, Elefant"
+            },
+            {
+              "letter": "F f",
+              "name": "ef",
+              "example": "Freund (do‘st)",
+              "audio": "F, Freund"
+            },
+            {
+              "letter": "G g",
+              "name": "ge",
+              "example": "Gut (yaxshi)",
+              "audio": "G, Gut"
+            },
+            {
+              "letter": "H h",
+              "name": "ha",
+              "example": "Haus (uy)",
+              "audio": "H, Haus"
+            },
+            {
+              "letter": "I i",
+              "name": "i",
+              "example": "Igel (tipratikan)",
+              "audio": "I, Igel"
+            },
+            {
+              "letter": "J j",
+              "name": "yot",
+              "example": "Ja (ha)",
+              "audio": "J, Ja"
+            },
+            {
+              "letter": "K k",
+              "name": "ka",
+              "example": "Kind (bola)",
+              "audio": "K, Kind"
+            },
+            {
+              "letter": "L l",
+              "name": "el",
+              "example": "Lampe (chiroq)",
+              "audio": "L, Lampe"
+            },
+            {
+              "letter": "M m",
+              "name": "em",
+              "example": "Mann (erkak)",
+              "audio": "M, Mann"
+            },
+            {
+              "letter": "N n",
+              "name": "en",
+              "example": "Nein (yo‘q)",
+              "audio": "N, Nein"
+            },
+            {
+              "letter": "O o",
+              "name": "o",
+              "example": "Opa (bobo)",
+              "audio": "O, Opa"
+            },
+            {
+              "letter": "P p",
+              "name": "pe",
+              "example": "Papa (ota)",
+              "audio": "P, Papa"
+            },
+            {
+              "letter": "Q q",
+              "name": "ku",
+              "example": "Quelle (buloq)",
+              "audio": "Q, Quelle"
+            },
+            {
+              "letter": "R r",
+              "name": "er",
+              "example": "Rot (qizil)",
+              "audio": "R, Rot"
+            },
+            {
+              "letter": "S s",
+              "name": "es",
+              "example": "Sonne (quyosh)",
+              "audio": "S, Sonne"
+            },
+            {
+              "letter": "T t",
+              "name": "te",
+              "example": "Tisch (stol)",
+              "audio": "T, Tisch"
+            },
+            {
+              "letter": "U u",
+              "name": "u",
+              "example": "Uhr (soat)",
+              "audio": "U, Uhr"
+            },
+            {
+              "letter": "V v",
+              "name": "fau",
+              "example": "Vater (ota)",
+              "audio": "V, Vater"
+            },
+            {
+              "letter": "W w",
+              "name": "ve",
+              "example": "Wasser (suv)",
+              "audio": "W, Wasser"
+            },
+            {
+              "letter": "X x",
+              "name": "iks",
+              "example": "Taxi (taksi)",
+              "audio": "X, Taxi"
+            },
+            {
+              "letter": "Y y",
+              "name": "ypsilon",
+              "example": "Yoga (yoga)",
+              "audio": "Y, Yoga"
+            },
+            {
+              "letter": "Z z",
+              "name": "tset",
+              "example": "Zug (poyezd)",
+              "audio": "Z, Zug"
+            },
+            {
+              "letter": "Ä ä",
+              "name": "a-umlaut [e]",
+              "example": "Äpfel (olmalar)",
+              "audio": "Ä, Äpfel"
+            },
+            {
+              "letter": "Ö ö",
+              "name": "o-umlaut",
+              "example": "Öl (yog‘)",
+              "audio": "Ö, Öl"
+            },
+            {
+              "letter": "Ü ü",
+              "name": "u-umlaut",
+              "example": "Über (ustida)",
+              "audio": "Ü, Über"
+            },
+            {
+              "letter": "ß",
+              "name": "eszett [qo‘shaloq s]",
+              "example": "Straße (ko‘cha)",
+              "audio": "Eszett, Straße"
+            }
           ]
         },
         "rules": [
@@ -137,6 +287,34 @@ module.exports = {
           {
             "de": "Auf Wiedersehen",
             "uz": "Ko‘rishguncha xayr (rasmiy)"
+          },
+          {
+            "de": "Guten Morgen",
+            "uz": "Xayrli tong (ertalabki 10 gacha)"
+          },
+          {
+            "de": "Guten Abend",
+            "uz": "Xayrli kech (soat 18 dan keyin)"
+          },
+          {
+            "de": "Gute Nacht",
+            "uz": "Xayrli tun (uyqu oldidan)"
+          },
+          {
+            "de": "Bis bald",
+            "uz": "Tez orada ko‘rishguncha"
+          },
+          {
+            "de": "Bis morgen",
+            "uz": "Ertagacha xayr"
+          },
+          {
+            "de": "Sehr angenehm",
+            "uz": "Juda mamnunman (tanishganda)"
+          },
+          {
+            "de": "Vielen Dank",
+            "uz": "Katta rahmat"
           }
         ]
       },
@@ -144,20 +322,34 @@ module.exports = {
         {
           "id": "de_ex1_1",
           "type": "multiple-choice",
-          "question": "Do‘konda rasmiy tarzda \"Xayrli kun\" demoqchisiz. Qaysi biri to‘g‘ri?",
+          "question": "Tasavvur qiling, soat 14:00 da Berlindagi do‘konga kirdingiz. Qaysi salomlashish eng to‘g‘ri?",
           "options": [
-            "Hallo",
+            "Guten Morgen",
             "Guten Tag",
             "Gute Nacht",
             "Tschüss"
           ],
           "correctIndex": 1,
-          "explanation": "\"Guten Tag\" — eng universal rasmiy salomlashish ifodasidir."
+          "explanation": "\"Guten Tag\" — eng universal rasmiy kunduzgi salomlashishdir."
         },
         {
           "id": "de_ex1_2",
+          "type": "listening-choice",
+          "audioText": "Auf Wiedersehen, bis morgen!",
+          "question": "Audioda nima deyildi? Diqqat bilan tinglang va to‘g‘ri ma’noni toping:",
+          "options": [
+            "Xayrli tong, do‘stim!",
+            "Ko‘rishguncha xayr, ertagacha!",
+            "Katta rahmat, salomat bo‘ling!",
+            "Kechirasiz, tushunmadim!"
+          ],
+          "correctIndex": 1,
+          "explanation": "\"Auf Wiedersehen, bis morgen!\" — «Ko‘rishguncha xayr, ertagacha!» degan ma’noni anglatadi."
+        },
+        {
+          "id": "de_ex1_3",
           "type": "multiple-choice",
-          "question": "\"mein\" (mening) so‘zi qanday o‘qiladi?",
+          "question": "Nemis tilidagi \"mein\" (mening) so‘zi qanday o‘qiladi?",
           "options": [
             "meyn",
             "mayn",
@@ -165,15 +357,52 @@ module.exports = {
             "men"
           ],
           "correctIndex": 1,
-          "explanation": "Nemis tilida \"EI\" harf birikmasi doimo «AY» deb talaffuz qilinadi."
+          "explanation": "Nemis tilida «EI» doimo «AY» deb talaffuz qilinadi."
         },
         {
-          "id": "de_ex1_3",
+          "id": "de_ex1_4",
           "type": "fill-blank",
-          "question": "Do‘stingiz bilan xayrlashayotganda: \"______, bis morgen!\"",
-          "placeholder": "So‘zni kiriting...",
+          "question": "Do‘stingiz bilan iliq xayrlashayotganda: \"______, bis bald!\"",
+          "placeholder": "So‘zni yozing...",
           "correctAnswer": "Tschüss",
-          "hint": "Chyus deb talaffuz qilinadi"
+          "hint": "Nemischa norasmiy xayrlashuv (Chyus)"
+        },
+        {
+          "id": "de_ex1_5",
+          "type": "true-false",
+          "question": "Nemis tilida «Gute Nacht» kunduzi soat 15:00 da odamlar bilan uchrashganda aytiladi.",
+          "trueLabel": "To‘g‘ri (Richtig)",
+          "falseLabel": "Noto‘g‘ri (Falsch)",
+          "correctValue": false,
+          "explanation": "«Gute Nacht» faqat uyqu oldidan aytiladi."
+        },
+        {
+          "id": "de_ex1_6",
+          "type": "order",
+          "question": "So‘zlardan to‘g‘ri gap tuzing: «Katta rahmat va xayrli kun!»",
+          "words": [
+            "Vielen",
+            "Dank",
+            "und",
+            "einen",
+            "schönen",
+            "Tag"
+          ],
+          "correctSentence": "Vielen Dank und einen schönen Tag",
+          "explanation": "\"Vielen Dank und einen schönen Tag\" — Katta rahmat va kuningiz xayrli o‘tsin."
+        },
+        {
+          "id": "de_ex1_7",
+          "type": "multiple-choice",
+          "question": "Nemis tilidagi «ß» (Eszett) harfi qanday tovush beradi?",
+          "options": [
+            "Qattiq «B»",
+            "Qo‘shaloq jarangdor «Z»",
+            "Qattiq cho‘ziq «S»",
+            "O‘qilmaydi"
+          ],
+          "correctIndex": 2,
+          "explanation": "«ß» harfi qattiq «S» kabi o‘qiladi (masalan: Straße)."
         }
       ],
       "speakingPrompt": {
@@ -195,6 +424,76 @@ module.exports = {
           "Tschüss dedi"
         ],
         "correctIndex": 1
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "Kafeda Ofitsiant bilan",
+          "desc": "Kafega kirganda xushmuomala salomlashish va buyurtma berish.",
+          "phrase": "Guten Tag! Einen Kaffee, bitte.",
+          "meaning": "Xayrli kun! Bitta kofe, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "Ko‘chada Notanish Odamdan Yordam",
+          "desc": "Katta ko‘chalarda manzil so‘rashdan oldin odob bilan uzr so‘rash.",
+          "phrase": "Entschuldigung, sprechen Sie Deutsch?",
+          "meaning": "Kechirasiz, siz nemischa gapirasizmi?"
+        },
+        {
+          "icon": "📱",
+          "title": "Do‘stlar bilan Messenjerda",
+          "desc": "Tengdoshlar yoki do‘stlar bilan tezkor salom-alik qilish.",
+          "phrase": "Hallo! Wie geht's dir heute?",
+          "meaning": "Salom! Bugun ishlaring qanday?"
+        },
+        {
+          "icon": "👋",
+          "title": "Xayrlashuv va Yaxshi Tilaklar",
+          "desc": "Suhbat yakunida rasmiy yoki do‘stona tarzda xayrlashish.",
+          "phrase": "Auf Wiedersehen und einen schönen Tag noch!",
+          "meaning": "Ko‘rishguncha xayr va kuningiz xayrli o‘tsin!"
+        }
+      ],
+      "dialogue": {
+        "title": "Ko‘chada Ilk Uchrashuv",
+        "context": "Anna va Lukas universitet hovlisida ilk bor uchrashib qolishdi.",
+        "lines": [
+          {
+            "speaker": "Anna",
+            "text": "Hallo! Guten Tag!",
+            "uz": "Salom! Xayrli kun!"
+          },
+          {
+            "speaker": "Lukas",
+            "text": "Guten Tag! Ich bin Lukas. Und du?",
+            "uz": "Xayrli kun! Men Lukasman. Siz-chi?"
+          },
+          {
+            "speaker": "Anna",
+            "text": "Ich heiße Anna. Freut mich sehr!",
+            "uz": "Mening ismim Anna. Juda xursandman!"
+          },
+          {
+            "speaker": "Lukas",
+            "text": "Freut mich auch! Danke schön.",
+            "uz": "Men ham xursandman! Katta rahmat."
+          },
+          {
+            "speaker": "Anna",
+            "text": "Tschüss Lukas, bis bald!",
+            "uz": "Xayr Lukas, tez orada ko‘rishguncha!"
+          },
+          {
+            "speaker": "Lukas",
+            "text": "Auf Wiedersehen, Anna!",
+            "uz": "Ko‘rishguncha xayr, Anna!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "«EI» va «IE» birikmalarini 1 soniyada eslab qolish siri!",
+        "tip": "Nemis tilida «EI» harfida IKKINCHI turgan harf «I» bo‘lgani uchun «AY» o‘qiladi (mein = mayn). «IE» birikmasida esa ikkinchi harf «E» bo‘lgani uchun cho‘ziq «II» o‘qiladi (sie = zii)!"
       }
     },
     {
@@ -256,6 +555,30 @@ module.exports = {
           {
             "de": "Sie/sie sind",
             "uz": "Siz/ular ...lar"
+          },
+          {
+            "de": "Ich bin...",
+            "uz": "Men ...man"
+          },
+          {
+            "de": "Du bist...",
+            "uz": "Sen ...san"
+          },
+          {
+            "de": "Er / Sie / Es ist...",
+            "uz": "U ...dir (o‘g‘il/qiz/o‘rta)"
+          },
+          {
+            "de": "Wir sind...",
+            "uz": "Biz ...miz"
+          },
+          {
+            "de": "Ihr seid...",
+            "uz": "Sizlar ...sizlar"
+          },
+          {
+            "de": "Sie sind...",
+            "uz": "Siz ...siz (hurmat shakli)"
           }
         ]
       },
@@ -263,23 +586,75 @@ module.exports = {
         {
           "id": "de_ex2_1",
           "type": "multiple-choice",
-          "question": "\"Men Toshkentda yashayman\" qaysi qatorda to‘g‘ri yozilgan?",
+          "question": "«Sen talabamisan?» jumlasini nemis tiliga to‘g‘ri tarjima qiling:",
           "options": [
-            "Ich komme in Taschkent",
-            "Ich wohne in Taschkent",
-            "Ich bin Taschkent",
-            "Ich heiße Taschkent"
+            "Bist du Student?",
+            "Bin du Student?",
+            "Ist du Student?",
+            "Sind du Student?"
           ],
-          "correctIndex": 1,
-          "explanation": "\"wohnen in\" — biror joyda doimiy yashashni bildiradi."
+          "correctIndex": 0,
+          "explanation": "\"Du\" olmoshi bilan «sein» fe’lining shakli «bist» bo‘ladi: Bist du Student?"
         },
         {
           "id": "de_ex2_2",
+          "type": "listening-choice",
+          "audioText": "Ich komme aus Taschkent und ich bin Student.",
+          "question": "Audiodagi qahramon qayerdan ekanini aytdi?",
+          "options": [
+            "Berlindan",
+            "Toshkentdan",
+            "Myunxendan",
+            "London dan"
+          ],
+          "correctIndex": 1,
+          "explanation": "Audioda aniq aytildi: «Ich komme aus Taschkent...» (Toshkentdanman)."
+        },
+        {
+          "id": "de_ex2_3",
           "type": "fill-blank",
-          "question": "Du ______ sehr freundlich. (\"sein\" fe’lining to‘g‘ri shakli)",
-          "placeholder": "fe’lni kiriting...",
-          "correctAnswer": "bist",
-          "hint": "du bilan bist"
+          "question": "Bo‘sh joyga to‘g‘ri fe’l shaklini yozing: \"Wir ______ aus Usbekistan.\"",
+          "placeholder": "fe'l shakli...",
+          "correctAnswer": "sind",
+          "hint": "«Wir» (biz) uchun «sein» fe’lining shakli"
+        },
+        {
+          "id": "de_ex2_4",
+          "type": "true-false",
+          "question": "Nemis tilida «Sie sind» ham «Ular», ham rasmiy «Siz» ma’nosini bildiradi.",
+          "trueLabel": "To‘g‘ri (Richtig)",
+          "falseLabel": "Noto‘g‘ri (Falsch)",
+          "correctValue": true,
+          "explanation": "Katta harf bilan «Sie sind» — «Sizsiz» (hurmat), kichik harf bilan «sie sind» — «ular» ma’nosida ishlatiladi."
+        },
+        {
+          "id": "de_ex2_5",
+          "type": "order",
+          "question": "So‘zlardan to‘g‘ri tartibda gap tuzing: «Mening ismim Anna va men Berlinda yashayman»",
+          "words": [
+            "Ich",
+            "heiße",
+            "Anna",
+            "und",
+            "wohne",
+            "in",
+            "Berlin"
+          ],
+          "correctSentence": "Ich heiße Anna und wohne in Berlin",
+          "explanation": "To‘g‘ri gap: \"Ich heiße Anna und wohne in Berlin\"."
+        },
+        {
+          "id": "de_ex2_6",
+          "type": "multiple-choice",
+          "question": "Rasmiy uchrashuvda «Siz qayerdansiz?» deb qanday so‘raladi?",
+          "options": [
+            "Woher kommst du?",
+            "Woher kommen Sie?",
+            "Wo wohnst du?",
+            "Wer bist du?"
+          ],
+          "correctIndex": 1,
+          "explanation": "Rasmiy murojaatda «Woher kommen Sie?» shakli ishlatiladi."
         }
       ],
       "speakingPrompt": {
@@ -301,6 +676,69 @@ module.exports = {
           "Münchenda"
         ],
         "correctIndex": 1
+      },
+      "situations": [
+        {
+          "icon": "🤝",
+          "title": "Tanishuv Kechasida",
+          "desc": "Yangi do‘stlar davrasida o‘zingizni erkin tanishtirish.",
+          "phrase": "Ich bin Shaxzod und ich komme aus Usbekistan.",
+          "meaning": "Men Shahzodman va men O‘zbekistondanman."
+        },
+        {
+          "icon": "💼",
+          "title": "Ish Joyida Rasmiy Tanishtiruv",
+          "desc": "Rahbar yoki hamkorga to‘liq ism-familiyangizni bildirish.",
+          "phrase": "Mein Name ist Alimov, freut mich sehr.",
+          "meaning": "Mening ismim Alimov, juda mamnunman."
+        },
+        {
+          "icon": "❓",
+          "title": "Suhbatdoshdan Ismini So‘rash",
+          "desc": "Yangi tanishgan odamdan xushmuomala tarzda ismini so‘rash.",
+          "phrase": "Wie heißen Sie? / Wie heißt du?",
+          "meaning": "Ismingiz nima? (Siz / Sen)"
+        }
+      ],
+      "dialogue": {
+        "title": "Til Kursidagi Ilk Tanishuv",
+        "context": "Til kursining birinchi kunida o‘quvchilar bir-biri bilan tanishmoqda.",
+        "lines": [
+          {
+            "speaker": "Markus",
+            "text": "Hallo! Wie heißt du?",
+            "uz": "Salom! Isming nima?"
+          },
+          {
+            "speaker": "Aziza",
+            "text": "Ich heiße Aziza. Und wer bist du?",
+            "uz": "Ismim Aziza. Sen kimsan?"
+          },
+          {
+            "speaker": "Markus",
+            "text": "Ich bin Markus. Woher kommst du, Aziza?",
+            "uz": "Men Markusman. Qayerdansan, Aziza?"
+          },
+          {
+            "speaker": "Aziza",
+            "text": "Ich komme aus Usbekistan, aus Taschkent.",
+            "uz": "Men O‘zbekistondanman, Toshkentdan."
+          },
+          {
+            "speaker": "Markus",
+            "text": "Toll! Ich wohne hier in Berlin.",
+            "uz": "Ajoyib! Men bu yerda, Berlinda yashayman."
+          },
+          {
+            "speaker": "Aziza",
+            "text": "Sehr schön, freut mich!",
+            "uz": "Juda yaxshi, xursandman!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "«Sein» (Bo‘lmoq) fe’li — barcha tillarning ustuni!",
+        "tip": "Inglizchadagi «I am, you are, he is» nemis tilida «ich bin, du bist, er ist» ga 100% to‘g‘ri keladi! O‘xshashlikni eslab qoling: bin = am, bist = are, ist = is!"
       }
     },
     {
@@ -360,6 +798,34 @@ module.exports = {
           {
             "de": "Wie viel kostet das?",
             "uz": "Bu qancha turadi?"
+          },
+          {
+            "de": "Wer?",
+            "uz": "Kim?"
+          },
+          {
+            "de": "Was?",
+            "uz": "Nima?"
+          },
+          {
+            "de": "Wo?",
+            "uz": "Qayerda?"
+          },
+          {
+            "de": "Wohin?",
+            "uz": "Qayerga?"
+          },
+          {
+            "de": "Woher?",
+            "uz": "Qayerdan?"
+          },
+          {
+            "de": "Wann?",
+            "uz": "Qachon?"
+          },
+          {
+            "de": "Warum?",
+            "uz": "Nega?"
           }
         ]
       },
@@ -367,23 +833,73 @@ module.exports = {
         {
           "id": "de_ex3_1",
           "type": "multiple-choice",
-          "question": "\"Qayerda yashaysan?\" nemischa qanday aytiladi?",
+          "question": "«Siz qayerda yashaysiz?» savoli nemischa qanday bo‘ladi?",
           "options": [
-            "Wo wohnst du?",
-            "Woher kommst du?",
-            "Was machst du?",
-            "Wer bist du?"
+            "Wo wohnen Sie?",
+            "Wohin wohnen Sie?",
+            "Woher wohnen Sie?",
+            "Wann wohnen Sie?"
           ],
           "correctIndex": 0,
-          "explanation": "\"Wo\" — qayerda (yashash joyini so‘rashda)."
+          "explanation": "Yashash joyi tinch holat bo‘lgani uchun «Wo» ishlatiladi."
         },
         {
           "id": "de_ex3_2",
+          "type": "listening-choice",
+          "audioText": "Warum lernst du Deutsch?",
+          "question": "Audiodagi savolda nima so‘raldi?",
+          "options": [
+            "Nemischa qayerda o‘qiysan?",
+            "Nega nemis tilini o‘rganyapsan?",
+            "Nemischa gapirasanmi?",
+            "Qachon imtihon topshirasan?"
+          ],
+          "correctIndex": 1,
+          "explanation": "«Warum lernst du Deutsch?» — Nega nemis tilini o‘rganyapsan?"
+        },
+        {
+          "id": "de_ex3_3",
           "type": "fill-blank",
-          "question": "______ ist das? — Das ist mein Freund Jasur. (Bu kim?)",
-          "placeholder": "So‘roq so‘zini yozing...",
-          "correctAnswer": "Wer",
-          "hint": "Wer (kim)"
+          "question": "\"______ gehst du heute Abend?\" (Bugun kechqurun qayerga ketyapsan?)",
+          "placeholder": "So'roq so'z...",
+          "correctAnswer": "Wohin",
+          "hint": "Harakat yo‘nalishi uchun «Wohin»"
+        },
+        {
+          "id": "de_ex3_4",
+          "type": "true-false",
+          "question": "Nemis tilidagi so‘roq gaplarda fe’l har doim 2-o‘rinda keladi.",
+          "trueLabel": "To‘g‘ri (Richtig)",
+          "falseLabel": "Noto‘g‘ri (Falsch)",
+          "correctValue": true,
+          "explanation": "Masalan: Wo (1) wohnst (2) du (3)?"
+        },
+        {
+          "id": "de_ex3_5",
+          "type": "order",
+          "question": "So‘zlardan to‘g‘ri so‘roq gap yasang: «Poyezd qachon keladi?»",
+          "words": [
+            "Wann",
+            "kommt",
+            "der",
+            "Zug",
+            "an"
+          ],
+          "correctSentence": "Wann kommt der Zug an",
+          "explanation": "To‘g‘ri savol: \"Wann kommt der Zug an?\""
+        },
+        {
+          "id": "de_ex3_6",
+          "type": "multiple-choice",
+          "question": "«Bu kim?» demoqchisiz. Qaysi savol to‘g‘ri?",
+          "options": [
+            "Was ist das?",
+            "Wer ist das?",
+            "Wo ist das?",
+            "Wie ist das?"
+          ],
+          "correctIndex": 1,
+          "explanation": "\"Wer\" — «Kim?» demakdir."
         }
       ],
       "speakingPrompt": {
@@ -405,6 +921,69 @@ module.exports = {
           "Avstriyadan"
         ],
         "correctIndex": 1
+      },
+      "situations": [
+        {
+          "icon": "❓",
+          "title": "Savol Berish Vaqti",
+          "desc": "Qayerda, qachon, nima va kimligini aniqlash.",
+          "phrase": "Wo ist der Bahnhof? / Was ist das?",
+          "meaning": "Vokzal qayerda? / Bu nima?"
+        },
+        {
+          "icon": "🕐",
+          "title": "Vaqtni Aniqlash",
+          "desc": "Poyezd qachon kelishi yoki dars qachon boshlanishini so‘rash.",
+          "phrase": "Wann fährt der Zug ab?",
+          "meaning": "Poyezd qachon jo‘naydi?"
+        },
+        {
+          "icon": "📍",
+          "title": "Yo‘nalish va Manzil",
+          "desc": "Qayerga ketayotganlikni bilish.",
+          "phrase": "Wohin gehst du jetzt?",
+          "meaning": "Hozir qayerga ketyapsan?"
+        }
+      ],
+      "dialogue": {
+        "title": "Vokzalda Yo‘l So‘rash",
+        "context": "Sayyoh bekatda yo‘lovchidan poyezd haqida so‘ramoqda.",
+        "lines": [
+          {
+            "speaker": "Sayyoh",
+            "text": "Entschuldigung, wo ist Gleis 4?",
+            "uz": "Kechirasiz, 4-yo‘l (perron) qayerda?"
+          },
+          {
+            "speaker": "Yo‘lovchi",
+            "text": "Gleis 4 ist dort drüben rechts.",
+            "uz": "4-yo‘l ana u yerda, o‘ng tomonda."
+          },
+          {
+            "speaker": "Sayyoh",
+            "text": "Wann kommt der Zug nach Hamburg?",
+            "uz": "Gamburg poyezdi qachon keladi?"
+          },
+          {
+            "speaker": "Yo‘lovchi",
+            "text": "Um 14 Uhr 30.",
+            "uz": "Soat 14:30 da."
+          },
+          {
+            "speaker": "Sayyoh",
+            "text": "Vielen Dank für Ihre Hilfe!",
+            "uz": "Yordamingiz uchun katta rahmat!"
+          },
+          {
+            "speaker": "Yo‘lovchi",
+            "text": "Gern geschehen! Gute Reise!",
+            "uz": "Arzimaydi! Oq yo‘l!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "W-Savollar siri: «Wo» va «Wohin» farqi!",
+        "tip": "«Wo» (Qayerda?) — tinch holatda turgan joy. «Wohin» (Qayerga?) — harakat yo‘nalishi!"
       }
     },
     {
@@ -465,23 +1044,73 @@ module.exports = {
         {
           "id": "de_ex4_1",
           "type": "multiple-choice",
-          "question": "\"Kitob\" (Buch) so‘zining artikli qaysi?",
+          "question": "«Menda vaqt bor» qanday aytiladi?",
           "options": [
-            "der",
-            "die",
-            "das",
-            "den"
+            "Ich bin Zeit.",
+            "Ich habe Zeit.",
+            "Ich hat Zeit.",
+            "Ich hast Zeit."
           ],
-          "correctIndex": 2,
-          "explanation": "\"das Buch\" — o‘rta jins (neutrum)."
+          "correctIndex": 1,
+          "explanation": "Ich habe Zeit."
         },
         {
           "id": "de_ex4_2",
+          "type": "listening-choice",
+          "audioText": "Ich habe einen Hund und eine Katze.",
+          "question": "Audioda nimalar borligi aytildi?",
+          "options": [
+            "Mashina va uy",
+            "It va mushuk",
+            "Kitob va daftar",
+            "Velosiped"
+          ],
+          "correctIndex": 1,
+          "explanation": "Hund (it) va Katze (mushuk)."
+        },
+        {
+          "id": "de_ex4_3",
           "type": "fill-blank",
-          "question": "Hast du Zeit? — Ja, ich ______ Zeit. (Ha, menda vaqt bor)",
-          "placeholder": "fe’lni kiriting...",
-          "correctAnswer": "habe",
-          "hint": "ich bilan habe"
+          "question": "\"______ du Zeit?\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "Hast",
+          "hint": "Du uchun haben"
+        },
+        {
+          "id": "de_ex4_4",
+          "type": "true-false",
+          "question": "Nemischa barcha otlar bosh harf bilan yoziladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Barcha otlar (der Tisch, das Buch) bosh harfda yoziladi."
+        },
+        {
+          "id": "de_ex4_5",
+          "type": "order",
+          "words": [
+            "Ich",
+            "habe",
+            "ein",
+            "neues",
+            "Auto"
+          ],
+          "correctSentence": "Ich habe ein neues Auto",
+          "question": "Gap tuzing: «Menda yangi mashina bor»",
+          "explanation": "Ich habe ein neues Auto."
+        },
+        {
+          "id": "de_ex4_6",
+          "type": "multiple-choice",
+          "question": "«das Kind» so‘zi qaysi jinsda?",
+          "options": [
+            "Erkak (Maskulin)",
+            "Ayol (Feminin)",
+            "O‘rta (Neutrum)",
+            "Ko‘plik"
+          ],
+          "correctIndex": 2,
+          "explanation": "«das» o‘rta jins artikli."
         }
       ],
       "speakingPrompt": {
@@ -503,7 +1132,54 @@ module.exports = {
           "Yangi kitob"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Kutubxonada",
+        "lines": [
+          {
+            "speaker": "Talaba",
+            "text": "Guten Tag! Haben Sie ein Wörterbuch?",
+            "uz": "Xayrli kun! Sizda lug‘at bormi?"
+          },
+          {
+            "speaker": "Kutubxonachi",
+            "text": "Ja, hier ist das Buch.",
+            "uz": "Ha, mana bu kitob."
+          },
+          {
+            "speaker": "Talaba",
+            "text": "Danke, ich habe morgen eine Prüfung.",
+            "uz": "Rahmat, ertaga imtihonim bor."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Artikl Ranglari",
+        "tip": "DER — Ko‘k 🔵, DIE — Qizil 🔴, DAS — Yashil 🟢 rangda tasavvur qiling!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "Kafeda / Restoranda",
+          "desc": "Ofitsiant bilan muloqot va amaliy buyurtma.",
+          "phrase": "Ich möchte bestellen, bitte.",
+          "meaning": "Buyurtma bermoqchiman, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "Shaharda va Ko‘chada",
+          "desc": "Yo‘l so‘rash, bekatlar va manzilga yetib borish.",
+          "phrase": "Wie komme ich dorthin?",
+          "meaning": "U yerga qanday borsam bo‘ladi?"
+        },
+        {
+          "icon": "💼",
+          "title": "Rasmiy Muloqot va Ishda",
+          "desc": "Hamkasblar va rahbar bilan hurmatli muomala.",
+          "phrase": "Vielen Dank für Ihre Unterstützung.",
+          "meaning": "Yordamingiz uchun katta rahmat."
+        }
+      ]
     },
     {
       "id": "de_lesson_5",
@@ -557,23 +1233,73 @@ module.exports = {
         {
           "id": "de_ex5_1",
           "type": "multiple-choice",
-          "question": "\"Kafeda hisob-kitob qilishda \"Birgami yoki alohida to‘laysizmi?\" nemischa:",
+          "question": "«Bu qancha turadi?» iborasi:",
           "options": [
-            "Zusammen oder getrennt?",
-            "Wie viel kostet das?",
-            "Was möchten Sie?",
-            "Auf Wiedersehen"
+            "Was kostet das?",
+            "Wo ist das?",
+            "Was ist das?",
+            "Wie spät ist es?"
           ],
           "correctIndex": 0,
-          "explanation": "\"Zusammen oder getrennt?\" — Germaniya restoranlarida har doim beriladigan savol."
+          "explanation": "Was kostet das?"
         },
         {
           "id": "de_ex5_2",
+          "type": "listening-choice",
+          "audioText": "Das macht zusammen zwanzig Euro.",
+          "question": "Jami qancha bo‘ldi?",
+          "options": [
+            "12 yevro",
+            "20 yevro",
+            "22 yevro",
+            "30 yevro"
+          ],
+          "correctIndex": 1,
+          "explanation": "zwanzig = 20."
+        },
+        {
+          "id": "de_ex5_3",
           "type": "fill-blank",
-          "question": "Ich ______ bitte ein Glas Wasser. (xohlayman)",
-          "placeholder": "möchte...",
-          "correctAnswer": "möchte",
-          "hint": "möchte"
+          "question": "\"einund______\" (21)",
+          "placeholder": "o'nlik...",
+          "correctAnswer": "zwanzig",
+          "hint": "20 so'zi"
+        },
+        {
+          "id": "de_ex5_4",
+          "type": "true-false",
+          "question": "Nemischa «hundert» 1000 sonini bildiradi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": false,
+          "explanation": "hundert = 100, tausend = 1000."
+        },
+        {
+          "id": "de_ex5_5",
+          "type": "order",
+          "words": [
+            "Kann",
+            "ich",
+            "mit",
+            "Karte",
+            "zahlen"
+          ],
+          "correctSentence": "Kann ich mit Karte zahlen",
+          "question": "Gap tuzing: «Karta bilan to‘lasam bo‘ladimi?»",
+          "explanation": "Kann ich mit Karte zahlen?"
+        },
+        {
+          "id": "de_ex5_6",
+          "type": "multiple-choice",
+          "question": "«Stimmt so!» iborasi nimani anglatadi?",
+          "options": [
+            "Qaytimi kerak emas (rozi bo‘ldim)",
+            "Juda qimmat",
+            "Arzonroq bering",
+            "Boshqa olaman"
+          ],
+          "correctIndex": 0,
+          "explanation": "Stimmt so — Qaytimi o‘zingizga (choypuli)."
         }
       ],
       "speakingPrompt": {
@@ -595,7 +1321,54 @@ module.exports = {
           "20 yevro"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Bozorda",
+        "lines": [
+          {
+            "speaker": "Xaridor",
+            "text": "Was kostet ein Kilo Äpfel?",
+            "uz": "Bir kilo olma qancha turadi?"
+          },
+          {
+            "speaker": "Sotuvchi",
+            "text": "Zwei Euro fünfzig, bitte.",
+            "uz": "2 yevro 50 sent, marhamat."
+          },
+          {
+            "speaker": "Xaridor",
+            "text": "Hier sind drei Euro. Stimmt so!",
+            "uz": "Mana uch yevro. Qaytimsiz!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Teskari Raqamlar",
+        "tip": "21 nemischa «einundzwanzig» (bir va yigirma) deb aytiladi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "Kafeda / Restoranda",
+          "desc": "Ofitsiant bilan muloqot va amaliy buyurtma.",
+          "phrase": "Ich möchte bestellen, bitte.",
+          "meaning": "Buyurtma bermoqchiman, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "Shaharda va Ko‘chada",
+          "desc": "Yo‘l so‘rash, bekatlar va manzilga yetib borish.",
+          "phrase": "Wie komme ich dorthin?",
+          "meaning": "U yerga qanday borsam bo‘ladi?"
+        },
+        {
+          "icon": "💼",
+          "title": "Rasmiy Muloqot va Ishda",
+          "desc": "Hamkasblar va rahbar bilan hurmatli muomala.",
+          "phrase": "Vielen Dank für Ihre Unterstützung.",
+          "meaning": "Yordamingiz uchun katta rahmat."
+        }
+      ]
     },
     {
       "id": "de_lesson_6",
@@ -649,23 +1422,73 @@ module.exports = {
         {
           "id": "de_ex6_1",
           "type": "multiple-choice",
-          "question": "\"Gestern ______ ich meine Freunde getroffen (Kecha do‘stlarim bilan ko‘rishdim).\":",
+          "question": "«Men kitob o‘qidim» qaysi biri to‘g‘ri?",
           "options": [
-            "habe",
-            "bin",
-            "hat",
-            "ist"
+            "Ich habe ein Buch gelesen.",
+            "Ich bin ein Buch gelesen.",
+            "Ich habe ein Buch gelest.",
+            "Ich lese ein Buch."
           ],
           "correctIndex": 0,
-          "explanation": "\"treffen\" (uchrashmoq) fe’li haben bilan o‘tgan zamon yasaydi."
+          "explanation": "Ich habe ein Buch gelesen."
         },
         {
           "id": "de_ex6_2",
+          "type": "listening-choice",
+          "audioText": "Wir sind gestern nach Berlin gefahren.",
+          "question": "Kecha ular qayerga borishdi?",
+          "options": [
+            "Myunxenga",
+            "Berlinga",
+            "Gamburg ga",
+            "Uyga"
+          ],
+          "correctIndex": 1,
+          "explanation": "nach Berlin gefahren."
+        },
+        {
+          "id": "de_ex6_3",
           "type": "fill-blank",
-          "question": "Ich bin gestern nach Deutschland ______ (gefahren).",
-          "placeholder": "Partizip II shakli...",
-          "correctAnswer": "gefahren",
-          "hint": "gefahren"
+          "question": "\"Ich bin nach Hause ______ (gehen fe'li Perfektda)\"",
+          "placeholder": "Partizip II...",
+          "correctAnswer": "gegangen",
+          "hint": "gehen -> gegangen"
+        },
+        {
+          "id": "de_ex6_4",
+          "type": "true-false",
+          "question": "Perfekt zamonida asosiy fe’l (Partizip II) gapning oxiriga tushadi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Masalan: Ich habe gestern viel gelernt (oxirida)."
+        },
+        {
+          "id": "de_ex6_5",
+          "type": "order",
+          "words": [
+            "Ich",
+            "habe",
+            "meine",
+            "Hausaufgabe",
+            "gemacht"
+          ],
+          "correctSentence": "Ich habe meine Hausaufgabe gemacht",
+          "question": "Gap tuzing: «Men uy vazifamni qildim»",
+          "explanation": "Ich habe meine Hausaufgabe gemacht."
+        },
+        {
+          "id": "de_ex6_6",
+          "type": "multiple-choice",
+          "question": "Qaysi fe’l Perfektda «sein» oladi?",
+          "options": [
+            "kaufen",
+            "spielen",
+            "kommen",
+            "trinken"
+          ],
+          "correctIndex": 2,
+          "explanation": "«kommen» harakat bo‘lgani uchun «sein» oladi (ist gekommen)."
         }
       ],
       "speakingPrompt": {
@@ -687,7 +1510,54 @@ module.exports = {
           "Uy tozaladi"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Dam Olish Kunlari",
+        "lines": [
+          {
+            "speaker": "Felix",
+            "text": "Was hast du am Wochenende gemacht?",
+            "uz": "Dam olish kunlarida nima qilding?"
+          },
+          {
+            "speaker": "Sara",
+            "text": "Ich habe ein Buch gelesen und Fußball gespielt.",
+            "uz": "Kitob o‘qidim va futbol o‘ynadim."
+          },
+          {
+            "speaker": "Felix",
+            "text": "Ich bin nach Frankfurt gefahren.",
+            "uz": "Men esa Frankfurtga bordim."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Harakat fe’llari «sein» oladi!",
+        "tip": "Fahren, gehen, kommen kabi siljish fe’llari Perfektda «haben» emas, «sein» oladi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "Kafeda / Restoranda",
+          "desc": "Ofitsiant bilan muloqot va amaliy buyurtma.",
+          "phrase": "Ich möchte bestellen, bitte.",
+          "meaning": "Buyurtma bermoqchiman, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "Shaharda va Ko‘chada",
+          "desc": "Yo‘l so‘rash, bekatlar va manzilga yetib borish.",
+          "phrase": "Wie komme ich dorthin?",
+          "meaning": "U yerga qanday borsam bo‘ladi?"
+        },
+        {
+          "icon": "💼",
+          "title": "Rasmiy Muloqot va Ishda",
+          "desc": "Hamkasblar va rahbar bilan hurmatli muomala.",
+          "phrase": "Vielen Dank für Ihre Unterstützung.",
+          "meaning": "Yordamingiz uchun katta rahmat."
+        }
+      ]
     },
     {
       "id": "de_lesson_7",
@@ -741,23 +1611,73 @@ module.exports = {
         {
           "id": "de_ex7_1",
           "type": "multiple-choice",
-          "question": "\"Ich fahre mit ______ Bus (der Bus).\":",
+          "question": "«Men do‘stimga yordam beryapman» qaysi biri to‘g‘ri?",
           "options": [
-            "dem",
-            "den",
-            "der",
-            "das"
+            "Ich helfe dem Freund.",
+            "Ich helfe den Freund.",
+            "Ich helfe der Freund.",
+            "Ich helfe das Freund."
           ],
           "correctIndex": 0,
-          "explanation": "\"mit\" predlogidan keyin \"der\" artikli Dativda \"dem\" ga aylanadi."
+          "explanation": "helfen fe’li Dativ talab qiladi (dem Freund)."
         },
         {
           "id": "de_ex7_2",
+          "type": "listening-choice",
+          "audioText": "Gehen Sie immer geradeaus bis zur Ampel.",
+          "question": "Qayergacha to‘g‘riga borish kerak?",
+          "options": [
+            "Metro bekatigacha",
+            "Svetoforgacha (Ampel)",
+            "Kafegacha",
+            "Ko‘prikgacha"
+          ],
+          "correctIndex": 1,
+          "explanation": "Ampel = Svetofor."
+        },
+        {
+          "id": "de_ex7_3",
           "type": "fill-blank",
-          "question": "Wie komme ich ______ Bahnhof? (zu + dem)",
-          "placeholder": "zum yoki zur...",
-          "correctAnswer": "zum",
-          "hint": "zum"
+          "question": "\"Ich fahre mit ______ Bus (der Bus).\"",
+          "placeholder": "Dativ artikli...",
+          "correctAnswer": "dem",
+          "hint": "mit + Dativ (der -> dem)"
+        },
+        {
+          "id": "de_ex7_4",
+          "type": "true-false",
+          "question": "«mit», «nach», «aus», «zu» predloglari har doim Dativ kelishigini talab qiladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! Bu predloglar sof Dativ predloglaridir."
+        },
+        {
+          "id": "de_ex7_5",
+          "type": "order",
+          "words": [
+            "Wie",
+            "komme",
+            "ich",
+            "zur",
+            "Post"
+          ],
+          "correctSentence": "Wie komme ich zur Post",
+          "question": "Gap tuzing: «Pochtaga qanday borsam bo‘ladi?»",
+          "explanation": "Wie komme ich zur Post?"
+        },
+        {
+          "id": "de_ex7_6",
+          "type": "multiple-choice",
+          "question": "Dativda ayol jinsi (die Frau) qaysi artiklga o‘zgaradi?",
+          "options": [
+            "dem",
+            "der",
+            "den",
+            "des"
+          ],
+          "correctIndex": 1,
+          "explanation": "Dativda «die» artikli «der» ga aylanadi."
         }
       ],
       "speakingPrompt": {
@@ -779,7 +1699,59 @@ module.exports = {
           "Liniya 10"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Shaharda Yo‘l Ko‘rsatish",
+        "lines": [
+          {
+            "speaker": "Sayyoh",
+            "text": "Entschuldigung, wie komme ich zum Bahnhof?",
+            "uz": "Kechirasiz, vokzalga qanday borsam bo‘ladi?"
+          },
+          {
+            "speaker": "Aholi",
+            "text": "Gehen Sie geradeaus und dann nach links.",
+            "uz": "To‘g‘riga boring va keyin chapga buriling."
+          },
+          {
+            "speaker": "Sayyoh",
+            "text": "Ist es weit von hier?",
+            "uz": "Bu yerdan uzoqmi?"
+          },
+          {
+            "speaker": "Aholi",
+            "text": "Nein, nur fünf Minuten zu Fuß.",
+            "uz": "Yo‘q, piyoda atigi besh daqiqa."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Dativ Artikllari Qoidasi",
+        "tip": "Dativda DER va DAS -> DEM ga, DIE -> DER ga aylanadi! (Masalan: zum = zu dem)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "Kafeda / Restoranda",
+          "desc": "Ofitsiant bilan muloqot va amaliy buyurtma.",
+          "phrase": "Ich möchte bestellen, bitte.",
+          "meaning": "Buyurtma bermoqchiman, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "Shaharda va Ko‘chada",
+          "desc": "Yo‘l so‘rash, bekatlar va manzilga yetib borish.",
+          "phrase": "Wie komme ich dorthin?",
+          "meaning": "U yerga qanday borsam bo‘ladi?"
+        },
+        {
+          "icon": "💼",
+          "title": "Rasmiy Muloqot va Ishda",
+          "desc": "Hamkasblar va rahbar bilan hurmatli muomala.",
+          "phrase": "Vielen Dank für Ihre Unterstützung.",
+          "meaning": "Yordamingiz uchun katta rahmat."
+        }
+      ]
     },
     {
       "id": "de_lesson_8",
@@ -833,23 +1805,74 @@ module.exports = {
         {
           "id": "de_ex8_1",
           "type": "multiple-choice",
-          "question": "\"Ich lerne Deutsch, weil es mir Spaß ______ (menga yoqadi).\":",
+          "question": "«Chunki men kasalman» qaysi gap grammatik to‘g‘ri?",
           "options": [
-            "macht",
-            "machen",
-            "machte",
-            "gemacht"
+            "Weil ich bin krank.",
+            "Weil ich krank bin.",
+            "Weil bin ich krank.",
+            "Weil krank ich bin."
           ],
-          "correctIndex": 0,
-          "explanation": "\"weil\" dan keyin fe’l shaxs-sonda tuslanib, gapning eng oxirida turadi: macht."
+          "correctIndex": 1,
+          "explanation": "«weil» da fe’l oxiriga tushadi: Weil ich krank bin."
         },
         {
           "id": "de_ex8_2",
+          "type": "listening-choice",
+          "audioText": "Ich weiß, dass Deutsch sehr wichtig ist.",
+          "question": "Audiodagi ma’no qaysi?",
+          "options": [
+            "Nemis tili oson deb o‘ylayman.",
+            "Nemis tili juda muhimligini bilaman.",
+            "Nemis tilini o‘qimayman.",
+            "Germaniyaga ketyapman."
+          ],
+          "correctIndex": 1,
+          "explanation": "dass Deutsch sehr wichtig ist."
+        },
+        {
+          "id": "de_ex8_3",
           "type": "fill-blank",
-          "question": "Sehr ______ Damen und Herren, (Hurmatli)",
-          "placeholder": "geehrte...",
-          "correctAnswer": "geehrte",
-          "hint": "geehrte"
+          "question": "\"Ich lerne Deutsch, ______ ich in Deutschland studieren will.\"",
+          "placeholder": "bog'lovchi...",
+          "correctAnswer": "weil",
+          "hint": "Chunki so'zi"
+        },
+        {
+          "id": "de_ex8_4",
+          "type": "true-false",
+          "question": "«obwohl» bog‘lovchisi «chunki» degan ma’noni anglatadi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": false,
+          "explanation": "«obwohl» — «garchi / ...ga qaramasdan» degan ma’noda keladi."
+        },
+        {
+          "id": "de_ex8_5",
+          "type": "order",
+          "words": [
+            "Ich",
+            "denke",
+            "dass",
+            "er",
+            "Recht",
+            "hat"
+          ],
+          "correctSentence": "Ich denke dass er Recht hat",
+          "question": "Gap tuzing: «O‘ylaymanki, u haq»",
+          "explanation": "Ich denke, dass er Recht hat."
+        },
+        {
+          "id": "de_ex8_6",
+          "type": "multiple-choice",
+          "question": "Qaysi bog‘lovchidan keyin fe’l gap oxiriga SURILMAYDI?",
+          "options": [
+            "weil",
+            "dass",
+            "und",
+            "obwohl"
+          ],
+          "correctIndex": 2,
+          "explanation": "«und» (va) teng bog‘lovchi, tartibni o‘zgartirmaydi."
         }
       ],
       "speakingPrompt": {
@@ -871,7 +1894,54 @@ module.exports = {
           "Kechirim so‘rash uchun"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Suhbat va Sabab",
+        "lines": [
+          {
+            "speaker": "Tim",
+            "text": "Warum kommst du heute nicht mit ins Kino?",
+            "uz": "Nega bugun biz bilan kinoga bormaysan?"
+          },
+          {
+            "speaker": "Lea",
+            "text": "Weil ich viel für die Prüfung lernen muss.",
+            "uz": "Chunki imtihon uchun ko‘p o‘qishim kerak."
+          },
+          {
+            "speaker": "Tim",
+            "text": "Schade! Ich hoffe, dass du die Prüfung bestehst.",
+            "uz": "Afsus! Umid qilamanki, imtihondan o‘tasan."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Fe’l Dumga Sakraydi!",
+        "tip": "«weil», «dass», «obwohl» bog‘lovchilari kelganda, tuslangan fe’l gapning eng oxiriga sakrab o‘tadi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "Kafeda / Restoranda",
+          "desc": "Ofitsiant bilan muloqot va amaliy buyurtma.",
+          "phrase": "Ich möchte bestellen, bitte.",
+          "meaning": "Buyurtma bermoqchiman, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "Shaharda va Ko‘chada",
+          "desc": "Yo‘l so‘rash, bekatlar va manzilga yetib borish.",
+          "phrase": "Wie komme ich dorthin?",
+          "meaning": "U yerga qanday borsam bo‘ladi?"
+        },
+        {
+          "icon": "💼",
+          "title": "Rasmiy Muloqot va Ishda",
+          "desc": "Hamkasblar va rahbar bilan hurmatli muomala.",
+          "phrase": "Vielen Dank für Ihre Unterstützung.",
+          "meaning": "Yordamingiz uchun katta rahmat."
+        }
+      ]
     },
     {
       "id": "de_lesson_9",
@@ -950,37 +2020,128 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Bir kishilik xona\" nemis tilida nima deyiladi?",
+          "id": "de_ex9_1",
+          "type": "multiple-choice",
+          "question": "«Nonushta narxga kiritilganmi?» nemischa:",
           "options": [
-            "das Doppelzimmer",
-            "das Einzelzimmer",
-            "die Wohnung",
-            "das Büro"
-          ],
-          "correctIndex": 1,
-          "explanation": "Einzel (yakka) + Zimmer (xona) = das Einzelzimmer."
-        },
-        {
-          "question": "\"Nonushta narxga kiradimi?\" savoli qaysi?",
-          "options": [
-            "Wo ist das Frühstück?",
             "Ist das Frühstück inklusive?",
-            "Möchten Sie frühstücken?",
-            "Ich esse kein Frühstück."
+            "Wo ist das Frühstück?",
+            "Was kostet Frühstück?",
+            "Haben Sie Frühstück?"
           ],
-          "correctIndex": 1,
-          "explanation": "Inklusive — o‘z ichiga oladi degani."
+          "correctIndex": 0,
+          "explanation": "Ist das Frühstück inklusive?"
         },
         {
-          "question": "\"Gibt es ______ WLAN?\" (bepul Wi-Fi bormi):",
+          "id": "de_ex9_2",
+          "type": "listening-choice",
+          "audioText": "Das WLAN-Passwort ist an der Rezeption erhältlich.",
+          "question": "Wi-Fi parolini qayerdan olish mumkin?",
           "options": [
-            "kostenlos",
-            "kostenloses",
-            "teuer",
-            "kein"
+            "Xonadagi stoldan",
+            "Resepshendan",
+            "Restorandan",
+            "Lift oldidan"
           ],
           "correctIndex": 1,
-          "explanation": "das WLAN neytrum bo‘lgani uchun Akkusativda \"kostenloses\" bo‘ladi."
+          "explanation": "Rezeption = resepshen."
+        },
+        {
+          "id": "de_ex9_3",
+          "type": "fill-blank",
+          "question": "\"Ich möchte ein Zimmer für zwei Nächte ______.\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "buchen",
+          "hint": "band qilmoq fe'li (buchen)"
+        },
+        {
+          "id": "de_ex9_4",
+          "type": "true-false",
+          "question": "«Auschecken» mehmonxonaga kirishni bildiradi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": false,
+          "explanation": "Einchecken — kirish, Auschecken — xonani topshirib ketish."
+        },
+        {
+          "id": "de_ex9_5",
+          "type": "order",
+          "words": [
+            "Ich",
+            "hätte",
+            "gern",
+            "ein",
+            "ruhiges",
+            "Zimmer"
+          ],
+          "correctSentence": "Ich hätte gern ein ruhiges Zimmer",
+          "question": "Gap tuzing: «Menga sokin xona bersangiz mamnun bo‘lardim»",
+          "explanation": "Ich hätte gern ein ruhiges Zimmer."
+        },
+        {
+          "id": "de_ex9_6",
+          "type": "multiple-choice",
+          "question": "Ikki kishilik xona qanday ataladi?",
+          "options": [
+            "Einzelzimmer",
+            "Doppelzimmer",
+            "Mehrbettzimmer",
+            "Suite"
+          ],
+          "correctIndex": 1,
+          "explanation": "Doppelzimmer — ikki kishilik xona."
+        }
+      ],
+      "dialogue": {
+        "title": "Mehmonxona Resepshenida",
+        "lines": [
+          {
+            "speaker": "Mehmon",
+            "text": "Guten Abend! Ich habe ein Einzelzimmer reserviert.",
+            "uz": "Xayrli kech! Men bir kishilik xona band qilgan edim."
+          },
+          {
+            "speaker": "Administrator",
+            "text": "Auf welchen Namen, bitte?",
+            "uz": "Qaysi nomga, iltimos?"
+          },
+          {
+            "speaker": "Mehmon",
+            "text": "Auf den Namen Alimov.",
+            "uz": "Alimov nomiga."
+          },
+          {
+            "speaker": "Administrator",
+            "text": "Hier ist Ihre Schlüsselkarte, Zimmer 304.",
+            "uz": "Mana xona kartangiz, 304-xona."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Einzelzimmer vs Doppelzimmer",
+        "tip": "Einzel (yakka) = 1 kishilik xona. Doppel (juft) = 2 kishilik xona!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "Kafeda / Restoranda",
+          "desc": "Ofitsiant bilan muloqot va amaliy buyurtma.",
+          "phrase": "Ich möchte bestellen, bitte.",
+          "meaning": "Buyurtma bermoqchiman, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "Shaharda va Ko‘chada",
+          "desc": "Yo‘l so‘rash, bekatlar va manzilga yetib borish.",
+          "phrase": "Wie komme ich dorthin?",
+          "meaning": "U yerga qanday borsam bo‘ladi?"
+        },
+        {
+          "icon": "💼",
+          "title": "Rasmiy Muloqot va Ishda",
+          "desc": "Hamkasblar va rahbar bilan hurmatli muomala.",
+          "phrase": "Vielen Dank für Ihre Unterstützung.",
+          "meaning": "Yordamingiz uchun katta rahmat."
         }
       ]
     },
@@ -1061,37 +2222,122 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Ich ______ heute zum Arzt gehen (borishim shart/kerak).\"",
+          "id": "de_ex10_1",
+          "type": "multiple-choice",
+          "question": "«Men nemischa gapira olaman» qanday aytiladi?",
           "options": [
-            "kann",
-            "muss",
-            "darf",
-            "willst"
+            "Ich kann Deutsch sprechen.",
+            "Ich muss Deutsch sprechen.",
+            "Ich darf Deutsch sprechen.",
+            "Ich will Deutsch sprechen."
           ],
-          "correctIndex": 1,
-          "explanation": "Ich bilan müssen -> muss shaklida tuslanadi."
+          "correctIndex": 0,
+          "explanation": "können = qobiliyat (gapira olmoq)."
         },
         {
-          "question": "\"Hier darf man nicht rauchen\" gapi qanday tarjima qilinadi?",
+          "id": "de_ex10_2",
+          "type": "listening-choice",
+          "audioText": "Hier darf man nicht rauchen.",
+          "question": "Audioda qanday taqiq bildirildi?",
           "options": [
-            "Bu yerda chekish mumkin",
-            "Bu yerda chekish taqiqlangan",
-            "Men chekmoqchiman",
-            "Ular chekishmaydi"
+            "Bu yerda chekish taqiqlanadi.",
+            "Bu yerda mashina qo‘yish mumkin emas.",
+            "Bu yerda baland gapirish taqiqlanadi.",
+            "Suratga tushish mumkin emas."
           ],
-          "correctIndex": 1,
-          "explanation": "nicht dürfen — ruxsat yo‘q / taqiqlangan degani."
+          "correctIndex": 0,
+          "explanation": "nicht rauchen = chekmaslik."
         },
         {
-          "question": "Modal fe’lli gapda asosiy fe’l qayerda turadi?",
-          "options": [
-            "1-o‘rinda",
-            "2-o‘rinda",
-            "Gapning eng oxirida (Infinitiv)",
-            "Ega yonida"
+          "id": "de_ex10_3",
+          "type": "fill-blank",
+          "question": "\"Du ______ deine Hausaufgaben machen! (Majburiyat: müssen)\"",
+          "placeholder": "fe'l shakli...",
+          "correctAnswer": "musst",
+          "hint": "du musst"
+        },
+        {
+          "id": "de_ex10_4",
+          "type": "true-false",
+          "question": "Modal fe’llar bilan kelgan 2-fe’l infinitiv (noaniq) shaklda gapning oxiriga boradi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Masalan: Ich kann (2-o'rin) sehr gut schwimmen (oxirida)."
+        },
+        {
+          "id": "de_ex10_5",
+          "type": "order",
+          "words": [
+            "Wir",
+            "müssen",
+            "heute",
+            "lange",
+            "arbeiten"
           ],
-          "correctIndex": 2,
-          "explanation": "Nemis tili ramkali strukturasi (Satzklammer) bo‘yicha asosiy fe’l eng oxirga boradi."
+          "correctSentence": "Wir müssen heute lange arbeiten",
+          "question": "Gap tuzing: «Biz bugun uzoq ishlashimiz kerak»",
+          "explanation": "Wir müssen heute lange arbeiten."
+        },
+        {
+          "id": "de_ex10_6",
+          "type": "multiple-choice",
+          "question": "Qaysi modal fe’l xohish-istakni bildiradi?",
+          "options": [
+            "dürfen",
+            "wollen",
+            "müssen",
+            "sollen"
+          ],
+          "correctIndex": 1,
+          "explanation": "wollen — xohlamoq, istamoq."
+        }
+      ],
+      "dialogue": {
+        "title": "Qoidalar va Ruxsat",
+        "lines": [
+          {
+            "speaker": "Mehmon",
+            "text": "Darf man hier parken?",
+            "uz": "Bu yerda mashina qo‘yish mumkinmi?"
+          },
+          {
+            "speaker": "Politsiya",
+            "text": "Nein, hier dürfen Sie nicht parken. Sie müssen weiterfahren.",
+            "uz": "Yo‘q, bu yerda qo‘yish mumkin emas. Oldinga haydashingiz kerak."
+          },
+          {
+            "speaker": "Mehmon",
+            "text": "Entschuldigung, ich habe das Schild nicht gesehen.",
+            "uz": "Kechirasiz, belgini ko‘rmay qolibman."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Dürfen vs Müssen",
+        "tip": "Müssen = Shart, majburiyat. Dürfen = Ruxsat (Nicht dürfen = Qat’iyan taqiqlangan)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "Kafeda / Restoranda",
+          "desc": "Ofitsiant bilan muloqot va amaliy buyurtma.",
+          "phrase": "Ich möchte bestellen, bitte.",
+          "meaning": "Buyurtma bermoqchiman, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "Shaharda va Ko‘chada",
+          "desc": "Yo‘l so‘rash, bekatlar va manzilga yetib borish.",
+          "phrase": "Wie komme ich dorthin?",
+          "meaning": "U yerga qanday borsam bo‘ladi?"
+        },
+        {
+          "icon": "💼",
+          "title": "Rasmiy Muloqot va Ishda",
+          "desc": "Hamkasblar va rahbar bilan hurmatli muomala.",
+          "phrase": "Vielen Dank für Ihre Unterstützung.",
+          "meaning": "Yordamingiz uchun katta rahmat."
         }
       ]
     },
@@ -1172,37 +2418,123 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Mening tishim og‘riyapti\" nemischa qanday bo‘ladi?",
+          "id": "de_ex11_1",
+          "type": "multiple-choice",
+          "question": "«Mening boshim og‘riyapti» nemischa:",
           "options": [
-            "Mein Zahn tut weh.",
-            "Ich habe Zahnbürste.",
-            "Mein Zahn ist schön.",
-            "Der Zahn geht weg."
+            "Mein Kopf tut weh.",
+            "Ich habe Kopf.",
+            "Mein Kopf ist krank.",
+            "Ich bin Kopfweh."
           ],
           "correctIndex": 0,
-          "explanation": "weh tun — og‘rimoq. Birlikda: tut weh."
+          "explanation": "Mein Kopf tut weh yoki Ich habe Kopfschmerzen."
         },
         {
-          "question": "\"Gute Besserung!\" nima ma’noni bildiradi?",
+          "id": "de_ex11_2",
+          "type": "listening-choice",
+          "audioText": "Nehmen Sie diese Tabletten dreimal täglich nach dem Essen.",
+          "question": "Dori qachon va necha marta ichilishi kerak?",
           "options": [
-            "Xayrli tong!",
-            "Yoqimli ishtaha!",
-            "Tezroq tuzalib keting!",
-            "Omad tilayman!"
+            "Kuniga 1 marta ovqatdan oldin",
+            "Kuniga 3 marta ovqatdan keyin",
+            "Faqat kechqurun",
+            "Har 2 soatda"
           ],
-          "correctIndex": 2,
-          "explanation": "Kasal bo‘lgan odamga tilak bildirishda ishlatiladi."
+          "correctIndex": 1,
+          "explanation": "dreimal täglich nach dem Essen."
         },
         {
-          "question": "\"Tabletkalarni kuniga 3 mahal iching\" tarjimasi:",
-          "options": [
-            "Nehmen Sie Tabletten dreimal täglich.",
-            "Essen Sie Tabletten morgen.",
-            "Trinken Sie Tabletten nicht.",
-            "Kaufen Sie Tabletten."
+          "id": "de_ex11_3",
+          "type": "fill-blank",
+          "question": "\"Gute ______! (Tezroq sog‘ayib keting!)\"",
+          "placeholder": "tilak...",
+          "correctAnswer": "Besserung",
+          "hint": "Gute Besserung"
+        },
+        {
+          "id": "de_ex11_4",
+          "type": "true-false",
+          "question": "«Apotheke» nemis tilida shifoxona demakdir.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": false,
+          "explanation": "Apotheke — dorixona. Shifoxona — Krankenhaus."
+        },
+        {
+          "id": "de_ex11_5",
+          "type": "order",
+          "words": [
+            "Ich",
+            "brauche",
+            "einen",
+            "Termin",
+            "beim",
+            "Arzt"
           ],
-          "correctIndex": 0,
-          "explanation": "Dori qabul qilishda \"einnehmen\" yoki \"nehmen\" fe’li ishlatiladi."
+          "correctSentence": "Ich brauche einen Termin beim Arzt",
+          "question": "Gap tuzing: «Menga shifokor qabuliga navbat kerak»",
+          "explanation": "Ich brauche einen Termin beim Arzt."
+        },
+        {
+          "id": "de_ex11_6",
+          "type": "multiple-choice",
+          "question": "Isitma nemis tilida nima deyiladi?",
+          "options": [
+            "Husten",
+            "Fieber",
+            "Schnupfen",
+            "Grippe"
+          ],
+          "correctIndex": 1,
+          "explanation": "das Fieber — tana harorati/isitma."
+        }
+      ],
+      "dialogue": {
+        "title": "Shifokor Qabulxonasida",
+        "lines": [
+          {
+            "speaker": "Shifokor",
+            "text": "Guten Tag! Was fehlt Ihnen denn?",
+            "uz": "Xayrli kun! Qayeringiz bezovta qilyapti?"
+          },
+          {
+            "speaker": "Bemor",
+            "text": "Ich habe seit drei Tagen starke Kopfschmerzen und Fieber.",
+            "uz": "Uch kundan beri qattiq bosh og‘rig‘i va isitmam bor."
+          },
+          {
+            "speaker": "Shifokor",
+            "text": "Ich untersuche Sie jetzt. Bitte tief einatmen.",
+            "uz": "Hozir sizni ko‘rikdan o‘tkazaman. Chuqur nafas oling."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Kopfschmerzen, Halsschmerzen",
+        "tip": "Tana a’zosi + «Schmerzen» (og‘riqlar) qo‘shiladi: Kopf (bosh) + Schmerzen = bosh og‘rig‘i!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "Kafeda / Restoranda",
+          "desc": "Ofitsiant bilan muloqot va amaliy buyurtma.",
+          "phrase": "Ich möchte bestellen, bitte.",
+          "meaning": "Buyurtma bermoqchiman, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "Shaharda va Ko‘chada",
+          "desc": "Yo‘l so‘rash, bekatlar va manzilga yetib borish.",
+          "phrase": "Wie komme ich dorthin?",
+          "meaning": "U yerga qanday borsam bo‘ladi?"
+        },
+        {
+          "icon": "💼",
+          "title": "Rasmiy Muloqot va Ishda",
+          "desc": "Hamkasblar va rahbar bilan hurmatli muomala.",
+          "phrase": "Vielen Dank für Ihre Unterstützung.",
+          "meaning": "Yordamingiz uchun katta rahmat."
         }
       ]
     },
@@ -1283,37 +2615,125 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Das ist der Computer, ______ sehr schnell funktioniert.\"",
+          "id": "de_ex12_1",
+          "type": "multiple-choice",
+          "question": "\"Das ist das Buch, ______ ich gestern gekauft habe.\"",
           "options": [
             "der",
             "die",
             "das",
             "den"
-          ],
-          "correctIndex": 0,
-          "explanation": "der Computer erkak jinsida (Nominativ) bo‘lgani uchun \"der\" bo‘ladi."
-        },
-        {
-          "question": "\"Das ist die Stadt, in ______ ich geboren bin.\"",
-          "options": [
-            "der",
-            "die",
-            "das",
-            "den"
-          ],
-          "correctIndex": 0,
-          "explanation": "in + Dativ: die Stadt Dativda \"der Stadt\" bo‘ladi."
-        },
-        {
-          "question": "Nisbiy ergash gapda (Relativsatz) tuslangan fe’l qayerda turadi?",
-          "options": [
-            "Boshida",
-            "O‘rtasida",
-            "Eng oxirida",
-            "Nisbiy olmoshdan keyin"
           ],
           "correctIndex": 2,
-          "explanation": "Ergash gaplarda fe’l doimo eng oxirgi o‘ringa suriladi."
+          "explanation": "Buch o‘rta jins (das) bo‘lgani uchun «das» nisbiy olmoshi keladi."
+        },
+        {
+          "id": "de_ex12_2",
+          "type": "listening-choice",
+          "audioText": "Die Frau, die neben mir wohnt, ist Ärztin.",
+          "question": "Qo‘shni ayol kim bo‘lib ishlaydi?",
+          "options": [
+            "O‘qituvchi",
+            "Shifokor (Ärztin)",
+            "Muhandis",
+            "Talaba"
+          ],
+          "correctIndex": 1,
+          "explanation": "ist Ärztin."
+        },
+        {
+          "id": "de_ex12_3",
+          "type": "fill-blank",
+          "question": "\"Der Mann, ______ dort spricht, ist mein Vater.\"",
+          "placeholder": "nisbiy olmosh...",
+          "correctAnswer": "der",
+          "hint": "der Mann uchun bosh kelishik"
+        },
+        {
+          "id": "de_ex12_4",
+          "type": "true-false",
+          "question": "Relativsätze (nisbiy gaplar)da fe’l har doim gap boshida keladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": false,
+          "explanation": "Fe’l har doim eng oxirida keladi."
+        },
+        {
+          "id": "de_ex12_5",
+          "type": "order",
+          "words": [
+            "Das",
+            "ist",
+            "die",
+            "Stadt",
+            "in",
+            "der",
+            "ich",
+            "lebe"
+          ],
+          "correctSentence": "Das ist die Stadt in der ich lebe",
+          "question": "Gap tuzing: «Bu men yashaydigan shahar»",
+          "explanation": "Das ist die Stadt, in der ich lebe."
+        },
+        {
+          "id": "de_ex12_6",
+          "type": "multiple-choice",
+          "question": "Ko‘plikdagi otlar uchun nisbiy olmosh qaysi?",
+          "options": [
+            "die",
+            "der",
+            "das",
+            "den"
+          ],
+          "correctIndex": 0,
+          "explanation": "Ko‘plikda doimo «die» ishlatiladi."
+        }
+      ],
+      "dialogue": {
+        "title": "Do‘stni Ta’riflash",
+        "lines": [
+          {
+            "speaker": "Jonas",
+            "text": "Kennst du den Mann, der dort drüben steht?",
+            "uz": "Ana u yerda turgan erkakni taniysanmi?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Ja, das ist Herr Becker, der unser neuer Lehrer ist.",
+            "uz": "Ha, bu bizning yangi o‘qituvchimiz janob Bekker."
+          },
+          {
+            "speaker": "Jonas",
+            "text": "Er sieht sehr nett aus!",
+            "uz": "U juda samimiy ko‘rinadi!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Nisbiy Gaplar Qoidasi",
+        "tip": "Oldidagi otning jinsi va kelishigiga qarab «der, die, das» tanlanadi va fe’l gap oxiriga tushadi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "Kafeda / Restoranda",
+          "desc": "Ofitsiant bilan muloqot va amaliy buyurtma.",
+          "phrase": "Ich möchte bestellen, bitte.",
+          "meaning": "Buyurtma bermoqchiman, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "Shaharda va Ko‘chada",
+          "desc": "Yo‘l so‘rash, bekatlar va manzilga yetib borish.",
+          "phrase": "Wie komme ich dorthin?",
+          "meaning": "U yerga qanday borsam bo‘ladi?"
+        },
+        {
+          "icon": "💼",
+          "title": "Rasmiy Muloqot va Ishda",
+          "desc": "Hamkasblar va rahbar bilan hurmatli muomala.",
+          "phrase": "Vielen Dank für Ihre Unterstützung.",
+          "meaning": "Yordamingiz uchun katta rahmat."
         }
       ]
     },
@@ -1394,37 +2814,122 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Kafeda kofe so‘rashning eng xushmuomala usuli qaysi?\"",
+          "id": "de_ex13_1",
+          "type": "multiple-choice",
+          "question": "Eng xushmuomala buyurtma berish iborasi qaysi?",
           "options": [
-            "Ich will Kaffee!",
-            "Gib mir Kaffee!",
-            "Ich hätte gern einen Kaffee, bitte.",
-            "Kaffee her!"
-          ],
-          "correctIndex": 2,
-          "explanation": "Ich hätte gern... xushmuomalalikning oltin qoidasidir."
-        },
-        {
-          "question": "\"Agar vaqtim bo‘lganida, men kitob o‘qir edim\":",
-          "options": [
-            "Wenn ich Zeit habe, lese ich.",
-            "Wenn ich Zeit hätte, würde ich lesen.",
-            "Ich habe Zeit und lese.",
-            "Ich will Zeit haben."
+            "Ich will Kaffee.",
+            "Ich hätte gern einen Kaffee.",
+            "Gib mir Kaffee.",
+            "Kaffee her."
           ],
           "correctIndex": 1,
-          "explanation": "hätte (shart) + würde lesen (natija) — Konjunktiv II."
+          "explanation": "Ich hätte gern... — oliy darajadagi odobli ifoda."
         },
         {
-          "question": "\"Könnten Sie mir bitte ______?\" (yordam bera olasizmi)",
+          "id": "de_ex13_2",
+          "type": "listening-choice",
+          "audioText": "Wenn ich reich wäre, würde ich um die Welt reisen.",
+          "question": "Audiodagi qahramon boy bo‘lsa nima qilgan bo‘lardi?",
           "options": [
-            "helfen",
-            "helfe",
-            "hilft",
-            "geholfen"
+            "Katta uy sotib olardi",
+            "Dunyo bo‘ylab sayohat qilardi",
+            "Ishlamasdi",
+            "Avtomobil olardi"
           ],
-          "correctIndex": 0,
-          "explanation": "könnten modal shakli bo‘lgani uchun asosiy fe’l Infinitiv (helfen)da bo‘ladi."
+          "correctIndex": 1,
+          "explanation": "um die Welt reisen."
+        },
+        {
+          "id": "de_ex13_3",
+          "type": "fill-blank",
+          "question": "\"______ Sie mir bitte helfen? (können Konjunktivda)\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "Könnten",
+          "hint": "Könnten Sie..."
+        },
+        {
+          "id": "de_ex13_4",
+          "type": "true-false",
+          "question": "«Ich wäre» bu «Ich habe» ning xushmuomala shaklidir.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": false,
+          "explanation": "«wäre» — sein fe’lining, «hätte» — haben fe’lining shaklidir."
+        },
+        {
+          "id": "de_ex13_5",
+          "type": "order",
+          "words": [
+            "Ich",
+            "würde",
+            "gern",
+            "Deutsch",
+            "lernen"
+          ],
+          "correctSentence": "Ich würde gern Deutsch lernen",
+          "question": "Gap tuzing: «Men nemis tilini o‘rganishni xohlardim»",
+          "explanation": "Ich würde gern Deutsch lernen."
+        },
+        {
+          "id": "de_ex13_6",
+          "type": "multiple-choice",
+          "question": "«hätte» fe’lining o‘zbekcha ma’nosi:",
+          "options": [
+            "bo‘lganimda",
+            "menda bo‘lganida",
+            "borardim",
+            "qilardim"
+          ],
+          "correctIndex": 1,
+          "explanation": "hätte = menda bo‘lganida (egalik)."
+        }
+      ],
+      "dialogue": {
+        "title": "Kafeda Xushmuomala Buyurtma",
+        "lines": [
+          {
+            "speaker": "Mijoz",
+            "text": "Ich hätte gern eine Tasse Tee.",
+            "uz": "Menga bir chashka choy bersangiz xursand bo‘lardim."
+          },
+          {
+            "speaker": "Ofitsiant",
+            "text": "Könnten Sie bitte einen Moment warten?",
+            "uz": "Biroz kuta olarmidingiz, iltimos?"
+          },
+          {
+            "speaker": "Mijoz",
+            "text": "Natürlich, kein Problem!",
+            "uz": "Albatta, hech qisi yo‘q!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Sehrli So‘zlar: Hätte gern & Könnte",
+        "tip": "«Ich will» (men xohlayman) o‘rniga «Ich hätte gern» (berolsangiz mamnun bo‘lardim) desangiz, nemislar sizni olijanob deb biladi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "Kafeda / Restoranda",
+          "desc": "Ofitsiant bilan muloqot va amaliy buyurtma.",
+          "phrase": "Ich möchte bestellen, bitte.",
+          "meaning": "Buyurtma bermoqchiman, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "Shaharda va Ko‘chada",
+          "desc": "Yo‘l so‘rash, bekatlar va manzilga yetib borish.",
+          "phrase": "Wie komme ich dorthin?",
+          "meaning": "U yerga qanday borsam bo‘ladi?"
+        },
+        {
+          "icon": "💼",
+          "title": "Rasmiy Muloqot va Ishda",
+          "desc": "Hamkasblar va rahbar bilan hurmatli muomala.",
+          "phrase": "Vielen Dank für Ihre Unterstützung.",
+          "meaning": "Yordamingiz uchun katta rahmat."
         }
       ]
     },
@@ -1505,37 +3010,123 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Jamoada ishlash qobiliyati\" nemischa nima deyiladi?",
+          "id": "de_ex14_1",
+          "type": "multiple-choice",
+          "question": "«Rezyume» nemis tilida nima deyiladi?",
           "options": [
-            "die Pünktlichkeit",
-            "die Teamfähigkeit",
-            "die Einsamkeit",
-            "die Faulheit"
+            "der Lebenslauf",
+            "das Buch",
+            "der Brief",
+            "die Zeitung"
           ],
-          "correctIndex": 1,
-          "explanation": "Team (jamoa) + Fähigkeit (qobiliyat) = die Teamfähigkeit."
+          "correctIndex": 0,
+          "explanation": "der Lebenslauf (CV/Rezyume)."
         },
         {
-          "question": "\"Men ko‘p yillik tajribaga egaman\" professional ifodasi:",
+          "id": "de_ex14_2",
+          "type": "listening-choice",
+          "audioText": "Ich habe drei Jahre Berufserfahrung im IT-Bereich.",
+          "question": "Nomzod qaysi sohada 3 yillik tajribaga ega?",
           "options": [
-            "Ich habe keine Erfahrung.",
-            "Ich verfüge über langjährige Erfahrung.",
-            "Ich brauche Erfahrung.",
-            "Erfahrung ist gut."
+            "Tibbiyotda",
+            "IT sohasida",
+            "Ta’limda",
+            "Bankda"
           ],
           "correctIndex": 1,
-          "explanation": "verfügen über + Akkusativ — rasmiy va kasbiy tilda egalik qilishni bildiradi."
+          "explanation": "IT-Bereich."
         },
         {
-          "question": "\"der Lebenslauf\" hujjati nima?",
+          "id": "de_ex14_3",
+          "type": "fill-blank",
+          "question": "\"Ich bewerbe mich um die ______ als Entwickler.\"",
+          "placeholder": "bo'sh o'rin...",
+          "correctAnswer": "Stelle",
+          "hint": "ish o'rni (Stelle)"
+        },
+        {
+          "id": "de_ex14_4",
+          "type": "true-false",
+          "question": "Germaniyada ishga kirish uchun «Bewerbungsunterlagen» (hujjatlar to‘plami) topshiriladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Anschreiben, Lebenslauf va diplomlar to‘plami."
+        },
+        {
+          "id": "de_ex14_5",
+          "type": "order",
+          "words": [
+            "Ich",
+            "kann",
+            "gut",
+            "im",
+            "Team",
+            "arbeiten"
+          ],
+          "correctSentence": "Ich kann gut im Team arbeiten",
+          "question": "Gap tuzing: «Men jamoada yaxshi ishlay olaman»",
+          "explanation": "Ich kann gut im Team arbeiten."
+        },
+        {
+          "id": "de_ex14_6",
+          "type": "multiple-choice",
+          "question": "«Vorstellungsgespräch» nimani anglatadi?",
           "options": [
-            "Pasport",
-            "Rezyume (CV)",
-            "Haydovchilik guvohnomasi",
-            "Diplom ilovasi"
+            "Imtihon",
+            "Ish suhbati (intervyu)",
+            "Telefon qo‘ng‘irog‘i",
+            "Sayohat"
           ],
           "correctIndex": 1,
-          "explanation": "Lebenslauf — Germaniyada ishga topshirishda eng asosiy rezyume hujjati."
+          "explanation": "Ish suhbati."
+        }
+      ],
+      "dialogue": {
+        "title": "Ish Suhbatida",
+        "lines": [
+          {
+            "speaker": "HR Menejer",
+            "text": "Guten Tag! Warum möchten Sie bei uns arbeiten?",
+            "uz": "Xayrli kun! Nega aynan bizning kompaniyada ishlamoqchisiz?"
+          },
+          {
+            "speaker": "Nomzod",
+            "text": "Weil Ihr Unternehmen sehr innovativ ist und ich meine Kenntnisse einbringen möchte.",
+            "uz": "Chunki korxonangiz innovatsion va men o‘z bilimlarimni tatbiq etmoqchiman."
+          },
+          {
+            "speaker": "HR Menejer",
+            "text": "Welche Stärken haben Sie?",
+            "uz": "Sizning kuchli tomonlaringiz nimalardan iborat?"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Stärken va Schwächen",
+        "tip": "Stärken = Kuchli jihatlar (stark = kuchli). Schwächen = Rivojlanishi kerak bo‘lgan zaif jihatlar!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "Kafeda / Restoranda",
+          "desc": "Ofitsiant bilan muloqot va amaliy buyurtma.",
+          "phrase": "Ich möchte bestellen, bitte.",
+          "meaning": "Buyurtma bermoqchiman, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "Shaharda va Ko‘chada",
+          "desc": "Yo‘l so‘rash, bekatlar va manzilga yetib borish.",
+          "phrase": "Wie komme ich dorthin?",
+          "meaning": "U yerga qanday borsam bo‘ladi?"
+        },
+        {
+          "icon": "💼",
+          "title": "Rasmiy Muloqot va Ishda",
+          "desc": "Hamkasblar va rahbar bilan hurmatli muomala.",
+          "phrase": "Vielen Dank für Ihre Unterstützung.",
+          "meaning": "Yordamingiz uchun katta rahmat."
         }
       ]
     },
@@ -1616,37 +3207,122 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Das Haus ______ vor zwei Jahren gebaut (Passiv Präteritum).\":",
+          "id": "de_ex15_1",
+          "type": "multiple-choice",
+          "question": "«Bu yerda yangi maktab qurilmoqda»:",
           "options": [
-            "wird",
+            "Hier wird eine neue Schule gebaut.",
+            "Hier ist eine neue Schule gebaut.",
+            "Hier baut eine neue Schule.",
+            "Hier war eine neue Schule gebaut."
+          ],
+          "correctIndex": 0,
+          "explanation": "wird gebaut — Passiv Präsens."
+        },
+        {
+          "id": "de_ex15_2",
+          "type": "listening-choice",
+          "audioText": "Das Auto wird morgen repariert.",
+          "question": "Mashina qachon tuzatiladi?",
+          "options": [
+            "Bugun",
+            "Ertaga",
+            "Keyingi hafta",
+            "Tuzatib bo‘lingan"
+          ],
+          "correctIndex": 1,
+          "explanation": "morgen repariert."
+        },
+        {
+          "id": "de_ex15_3",
+          "type": "fill-blank",
+          "question": "\"Das Haus ______ vor zehn Jahren gebaut (Präteritum).\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "wurde",
+          "hint": "wurde gebaut"
+        },
+        {
+          "id": "de_ex15_4",
+          "type": "true-false",
+          "question": "Passivda ish-harakatni bajargan shaxs «von» predlogi (Dativ) bilan ifodalanadi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Masalan: Das Buch wurde von Goethe geschrieben."
+        },
+        {
+          "id": "de_ex15_5",
+          "type": "order",
+          "words": [
+            "Die",
+            "E-Mail",
             "wurde",
-            "hat",
-            "ist"
+            "erfolgreich",
+            "gesendet"
           ],
-          "correctIndex": 1,
-          "explanation": "O‘tgan zamon Passiv shaklida \"wurde\" ishlatiladi."
+          "correctSentence": "Die E-Mail wurde erfolgreich gesendet",
+          "question": "Gap tuzing: «Xat muvaffaqiyatli jo‘natildi»",
+          "explanation": "Die E-Mail wurde erfolgreich gesendet."
         },
         {
-          "question": "\"Das Projekt wird von ______ Ingenieur geleitet.\"",
+          "id": "de_ex15_6",
+          "type": "multiple-choice",
+          "question": "«werden» fe’lining Präteritum shakli:",
           "options": [
-            "der",
-            "dem",
-            "den",
-            "des"
+            "worden",
+            "wurde",
+            "geworden",
+            "werdet"
           ],
           "correctIndex": 1,
-          "explanation": "von predlogi doimo Dativ talab qiladi (der Ingenieur -> dem Ingenieur)."
+          "explanation": "wurde — o‘tgan zamon passiv yordamchisi."
+        }
+      ],
+      "dialogue": {
+        "title": "Yangiliklar va Hisobot",
+        "lines": [
+          {
+            "speaker": "Suxandon",
+            "text": "In Berlin wird eine neue U-Bahn-Linie gebaut.",
+            "uz": "Berlinda yangi metro yo‘nalishi qurilmoqda."
+          },
+          {
+            "speaker": "Muxbir",
+            "text": "Das Projekt wurde gestern offiziell vorgestellt.",
+            "uz": "Loyiha kecha rasman taqdim etildi."
+          },
+          {
+            "speaker": "Suxandon",
+            "text": "Es wird erwartet, dass die Arbeiten zügig vorangehen.",
+            "uz": "Ishlar tez sur’atlarda borishi kutilmoqda."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Passiv Formulalari",
+        "tip": "Passiv = «werden» (tuslangan) + Partizip II (oxirida)! Ish-harakat kim tomonidan emas, NIMA bo‘lgani muhim!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "Kafeda / Restoranda",
+          "desc": "Ofitsiant bilan muloqot va amaliy buyurtma.",
+          "phrase": "Ich möchte bestellen, bitte.",
+          "meaning": "Buyurtma bermoqchiman, iltimos."
         },
         {
-          "question": "Passiv Präsens formulasi qaysi?",
-          "options": [
-            "haben + Partizip II",
-            "sein + Partizip II",
-            "werden + Partizip II",
-            "können + Infinitiv"
-          ],
-          "correctIndex": 2,
-          "explanation": "Passiv: werden (tuslangan) + Partizip II (gap oxirida)."
+          "icon": "🚶",
+          "title": "Shaharda va Ko‘chada",
+          "desc": "Yo‘l so‘rash, bekatlar va manzilga yetib borish.",
+          "phrase": "Wie komme ich dorthin?",
+          "meaning": "U yerga qanday borsam bo‘ladi?"
+        },
+        {
+          "icon": "💼",
+          "title": "Rasmiy Muloqot va Ishda",
+          "desc": "Hamkasblar va rahbar bilan hurmatli muomala.",
+          "phrase": "Vielen Dank für Ihre Unterstützung.",
+          "meaning": "Yordamingiz uchun katta rahmat."
         }
       ]
     },
@@ -1727,37 +3403,125 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Bir tomondan ..., boshqa tomondan ...\" ifodasi qaysi?",
+          "id": "de_ex16_1",
+          "type": "multiple-choice",
+          "question": "«Mening fikrimcha...» iborasining eng akademik shakli:",
           "options": [
-            "Zuerst ..., dann ...",
-            "Einerseits ..., andererseits ...",
-            "Entweder ..., oder ...",
-            "Weder ..., noch ..."
+            "Meiner Meinung nach...",
+            "Ich will sagen...",
+            "Mein Kopf denkt...",
+            "Hör mal..."
           ],
-          "correctIndex": 1,
-          "explanation": "Einerseits ..., andererseits ... — B2 darajasining eng nufuzli bog‘lovchisi."
+          "correctIndex": 0,
+          "explanation": "Meiner Meinung nach..."
         },
         {
-          "question": "\"Sizning fikringizga to‘liq qo‘shilaman\" nemischa:",
+          "id": "de_ex16_2",
+          "type": "listening-choice",
+          "audioText": "Einerseits ist es teuer, andererseits spart es viel Zeit.",
+          "question": "Qarorning ijobiy tomoni nima ekanligi aytildi?",
           "options": [
-            "Ich habe keine Meinung.",
-            "Ich stimme Ihnen völlig zu.",
-            "Ich bin dagegen.",
-            "Das ist falsch."
+            "Pul tejaydi",
+            "Vaqtni ko‘p tejaydi",
+            "Qulay emas",
+            "Tez buziladi"
           ],
           "correctIndex": 1,
-          "explanation": "zustimmen — rozi bo‘lmoq / qo‘shilmoq."
+          "explanation": "spart es viel Zeit."
         },
         {
-          "question": "Goethe B2 imtihonida xulosa yasashda qaysi ibora ishlatiladi?",
+          "id": "de_ex16_3",
+          "type": "fill-blank",
+          "question": "\"Ich stimme dir voll und ganz ______.\"",
+          "placeholder": "fe'l old qo'shimchasi...",
+          "correctAnswer": "zu",
+          "hint": "zustimmen (qo'shilmoq)"
+        },
+        {
+          "id": "de_ex16_4",
+          "type": "true-false",
+          "question": "«Ich bin davon überzeugt, dass...» iborasi «Men bunga qat’iy ishonamanki...» degan ma’noni bildiradi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha, B2 darajasidagi qat’iy ishonch iborasi."
+        },
+        {
+          "id": "de_ex16_5",
+          "type": "order",
+          "words": [
+            "Meiner",
+            "Auffassung",
+            "nach",
+            "ist",
+            "das",
+            "die",
+            "beste",
+            "Lösung"
+          ],
+          "correctSentence": "Meiner Auffassung nach ist das die beste Lösung",
+          "question": "Gap tuzing: «Mening tushunchamga ko‘ra, bu eng maqbul yechim»",
+          "explanation": "Meiner Auffassung nach ist das die beste Lösung."
+        },
+        {
+          "id": "de_ex16_6",
+          "type": "multiple-choice",
+          "question": "Suhbatdosh fikriga qarshi chiqishda xushmuomala ibora:",
           "options": [
-            "Guten Tag",
-            "Zusammenfassend lässt sich sagen, dass ...",
-            "Ich weiß nicht",
-            "Tschüss"
+            "Das ist Quatsch!",
+            "Da bin ich anderer Meinung.",
+            "Halt den Mund!",
+            "Du hast keine Ahnung."
           ],
           "correctIndex": 1,
-          "explanation": "Zusammenfassend lässt sich sagen — xulosa qilib aytganda."
+          "explanation": "Da bin ich anderer Meinung (Men boshqacha fikrdaman)."
+        }
+      ],
+      "dialogue": {
+        "title": "Ekologiya Mavzusidagi Bahs",
+        "lines": [
+          {
+            "speaker": "Ekspert 1",
+            "text": "Meiner Meinung nach müssen wir den öffentlichen Nahverkehr ausbauen.",
+            "uz": "Mening fikrimcha, biz jamoat transportini kengaytirishimiz shart."
+          },
+          {
+            "speaker": "Ekspert 2",
+            "text": "Da stimme ich Ihnen vollkommen zu, aber die Finanzierung ist unklar.",
+            "uz": "Bu fikringizga to‘liq qo‘shilaman, ammo moliyalashtirish noaniq."
+          },
+          {
+            "speaker": "Ekspert 1",
+            "text": "Auf der einen Seite kostet es Geld, auf der anderen Seite schützt es das Klima.",
+            "uz": "Bir tomondan pul talab qiladi, boshqa tomondan esa iqlimni asraydi."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "B2 Argumentatsiya Fraza Juftligi",
+        "tip": "«Einerseits... andererseits» (Bir tomondan... boshqa tomondan) — har qanday B2 imtihonida eng yuqori ball keltiruvchi konstruktsiya!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "Kafeda / Restoranda",
+          "desc": "Ofitsiant bilan muloqot va amaliy buyurtma.",
+          "phrase": "Ich möchte bestellen, bitte.",
+          "meaning": "Buyurtma bermoqchiman, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "Shaharda va Ko‘chada",
+          "desc": "Yo‘l so‘rash, bekatlar va manzilga yetib borish.",
+          "phrase": "Wie komme ich dorthin?",
+          "meaning": "U yerga qanday borsam bo‘ladi?"
+        },
+        {
+          "icon": "💼",
+          "title": "Rasmiy Muloqot va Ishda",
+          "desc": "Hamkasblar va rahbar bilan hurmatli muomala.",
+          "phrase": "Vielen Dank für Ihre Unterstützung.",
+          "meaning": "Yordamingiz uchun katta rahmat."
         }
       ]
     }
@@ -1776,32 +3540,162 @@ module.exports = {
           "title": "The English Alphabet (26 ta Harf)",
           "description": "Harf ustiga bosing — sof ingliz tilidagi talaffuzini eshitasiz!",
           "letters": [
-            { "letter": "A a", "name": "ey", "example": "Apple (olma)", "audio": "A, Apple" },
-            { "letter": "B b", "name": "bi", "example": "Book (kitob)", "audio": "B, Book" },
-            { "letter": "C c", "name": "si", "example": "Cat (mushuk)", "audio": "C, Cat" },
-            { "letter": "D d", "name": "di", "example": "Dog (kuchuk)", "audio": "D, Dog" },
-            { "letter": "E e", "name": "i", "example": "Egg (tuxum)", "audio": "E, Egg" },
-            { "letter": "F f", "name": "ef", "example": "Fish (baliq)", "audio": "F, Fish" },
-            { "letter": "G g", "name": "ji", "example": "Good (yaxshi)", "audio": "G, Good" },
-            { "letter": "H h", "name": "eych", "example": "House (uy)", "audio": "H, House" },
-            { "letter": "I i", "name": "ay", "example": "Ice (muz)", "audio": "I, Ice" },
-            { "letter": "J j", "name": "jey", "example": "Job (ish)", "audio": "J, Job" },
-            { "letter": "K k", "name": "key", "example": "King (qirol)", "audio": "K, King" },
-            { "letter": "L l", "name": "el", "example": "Life (hayot)", "audio": "L, Life" },
-            { "letter": "M m", "name": "em", "example": "Moon (oy)", "audio": "M, Moon" },
-            { "letter": "N n", "name": "en", "example": "Name (ism)", "audio": "N, Name" },
-            { "letter": "O o", "name": "ou", "example": "Open (ochiq)", "audio": "O, Open" },
-            { "letter": "P p", "name": "pi", "example": "Pen (ruchka)", "audio": "P, Pen" },
-            { "letter": "Q q", "name": "kyu", "example": "Queen (qirolicha)", "audio": "Q, Queen" },
-            { "letter": "R r", "name": "ar", "example": "Red (qizil)", "audio": "R, Red" },
-            { "letter": "S s", "name": "es", "example": "Sun (quyosh)", "audio": "S, Sun" },
-            { "letter": "T t", "name": "ti", "example": "Time (vaqt)", "audio": "T, Time" },
-            { "letter": "U u", "name": "yu", "example": "Music (musiqa)", "audio": "U, Music" },
-            { "letter": "V v", "name": "vi", "example": "Voice (ovoz)", "audio": "V, Voice" },
-            { "letter": "W w", "name": "dabl-yu", "example": "Water (suv)", "audio": "W, Water" },
-            { "letter": "X x", "name": "eks", "example": "Box (quti)", "audio": "X, Box" },
-            { "letter": "Y y", "name": "way", "example": "Yes (ha)", "audio": "Y, Yes" },
-            { "letter": "Z z", "name": "zed / zi", "example": "Zoo (hayvonot bog‘i)", "audio": "Z, Zoo" }
+            {
+              "letter": "A a",
+              "name": "ey",
+              "example": "Apple (olma)",
+              "audio": "A, Apple"
+            },
+            {
+              "letter": "B b",
+              "name": "bi",
+              "example": "Book (kitob)",
+              "audio": "B, Book"
+            },
+            {
+              "letter": "C c",
+              "name": "si",
+              "example": "Cat (mushuk)",
+              "audio": "C, Cat"
+            },
+            {
+              "letter": "D d",
+              "name": "di",
+              "example": "Dog (kuchuk)",
+              "audio": "D, Dog"
+            },
+            {
+              "letter": "E e",
+              "name": "i",
+              "example": "Egg (tuxum)",
+              "audio": "E, Egg"
+            },
+            {
+              "letter": "F f",
+              "name": "ef",
+              "example": "Fish (baliq)",
+              "audio": "F, Fish"
+            },
+            {
+              "letter": "G g",
+              "name": "ji",
+              "example": "Good (yaxshi)",
+              "audio": "G, Good"
+            },
+            {
+              "letter": "H h",
+              "name": "eych",
+              "example": "House (uy)",
+              "audio": "H, House"
+            },
+            {
+              "letter": "I i",
+              "name": "ay",
+              "example": "Ice (muz)",
+              "audio": "I, Ice"
+            },
+            {
+              "letter": "J j",
+              "name": "jey",
+              "example": "Job (ish)",
+              "audio": "J, Job"
+            },
+            {
+              "letter": "K k",
+              "name": "key",
+              "example": "King (qirol)",
+              "audio": "K, King"
+            },
+            {
+              "letter": "L l",
+              "name": "el",
+              "example": "Life (hayot)",
+              "audio": "L, Life"
+            },
+            {
+              "letter": "M m",
+              "name": "em",
+              "example": "Moon (oy)",
+              "audio": "M, Moon"
+            },
+            {
+              "letter": "N n",
+              "name": "en",
+              "example": "Name (ism)",
+              "audio": "N, Name"
+            },
+            {
+              "letter": "O o",
+              "name": "ou",
+              "example": "Open (ochiq)",
+              "audio": "O, Open"
+            },
+            {
+              "letter": "P p",
+              "name": "pi",
+              "example": "Pen (ruchka)",
+              "audio": "P, Pen"
+            },
+            {
+              "letter": "Q q",
+              "name": "kyu",
+              "example": "Queen (qirolicha)",
+              "audio": "Q, Queen"
+            },
+            {
+              "letter": "R r",
+              "name": "ar",
+              "example": "Red (qizil)",
+              "audio": "R, Red"
+            },
+            {
+              "letter": "S s",
+              "name": "es",
+              "example": "Sun (quyosh)",
+              "audio": "S, Sun"
+            },
+            {
+              "letter": "T t",
+              "name": "ti",
+              "example": "Time (vaqt)",
+              "audio": "T, Time"
+            },
+            {
+              "letter": "U u",
+              "name": "yu",
+              "example": "Music (musiqa)",
+              "audio": "U, Music"
+            },
+            {
+              "letter": "V v",
+              "name": "vi",
+              "example": "Voice (ovoz)",
+              "audio": "V, Voice"
+            },
+            {
+              "letter": "W w",
+              "name": "dabl-yu",
+              "example": "Water (suv)",
+              "audio": "W, Water"
+            },
+            {
+              "letter": "X x",
+              "name": "eks",
+              "example": "Box (quti)",
+              "audio": "X, Box"
+            },
+            {
+              "letter": "Y y",
+              "name": "way",
+              "example": "Yes (ha)",
+              "audio": "Y, Yes"
+            },
+            {
+              "letter": "Z z",
+              "name": "zed / zi",
+              "example": "Zoo (hayvonot bog‘i)",
+              "audio": "Z, Zoo"
+            }
           ]
         },
         "rules": [
@@ -1858,6 +3752,22 @@ module.exports = {
           {
             "de": "Goodbye / Bye",
             "uz": "Xayr"
+          },
+          {
+            "de": "Good night",
+            "uz": "Xayrli tun (uyqu oldidan)"
+          },
+          {
+            "de": "See you later",
+            "uz": "Keyinroq ko‘rishguncha"
+          },
+          {
+            "de": "Nice to meet you",
+            "uz": "Tanishganimdan xursandman"
+          },
+          {
+            "de": "Thank you so much",
+            "uz": "Katta rahmat"
           }
         ]
       },
@@ -1865,28 +3775,86 @@ module.exports = {
         {
           "id": "en_ex1_1",
           "type": "multiple-choice",
-          "question": "Kechqurun ko‘rishganda ingliz tilida qanday salom beriladi?",
+          "question": "Kafega soat 14:00 da kirib salomlashmoqchisiz. Qaysi biri eng to‘g‘ri?",
           "options": [
             "Good morning",
             "Good afternoon",
-            "Good evening",
-            "Good night"
+            "Good night",
+            "Goodbye"
           ],
-          "correctIndex": 2,
-          "explanation": "\"Good evening\" — xayrli kech. (\"Good night\" esa faqat uxlashga ketganda xayrlashuvdir)."
+          "correctIndex": 1,
+          "explanation": "\"Good afternoon\" 12:00 dan 17:00 gacha bo‘lgan rasmiy salomlashishdir."
         },
         {
           "id": "en_ex1_2",
-          "type": "multiple-choice",
-          "question": "\"Thank you\" iborasidagi \"TH\" tovushi qanday talaffuz qilinadi?",
+          "type": "listening-choice",
+          "audioText": "Nice to meet you, have a great day!",
+          "question": "Audioda qanday tilak bildirildi?",
           "options": [
-            "Oddiy \"T\"",
-            "Tilni tishlar orasiga qo‘yib \"S\"",
-            "Oddiy \"K\"",
-            "Oddiy \"P\""
+            "Katta rahmat, salomat bo‘ling!",
+            "Tanishganimdan xursandman, kuningiz ajoyib o‘tsin!",
+            "Xayrli kech, do‘stlar!",
+            "Kechirasiz, shoshyapman!"
           ],
           "correctIndex": 1,
-          "explanation": "\"TH\" ingliz tilida tilsimon tovush hosil qiladi."
+          "explanation": "Nice to meet you, have a great day!"
+        },
+        {
+          "id": "en_ex1_3",
+          "type": "multiple-choice",
+          "question": "Ingliz tilida «W» harfi qanday tovush beradi?",
+          "options": [
+            "O‘zbekcha qattiq «V»",
+            "Lab-lab yumaloq «U-V» (uoter kabi)",
+            "O‘qilmaydi",
+            "«B» kabi"
+          ],
+          "correctIndex": 1,
+          "explanation": "«W» harfida lablar cho‘chchayib yumaloq talaffuz qilinadi (Water, World)."
+        },
+        {
+          "id": "en_ex1_4",
+          "type": "fill-blank",
+          "question": "Do‘stingiz bilan iliq xayrlashayotganda: \"See you ______, take care!\"",
+          "placeholder": "so'z...",
+          "correctAnswer": "later",
+          "hint": "Keyinroq so'zi (later yoki soon)"
+        },
+        {
+          "id": "en_ex1_5",
+          "type": "true-false",
+          "question": "Ingliz tilida «Good night» kunduzi ko‘chada odamlar bilan uchrashganda aytiladi.",
+          "trueLabel": "To‘g‘ri (True)",
+          "falseLabel": "Noto‘g‘ri (False)",
+          "correctValue": false,
+          "explanation": "Good night faqat uxlash oldidan yoki kechqurun ketayotganda aytiladi."
+        },
+        {
+          "id": "en_ex1_6",
+          "type": "order",
+          "words": [
+            "Thank",
+            "you",
+            "very",
+            "much",
+            "indeed"
+          ],
+          "correctSentence": "Thank you very much indeed",
+          "question": "Gap tuzing: «Sizga chindan ham katta rahmat!»",
+          "explanation": "Thank you very much indeed."
+        },
+        {
+          "id": "en_ex1_7",
+          "type": "multiple-choice",
+          "question": "Ingliz alifbosida nechta harf bor?",
+          "options": [
+            "24 ta",
+            "26 ta",
+            "28 ta",
+            "30 ta"
+          ],
+          "correctIndex": 1,
+          "explanation": "Ingliz alifbosi 26 ta harfdan iborat."
         }
       ],
       "speakingPrompt": {
@@ -1908,6 +3876,76 @@ module.exports = {
           "Toshkentdan"
         ],
         "correctIndex": 1
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a London Coffee Shop",
+          "desc": "Greeting politely and ordering morning coffee.",
+          "phrase": "Good morning! Can I have a cappuccino, please?",
+          "meaning": "Xayrli tong! Bitta kapuchino bersangiz, iltimos?"
+        },
+        {
+          "icon": "🚶",
+          "title": "Asking for Help in New York",
+          "desc": "Approaching strangers politely for directions.",
+          "phrase": "Excuse me, could you help me, please?",
+          "meaning": "Kechirasiz, menga yordam bera olasizmi?"
+        },
+        {
+          "icon": "📱",
+          "title": "Chatting with International Friends",
+          "desc": "Casual everyday text messaging greetings.",
+          "phrase": "Hey there! How's your day going?",
+          "meaning": "Salom! Kuning qanday o‘tyapti?"
+        },
+        {
+          "icon": "👋",
+          "title": "Warm Goodbyes",
+          "desc": "Saying goodbye with warm wishes.",
+          "phrase": "Have a wonderful day, see you soon!",
+          "meaning": "Kuningiz ajoyib o‘tsin, tez orada ko‘rishguncha!"
+        }
+      ],
+      "dialogue": {
+        "title": "Meeting a Classmate at Oxford",
+        "context": "Sarah and Alex meet for the first time outside the university library.",
+        "lines": [
+          {
+            "speaker": "Sarah",
+            "text": "Hello! Good morning!",
+            "uz": "Salom! Xayrli tong!"
+          },
+          {
+            "speaker": "Alex",
+            "text": "Good morning! I am Alex. What is your name?",
+            "uz": "Xayrli tong! Men Aleksman. Isming nima?"
+          },
+          {
+            "speaker": "Sarah",
+            "text": "My name is Sarah. It is a pleasure to meet you!",
+            "uz": "Mening ismim Sara. Tanishganimdan xursandman!"
+          },
+          {
+            "speaker": "Alex",
+            "text": "Pleasure to meet you too! Where are you from?",
+            "uz": "Men ham xursandman! Qayerdansan?"
+          },
+          {
+            "speaker": "Sarah",
+            "text": "I am from Uzbekistan, from Tashkent.",
+            "uz": "Men O‘zbekistondanman, Toshkentdan."
+          },
+          {
+            "speaker": "Alex",
+            "text": "That is wonderful! Welcome to the class.",
+            "uz": "Bu ajoyib! Guruhimizga xush kelibsan."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Magic «TH» Sound Lifehack!",
+        "tip": "Inglizcha «TH» (masalan: Thanks, This) tovushini aytish uchun til uchini tishlar orasiga yengil qo‘ying va shivirlang! Hech qachon o‘zbekcha oddiy «S» yoki «Z» demang!"
       }
     },
     {
@@ -1966,7 +4004,7 @@ module.exports = {
         {
           "id": "en_ex2_1",
           "type": "multiple-choice",
-          "question": "\"She ______ my best friend.\" Nuqtalar o‘rniga to‘g‘ri fe’lni qo‘ying:",
+          "question": "\"She ______ a doctor.\"",
           "options": [
             "am",
             "is",
@@ -1974,15 +4012,66 @@ module.exports = {
             "be"
           ],
           "correctIndex": 1,
-          "explanation": "\"She\" birlikda bo‘lgani uchun \"is\" ishlatiladi."
+          "explanation": "She is a doctor."
         },
         {
           "id": "en_ex2_2",
+          "type": "listening-choice",
+          "audioText": "They are my best friends from school.",
+          "question": "Audioda kimlar haqida gapirildi?",
+          "options": [
+            "Mening o‘qituvchilarim",
+            "Mening eng yaxshi maktab do‘stlarim",
+            "Mening hamkasblarim",
+            "Qo‘shnilarim"
+          ],
+          "correctIndex": 1,
+          "explanation": "best friends from school."
+        },
+        {
+          "id": "en_ex2_3",
           "type": "fill-blank",
-          "question": "We ______ very happy today.",
-          "placeholder": "am, is yoki are...",
+          "question": "\"We ______ ready for the lesson.\"",
+          "placeholder": "to be shakli...",
           "correctAnswer": "are",
-          "hint": "We (biz) ko‘plik"
+          "hint": "we are"
+        },
+        {
+          "id": "en_ex2_4",
+          "type": "true-false",
+          "question": "Ingliz tilida «I» (men) olmoshi gapning qayerida kelsa ham doimo KATTA HARFDA yoziladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! «I» har doim bosh harfda yoziladi."
+        },
+        {
+          "id": "en_ex2_5",
+          "type": "order",
+          "words": [
+            "He",
+            "is",
+            "a",
+            "very",
+            "smart",
+            "student"
+          ],
+          "correctSentence": "He is a very smart student",
+          "question": "Gap tuzing: «U juda aqlli talaba»",
+          "explanation": "He is a very smart student."
+        },
+        {
+          "id": "en_ex2_6",
+          "type": "multiple-choice",
+          "question": "«Ular baxtli» inglizcha qanday bo‘ladi?",
+          "options": [
+            "They is happy.",
+            "They are happy.",
+            "They am happy.",
+            "They be happy."
+          ],
+          "correctIndex": 1,
+          "explanation": "They are happy."
         }
       ],
       "speakingPrompt": {
@@ -2004,7 +4093,54 @@ module.exports = {
           "Shifokorlar"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "At the Airport",
+        "lines": [
+          {
+            "speaker": "Officer",
+            "text": "Are you a student here?",
+            "uz": "Siz bu yerda talabamisiz?"
+          },
+          {
+            "speaker": "David",
+            "text": "Yes, I am. I am at Westminster University.",
+            "uz": "Ha. Men Vestminster universitetidaman."
+          },
+          {
+            "speaker": "Officer",
+            "text": "Welcome to London! Have a great stay.",
+            "uz": "Londonga xush kelibsiz! Maroqli hordiq tilayman."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "I am, He/She/It is, We/You/They are",
+        "tip": "Yakkalikda 'is', ko'plikda 'are', o'zingiz uchun 'am'!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
+        },
+        {
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
+        },
+        {
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
+        }
+      ]
     },
     {
       "id": "en_lesson_3",
@@ -2058,23 +4194,74 @@ module.exports = {
         {
           "id": "en_ex3_1",
           "type": "multiple-choice",
-          "question": "\"He ______ English very well.\" To‘g‘ri shaklni tanlang:",
+          "question": "\"He ______ English every single day.\"",
           "options": [
-            "speaks",
-            "speak",
-            "speaking",
-            "speaked"
+            "study",
+            "studies",
+            "studying",
+            "is study"
           ],
-          "correctIndex": 0,
-          "explanation": "\"He\" bilan fe’lga -s qo‘shimchasi qo‘shiladi: speaks."
+          "correctIndex": 1,
+          "explanation": "He studies (he/she/it da -s/-es)."
         },
         {
           "id": "en_ex3_2",
+          "type": "listening-choice",
+          "audioText": "I usually drink green tea in the morning.",
+          "question": "Qahramon ertalab nima ichadi?",
+          "options": [
+            "Qora qahva",
+            "Ko‘k choy",
+            "Sharbat",
+            "Suv"
+          ],
+          "correctIndex": 1,
+          "explanation": "green tea."
+        },
+        {
+          "id": "en_ex3_3",
           "type": "fill-blank",
-          "question": "I ______ not speak French. (Men fransuzcha gapirmayman)",
-          "placeholder": "do yoki does...",
-          "correctAnswer": "do",
-          "hint": "I bilan do"
+          "question": "\"She ______ to school by bus. (go fe'li)\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "goes",
+          "hint": "he/she/it go -> goes"
+        },
+        {
+          "id": "en_ex3_4",
+          "type": "true-false",
+          "question": "Savol va inkor gaplarda (Do/Does) asosiy fe'lga -s qo'shilmaydi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Does he work? (works emas)."
+        },
+        {
+          "id": "en_ex3_5",
+          "type": "order",
+          "words": [
+            "I",
+            "always",
+            "read",
+            "books",
+            "at",
+            "night"
+          ],
+          "correctSentence": "I always read books at night",
+          "question": "Gap tuzing: «Men har doim tunda kitob o‘qiyman»",
+          "explanation": "I always read books at night."
+        },
+        {
+          "id": "en_ex3_6",
+          "type": "multiple-choice",
+          "question": "\"We ______ like fast food.\"",
+          "options": [
+            "doesn't",
+            "don't",
+            "not",
+            "isn't"
+          ],
+          "correctIndex": 1,
+          "explanation": "We don't like..."
         }
       ],
       "speakingPrompt": {
@@ -2096,7 +4283,59 @@ module.exports = {
           "Faqat tunda"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Morning Habits",
+        "lines": [
+          {
+            "speaker": "Emma",
+            "text": "What time do you usually wake up?",
+            "uz": "Odatda soat nechada uyg‘onasan?"
+          },
+          {
+            "speaker": "John",
+            "text": "I wake up at 7 AM and drink coffee.",
+            "uz": "Ertalab soat 7 da uyg‘onaman va kofe ichaman."
+          },
+          {
+            "speaker": "Emma",
+            "text": "Do you exercise every day?",
+            "uz": "Har kuni mashq qilasanmi?"
+          },
+          {
+            "speaker": "John",
+            "text": "Yes, I run in the park.",
+            "uz": "Ha, parkda yuguraman."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "He/She/It fe'liga -S qo'shilishi!",
+        "tip": "He drinks, she walks, it works! Uchinchi shaxsda fe'l 'S' kiyib oladi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
+        },
+        {
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
+        },
+        {
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
+        }
+      ]
     },
     {
       "id": "en_lesson_4",
@@ -2162,23 +4401,74 @@ module.exports = {
         {
           "id": "en_ex4_1",
           "type": "multiple-choice",
-          "question": "\"Qayerda yashaysiz?\" inglizcha qanday so‘raladi?",
+          "question": "«Siz qayerda yashaysiz?» inglizcha:",
           "options": [
             "Where do you live?",
-            "What do you live?",
-            "Who do you live?",
-            "When do you live?"
+            "When do you live?",
+            "Why do you live?",
+            "Who do you live?"
           ],
           "correctIndex": 0,
-          "explanation": "\"Where\" joyni so‘rash uchun ishlatiladi."
+          "explanation": "Where do you live?"
         },
         {
           "id": "en_ex4_2",
+          "type": "listening-choice",
+          "audioText": "Why are you learning English?",
+          "question": "Audiodagi savol ma'nosi qaysi?",
+          "options": [
+            "Qayerda inglizcha o‘qiysan?",
+            "Nega ingliz tilini o‘rganyapsan?",
+            "Inglizcha gapirasanmi?",
+            "Kim bilan o‘rganyapsan?"
+          ],
+          "correctIndex": 1,
+          "explanation": "Why are you learning English?"
+        },
+        {
+          "id": "en_ex4_3",
           "type": "fill-blank",
-          "question": "______ much is this coffee? (Bu qahva qancha turadi?)",
-          "placeholder": "So‘roq so‘zini yozing...",
-          "correctAnswer": "How",
-          "hint": "How much"
+          "question": "\"______ is your favorite teacher?\"",
+          "placeholder": "so'roq so'z...",
+          "correctAnswer": "Who",
+          "hint": "Shaxs uchun «Who» (Kim)"
+        },
+        {
+          "id": "en_ex4_4",
+          "type": "true-false",
+          "question": "Inglizcha savol tuzishda Wh- so'roq so'z gapning eng boshida keladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Where / What / Why har doim boshda keladi."
+        },
+        {
+          "id": "en_ex4_5",
+          "type": "order",
+          "words": [
+            "What",
+            "time",
+            "does",
+            "the",
+            "movie",
+            "start"
+          ],
+          "correctSentence": "What time does the movie start",
+          "question": "Gap tuzing: «Film soat nechada boshlanadi?»",
+          "explanation": "What time does the movie start?"
+        },
+        {
+          "id": "en_ex4_6",
+          "type": "multiple-choice",
+          "question": "«Qachon?» so‘rog‘i inglizcha:",
+          "options": [
+            "Where",
+            "When",
+            "Why",
+            "Which"
+          ],
+          "correctIndex": 1,
+          "explanation": "When = Qachon."
         }
       ],
       "speakingPrompt": {
@@ -2200,7 +4490,54 @@ module.exports = {
           "Orqaga qayting"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Asking for Info",
+        "lines": [
+          {
+            "speaker": "Tourist",
+            "text": "Where is the nearest subway station?",
+            "uz": "Eng yaqin metro bekati qayerda?"
+          },
+          {
+            "speaker": "Local",
+            "text": "It is two blocks down the street on your right.",
+            "uz": "Ko‘cha bo‘ylab ikkita kvartal o‘ng tomonda."
+          },
+          {
+            "speaker": "Tourist",
+            "text": "How much is a single ride ticket?",
+            "uz": "Bitta yo‘l chiptasi qancha turadi?"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Who vs Where vs Why",
+        "tip": "Who = Kim, Where = Qayerda, When = Qachon, Why = Nega, What = Nima!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
+        },
+        {
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
+        },
+        {
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
+        }
+      ]
     },
     {
       "id": "en_lesson_5",
@@ -2254,23 +4591,73 @@ module.exports = {
         {
           "id": "en_ex5_1",
           "type": "multiple-choice",
-          "question": "\"Hisobni keltirsangiz, iltimos\" inglizcha qanday aytiladi?",
+          "question": "Restoranda ovqat buyurtma qilishda eng odobli ibora:",
           "options": [
-            "Could we have the bill, please?",
-            "Where is the kitchen?",
-            "I want to eat now.",
-            "Goodbye!"
+            "Give me food.",
+            "I want steak.",
+            "I would like the steak, please.",
+            "Food here."
           ],
-          "correctIndex": 0,
-          "explanation": "\"Could we have the bill, please?\" — eng xushmuomala hisob so‘rash usuli."
+          "correctIndex": 2,
+          "explanation": "I would like the steak, please."
         },
         {
           "id": "en_ex5_2",
+          "type": "listening-choice",
+          "audioText": "Could we have the bill, please?",
+          "question": "Mijoz ofitsiantdan nimani so‘radi?",
+          "options": [
+            "Menyu",
+            "Hisob-kitob (chek)",
+            "Desert",
+            "Suv"
+          ],
+          "correctIndex": 1,
+          "explanation": "the bill = hisob/chek."
+        },
+        {
+          "id": "en_ex5_3",
           "type": "fill-blank",
-          "question": "I would ______ a cup of coffee, please.",
-          "placeholder": "so‘zni yozing...",
-          "correctAnswer": "like",
-          "hint": "like"
+          "question": "\"Can I have a cup of coffee, ______?\"",
+          "placeholder": "iltimos...",
+          "correctAnswer": "please",
+          "hint": "Iltimos so'zi"
+        },
+        {
+          "id": "en_ex5_4",
+          "type": "true-false",
+          "question": "Amerikada restoranda «the check», Britaniyada esa «the bill» deyiladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! Ikkisi ham hisob/chek ma'nosida."
+        },
+        {
+          "id": "en_ex5_5",
+          "type": "order",
+          "words": [
+            "Keep",
+            "the",
+            "change",
+            "thank",
+            "you"
+          ],
+          "correctSentence": "Keep the change thank you",
+          "question": "Gap tuzing: «Qaytimi o‘zingizga, rahmat»",
+          "explanation": "Keep the change, thank you."
+        },
+        {
+          "id": "en_ex5_6",
+          "type": "multiple-choice",
+          "question": "«Sparkling water» qanday suv?",
+          "options": [
+            "Oddiy suv",
+            "Qaynatilgan suv",
+            "Gazlangan suv",
+            "Muzdek suv"
+          ],
+          "correctIndex": 2,
+          "explanation": "Sparkling water = gazli suv."
         }
       ],
       "speakingPrompt": {
@@ -2292,7 +4679,59 @@ module.exports = {
           "Pitsa"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Ordering Dinner",
+        "lines": [
+          {
+            "speaker": "Waiter",
+            "text": "Are you ready to order?",
+            "uz": "Buyurtma berishga tayyormisiz?"
+          },
+          {
+            "speaker": "Customer",
+            "text": "Yes, I would like the grilled salmon, please.",
+            "uz": "Ha, menga qovurilgan losos bersangiz, iltimos."
+          },
+          {
+            "speaker": "Waiter",
+            "text": "And what would you like to drink?",
+            "uz": "Ichishga nima xohlaysiz?"
+          },
+          {
+            "speaker": "Customer",
+            "text": "Sparkling water with lemon, please.",
+            "uz": "Gazli suv limon bilan, iltimos."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "I would like (I'd like)",
+        "tip": "I want (men xohlayman) o'rniga I would like (menga bersangiz mamnun bo'lardim) desangiz juda xushmuomala chiqadi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
+        },
+        {
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
+        },
+        {
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
+        }
+      ]
     },
     {
       "id": "en_lesson_6",
@@ -2346,23 +4785,74 @@ module.exports = {
         {
           "id": "en_ex6_1",
           "type": "multiple-choice",
-          "question": "\"Yesterday I ______ to the supermarket.\" (go fe’lining o‘tgan zamoni):",
+          "question": "\"Yesterday, I ______ a great movie.\"",
           "options": [
-            "goed",
-            "went",
-            "gone",
-            "going"
+            "watch",
+            "watched",
+            "watching",
+            "watches"
           ],
           "correctIndex": 1,
-          "explanation": "\"go\" noto‘g‘ri fe’l bo‘lib, o‘tgan zamoni \"went\" bo‘ladi."
+          "explanation": "Oddiy fe'llarga -ed qo'shiladi: watched."
         },
         {
           "id": "en_ex6_2",
+          "type": "listening-choice",
+          "audioText": "We visited our grandparents last weekend.",
+          "question": "Ular o‘tgan hafta oxirida qayerga borishdi?",
+          "options": [
+            "Tog‘ga",
+            "Bobo va buvisinikiga",
+            "Kutubxonaga",
+            "Kino zaliga"
+          ],
+          "correctIndex": 1,
+          "explanation": "grandparents."
+        },
+        {
+          "id": "en_ex6_3",
           "type": "fill-blank",
-          "question": "Did you ______ your homework? (do fe’li so‘roqda 1-shaklda qoladi)",
-          "placeholder": "do yoki did...",
-          "correctAnswer": "do",
-          "hint": "did bor joyda fe’l o‘zgarmaydi"
+          "question": "\"I ______ to London last year. (go fe'li o'tgan zamonda)\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "went",
+          "hint": "go ning 2-shakli: went"
+        },
+        {
+          "id": "en_ex6_4",
+          "type": "true-false",
+          "question": "Did bilan kelgan savolda asosiy fe'l 1-boshlang'ich shaklga qaytadi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Did you go? (Did you went emas)."
+        },
+        {
+          "id": "en_ex6_5",
+          "type": "order",
+          "words": [
+            "She",
+            "bought",
+            "a",
+            "new",
+            "laptop",
+            "yesterday"
+          ],
+          "correctSentence": "She bought a new laptop yesterday",
+          "question": "Gap tuzing: «U kecha yangi noutbuk sotib oldi»",
+          "explanation": "She bought a new laptop yesterday."
+        },
+        {
+          "id": "en_ex6_6",
+          "type": "multiple-choice",
+          "question": "«See» fe'lining o'tgan zamon shakli qaysi?",
+          "options": [
+            "seed",
+            "saw",
+            "seen",
+            "seeing"
+          ],
+          "correctIndex": 1,
+          "explanation": "see -> saw."
         }
       ],
       "speakingPrompt": {
@@ -2384,7 +4874,59 @@ module.exports = {
           "Maktabga bordi"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Yesterday's Trip",
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "Where did you go yesterday?",
+            "uz": "Kecha qayerga bording?"
+          },
+          {
+            "speaker": "Lisa",
+            "text": "I went to the museum and saw amazing paintings.",
+            "uz": "Muzeyga bordim va ajoyib rasmlarni ko‘rdim."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Did you buy any souvenirs?",
+            "uz": "Esdalik sovg‘alari sotib oldingmi?"
+          },
+          {
+            "speaker": "Lisa",
+            "text": "Yes, I bought a couple of postcards.",
+            "uz": "Ha, bir nechta otkritka sotib oldim."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Noto'g'ri fe'llar siri (Irregular verbs)",
+        "tip": "Go -> Went, See -> Saw, Buy -> Bought! O'tgan zamonda noto'g'ri fe'llarning 2-shakli yodlanadi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
+        },
+        {
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
+        },
+        {
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
+        }
+      ]
     },
     {
       "id": "en_lesson_7",
@@ -2438,23 +4980,74 @@ module.exports = {
         {
           "id": "en_ex7_1",
           "type": "multiple-choice",
-          "question": "\"The phone is ringing! — Don't worry, I ______ answer it.\" (Hozir qaror qabul qilindi):",
+          "question": "Oldindan poyezd chiptasi olingan reja uchun qaysi biri ishlatiladi?",
           "options": [
-            "will",
-            "am going to",
-            "did",
-            "was"
+            "I will travel.",
+            "I am going to travel.",
+            "I travel.",
+            "I traveled."
           ],
-          "correctIndex": 0,
-          "explanation": "Hozirgi paytdagi tezkor qarorlar uchun \"will\" ishlatiladi."
+          "correctIndex": 1,
+          "explanation": "Aniq reja uchun «be going to»."
         },
         {
           "id": "en_ex7_2",
+          "type": "listening-choice",
+          "audioText": "Don't worry, I will help you with your luggage.",
+          "question": "Qahramon nima qilishga va’da berdi?",
+          "options": [
+            "Mashina haydashga",
+            "Yuklarni ko‘tarishga yordam berishga",
+            "Chipta sotib olishga",
+            "Telefon qilishga"
+          ],
+          "correctIndex": 1,
+          "explanation": "help with luggage."
+        },
+        {
+          "id": "en_ex7_3",
           "type": "fill-blank",
-          "question": "I am ______ to visit my grandparents this Sunday.",
-          "placeholder": "going...",
-          "correctAnswer": "going",
-          "hint": "going to"
+          "question": "\"Look at the dark clouds! It is going to ______.\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "rain",
+          "hint": "yomg'ir yog'moq (rain)"
+        },
+        {
+          "id": "en_ex7_4",
+          "type": "true-false",
+          "question": "«Will» fe'lidan keyin doimo «to» yuklamasi qo'yiladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": false,
+          "explanation": "Noto‘g‘ri! I will go (I will to go emas)."
+        },
+        {
+          "id": "en_ex7_5",
+          "type": "order",
+          "words": [
+            "We",
+            "are",
+            "going",
+            "to",
+            "learn",
+            "English"
+          ],
+          "correctSentence": "We are going to learn English",
+          "question": "Gap tuzing: «Biz ingliz tilini o‘rganmoqchimiz»",
+          "explanation": "We are going to learn English."
+        },
+        {
+          "id": "en_ex7_6",
+          "type": "multiple-choice",
+          "question": "«Telefon jiringlayapti, men ko'taraman» uchun qaysi to'g'ri?",
+          "options": [
+            "I will answer it.",
+            "I am going to answer it.",
+            "I answered it.",
+            "I answer."
+          ],
+          "correctIndex": 0,
+          "explanation": "Shu onda qabul qilingan qaror uchun «will»."
         }
       ],
       "speakingPrompt": {
@@ -2476,7 +5069,54 @@ module.exports = {
           "O‘qish uchun Parijga"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Weekend Plans",
+        "lines": [
+          {
+            "speaker": "Tom",
+            "text": "What are your plans for the summer?",
+            "uz": "Yozga qanday rejalaring bor?"
+          },
+          {
+            "speaker": "Kate",
+            "text": "I am going to visit Spain with my family.",
+            "uz": "Oilam bilan Ispaniyaga bormoqchiman."
+          },
+          {
+            "speaker": "Tom",
+            "text": "That sounds fun! I think I will just relax at home.",
+            "uz": "Ajoyib eshitiladi! Menimcha, men shunchaki uyda dam olsam kerak."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Going to (Reja) vs Will (Tezkor qaror)",
+        "tip": "Oldindan rejalashtirilgan ish = going to! Shu soniyada qaror qilingan ish yoki bashorat = will!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
+        },
+        {
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
+        },
+        {
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
+        }
+      ]
     },
     {
       "id": "en_lesson_8",
@@ -2530,23 +5170,74 @@ module.exports = {
         {
           "id": "en_ex8_1",
           "type": "multiple-choice",
-          "question": "\"Have you ever ______ to New York?\" (be fe’lining 3-shakli):",
+          "question": "\"I have ______ finished my homework.\"",
           "options": [
-            "been",
-            "be",
-            "was",
-            "being"
+            "already",
+            "yet",
+            "ever",
+            "ago"
           ],
           "correctIndex": 0,
-          "explanation": "\"Have you ever been to...\" — biror joyda bo‘lganlik tajribasini so‘rashda ishlatiladi."
+          "explanation": "already = allaqachon."
         },
         {
           "id": "en_ex8_2",
+          "type": "listening-choice",
+          "audioText": "Have you ever tried traditional Japanese sushi?",
+          "question": "Audiodagi savolda nima so‘raldi?",
+          "options": [
+            "Yaponiyaga borganmisan?",
+            "Hech an’anaviy yapon sushisini tatib ko‘rganmisan?",
+            "Ovqat pishira olasanmi?",
+            "Restoranga borasanmi?"
+          ],
+          "correctIndex": 1,
+          "explanation": "tried traditional Japanese sushi."
+        },
+        {
+          "id": "en_ex8_3",
           "type": "fill-blank",
-          "question": "In my ______, English is essential for global business. (fikrimcha)",
-          "placeholder": "opinion...",
-          "correctAnswer": "opinion",
-          "hint": "opinion"
+          "question": "\"She has ______ to Italy three times. (be fe'li V3)\"",
+          "placeholder": "V3 shakli...",
+          "correctAnswer": "been",
+          "hint": "be -> was -> been"
+        },
+        {
+          "id": "en_ex8_4",
+          "type": "true-false",
+          "question": "Present Perfect zamonida aniq o'tgan vaqt (yesterday, last year) aytilmaydi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Aniq vaqt aytilsa Past Simple ishlatiladi."
+        },
+        {
+          "id": "en_ex8_5",
+          "type": "order",
+          "words": [
+            "In",
+            "my",
+            "opinion",
+            "reading",
+            "is",
+            "essential"
+          ],
+          "correctSentence": "In my opinion reading is essential",
+          "question": "Gap tuzing: «Mening fikrimcha, kitob o‘qish juda muhim»",
+          "explanation": "In my opinion reading is essential."
+        },
+        {
+          "id": "en_ex8_6",
+          "type": "multiple-choice",
+          "question": "\"He hasn't called me ______.\"",
+          "options": [
+            "yet",
+            "already",
+            "ever",
+            "never"
+          ],
+          "correctIndex": 0,
+          "explanation": "Inkor gaplarning oxirida «yet» (hali) ishlatiladi."
         }
       ],
       "speakingPrompt": {
@@ -2568,7 +5259,54 @@ module.exports = {
           "10 yil, robotlar haqida"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Travel Experiences",
+        "lines": [
+          {
+            "speaker": "Dan",
+            "text": "Have you ever been to New York?",
+            "uz": "Hech Nyu-Yorkda bo‘lganmisan?"
+          },
+          {
+            "speaker": "Grace",
+            "text": "Yes, I have been there twice. In my opinion, it is an amazing city.",
+            "uz": "Ha, u yerda ikki marta bo‘lganman. Mening fikrimcha, ajoyib shahar."
+          },
+          {
+            "speaker": "Dan",
+            "text": "I have never visited the USA, but I hope to go soon.",
+            "uz": "Men hech qachon AQSHda bo‘lmaganman, lekin tez orada borishga umid qilaman."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Have/Has + V3 (Tajriba)",
+        "tip": "«Have you ever...?» hayotingizdagi umumiy tajribani so‘rash uchun eng mashhur savol!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
+        },
+        {
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
+        },
+        {
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
+        }
+      ]
     },
     {
       "id": "en_lesson_9",
@@ -2647,37 +5385,124 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Nonushta narxga kiritilganmi?\" inglizcha qanday so‘raladi?",
+          "id": "en_ex9_1",
+          "type": "multiple-choice",
+          "question": "«Nonushta narxga kiritilganmi?» inglizcha:",
           "options": [
-            "Where is breakfast?",
             "Is breakfast included?",
-            "Do you eat breakfast?",
-            "Breakfast is good."
-          ],
-          "correctIndex": 1,
-          "explanation": "included — o‘z ichiga olingan degani."
-        },
-        {
-          "question": "\"Ikki kishilik xona\" qaysi biri?",
-          "options": [
-            "single room",
-            "double room",
-            "family house",
-            "kitchen"
-          ],
-          "correctIndex": 1,
-          "explanation": "double room — ikki kishilik xona."
-        },
-        {
-          "question": "\"Could you give me the key, please?\" ma’nosi nima?",
-          "options": [
-            "Menga kalitni bera olasizmi, iltimos?",
-            "Kalit qayerda?",
-            "Men kalitni yo‘qotdim",
-            "Xonaga kiring"
+            "Where is breakfast?",
+            "How much breakfast?",
+            "Breakfast please?"
           ],
           "correctIndex": 0,
-          "explanation": "Could you give me... — xushmuomala iltimos shakli."
+          "explanation": "Is breakfast included?"
+        },
+        {
+          "id": "en_ex9_2",
+          "type": "listening-choice",
+          "audioText": "Check-out time is twelve o'clock noon.",
+          "question": "Xonani topshirish (check-out) vaqti soat nechada?",
+          "options": [
+            "Ertalab soat 9 da",
+            "Kunduzi soat 12 da",
+            "Kechki soat 6 da",
+            "Istalgan vaqtda"
+          ],
+          "correctIndex": 1,
+          "explanation": "twelve o'clock noon."
+        },
+        {
+          "id": "en_ex9_3",
+          "type": "fill-blank",
+          "question": "\"I would like to ______ a double room, please.\"",
+          "placeholder": "band qilmoq...",
+          "correctAnswer": "book",
+          "hint": "book (band qilmoq) yoki reserve"
+        },
+        {
+          "id": "en_ex9_4",
+          "type": "true-false",
+          "question": "«Single room» bu 2 kishilik xona deganidir.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": false,
+          "explanation": "Single room = 1 kishilik, Double room = 2 kishilik."
+        },
+        {
+          "id": "en_ex9_5",
+          "type": "order",
+          "words": [
+            "Could",
+            "you",
+            "call",
+            "a",
+            "taxi",
+            "for",
+            "me"
+          ],
+          "correctSentence": "Could you call a taxi for me",
+          "question": "Gap tuzing: «Menga taksi chaqirib bera olasizmi?»",
+          "explanation": "Could you call a taxi for me?"
+        },
+        {
+          "id": "en_ex9_6",
+          "type": "multiple-choice",
+          "question": "Lift ingliz tilida nima deyiladi?",
+          "options": [
+            "Stairs",
+            "Elevator / Lift",
+            "Escalator",
+            "Hallway"
+          ],
+          "correctIndex": 1,
+          "explanation": "Elevator (US) / Lift (UK)."
+        }
+      ],
+      "dialogue": {
+        "title": "At Hotel Reception",
+        "lines": [
+          {
+            "speaker": "Receptionist",
+            "text": "Good afternoon! How can I help you?",
+            "uz": "Xayrli kun! Sizga qanday yordam bera olaman?"
+          },
+          {
+            "speaker": "Guest",
+            "text": "I have a reservation for three nights under the name Alimov.",
+            "uz": "Alimov nomiga uch kechaga band qilingan xonam bor edi."
+          },
+          {
+            "speaker": "Receptionist",
+            "text": "Here is your key card. Breakfast is served from 7 to 10 AM.",
+            "uz": "Mana kalit kartangiz. Nonushta ertalab 7 dan 10 gacha beriladi."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Check-in vs Check-out",
+        "tip": "Check-in = Mehmonxonaga kirish va ro'yxatdan o'tish. Check-out = Chiqish va hisob-kitob qilish!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
+        },
+        {
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
+        },
+        {
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
         }
       ]
     },
@@ -2758,37 +5583,123 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Siz ko‘proq kitob o‘qishingiz kerak (maslahat)\" tarjimasi:",
+          "id": "en_ex10_1",
+          "type": "multiple-choice",
+          "question": "\"You ______ see a doctor if your fever doesn't stop.\"",
           "options": [
-            "You must read books.",
-            "You should read more books.",
-            "You cannot read books.",
-            "You read books."
+            "should",
+            "can",
+            "may",
+            "would"
           ],
-          "correctIndex": 1,
-          "explanation": "Do‘stona maslahat uchun \"should\" ishlatiladi."
+          "correctIndex": 0,
+          "explanation": "Maslahat uchun «should»."
         },
         {
-          "question": "\"You ______ smoke here (bu yerda chekish taqiqlangan).\":",
+          "id": "en_ex10_2",
+          "type": "listening-choice",
+          "audioText": "You must wear a seatbelt while driving.",
+          "question": "Qanday qat’iy talab aytildi?",
           "options": [
-            "can",
-            "must not",
+            "Tez haydamaslik",
+            "Xavfsizlik kamarini taqish",
+            "Musiqa qo‘ymaslik",
+            "Kunduzi chiroq yoqish"
+          ],
+          "correctIndex": 1,
+          "explanation": "wear a seatbelt."
+        },
+        {
+          "id": "en_ex10_3",
+          "type": "fill-blank",
+          "question": "\"I ______ speak three languages fluently. (Qobiliyat)\"",
+          "placeholder": "modal fe'l...",
+          "correctAnswer": "can",
+          "hint": "can (qila olmoq)"
+        },
+        {
+          "id": "en_ex10_4",
+          "type": "true-false",
+          "question": "Modal fe'llardan keyin fe'lga -s yoki -ing qo'shilmaydi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "He can swim (He can swims emas)."
+        },
+        {
+          "id": "en_ex10_5",
+          "type": "order",
+          "words": [
+            "You",
+            "must",
+            "not",
+            "smoke",
+            "in",
+            "here"
+          ],
+          "correctSentence": "You must not smoke in here",
+          "question": "Gap tuzing: «Bu yerda chekmasligingiz shart»",
+          "explanation": "You must not smoke in here."
+        },
+        {
+          "id": "en_ex10_6",
+          "type": "multiple-choice",
+          "question": "«Ruxsat berish / ehtimollik» uchun qaysi modal fe'l ishlatiladi?",
+          "options": [
+            "must",
+            "may",
             "should",
             "have to"
           ],
           "correctIndex": 1,
-          "explanation": "must not — qat’iy taqiqni anglatadi."
+          "explanation": "may / might = ehtimollik va ruxsat."
+        }
+      ],
+      "dialogue": {
+        "title": "Giving Advice",
+        "lines": [
+          {
+            "speaker": "Mark",
+            "text": "I feel exhausted and I have an exam tomorrow.",
+            "uz": "Charchab ketdim, ertaga esa imtihonim bor."
+          },
+          {
+            "speaker": "Helen",
+            "text": "You should get some sleep now. You must not study all night.",
+            "uz": "Hozir uxlashing kerak. Tun bo‘yi dars qilmasliging shart."
+          },
+          {
+            "speaker": "Mark",
+            "text": "You are right. I can wake up early tomorrow.",
+            "uz": "Haqsan. Ertaga erta tura olaman."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Should (Maslahat) vs Must (Qat'iy qoida)",
+        "tip": "Should = qilsang yaxshi bo'lardi (maslahat). Must = qat'iyan bajarishing shart!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
         },
         {
-          "question": "Modal fe’llardan keyin asosiy fe’l qanday shaklda keladi?",
-          "options": [
-            "-ing bilan",
-            "to bilan",
-            "O‘zgarishsiz sof asos (Infinitive without to)",
-            "-ed bilan"
-          ],
-          "correctIndex": 2,
-          "explanation": "can go, must do, should study — fe’l hech qanday qo‘shimchasiz keladi."
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
+        },
+        {
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
         }
       ]
     },
@@ -2869,37 +5780,123 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Mening tomog‘im og‘riyapti\" inglizcha qanday aytiladi?",
+          "id": "en_ex11_1",
+          "type": "multiple-choice",
+          "question": "«Mening tishim og‘riyapti» inglizcha:",
           "options": [
-            "I have a sore throat.",
+            "I have a toothache.",
             "I have a headache.",
-            "My leg is blue.",
-            "I want water."
+            "I have a stomachache.",
+            "I have an earache."
           ],
           "correctIndex": 0,
-          "explanation": "sore throat — tomoq og‘rig‘i."
+          "explanation": "toothache = tish og'rig'i."
         },
         {
-          "question": "\"Get well soon!\" ma’nosi nima?",
+          "id": "en_ex11_2",
+          "type": "listening-choice",
+          "audioText": "Drink plenty of warm water and stay in bed.",
+          "question": "Shifokor bemorga nimani maslahat berdi?",
           "options": [
-            "Xush kelibsiz!",
-            "Tezroq sog‘ayib keting!",
-            "Tabriklayman!",
-            "Rahmat!"
+            "Sport bilan shug‘ullanishni",
+            "Ko‘p iliq suv ichish va yotoqda dam olishni",
+            "Sovuq dush qabul qilishni",
+            "Ishga borishni"
           ],
           "correctIndex": 1,
-          "explanation": "Bemorga sog‘lik tilashning eng mashhur iborasi."
+          "explanation": "warm water and stay in bed."
         },
         {
-          "question": "\"Dorini ovqatdan keyin iching\" tarjimasi:",
-          "options": [
-            "Eat the medicine before sleep.",
-            "Take this medicine after meals.",
-            "Do not buy medicine.",
-            "Drink water only."
+          "id": "en_ex11_3",
+          "type": "fill-blank",
+          "question": "\"Get ______ soon! (Tezroq tuzalib keting!)\"",
+          "placeholder": "tilak...",
+          "correctAnswer": "well",
+          "hint": "Get well soon"
+        },
+        {
+          "id": "en_ex11_4",
+          "type": "true-false",
+          "question": "«Pharmacy» bu dorixona demakdir.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Pharmacy yoki Chemist's = dorixona."
+        },
+        {
+          "id": "en_ex11_5",
+          "type": "order",
+          "words": [
+            "I",
+            "need",
+            "to",
+            "make",
+            "an",
+            "appointment"
           ],
-          "correctIndex": 1,
-          "explanation": "after meals — ovqatdan keyin."
+          "correctSentence": "I need to make an appointment",
+          "question": "Gap tuzing: «Men shifokorga yozilishim kerak»",
+          "explanation": "I need to make an appointment."
+        },
+        {
+          "id": "en_ex11_6",
+          "type": "multiple-choice",
+          "question": "Retsept ingliz tilida nima deyiladi?",
+          "options": [
+            "Receipt",
+            "Recipe",
+            "Prescription",
+            "Bill"
+          ],
+          "correctIndex": 2,
+          "explanation": "Prescription = dori retsepti (Receipt bu to'lov cheki)."
+        }
+      ],
+      "dialogue": {
+        "title": "Medical Checkup",
+        "lines": [
+          {
+            "speaker": "Doctor",
+            "text": "Hello! What seems to be the problem today?",
+            "uz": "Salom! Bugun nima bezovta qilyapti?"
+          },
+          {
+            "speaker": "Patient",
+            "text": "I have a terrible sore throat and a high fever.",
+            "uz": "Tog‘og‘im qattiq og‘riyapti va yuqori isitmam bor."
+          },
+          {
+            "speaker": "Doctor",
+            "text": "Let me check your temperature. Take this medicine twice a day.",
+            "uz": "Haroratingizni o‘lchab ko‘ray. Bu dorini kuniga ikki marta iching."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "-ache Qo'shimchasi",
+        "tip": "Headache (bosh og'rig'i), Stomachache (oshqozon og'rig'i), Toothache (tish og'rig'i)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
+        },
+        {
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
+        },
+        {
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
         }
       ]
     },
@@ -2980,37 +5977,124 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"A doctor is a person ______ treats sick people.\"",
+          "id": "en_ex12_1",
+          "type": "multiple-choice",
+          "question": "\"The man ______ lives next door is an engineer.\"",
           "options": [
+            "who",
             "which",
+            "whose",
+            "where"
+          ],
+          "correctIndex": 0,
+          "explanation": "Inson uchun «who»."
+        },
+        {
+          "id": "en_ex12_2",
+          "type": "listening-choice",
+          "audioText": "This is the laptop which I bought in California.",
+          "question": "Noutbuk qayerda sotib olingan?",
+          "options": [
+            "Londonda",
+            "Kaliforniyada",
+            "Toshkentda",
+            "Nyu-Yorkda"
+          ],
+          "correctIndex": 1,
+          "explanation": "in California."
+        },
+        {
+          "id": "en_ex12_3",
+          "type": "fill-blank",
+          "question": "\"The boy ______ dog was lost was crying.\"",
+          "placeholder": "nisbiy olmosh...",
+          "correctAnswer": "whose",
+          "hint": "egalik uchun: whose (uning iti)"
+        },
+        {
+          "id": "en_ex12_4",
+          "type": "true-false",
+          "question": "Ingliz tilida «that» so‘zini ham odamlar, ham buyumlar uchun ishlatish mumkin.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! «that» universal nisbiy olmosh."
+        },
+        {
+          "id": "en_ex12_5",
+          "type": "order",
+          "words": [
+            "The",
+            "car",
+            "which",
+            "he",
+            "drives",
+            "is",
+            "electric"
+          ],
+          "correctSentence": "The car which he drives is electric",
+          "question": "Gap tuzing: «U haydaydigan mashina elektromobil»",
+          "explanation": "The car which he drives is electric."
+        },
+        {
+          "id": "en_ex12_6",
+          "type": "multiple-choice",
+          "question": "Joylar uchun qaysi nisbiy olmosh ishlatiladi?",
+          "options": [
             "who",
             "where",
+            "which",
             "whose"
           ],
           "correctIndex": 1,
-          "explanation": "Odamlar (shaxslar) uchun \"who\" nisbiy olmoshi ishlatiladi."
+          "explanation": "where = qayerdaki/u yerda."
+        }
+      ],
+      "dialogue": {
+        "title": "Describing People & Things",
+        "lines": [
+          {
+            "speaker": "Alice",
+            "text": "Do you know the girl who won the coding contest?",
+            "uz": "Dasturlash tanlovida yutib chiqqan qizni taniysanmi?"
+          },
+          {
+            "speaker": "Bob",
+            "text": "Yes! She is the student whose project was about AI.",
+            "uz": "Ha! U loyihasi AI haqida bo‘lgan talaba."
+          },
+          {
+            "speaker": "Alice",
+            "text": "That is the app which everyone is downloading right now.",
+            "uz": "Hozir hamma yuklab olayotgan ilova o‘sha edi."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Who (Odamlar) vs Which (Buyumlar)",
+        "tip": "Insonlar uchun WHO, jonsiz narsalar va hayvonlar uchun WHICH, ikkisiga ham THAT o'tadi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
         },
         {
-          "question": "\"This is the house ______ my grandparents lived.\"",
-          "options": [
-            "who",
-            "which",
-            "where",
-            "whose"
-          ],
-          "correctIndex": 2,
-          "explanation": "Joylar (manzillar) uchun \"where\" ishlatiladi."
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
         },
         {
-          "question": "\"I have a friend ______ car was stolen.\"",
-          "options": [
-            "whose",
-            "who",
-            "which",
-            "that"
-          ],
-          "correctIndex": 0,
-          "explanation": "Egalik (do‘stimning mashinasi) bo‘lgani uchun \"whose\" to‘g‘ri keladi."
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
         }
       ]
     },
@@ -3091,37 +6175,123 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"If you study hard, you ______ your IELTS test.\"",
-          "options": [
-            "pass",
-            "will pass",
-            "would pass",
-            "passed"
-          ],
-          "correctIndex": 1,
-          "explanation": "First Conditional: If + Present Simple, kelajakda \"will pass\"."
-        },
-        {
-          "question": "\"If I ______ more money, I would buy a new car.\"",
-          "options": [
-            "have",
-            "had",
-            "will have",
-            "having"
-          ],
-          "correctIndex": 1,
-          "explanation": "Second Conditional (orzu): If qismida Past Simple (had) ishlatiladi."
-        },
-        {
-          "question": "\"If I were you, I ______ take this opportunity.\"",
+          "id": "en_ex13_1",
+          "type": "multiple-choice",
+          "question": "\"If it rains tomorrow, we ______ stay at home.\"",
           "options": [
             "will",
             "would",
-            "am",
-            "can"
+            "had",
+            "are"
+          ],
+          "correctIndex": 0,
+          "explanation": "1st Conditional: will stay."
+        },
+        {
+          "id": "en_ex13_2",
+          "type": "listening-choice",
+          "audioText": "If I had more free time, I would travel the world.",
+          "question": "Qahramonda ko‘proq bo‘sh vaqt bo‘lsa nima qilardi?",
+          "options": [
+            "Kitob yozardi",
+            "Dunyo bo‘ylab sayohat qilardi",
+            "Kompaniya ochardi",
+            "Sport bilan shug‘ullanardi"
           ],
           "correctIndex": 1,
-          "explanation": "If I were you + would + Verb — shaxsiy maslahat qolipi."
+          "explanation": "travel the world."
+        },
+        {
+          "id": "en_ex13_3",
+          "type": "fill-blank",
+          "question": "\"If I were you, I ______ accept that job offer.\"",
+          "placeholder": "would...",
+          "correctAnswer": "would",
+          "hint": "would accept"
+        },
+        {
+          "id": "en_ex13_4",
+          "type": "true-false",
+          "question": "2nd Conditionalda «I» olmoshi bilan rasmiy tilda «were» ishlatiladi (If I were you).",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! «If I were you» eng to'g'ri grammatik qoida."
+        },
+        {
+          "id": "en_ex13_5",
+          "type": "order",
+          "words": [
+            "If",
+            "you",
+            "practice",
+            "you",
+            "will",
+            "succeed"
+          ],
+          "correctSentence": "If you practice you will succeed",
+          "question": "Gap tuzing: «Mashq qilsang, muvaffaqiyatga erishasan»",
+          "explanation": "If you practice you will succeed."
+        },
+        {
+          "id": "en_ex13_6",
+          "type": "multiple-choice",
+          "question": "«If she ______ (know) the answer, she would tell us.»",
+          "options": [
+            "knows",
+            "knew",
+            "known",
+            "knowing"
+          ],
+          "correctIndex": 1,
+          "explanation": "2nd Conditionalda if qismida Past Simple (knew) keladi."
+        }
+      ],
+      "dialogue": {
+        "title": "Dreaming Big",
+        "lines": [
+          {
+            "speaker": "Leo",
+            "text": "If you study hard, you will pass the IELTS exam.",
+            "uz": "Agar qunt bilan o‘qisang, IELTS imtihonidan o‘tasan."
+          },
+          {
+            "speaker": "Sam",
+            "text": "And what would you do if you won a million dollars?",
+            "uz": "Agar bir million dollar yutib olganingda nima qilarding?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "If I had that money, I would build an education center.",
+            "uz": "Menda shunday pul bo‘lganida, o‘quv markazi qurgan bo‘lardim."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Real (1st) vs Xayoliy (2nd)",
+        "tip": "1st: If + Present, will + V1 (Haqiqiy imkoniyat). 2nd: If + Past, would + V1 (Xayoliy orzu)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
+        },
+        {
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
+        },
+        {
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
         }
       ]
     },
@@ -3202,37 +6372,123 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Men ushbu lavozim uchun juda mosman\" inglizcha professional iborasi:",
+          "id": "en_ex14_1",
+          "type": "multiple-choice",
+          "question": "«Rezyume» Amerika inglizchasida qanday ataladi?",
           "options": [
-            "I want this job.",
-            "I am a great fit for this position.",
-            "Give me work.",
-            "I like money."
-          ],
-          "correctIndex": 1,
-          "explanation": "a great fit for this position — B2/C1 intervyu leksikasi."
-        },
-        {
-          "question": "\"Kutilayotgan maosh\" nima deyiladi?",
-          "options": [
-            "Salary expectation",
-            "Free money",
-            "Price tag",
-            "Cash bonus"
+            "Resume",
+            "Curriculum Vitae",
+            "Letter",
+            "Application"
           ],
           "correctIndex": 0,
-          "explanation": "Salary expectation — nomzod kutayotgan maosh."
+          "explanation": "Resume (US) / CV (UK)."
         },
         {
-          "question": "\"I have a proven track record\" iborasi nimani bildiradi?",
+          "id": "en_ex14_2",
+          "type": "listening-choice",
+          "audioText": "My greatest strength is solving complex problems under pressure.",
+          "question": "Nomzod o‘zining eng katta kuchli jihati deb nimani aytdi?",
           "options": [
-            "Mening xatolarim ko‘p",
-            "Menda isbotlangan muvaffaqiyatli tajriba bor",
-            "Men yangi boshlovchiman",
-            "Men ishlamaganman"
+            "Baland ovozda gapirish",
+            "Bosim ostida murakkab muammolarni yechish",
+            "Chet tillarini bilish",
+            "Erta uyg‘onish"
           ],
           "correctIndex": 1,
-          "explanation": "proven track record — muvaffaqiyatli ish tarixi."
+          "explanation": "solving complex problems under pressure."
+        },
+        {
+          "id": "en_ex14_3",
+          "type": "fill-blank",
+          "question": "\"I am looking forward to ______ from you.\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "hearing",
+          "hint": "hearing from you"
+        },
+        {
+          "id": "en_ex14_4",
+          "type": "true-false",
+          "question": "«Deadline» bu topshiriq topshirilishi kerak bo‘lgan oxirgi muddatdir.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Deadline — so'nggi muddat."
+        },
+        {
+          "id": "en_ex14_5",
+          "type": "order",
+          "words": [
+            "I",
+            "am",
+            "a",
+            "highly",
+            "motivated",
+            "professional"
+          ],
+          "correctSentence": "I am a highly motivated professional",
+          "question": "Gap tuzing: «Men yuqori motivatsiyaga ega mutaxassisman»",
+          "explanation": "I am a highly motivated professional."
+        },
+        {
+          "id": "en_ex14_6",
+          "type": "multiple-choice",
+          "question": "«Cover letter» nimani anglatadi?",
+          "options": [
+            "Hujjat muqovasi",
+            "Kuzatuv xati (musharraf xat)",
+            "Tavsiyanoma",
+            "Pasport nusxasi"
+          ],
+          "correctIndex": 1,
+          "explanation": "Cover letter — rezyumega qo'shib yoziladigan xat."
+        }
+      ],
+      "dialogue": {
+        "title": "Professional Interview",
+        "lines": [
+          {
+            "speaker": "Interviewer",
+            "text": "Tell me about yourself and your professional background.",
+            "uz": "O‘zingiz va kasbiy faoliyatingiz haqida gapirib bering."
+          },
+          {
+            "speaker": "Candidate",
+            "text": "I have over four years of experience in software development and project management.",
+            "uz": "Menda dasturiy ta’minot ishlab chiqish va loyihalarni boshqarishda 4 yillik tajriba bor."
+          },
+          {
+            "speaker": "Interviewer",
+            "text": "How do you handle working under tight deadlines?",
+            "uz": "Qisqa muddatli muhim vazifalarda ishlashni qanday boshqarasiz?"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "STAR Metodi",
+        "tip": "Intervyuda savollarga javob berish siri: Situation (vaziyat) -> Task (vazifa) -> Action (harakatingiz) -> Result (natija)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
+        },
+        {
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
+        },
+        {
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
         }
       ]
     },
@@ -3313,37 +6569,123 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"The new website ______ launched last week (Past Passive).\":",
+          "id": "en_ex15_1",
+          "type": "multiple-choice",
+          "question": "\"The contract ______ signed by both parties yesterday.\"",
           "options": [
-            "is",
             "was",
+            "is",
+            "were",
+            "has been"
+          ],
+          "correctIndex": 0,
+          "explanation": "Yesterday bo'lgani uchun: was signed."
+        },
+        {
+          "id": "en_ex15_2",
+          "type": "listening-choice",
+          "audioText": "English is spoken in almost every country.",
+          "question": "Audiodagi jumla ma’nosi qaysi?",
+          "options": [
+            "Ingliz tili juda qiyin.",
+            "Ingliz tili deyarli har bir mamlakatda gapiriladi.",
+            "Ingliz tilini o‘rganish kerak.",
+            "Inglizlar ko‘p sayohat qilishadi."
+          ],
+          "correctIndex": 1,
+          "explanation": "is spoken in almost every country."
+        },
+        {
+          "id": "en_ex15_3",
+          "type": "fill-blank",
+          "question": "\"The new bridge will be ______ next month (build V3).\"",
+          "placeholder": "V3 shakli...",
+          "correctAnswer": "built",
+          "hint": "build -> built -> built"
+        },
+        {
+          "id": "en_ex15_4",
+          "type": "true-false",
+          "question": "Passiv nisbatda ish-harakatni kim bajarganini ko‘rsatish uchun «by» predlogi qo‘yiladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "The book was written by Hemingway."
+        },
+        {
+          "id": "en_ex15_5",
+          "type": "order",
+          "words": [
+            "The",
+            "email",
             "has",
-            "were"
+            "been",
+            "sent",
+            "successfully"
           ],
-          "correctIndex": 1,
-          "explanation": "O‘tgan zamon birlik uchun \"was launched\" bo‘ladi."
+          "correctSentence": "The email has been sent successfully",
+          "question": "Gap tuzing: «Email xat muvaffaqiyatli yuborildi»",
+          "explanation": "The email has been sent successfully."
         },
         {
-          "question": "\"The report was prepared ______ our senior analyst.\"",
+          "id": "en_ex15_6",
+          "type": "multiple-choice",
+          "question": "«write» fe'lining passivda ishlatiladigan 3-shakli qaysi?",
           "options": [
-            "with",
-            "by",
-            "from",
-            "to"
+            "wrote",
+            "written",
+            "writing",
+            "writes"
           ],
           "correctIndex": 1,
-          "explanation": "Harakatni kim bajarganini ko‘rsatish uchun \"by\" ishlatiladi."
+          "explanation": "write -> wrote -> written."
+        }
+      ],
+      "dialogue": {
+        "title": "Corporate Meeting",
+        "lines": [
+          {
+            "speaker": "Manager",
+            "text": "The new marketing strategy was approved this morning.",
+            "uz": "Yangi marketing strategiyasi bugun ertalab ma’qullandi."
+          },
+          {
+            "speaker": "Lead",
+            "text": "All client reports have been delivered on time.",
+            "uz": "Barcha mijoz hisobotlari o‘z vaqtida yetkazib berildi."
+          },
+          {
+            "speaker": "Manager",
+            "text": "Excellent! The final presentation will be held tomorrow.",
+            "uz": "Ajoyib! Yakuniy taqdimot ertaga o‘tkaziladi."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Be + V3 Formulari",
+        "tip": "Passivda har doim «to be» ning kerakli zamoni + fe'lning 3-shakli (Past Participle) ishlatiladi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
         },
         {
-          "question": "\"Dastur yangilandi (natijasi bor)\" Present Perfect Passive:",
-          "options": [
-            "The app updated.",
-            "The app has been updated.",
-            "The app is update.",
-            "The app was updating."
-          ],
-          "correctIndex": 1,
-          "explanation": "has been + V3 — hozirgi tugallangan majhul nisbat."
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
+        },
+        {
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
         }
       ]
     },
@@ -3424,37 +6766,125 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Foydasi zararlaridan ustun turadi\" inglizcha qanday aytiladi?",
+          "id": "en_ex16_1",
+          "type": "multiple-choice",
+          "question": "Akademik munozarada «Mening nuqtai nazarimcha...» iborasi:",
           "options": [
-            "It is good.",
-            "The benefits outweigh the drawbacks.",
-            "I like benefits.",
-            "There are problems."
+            "From my perspective...",
+            "I think that...",
+            "My brain says...",
+            "Look here..."
           ],
-          "correctIndex": 1,
-          "explanation": "outweigh the drawbacks — B2/C1 darajadagi akademik ibora."
+          "correctIndex": 0,
+          "explanation": "From my perspective... / In my view..."
         },
         {
-          "question": "\"O‘z-o‘zidan ravshanki...\" iborasi qaysi?",
+          "id": "en_ex16_2",
+          "type": "listening-choice",
+          "audioText": "On the one hand it saves money, on the other hand it requires patience.",
+          "question": "Qarorning talabi nima ekanligi aytildi?",
           "options": [
-            "I do not know",
-            "It goes without saying that ...",
-            "Maybe tomorrow",
-            "Never mind"
+            "Tez qaror qabul qilish",
+            "Sabr-toqat talab qilishi",
+            "Ko‘p odamlar kerakligi",
+            "Qimmatligi"
           ],
           "correctIndex": 1,
-          "explanation": "It goes without saying — isbot talab qilmaydigan aniq haqiqat."
+          "explanation": "requires patience."
         },
         {
-          "question": "Qarshi fikr bildirishning eng odobli madaniy usuli qaysi?",
-          "options": [
-            "You are wrong!",
-            "Shut up!",
-            "I beg to differ.",
-            "Stupid idea."
+          "id": "en_ex16_3",
+          "type": "fill-blank",
+          "question": "\"I strongly ______ with the argument presented.\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "agree",
+          "hint": "agree (qo'shilmoq)"
+        },
+        {
+          "id": "en_ex16_4",
+          "type": "true-false",
+          "question": "«Consequently» so‘zi «Natijada / Oqibatda» degan ma’noni bildiradi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! Consequently = as a result."
+        },
+        {
+          "id": "en_ex16_5",
+          "type": "order",
+          "words": [
+            "There",
+            "is",
+            "no",
+            "denying",
+            "the",
+            "importance",
+            "of",
+            "education"
           ],
-          "correctIndex": 2,
-          "explanation": "I beg to differ — xushmuomala ingliz tilida \"men boshqacha fikrdaman\"."
+          "correctSentence": "There is no denying the importance of education",
+          "question": "Gap tuzing: «Ta’limning ahamiyatini inkor etib bo‘lmaydi»",
+          "explanation": "There is no denying the importance of education."
+        },
+        {
+          "id": "en_ex16_6",
+          "type": "multiple-choice",
+          "question": "«Muhim» so'zining yuqori akademik sinonimi qaysi?",
+          "options": [
+            "crucial / paramount",
+            "little",
+            "easy",
+            "simple"
+          ],
+          "correctIndex": 0,
+          "explanation": "crucial / paramount = o'ta muhim, hal qiluvchi."
+        }
+      ],
+      "dialogue": {
+        "title": "Academic Discussion",
+        "lines": [
+          {
+            "speaker": "Speaker A",
+            "text": "From my perspective, artificial intelligence will create more opportunities than it destroys.",
+            "uz": "Mening nuqtai nazarimcha, sun’iy intellekt yo‘qotganidan ko‘ra ko‘proq imkoniyatlar yaratadi."
+          },
+          {
+            "speaker": "Speaker B",
+            "text": "I completely agree with your premise, nonetheless we need ethical regulations.",
+            "uz": "Fikringizga to‘liq qo‘shilaman, shunga qaramay bizga axloqiy qoidalar kerak."
+          },
+          {
+            "speaker": "Speaker A",
+            "text": "Undoubtedly! A balanced approach is paramount.",
+            "uz": "Shubhasiz! Muvozanatli yondashuv o‘ta muhimdir."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "IELTS 8.0 Linking Words",
+        "tip": "«Furthermore» (bundan tashqari), «Nonetheless» (shunga qaramay), «Consequently» (natijada) so'zlari nutqingizni akademik darajaga ko'taradi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "At a Café / Restaurant",
+          "desc": "Ordering food and talking with staff.",
+          "phrase": "Could I have the menu, please?",
+          "meaning": "Menyuni olsam bo‘ladimi, iltimos?"
+        },
+        {
+          "icon": "🚶",
+          "title": "In the City / On the Street",
+          "desc": "Asking for directions and public transit.",
+          "phrase": "Excuse me, which way is the center?",
+          "meaning": "Kechirasiz, markaz qaysi tomonda?"
+        },
+        {
+          "icon": "💼",
+          "title": "Work & Professional Setting",
+          "desc": "Communicating politely in business meetings.",
+          "phrase": "Thank you very much for your time.",
+          "meaning": "Ajratgan vaqtingiz uchun katta rahmat."
         }
       ]
     }
@@ -3473,39 +6903,204 @@ module.exports = {
           "title": "Русский алфавит (33 ta Harf)",
           "description": "Harf ustiga bosing — sof ruscha talaffuzini eshitasiz!",
           "letters": [
-            { "letter": "А а", "name": "а", "example": "Арбуз (tarvuz)", "audio": "А, Арбуз" },
-            { "letter": "Б б", "name": "бэ", "example": "Брат (aka/uka)", "audio": "Б, Брат" },
-            { "letter": "В в", "name": "вэ", "example": "Вода (suv)", "audio": "В, Вода" },
-            { "letter": "Г г", "name": "гэ", "example": "Город (shahar)", "audio": "Г, Город" },
-            { "letter": "Д д", "name": "дэ", "example": "Дом (uy)", "audio": "Д, Дом" },
-            { "letter": "Е е", "name": "е", "example": "Еда (ovqat)", "audio": "Е, Еда" },
-            { "letter": "Ё ё", "name": "ё", "example": "Ёлка (archasi)", "audio": "Ё, Ёлка" },
-            { "letter": "Ж ж", "name": "жэ", "example": "Жизнь (hayot)", "audio": "Ж, Жизнь" },
-            { "letter": "З з", "name": "зэ", "example": "Зима (qish)", "audio": "З, Зима" },
-            { "letter": "И и", "name": "и", "example": "Имя (ism)", "audio": "И, Имя" },
-            { "letter": "Й й", "name": "и краткое", "example": "Чай (choy)", "audio": "Й, Чай" },
-            { "letter": "К к", "name": "ка", "example": "Книга (kitob)", "audio": "К, Книга" },
-            { "letter": "Л л", "name": "эль", "example": "Лето (yoz)", "audio": "Л, Лето" },
-            { "letter": "М м", "name": "эм", "example": "Мама (ona)", "audio": "М, Мама" },
-            { "letter": "Н н", "name": "эн", "example": "Нос (burun)", "audio": "Н, Нос" },
-            { "letter": "О о", "name": "о", "example": "Окно (deraza)", "audio": "О, Окно" },
-            { "letter": "П п", "name": "пэ", "example": "Папа (ota)", "audio": "П, Папа" },
-            { "letter": "Р р", "name": "эр", "example": "Рука (qo‘l)", "audio": "Р, Рука" },
-            { "letter": "С с", "name": "эс", "example": "Солнце (quyosh)", "audio": "С, Солнце" },
-            { "letter": "Т т", "name": "тэ", "example": "Ташкент (Toshkent)", "audio": "Т, Ташкент" },
-            { "letter": "У у", "name": "у", "example": "Утро (tong)", "audio": "У, Утро" },
-            { "letter": "Ф ф", "name": "эф", "example": "Фото (surat)", "audio": "Ф, Фото" },
-            { "letter": "Х х", "name": "ха", "example": "Хлеб (non)", "audio": "Х, Хлеб" },
-            { "letter": "Ц ц", "name": "цэ", "example": "Центр (markaz)", "audio": "Ц, Центр" },
-            { "letter": "Ч ч", "name": "че", "example": "Час (soat)", "audio": "Ч, Час" },
-            { "letter": "Ш ш", "name": "ша", "example": "Школа (maktab)", "audio": "Ш, Школа" },
-            { "letter": "Щ щ", "name": "ща", "example": "Щётка (cho‘tka)", "audio": "Щ, Щётка" },
-            { "letter": "Ъ", "name": "твёрдый знак", "example": "Объект (obyekt)", "audio": "Твёрдый знак, Объект" },
-            { "letter": "Ы", "name": "ы", "example": "Мы (biz)", "audio": "Ы, Мы" },
-            { "letter": "Ь", "name": "мягкий знак", "example": "День (kun)", "audio": "Мягкий знак, День" },
-            { "letter": "Э э", "name": "э", "example": "Этот (bu)", "audio": "Э, Этот" },
-            { "letter": "Ю ю", "name": "ю", "example": "Юг (janub)", "audio": "Ю, Юг" },
-            { "letter": "Я я", "name": "я", "example": "Яблоко (olma)", "audio": "Я, Яблоко" }
+            {
+              "letter": "А а",
+              "name": "а",
+              "example": "Арбуз (tarvuz)",
+              "audio": "А, Арбуз"
+            },
+            {
+              "letter": "Б б",
+              "name": "бэ",
+              "example": "Брат (aka/uka)",
+              "audio": "Б, Брат"
+            },
+            {
+              "letter": "В в",
+              "name": "вэ",
+              "example": "Вода (suv)",
+              "audio": "В, Вода"
+            },
+            {
+              "letter": "Г г",
+              "name": "гэ",
+              "example": "Город (shahar)",
+              "audio": "Г, Город"
+            },
+            {
+              "letter": "Д д",
+              "name": "дэ",
+              "example": "Дом (uy)",
+              "audio": "Д, Дом"
+            },
+            {
+              "letter": "Е е",
+              "name": "е",
+              "example": "Еда (ovqat)",
+              "audio": "Е, Еда"
+            },
+            {
+              "letter": "Ё ё",
+              "name": "ё",
+              "example": "Ёлка (archasi)",
+              "audio": "Ё, Ёлка"
+            },
+            {
+              "letter": "Ж ж",
+              "name": "жэ",
+              "example": "Жизнь (hayot)",
+              "audio": "Ж, Жизнь"
+            },
+            {
+              "letter": "З з",
+              "name": "зэ",
+              "example": "Зима (qish)",
+              "audio": "З, Зима"
+            },
+            {
+              "letter": "И и",
+              "name": "и",
+              "example": "Имя (ism)",
+              "audio": "И, Имя"
+            },
+            {
+              "letter": "Й й",
+              "name": "и краткое",
+              "example": "Чай (choy)",
+              "audio": "Й, Чай"
+            },
+            {
+              "letter": "К к",
+              "name": "ка",
+              "example": "Книга (kitob)",
+              "audio": "К, Книга"
+            },
+            {
+              "letter": "Л л",
+              "name": "эль",
+              "example": "Лето (yoz)",
+              "audio": "Л, Лето"
+            },
+            {
+              "letter": "М м",
+              "name": "эм",
+              "example": "Мама (ona)",
+              "audio": "М, Мама"
+            },
+            {
+              "letter": "Н н",
+              "name": "эн",
+              "example": "Нос (burun)",
+              "audio": "Н, Нос"
+            },
+            {
+              "letter": "О о",
+              "name": "о",
+              "example": "Окно (deraza)",
+              "audio": "О, Окно"
+            },
+            {
+              "letter": "П п",
+              "name": "пэ",
+              "example": "Папа (ota)",
+              "audio": "П, Папа"
+            },
+            {
+              "letter": "Р р",
+              "name": "эр",
+              "example": "Рука (qo‘l)",
+              "audio": "Р, Рука"
+            },
+            {
+              "letter": "С с",
+              "name": "эс",
+              "example": "Солнце (quyosh)",
+              "audio": "С, Солнце"
+            },
+            {
+              "letter": "Т т",
+              "name": "тэ",
+              "example": "Ташкент (Toshkent)",
+              "audio": "Т, Ташкент"
+            },
+            {
+              "letter": "У у",
+              "name": "у",
+              "example": "Утро (tong)",
+              "audio": "У, Утро"
+            },
+            {
+              "letter": "Ф ф",
+              "name": "эф",
+              "example": "Фото (surat)",
+              "audio": "Ф, Фото"
+            },
+            {
+              "letter": "Х х",
+              "name": "ха",
+              "example": "Хлеб (non)",
+              "audio": "Х, Хлеб"
+            },
+            {
+              "letter": "Ц ц",
+              "name": "цэ",
+              "example": "Центр (markaz)",
+              "audio": "Ц, Центр"
+            },
+            {
+              "letter": "Ч ч",
+              "name": "че",
+              "example": "Час (soat)",
+              "audio": "Ч, Час"
+            },
+            {
+              "letter": "Ш ш",
+              "name": "ша",
+              "example": "Школа (maktab)",
+              "audio": "Ш, Школа"
+            },
+            {
+              "letter": "Щ щ",
+              "name": "ща",
+              "example": "Щётка (cho‘tka)",
+              "audio": "Щ, Щётка"
+            },
+            {
+              "letter": "Ъ",
+              "name": "твёрдый знак",
+              "example": "Объект (obyekt)",
+              "audio": "Твёрдый знак, Объект"
+            },
+            {
+              "letter": "Ы",
+              "name": "ы",
+              "example": "Мы (biz)",
+              "audio": "Ы, Мы"
+            },
+            {
+              "letter": "Ь",
+              "name": "мягкий знак",
+              "example": "День (kun)",
+              "audio": "Мягкий знак, День"
+            },
+            {
+              "letter": "Э э",
+              "name": "э",
+              "example": "Этот (bu)",
+              "audio": "Э, Этот"
+            },
+            {
+              "letter": "Ю ю",
+              "name": "ю",
+              "example": "Юг (janub)",
+              "audio": "Ю, Юг"
+            },
+            {
+              "letter": "Я я",
+              "name": "я",
+              "example": "Яблоко (olma)",
+              "audio": "Я, Яблоко"
+            }
           ]
         },
         "rules": [
@@ -3566,6 +7161,22 @@ module.exports = {
           {
             "de": "До свидания",
             "uz": "Xayr, ko‘rishguncha"
+          },
+          {
+            "de": "Спокойной ночи",
+            "uz": "Xayrli tun (uyqu oldidan)"
+          },
+          {
+            "de": "До встречи",
+            "uz": "Ko‘rishguncha xayr"
+          },
+          {
+            "de": "Большое спасибо",
+            "uz": "Katta rahmat"
+          },
+          {
+            "de": "Будьте здоровы",
+            "uz": "Sog‘ bo‘ling"
           }
         ]
       },
@@ -3573,23 +7184,86 @@ module.exports = {
         {
           "id": "ru_ex1_1",
           "type": "multiple-choice",
-          "question": "Kattalarga yoki rasmiy joyda qanday salom beriladi?",
+          "question": "Kattalar bilan yoki rasmiy joyda salomlashganda qaysi biri eng to‘g‘ri?",
           "options": [
             "Привет",
             "Здравствуйте",
             "Пока",
-            "Спокойной ночи"
+            "Здорово"
           ],
           "correctIndex": 1,
-          "explanation": "\"Здравствуйте\" — eng oliy rasmiy salomlashish ifodasidir."
+          "explanation": "\"Здравствуйте\" — eng oliy rasmiy salomlashishdir."
         },
         {
           "id": "ru_ex1_2",
+          "type": "listening-choice",
+          "audioText": "До свидания, всего хорошего!",
+          "question": "Audioda nima deyildi?",
+          "options": [
+            "Xayrli tong, do‘stlar!",
+            "Xayr, barcha yaxshiliklar yor bo‘lsin!",
+            "Katta rahmat, salomat bo‘ling!",
+            "Tanishganimdan xursandman!"
+          ],
+          "correctIndex": 1,
+          "explanation": "\"До свидания, всего хорошего!\""
+        },
+        {
+          "id": "ru_ex1_3",
+          "type": "multiple-choice",
+          "question": "Rus alifbosida nechta harf mavjud?",
+          "options": [
+            "26 ta",
+            "30 ta",
+            "33 ta",
+            "35 ta"
+          ],
+          "correctIndex": 2,
+          "explanation": "Rus alifbosida 33 ta harf bor."
+        },
+        {
+          "id": "ru_ex1_4",
           "type": "fill-blank",
-          "question": "Katta rahmat demoqchisiz: \"Спасибо ______.\"",
-          "placeholder": "So‘zni yozing...",
-          "correctAnswer": "большое",
-          "hint": "bolshoye"
+          "question": "Tanishganda «Juda mamnunman»: \"Очень ______!\"",
+          "placeholder": "so'z...",
+          "correctAnswer": "приятно",
+          "hint": "приятно (yoqimli/mamnunman)"
+        },
+        {
+          "id": "ru_ex1_5",
+          "type": "true-false",
+          "question": "Rus tilidagi «Ъ» (qattiqlik belgisi) va «Ь» (yumshatish belgisi) harflarining o‘z ovozi yo‘q.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! Bu belgilar harflarning o‘qilish qattiq-yumshoqligini boshqaradi."
+        },
+        {
+          "id": "ru_ex1_6",
+          "type": "order",
+          "words": [
+            "Большое",
+            "спасибо",
+            "за",
+            "вашу",
+            "помощь"
+          ],
+          "correctSentence": "Большое спасибо за вашу помощь",
+          "question": "Gap tuzing: «Yordamingiz uchun katta rahmat»",
+          "explanation": "Большое спасибо за вашу помощь."
+        },
+        {
+          "id": "ru_ex1_7",
+          "type": "multiple-choice",
+          "question": "Rus tilida «хорошо» so‘zidagi birinchi «о» qanday o‘qiladi?",
+          "options": [
+            "O‘zbekcha cho‘ziq «O»",
+            "Qisqa «A»",
+            "«U» kabi",
+            "O‘qilmaydi"
+          ],
+          "correctIndex": 1,
+          "explanation": "Urg‘usiz «о» harfi «A» kabi talaffuz qilinadi [xarasho]."
         }
       ],
       "speakingPrompt": {
@@ -3611,6 +7285,76 @@ module.exports = {
           "Samarqandda"
         ],
         "correctIndex": 1
+      },
+      "situations": [
+        {
+          "icon": "🤝",
+          "title": "Rasmiy Salomlashish",
+          "desc": "Universitetda, idorada yoki notanish kattalar bilan salomlashish.",
+          "phrase": "Здравствуйте! Рад вас видеть.",
+          "meaning": "Assalomu alaykum! Sizni ko‘rganimdan xursandman."
+        },
+        {
+          "icon": "🚶",
+          "title": "Ko‘chada Notanish Odamdan So‘rash",
+          "desc": "Ko‘chada odob bilan murojaat qilib yo‘l so‘rash.",
+          "phrase": "Извините, пожалуйста, вы не подскажете...?",
+          "meaning": "Kechirasiz, iltimos, ayta olmaysizmi...?"
+        },
+        {
+          "icon": "📱",
+          "title": "Do‘stlar Davrasida",
+          "desc": "Tengdoshlar yoki do‘stlar bilan norasmiy salom-alik.",
+          "phrase": "Привет! Как твои дела?",
+          "meaning": "Salom! Ishlaring qanday?"
+        },
+        {
+          "icon": "👋",
+          "title": "Iliq Xayrlashuv",
+          "desc": "Suhbat oxirida xayrlashish va yaxshi tilak bildirish.",
+          "phrase": "До свидания! Всего хорошего!",
+          "meaning": "Xayr! Barcha yaxshiliklar yor bo‘lsin!"
+        }
+      ],
+      "dialogue": {
+        "title": "Kutubxonadagi Ilk Tanishuv",
+        "context": "Kutubxonada ikki talaba tanishib qolishdi.",
+        "lines": [
+          {
+            "speaker": "Aleksey",
+            "text": "Здравствуйте! Меня зовут Алексей.",
+            "uz": "Assalomu alaykum! Mening ismim Aleksey."
+          },
+          {
+            "speaker": "Nodira",
+            "text": "Здравствуйте! А меня зовут Нодира. Очень приятно!",
+            "uz": "Assalomu alaykum! Mening ismim esa Nodira. Juda mamnunman!"
+          },
+          {
+            "speaker": "Aleksey",
+            "text": "Мне тоже очень приятно! Вы студентка?",
+            "uz": "Men ham juda mamnunman! Siz talabamisiz?"
+          },
+          {
+            "speaker": "Nodira",
+            "text": "Да, я учусь здесь на первом курсе.",
+            "uz": "Ha, men bu yerda birinchi kursda o‘qiyman."
+          },
+          {
+            "speaker": "Aleksey",
+            "text": "Отлично! До скорой встречи, Нодира!",
+            "uz": "Ajoyib! Tez orada ko‘rishguncha, Nodira!"
+          },
+          {
+            "speaker": "Nodira",
+            "text": "До свидания, Алексей!",
+            "uz": "Xayr, Aleksey!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "«О» harfi urg‘usiz bo‘lsa «А» o‘qiladi!",
+        "tip": "Rus tilida eng katta sir: Agar «О» harfiga urg‘u tushmasa, u qisqa «A» kabi o‘qiladi! Masalan: «хорошо» so‘zida faqat oxirgi «О» urg‘uli, shuning uchun [xarasho] deb aytiladi!"
       }
     },
     {
@@ -3675,23 +7419,73 @@ module.exports = {
         {
           "id": "ru_ex2_1",
           "type": "multiple-choice",
-          "question": "\"Мы ______ по-русски.\" (говорить fe’lining to‘g‘ri shakli):",
+          "question": "\"Мы хорошо ______ по-русски (понимать fe'li).\"",
           "options": [
-            "говорю",
-            "говоришь",
-            "говорит",
-            "говорим"
+            "понимаю",
+            "понимаешь",
+            "понимаем",
+            "понимают"
           ],
-          "correctIndex": 3,
-          "explanation": "\"Мы\" bilan -им qo‘shiladi: говорим."
+          "correctIndex": 2,
+          "explanation": "Мы понимаем."
         },
         {
           "id": "ru_ex2_2",
+          "type": "listening-choice",
+          "audioText": "Я работаю в банке и изучаю языки.",
+          "question": "Qahramon qayerda ishlaydi?",
+          "options": [
+            "Maktabda",
+            "Bankda",
+            "Kasalxonada",
+            "Zavodda"
+          ],
+          "correctIndex": 1,
+          "explanation": "в банке."
+        },
+        {
+          "id": "ru_ex2_3",
           "type": "fill-blank",
-          "question": "Меня ______ Сардор. (Mening ismim Sardor)",
-          "placeholder": "so‘zni yozing...",
-          "correctAnswer": "зовут",
-          "hint": "зовут"
+          "question": "\"Где ты ______? (жить fe'li)\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "живёшь",
+          "hint": "ты живёшь"
+        },
+        {
+          "id": "ru_ex2_4",
+          "type": "true-false",
+          "question": "Rus tilida «Я» doimo katta harf bilan yozilishi shart emas.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Faqat gap boshida katta harf bo‘ladi (inglizchadagidek har doim emas)."
+        },
+        {
+          "id": "ru_ex2_5",
+          "type": "order",
+          "words": [
+            "Я",
+            "каждый",
+            "день",
+            "читаю",
+            "книги"
+          ],
+          "correctSentence": "Я каждый день читаю книги",
+          "question": "Gap tuzing: «Men har kuni kitob o‘qiyman»",
+          "explanation": "Я каждый день читаю книги."
+        },
+        {
+          "id": "ru_ex2_6",
+          "type": "multiple-choice",
+          "question": "«Они» (Ular) uchun fe'l qo'shimchasi qaysi?",
+          "options": [
+            "-ем",
+            " -ешь",
+            " -ют / -ут",
+            " -ете"
+          ],
+          "correctIndex": 2,
+          "explanation": "они читают / работают."
         }
       ],
       "speakingPrompt": {
@@ -3713,7 +7507,54 @@ module.exports = {
           "Magistraturada"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Первый разговор",
+        "lines": [
+          {
+            "speaker": "Иван",
+            "text": "Привет! Ты говоришь по-русски?",
+            "uz": "Salom! Ruscha gapirasanmi?"
+          },
+          {
+            "speaker": "Сардор",
+            "text": "Да, я немного говорю и сейчас изучаю грамматику.",
+            "uz": "Ha, biroz gapiraman va hozir grammatikani o‘rganyapman."
+          },
+          {
+            "speaker": "Иван",
+            "text": "Ты отлично понимаешь!",
+            "uz": "Juda yaxshi tushunyapsan!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "1-tuslanish qo'shimchalari",
+        "tip": "Я чита-ю, ты чита-ешь, он чита-ет, мы чита-ем, вы чита-ете, они чита-ют!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
+        }
+      ]
     },
     {
       "id": "ru_lesson_3",
@@ -3773,23 +7614,73 @@ module.exports = {
         {
           "id": "ru_ex3_1",
           "type": "multiple-choice",
-          "question": "\"Машина\" so‘zi bilan qaysi olmosh to‘g‘ri ishlatiladi?",
+          "question": "\"Это ______ книга (kitob - ayol jinsi).\"",
           "options": [
-            "Мой машина",
-            "Моя машина",
-            "Моё машина",
-            "Мои машина"
+            "мой",
+            "моя",
+            "моё",
+            "мои"
           ],
           "correctIndex": 1,
-          "explanation": "\"Машина\" -а ga tugagan, ayol jinsi (женский род), shuning uchun \"моя\"."
+          "explanation": "книга (она) -> моя книга."
         },
         {
           "id": "ru_ex3_2",
+          "type": "listening-choice",
+          "audioText": "Это моё любимое окно с видом на парк.",
+          "question": "Qaysi so‘z o‘rta jinsda aytildi?",
+          "options": [
+            "парк",
+            "окно (deraza)",
+            "вид",
+            "любимый"
+          ],
+          "correctIndex": 1,
+          "explanation": "моё окно (оно)."
+        },
+        {
+          "id": "ru_ex3_3",
           "type": "fill-blank",
-          "question": "Это ______ новый дом. (Bu mening yangi uyim)",
-          "placeholder": "мой, моя yoki моё...",
+          "question": "\"Это ______ друг. (mening)\"",
+          "placeholder": "olmosh...",
           "correctAnswer": "мой",
-          "hint": "дом — мужской род"
+          "hint": "друг (он) -> мой"
+        },
+        {
+          "id": "ru_ex3_4",
+          "type": "true-false",
+          "question": "«Папа» va «дедушка» so‘zlari -а bilan tugasa ham erkak jinsiga tegishli.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Tabiiy jinsiga ko'ra erkak (мой папа, мой дедушка)."
+        },
+        {
+          "id": "ru_ex3_5",
+          "type": "order",
+          "words": [
+            "Это",
+            "наш",
+            "новый",
+            "красивый",
+            "дом"
+          ],
+          "correctSentence": "Это наш новый красивый дом",
+          "question": "Gap tuzing: «Bu bizning yangi chiroyli uyimiz»",
+          "explanation": "Это наш новый красивый дом."
+        },
+        {
+          "id": "ru_ex3_6",
+          "type": "multiple-choice",
+          "question": "Ko'plik uchun qaysi olmosh ishlatiladi?",
+          "options": [
+            "мой",
+            "моя",
+            "моё",
+            "мои"
+          ],
+          "correctIndex": 3,
+          "explanation": "мои книги / мои друзья."
         }
       ],
       "speakingPrompt": {
@@ -3811,7 +7702,54 @@ module.exports = {
           "Shifokor"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Моя семья",
+        "lines": [
+          {
+            "speaker": "Анна",
+            "text": "Это твой брат на фотографии?",
+            "uz": "Suratdagi sening akangmi?"
+          },
+          {
+            "speaker": "Тимур",
+            "text": "Да, это мой брат, а рядом моя сестра.",
+            "uz": "Ha, bu mening akam, yonida esa mening singlim."
+          },
+          {
+            "speaker": "Анна",
+            "text": "Какая красивая семья!",
+            "uz": "Qanday go‘zal oila!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Jinslar siri: Oxirgi harf",
+        "tip": "Undosh bilan tugasa = Erkak (он, мой). -А/-Я bilan tugasa = Ayol (она, моя). -О/-Е bilan tugasa = O'rta (оно, моё)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
+        }
+      ]
     },
     {
       "id": "ru_lesson_4",
@@ -3871,23 +7809,73 @@ module.exports = {
         {
           "id": "ru_ex4_1",
           "type": "multiple-choice",
-          "question": "\"To‘g‘riga boring\" ruscha qanday aytiladi?",
+          "question": "\"Я сейчас нахожусь ______ школе.\"",
           "options": [
-            "Идите прямо",
-            "Идите направо",
-            "Идите налево",
-            "Стойте здесь"
+            "в",
+            "на",
+            "к",
+            "за"
           ],
           "correctIndex": 0,
-          "explanation": "\"Прямо\" — to‘g‘riga degani."
+          "explanation": "в школе (maktabda)."
         },
         {
           "id": "ru_ex4_2",
+          "type": "listening-choice",
+          "audioText": "Поверните направо на следующем перекрёстке.",
+          "question": "Qayerga burilish kerak?",
+          "options": [
+            "Chapga",
+            "O‘ngga (направо)",
+            "To‘g‘riga",
+            "Orqaga"
+          ],
+          "correctIndex": 1,
+          "explanation": "направо."
+        },
+        {
+          "id": "ru_ex4_3",
           "type": "fill-blank",
-          "question": "Скажите, пожалуйста, ______ находится банк? (qayerda)",
-          "placeholder": "So‘roq so‘zini yozing...",
-          "correctAnswer": "где",
-          "hint": "где"
+          "question": "\"Вечером мы идём ______ концерт.\"",
+          "placeholder": "predlog...",
+          "correctAnswer": "на",
+          "hint": "tadbir uchun: на"
+        },
+        {
+          "id": "ru_ex4_4",
+          "type": "true-false",
+          "question": "«Где?» savoli harakat yo‘nalishini so‘rash uchun ishlatiladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": false,
+          "explanation": "Где? = Qayerda (tinch joy). Куда? = Qayerga (harakat)."
+        },
+        {
+          "id": "ru_ex4_5",
+          "type": "order",
+          "words": [
+            "Аптека",
+            "находится",
+            "рядом",
+            "с",
+            "банком"
+          ],
+          "correctSentence": "Аптека находится рядом с банком",
+          "question": "Gap tuzing: «Dorixona bank yonida joylashgan»",
+          "explanation": "Аптека находится рядом с банком."
+        },
+        {
+          "id": "ru_ex4_6",
+          "type": "multiple-choice",
+          "question": "«To‘g‘riga boring» ruscha qanday bo‘ladi?",
+          "options": [
+            "Идите прямо",
+            "Идите направо",
+            "Идите назад",
+            "Стойте здесь"
+          ],
+          "correctIndex": 0,
+          "explanation": "Идите прямо."
         }
       ],
       "speakingPrompt": {
@@ -3909,7 +7897,54 @@ module.exports = {
           "Avtobusda 30 daqiqa"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "В центре города",
+        "lines": [
+          {
+            "speaker": "Прохожий",
+            "text": "Скажите, пожалуйста, где находится метро?",
+            "uz": "Aytingchi, iltimos, metro qayerda joylashgan?"
+          },
+          {
+            "speaker": "Житель",
+            "text": "Метро прямо за тем большим зданием.",
+            "uz": "Metro ana u katta binoning roppa-rosa orqasida."
+          },
+          {
+            "speaker": "Прохожий",
+            "text": "Спасибо! А куда ведёт эта улица?",
+            "uz": "Rahmat! Bu ko‘cha qayerga olib boradi?"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "В (Ichiga) vs На (Ustiga)",
+        "tip": "Bino va xonalar ichiga = В (в театр, в школу). Ochiq maydon va tadbirlarga = НА (на стадион, на концерт)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
+        }
+      ]
     },
     {
       "id": "ru_lesson_5",
@@ -3963,23 +7998,72 @@ module.exports = {
         {
           "id": "ru_ex5_1",
           "type": "multiple-choice",
-          "question": "\"Karta orqali to‘lasam bo‘ladimi?\" ruscha qanday so‘raladi?",
+          "question": "«Bu qancha turadi?» rus tilida:",
           "options": [
-            "Можно оплатить картой?",
-            "Где карта?",
-            "Сколько стоит карта?",
-            "Это моя карта"
+            "Сколько это стоит?",
+            "Где это стоит?",
+            "Кто это стоит?",
+            "Когда это стоит?"
           ],
           "correctIndex": 0,
-          "explanation": "\"Можно оплатить картой?\" — to‘lov paytidagi eng ko‘p ishlatiladigan jumla."
+          "explanation": "Сколько это стоит?"
         },
         {
           "id": "ru_ex5_2",
+          "type": "listening-choice",
+          "audioText": "Сейчас ровно три часа дня.",
+          "question": "Soat necha bo‘ldi?",
+          "options": [
+            "12:00",
+            "13:00",
+            "15:00 (kunduzgi 3)",
+            "18:00"
+          ],
+          "correctIndex": 2,
+          "explanation": "три часа дня."
+        },
+        {
+          "id": "ru_ex5_3",
           "type": "fill-blank",
-          "question": "Дайте, ______, бутылку минеральной воды.",
-          "placeholder": "пожалуйста...",
-          "correctAnswer": "пожалуйста",
-          "hint": "пожалуйста"
+          "question": "\"У вас есть ______ рублей? (100 soni)\"",
+          "placeholder": "100 so'zi...",
+          "correctAnswer": "сто",
+          "hint": "сто"
+        },
+        {
+          "id": "ru_ex5_4",
+          "type": "true-false",
+          "question": "Rus tilida 20 soni «двадцать» deb ataladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "двадцать = 20."
+        },
+        {
+          "id": "ru_ex5_5",
+          "type": "order",
+          "words": [
+            "Можно",
+            "оплатить",
+            "банковской",
+            "картой"
+          ],
+          "correctSentence": "Можно оплатить банковской картой",
+          "question": "Gap tuzing: «Bank kartasi bilan to‘lasa bo‘ladimi?»",
+          "explanation": "Можно оплатить банковской картой."
+        },
+        {
+          "id": "ru_ex5_6",
+          "type": "multiple-choice",
+          "question": "«Без сдачи» nimani bildiradi?",
+          "options": [
+            "Qaytim kerak emas",
+            "Chek bermang",
+            "Qimmat",
+            "Arzon"
+          ],
+          "correctIndex": 0,
+          "explanation": "Без сдачи = qaytimsiz to'g'ri summa."
         }
       ],
       "speakingPrompt": {
@@ -4001,7 +8085,59 @@ module.exports = {
           "Kechirasizmi?"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "В супермаркете",
+        "lines": [
+          {
+            "speaker": "Кассир",
+            "text": "Здравствуйте! Пакет нужен?",
+            "uz": "Assalomu alaykum! Paket kerakmi?"
+          },
+          {
+            "speaker": "Покупатель",
+            "text": "Нет, спасибо. Сколько с меня?",
+            "uz": "Yo‘q, rahmat. Mendan qancha bo‘ldi?"
+          },
+          {
+            "speaker": "Кассир",
+            "text": "С вас пятьсот рублей. Оплата картой?",
+            "uz": "Sizdan 500 rubl. To‘lov kartadami?"
+          },
+          {
+            "speaker": "Покупатель",
+            "text": "Да, приложил карту. Спасибо!",
+            "uz": "Ha, kartani tekkizdim. Rahmat!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "1 рубль, 2 рубля, 5 рублей",
+        "tip": "1 = рубль (birlik), 2, 3, 4 = рубля (roditelniy birlik), 5 dan 20 gacha = рублей (roditelniy ko'plik)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
+        }
+      ]
     },
     {
       "id": "ru_lesson_6",
@@ -4061,23 +8197,74 @@ module.exports = {
         {
           "id": "ru_ex6_1",
           "type": "multiple-choice",
-          "question": "\"Вчера Анна ______ новую книгу.\" (читать fe’li ayol kishiga):",
+          "question": "Ayol kishi aytganda «Men kecha ishladim»:",
           "options": [
-            "читал",
-            "читала",
-            "читало",
-            "читали"
+            "Я работал вчера.",
+            "Я работала вчера.",
+            "Я работали вчера.",
+            "Я работало вчера."
           ],
           "correctIndex": 1,
-          "explanation": "\"Анна\" ayol jinsi bo‘lgani uchun fe’lga -ла qo‘shiladi: читала."
+          "explanation": "Ayol kishi: работала."
         },
         {
           "id": "ru_ex6_2",
+          "type": "listening-choice",
+          "audioText": "Мы вчера посмотрели отличный фильм.",
+          "question": "Ular kecha nima qilishdi?",
+          "options": [
+            "Teatrga borishdi",
+            "Ajoyib film tomosha qilishdi",
+            "Futbol o‘ynashdi",
+            "Ovqat pishirishdi"
+          ],
+          "correctIndex": 1,
+          "explanation": "посмотрели фильм."
+        },
+        {
+          "id": "ru_ex6_3",
           "type": "fill-blank",
-          "question": "Завтра я ______ учить новые слова. (буду)",
-          "placeholder": "fe’lni yozing...",
+          "question": "\"Завтра я ______ читать новую книгу (kelasi zamon).\"",
+          "placeholder": "yordamchi fe'l...",
           "correctAnswer": "буду",
-          "hint": "буду"
+          "hint": "я буду"
+        },
+        {
+          "id": "ru_ex6_4",
+          "type": "true-false",
+          "question": "Rus tilida o'tgan zamon fe'llari shaxslarga emas, jinsga qarab o'zgaradi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! Он читал, она читала, мы читали (erkak/ayol/ko'plik)."
+        },
+        {
+          "id": "ru_ex6_5",
+          "type": "order",
+          "words": [
+            "Вчера",
+            "мы",
+            "долго",
+            "гуляли",
+            "в",
+            "парке"
+          ],
+          "correctSentence": "Вчера мы долго гуляли в парке",
+          "question": "Gap tuzing: «Kecha biz uzoq parkda sayr qildik»",
+          "explanation": "Вчера мы долго гуляли в парке."
+        },
+        {
+          "id": "ru_ex6_6",
+          "type": "multiple-choice",
+          "question": "Ko'plik uchun o'tgan zamon qo'shimchasi qaysi?",
+          "options": [
+            "-л",
+            "-ла",
+            "-ли",
+            "-ло"
+          ],
+          "correctIndex": 2,
+          "explanation": "-ли (они играли, читали)."
         }
       ],
       "speakingPrompt": {
@@ -4099,7 +8286,54 @@ module.exports = {
           "Dars qilishdi"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Вчера и Завтра",
+        "lines": [
+          {
+            "speaker": "Максим",
+            "text": "Что ты делал вчера вечером?",
+            "uz": "Kecha oqshomda nima qilding?"
+          },
+          {
+            "speaker": "Олег",
+            "text": "Я читал интересную статью и отдыхал.",
+            "uz": "Qiziqarli maqola o‘qidim va dam oldim."
+          },
+          {
+            "speaker": "Максим",
+            "text": "А завтра мы будем играть в футбол?",
+            "uz": "Ertaga esa futbol o‘ynaymizmi?"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "O'tgan zamonda: -Л, -ЛА, -ЛО, -ЛИ",
+        "tip": "Erkak kishi: дела-л. Ayol kishi: дела-ла. O'rta: дела-ло. Ko'plik: дела-ли!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
+        }
+      ]
     },
     {
       "id": "ru_lesson_7",
@@ -4153,23 +8387,73 @@ module.exports = {
         {
           "id": "ru_ex7_1",
           "type": "multiple-choice",
-          "question": "\"У меня сейчас нет ______ (время).\":",
+          "question": "\"У меня сегодня нет ______ (время).\"",
           "options": [
             "время",
             "времени",
             "временем",
-            "времените"
+            "времена"
           ],
           "correctIndex": 1,
-          "explanation": "\"нет\" so‘zidan keyin Родительный падеж keladi: нет времени."
+          "explanation": "нет времени."
         },
         {
           "id": "ru_ex7_2",
+          "type": "listening-choice",
+          "audioText": "Здесь нет сахара и соли.",
+          "question": "Bu yerda nimalar yo‘q?",
+          "options": [
+            "Choy va kofe",
+            "Shakar va tuz",
+            "Non va yog‘",
+            "Suv va sharbat"
+          ],
+          "correctIndex": 1,
+          "explanation": "сахара и соли."
+        },
+        {
+          "id": "ru_ex7_3",
           "type": "fill-blank",
-          "question": "Дайте мне стакан холодной ______ (вода -> воды).",
-          "placeholder": "воды...",
-          "correctAnswer": "воды",
-          "hint": "воды"
+          "question": "\"У брата нет нового ______ (компьютер).\"",
+          "placeholder": "kelishik shakli...",
+          "correctAnswer": "компьютера",
+          "hint": "-а qo'shiladi"
+        },
+        {
+          "id": "ru_ex7_4",
+          "type": "true-false",
+          "question": "«Без» (siz/sizsiz) predlogidan keyin har doim Roditelniy kelishigi keladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Без сахара, без друга."
+        },
+        {
+          "id": "ru_ex7_5",
+          "type": "order",
+          "words": [
+            "У",
+            "меня",
+            "нет",
+            "лишнего",
+            "времени"
+          ],
+          "correctSentence": "У меня нет лишнего времени",
+          "question": "Gap tuzing: «Menda ortiqcha vaqt yo‘q»",
+          "explanation": "У меня нет лишнего времени."
+        },
+        {
+          "id": "ru_ex7_6",
+          "type": "multiple-choice",
+          "question": "«Стакан воды» iborasida «воды» qaysi kelishikda?",
+          "options": [
+            "Именительный",
+            "Родительный",
+            "Дательный",
+            "Творительный"
+          ],
+          "correctIndex": 1,
+          "explanation": "Родительный (кого? чего? - воды)."
         }
       ],
       "speakingPrompt": {
@@ -4191,7 +8475,54 @@ module.exports = {
           "Shakar bilan"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Чего у нас нет?",
+        "lines": [
+          {
+            "speaker": "Мама",
+            "text": "Посмотри в холодильнике, молоко есть?",
+            "uz": "Muzlatkichga qara-chi, sut bormi?"
+          },
+          {
+            "speaker": "Сын",
+            "text": "Нет, молока нет. И хлеба тоже нет.",
+            "uz": "Yo‘q, sut yo‘q. Non ham yo‘q."
+          },
+          {
+            "speaker": "Мама",
+            "text": "Тогда сходи в магазин и купи хлеба и молока.",
+            "uz": "Unday bo‘lsa do‘konga tushib, non va sut olib kel."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "НЕТ kelganda Roditelniy!",
+        "tip": "«Нет кого? Чего?» — Inkor qilinganda otlar -А / -Я (erkak/o'rta) va -Ы / -И (ayol) oladi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
+        }
+      ]
     },
     {
       "id": "ru_lesson_8",
@@ -4245,7 +8576,7 @@ module.exports = {
         {
           "id": "ru_ex8_1",
           "type": "multiple-choice",
-          "question": "\"Мы сейчас ______ на поезде в Самарканд.\" (transportda bir yo‘nalish):",
+          "question": "\"Мы ______ в Самарканд на поезде.\"",
           "options": [
             "идём",
             "едем",
@@ -4253,15 +8584,65 @@ module.exports = {
             "ездим"
           ],
           "correctIndex": 1,
-          "explanation": "Poezdda harakatlanayotganda \"ехать\" (мы едем) fe’li ishlatiladi."
+          "explanation": "Transportda bo'lgani uchun: едем."
         },
         {
           "id": "ru_ex8_2",
+          "type": "listening-choice",
+          "audioText": "Куда ты идёшь так быстро?",
+          "question": "Audiodagi savolda nima so‘raldi?",
+          "options": [
+            "Qayerga bunchalik tez ketyapsan?",
+            "Qayerda ishlayapsan?",
+            "Qachon kelasiz?",
+            "Nega yuguryapsan?"
+          ],
+          "correctIndex": 0,
+          "explanation": "Куда ты идёшь так быстро?"
+        },
+        {
+          "id": "ru_ex8_3",
           "type": "fill-blank",
-          "question": "Я каждый день ______ в спортзал пешком. (ходить -> я хожу)",
-          "placeholder": "хожу...",
-          "correctAnswer": "хожу",
-          "hint": "хожу"
+          "question": "\"Каждое утро я ______ пешком на работу.\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "иду",
+          "hint": "я иду"
+        },
+        {
+          "id": "ru_ex8_4",
+          "type": "true-false",
+          "question": "«Лететь» fe'li samolyotda harakatlanish uchun ishlatiladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "лететь = uchmoq."
+        },
+        {
+          "id": "ru_ex8_5",
+          "type": "order",
+          "words": [
+            "Завтра",
+            "мы",
+            "едем",
+            "в",
+            "горы"
+          ],
+          "correctSentence": "Завтра мы едем в горы",
+          "question": "Gap tuzing: «Ertaga biz tog‘ga ketyapmiz»",
+          "explanation": "Завтра мы едем в горы."
+        },
+        {
+          "id": "ru_ex8_6",
+          "type": "multiple-choice",
+          "question": "«Он едет» fe'lining infinitiv (boshlang'ich) shakli qaysi?",
+          "options": [
+            "ехать",
+            "идти",
+            "ходить",
+            "ездить"
+          ],
+          "correctIndex": 0,
+          "explanation": "ехать."
         }
       ],
       "speakingPrompt": {
@@ -4283,7 +8664,54 @@ module.exports = {
           "Chipta olish uchun"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Как добраться?",
+        "lines": [
+          {
+            "speaker": "Денис",
+            "text": "Ты идёшь пешком или едешь на автобусе?",
+            "uz": "Piyoda ketyapsanmi yoki avtobusda ketyapsanmi?"
+          },
+          {
+            "speaker": "Артём",
+            "text": "Я еду на метро, так намного быстрее.",
+            "uz": "Men metroda ketyapman, shunday ancha tezroq."
+          },
+          {
+            "speaker": "Денис",
+            "text": "Хорошо, тогда встретимся на станции.",
+            "uz": "Yaxshi, unda bekatda uchrashamiz."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Идти (Piyoda) vs Ехать (Transportda)",
+        "tip": "Oyoqda yursangiz = ИДТИ. G'ildirakda / transportda yursangiz = ЕХАТЬ!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
+        }
+      ]
     },
     {
       "id": "ru_lesson_9",
@@ -4362,37 +8790,122 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Bir kishilik xona\" rus tilida nima deyiladi?",
+          "id": "ru_ex9_1",
+          "type": "multiple-choice",
+          "question": "«Nonushta narxga kiritilganmi?» ruscha:",
           "options": [
-            "двухместный номер",
-            "одноместный номер",
-            "большая квартира",
-            "кухня"
+            "Завтрак включён в стоимость?",
+            "Где завтрак?",
+            "Сколько стоит завтрак?",
+            "Завтрак есть?"
           ],
-          "correctIndex": 1,
-          "explanation": "одноместный — bir kishilik."
+          "correctIndex": 0,
+          "explanation": "Завтрак включён в стоимость?"
         },
         {
-          "question": "\"Завтрак включён в стоимость?\" ma’nosi nima?",
+          "id": "ru_ex9_2",
+          "type": "listening-choice",
+          "audioText": "Пароль от вайфая указан на карточке номера.",
+          "question": "Wi-Fi paroli qayerda ko‘rsatilgan?",
           "options": [
-            "Nonushta qayerda?",
-            "Nonushta narx ichiga kirganmi?",
-            "Nonushta yeymizmi?",
-            "Nonushta yo‘q"
+            "Resepshenda devorda",
+            "Xona kartochkasida",
+            "Liftda",
+            "Televizorda"
           ],
           "correctIndex": 1,
-          "explanation": "включён в стоимость — narxga kiritilgan."
+          "explanation": "на карточке номера."
         },
         {
-          "question": "\"Вызовите, пожалуйста, такси\" tarjimasi:",
+          "id": "ru_ex9_3",
+          "type": "fill-blank",
+          "question": "\"Я хочу ______ номер на выходные.\"",
+          "placeholder": "band qilmoq...",
+          "correctAnswer": "забронировать",
+          "hint": "забронировать"
+        },
+        {
+          "id": "ru_ex9_4",
+          "type": "true-false",
+          "question": "«Сутки» rus tilida 24 soatlik kun va tunni bildiradi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "сутки = 24 soat (bir kecha-kunduz)."
+        },
+        {
+          "id": "ru_ex9_5",
+          "type": "order",
+          "words": [
+            "Во",
+            "сколько",
+            "у",
+            "вас",
+            "выезд"
+          ],
+          "correctSentence": "Во сколько у вас выезд",
+          "question": "Gap tuzing: «Xonani topshirish (chiqish) soat nechada?»",
+          "explanation": "Во сколько у вас выезд?"
+        },
+        {
+          "id": "ru_ex9_6",
+          "type": "multiple-choice",
+          "question": "Lift rus tilida qanday ataladi?",
           "options": [
-            "Taksi kelyapti",
-            "Iltimos, taksi chaqirib bering",
-            "Taksi qimmat",
-            "Taksi haydovchisi"
+            "Этаж",
+            "Лифт",
+            "Лестница",
+            "Балкон"
           ],
           "correctIndex": 1,
-          "explanation": "Вызовите — chaqiring / chaqirib bering."
+          "explanation": "лифт."
+        }
+      ],
+      "dialogue": {
+        "title": "Стойка регистрации",
+        "lines": [
+          {
+            "speaker": "Администратор",
+            "text": "Добрый вечер! Чем могу помочь?",
+            "uz": "Xayrli kech! Qanday yordam bera olaman?"
+          },
+          {
+            "speaker": "Гость",
+            "text": "У меня забронирован одноместный номер на три дня.",
+            "uz": "Menda uch kunga bir kishilik xona band qilingan."
+          },
+          {
+            "speaker": "Администратор",
+            "text": "Ваш паспорт, пожалуйста. Вот ваш ключ, номер 205.",
+            "uz": "Pasportingiz, iltimos. Mana kalitingiz, 205-xona."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Одноместный vs Двухместный",
+        "tip": "Одноместный = 1 kishilik. Двухместный = 2 kishilik xona!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
         }
       ]
     },
@@ -4473,37 +8986,122 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Я читаю интересн______ книгу (книга - ayol jinsi)\":",
+          "id": "ru_ex10_1",
+          "type": "multiple-choice",
+          "question": "\"Я вижу красивую ______ (девушка).\"",
           "options": [
-            "ая",
-            "ую",
-            "ой",
-            "ом"
+            "девушка",
+            "девушку",
+            "девушке",
+            "девушкой"
           ],
           "correctIndex": 1,
-          "explanation": "Ayol jinsi sifatlari tushum kelishigida -ую qo‘shimchasini oladi."
+          "explanation": "Винительный: девушку."
         },
         {
-          "question": "\"Я жду своего ______ (брат - jonli erkak jinsi)\":",
+          "id": "ru_ex10_2",
+          "type": "listening-choice",
+          "audioText": "Я каждый день слушаю музыку и читаю газету.",
+          "question": "Qahramon har kuni nima qiladi?",
           "options": [
-            "брат",
-            "брата",
-            "брату",
-            "братом"
+            "Sport bilan shug‘ullanadi",
+            "Musiqa tinglaydi va gazeta o‘qiydi",
+            "Kino ko‘radi",
+            "Rasm chizadi"
           ],
           "correctIndex": 1,
-          "explanation": "Jonli erkak jinsi otlari tushum kelishigida -а oladi."
+          "explanation": "слушаю музыку и читаю газету."
         },
         {
-          "question": "\"Мы идём ______ концерт (Куда?)\":",
-          "options": [
-            "на",
-            "в",
-            "из",
-            "о"
+          "id": "ru_ex10_3",
+          "type": "fill-blank",
+          "question": "\"Я люблю узбекскую ______ (кухня).\"",
+          "placeholder": "kelishik shakli...",
+          "correctAnswer": "кухню",
+          "hint": "кухня -> кухню"
+        },
+        {
+          "id": "ru_ex10_4",
+          "type": "true-false",
+          "question": "Jonsiz erkak jinsidagi otlar (компьютер, телефон) Винительныйda o'zgarmaydi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! Я купил телефон (o'zgarmaydi)."
+        },
+        {
+          "id": "ru_ex10_5",
+          "type": "order",
+          "words": [
+            "Я",
+            "очень",
+            "люблю",
+            "свою",
+            "семью"
           ],
-          "correctIndex": 0,
-          "explanation": "Tadbirlar (kontsert, stadion) uchun \"на\" predlogi ishlatiladi."
+          "correctSentence": "Я очень люблю свою семью",
+          "question": "Gap tuzing: «Men o‘z oilamni juda yaxshi ko‘raman»",
+          "explanation": "Я очень люблю свою семью."
+        },
+        {
+          "id": "ru_ex10_6",
+          "type": "multiple-choice",
+          "question": "«Кого? Что?» qaysi kelishik savollari?",
+          "options": [
+            "Именительный",
+            "Винительный",
+            "Дательный",
+            "Творительный"
+          ],
+          "correctIndex": 1,
+          "explanation": "Винительный падеж."
+        }
+      ],
+      "dialogue": {
+        "title": "В кафе",
+        "lines": [
+          {
+            "speaker": "Официант",
+            "text": "Что вы будете заказывать?",
+            "uz": "Nima buyurtma qilasiz?"
+          },
+          {
+            "speaker": "Гость",
+            "text": "Я возьму чашку кофе и свежую выпечку.",
+            "uz": "Bitta chashka kofe va yangi pishiriq olaman."
+          },
+          {
+            "speaker": "Официант",
+            "text": "Прекрасный выбор!",
+            "uz": "Ajoyib tanlov!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Ayol jinsi -У / -Ю ga aylanadi!",
+        "tip": "Винительныйда ayol jinsi o'zgaradi: книга -> книгу, мама -> маму, вода -> воду!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
         }
       ]
     },
@@ -4584,37 +9182,122 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Mening yuragim og‘riyapti\" qaysi biri to‘g‘ri?",
+          "id": "ru_ex11_1",
+          "type": "multiple-choice",
+          "question": "«Mening tishim og‘riyapti» ruscha:",
           "options": [
-            "У меня болит сердце.",
-            "У меня болят сердце.",
-            "Сердце не хочет.",
-            "Я люблю сердце."
+            "У меня болит зуб.",
+            "У меня болят зуб.",
+            "Я болит зуб.",
+            "Мой зуб болит."
           ],
           "correctIndex": 0,
-          "explanation": "Сердце birlikda bo‘lgani uchun \"болит\" bo‘ladi."
+          "explanation": "У меня болит зуб."
         },
         {
-          "question": "\"Выздоравливайте!\" iborasining ma’nosi nima?",
+          "id": "ru_ex11_2",
+          "type": "listening-choice",
+          "audioText": "Принимайте эти таблетки два раза в день после еды.",
+          "question": "Dori qachon va qancha qabul qilinadi?",
           "options": [
-            "Xayr!",
-            "Tezroq tuzalib keting!",
-            "Yoqimli ishtaha!",
-            "Keling!"
+            "Kuniga 1 marta",
+            "Kuniga 2 marta ovqatdan keyin",
+            "Faqat ertalab",
+            "Uxlashdan oldin"
           ],
           "correctIndex": 1,
-          "explanation": "Kasal bo‘lgan insonning tezroq tuzalishini tilash."
+          "explanation": "два раза в день после еды."
         },
         {
-          "question": "\"Dorini ovqatdan oldin iching\" tarjimasi:",
+          "id": "ru_ex11_3",
+          "type": "fill-blank",
+          "question": "\"Выздоравливайте ______! (Tezroq tuzaling!)\"",
+          "placeholder": "tezroq...",
+          "correctAnswer": "скорее",
+          "hint": "скорее"
+        },
+        {
+          "id": "ru_ex11_4",
+          "type": "true-false",
+          "question": "«Рецепт» so'zi faqat ovqat retseptini bildiradi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": false,
+          "explanation": "Shifokor yozib bergan dori qog'ozi ham «рецепт» deyiladi."
+        },
+        {
+          "id": "ru_ex11_5",
+          "type": "order",
+          "words": [
+            "Мне",
+            "нужно",
+            "записаться",
+            "к",
+            "врачу"
+          ],
+          "correctSentence": "Мне нужно записаться к врачу",
+          "question": "Gap tuzing: «Men shifokorga yozilishim kerak»",
+          "explanation": "Мне нужно записаться к врачу."
+        },
+        {
+          "id": "ru_ex11_6",
+          "type": "multiple-choice",
+          "question": "Shamollash rus tilida nima deyiladi?",
           "options": [
-            "Принимайте лекарство до еды.",
-            "Принимайте лекарство после еды.",
-            "Не пейте лекарство.",
-            "Купите лекарство."
+            "Простуда",
+            "Голова",
+            "Аптека",
+            "Больница"
           ],
           "correctIndex": 0,
-          "explanation": "до еды — ovqatdan oldin."
+          "explanation": "простуда."
+        }
+      ],
+      "dialogue": {
+        "title": "На приёме у терапевта",
+        "lines": [
+          {
+            "speaker": "Врач",
+            "text": "Здравствуйте! На что жалуетесь?",
+            "uz": "Assalomu alaykum! Shikoyatingiz nimadan?"
+          },
+          {
+            "speaker": "Пациент",
+            "text": "У меня сильно болит горло и поднялась температура.",
+            "uz": "Tog‘og‘im qattiq og‘riyapti va isitma ko‘tarildi."
+          },
+          {
+            "speaker": "Врач",
+            "text": "Откройте рот, покажите горло. Вы простудились.",
+            "uz": "Og‘zingizni oching, tomog‘ingizni ko‘rsating. Shamollabsiz."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Болит vs Болят",
+        "tip": "Bitta a'zo bo'lsa = болит (болит голова). Ko'plikda bo'lsa = болят (болят зубы, глаза)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
         }
       ]
     },
@@ -4695,7 +9378,9 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Я хочу помочь ______ (друг - erkak jinsi)\":",
+          "id": "ru_ex12_1",
+          "type": "multiple-choice",
+          "question": "\"Я звоню своему ______ (друг).\"",
           "options": [
             "друг",
             "другу",
@@ -4703,29 +9388,111 @@ module.exports = {
             "друга"
           ],
           "correctIndex": 1,
-          "explanation": "помогать fe’li Дательный падеж (кому? -> другу) talab qiladi."
+          "explanation": "звонить кому? -> другу."
         },
         {
-          "question": "\"Yoshingiz nechada?\" rus tilida qanday so‘raladi?",
+          "id": "ru_ex12_2",
+          "type": "listening-choice",
+          "audioText": "Сколько лет вашему сыну?",
+          "question": "Audioda nima so‘raldi?",
           "options": [
-            "Кто вы?",
-            "Сколько вам лет?",
-            "Где вы живёте?",
-            "Как дела?"
+            "O‘g‘lingiz qayerda?",
+            "O‘g‘lingiz necha yoshda?",
+            "O‘g‘lingiz maktabga boradimi?",
+            "O‘g‘lingiz qayerda ishlaydi?"
           ],
           "correctIndex": 1,
-          "explanation": "Сколько вам лет? — yoshni so‘rashning standart shakli."
+          "explanation": "Сколько лет вашему сыну?"
         },
         {
-          "question": "\"Я звоню ______ (сестра - ayol jinsi)\":",
-          "options": [
-            "сестре",
-            "сестру",
-            "сестрой",
-            "сестра"
+          "id": "ru_ex12_3",
+          "type": "fill-blank",
+          "question": "\"Мне ______ лет. (25 yosh)\"",
+          "placeholder": "son...",
+          "correctAnswer": "двадцать пять",
+          "hint": "двадцать пять"
+        },
+        {
+          "id": "ru_ex12_4",
+          "type": "true-false",
+          "question": "Rus tilida yosh aytganda doimo Дательный ishlatiladi (Мне 20 лет).",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Мне / ему / ей 20 лет."
+        },
+        {
+          "id": "ru_ex12_5",
+          "type": "order",
+          "words": [
+            "Передайте",
+            "привет",
+            "вашей",
+            "семье"
           ],
-          "correctIndex": 0,
-          "explanation": "Ayol jinsi Дательный падежда -е qo‘shimchasini oladi."
+          "correctSentence": "Передайте привет вашей семье",
+          "question": "Gap tuzing: «Oilangizga salom ayting»",
+          "explanation": "Передайте привет вашей семье."
+        },
+        {
+          "id": "ru_ex12_6",
+          "type": "multiple-choice",
+          "question": "«Помогать» (yordam bermoq) fe'li qaysi kelishikni talab qiladi?",
+          "options": [
+            "Именительный",
+            "Дательный (кому?)",
+            "Винительный",
+            "Родительный"
+          ],
+          "correctIndex": 1,
+          "explanation": "помогать другу (Дательный)."
+        }
+      ],
+      "dialogue": {
+        "title": "Подарок другу",
+        "lines": [
+          {
+            "speaker": "Света",
+            "text": "Что ты подаришь своему другу на день рождения?",
+            "uz": "Tug‘ilgan kuniga do‘stingga nima sovg‘a qilasan?"
+          },
+          {
+            "speaker": "Дима",
+            "text": "Я подарю ему интересную книгу по истории.",
+            "uz": "Unga tarixga oid qiziqarli kitob sovg‘a qilaman."
+          },
+          {
+            "speaker": "Света",
+            "text": "Отличная идея, он любит читать!",
+            "uz": "Ajoyib fikr, u o‘qishni yaxshi ko‘radi!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Дательный: -У / -Ю (Erkak), -Е (Ayol)",
+        "tip": "Друг -> друг-у, брат -> брат-у, сестра -> сестр-е!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
         }
       ]
     },
@@ -4806,37 +9573,127 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Я пью чай с ______ (сахар - shakar bilan)\":",
+          "id": "ru_ex13_1",
+          "type": "multiple-choice",
+          "question": "\"Он работает ______ (учитель).\"",
           "options": [
-            "сахар",
-            "сахаром",
-            "сахаре",
-            "сахара"
+            "учитель",
+            "учителем",
+            "учителю",
+            "учителя"
           ],
           "correctIndex": 1,
-          "explanation": "с чем? -> с сахаром (-ом qo‘shimchasi)."
+          "explanation": "работать кем? -> учителем."
         },
         {
-          "question": "\"Она работает ______ (учительница - ayol jinsi)\":",
+          "id": "ru_ex13_2",
+          "type": "listening-choice",
+          "audioText": "Я люблю чай с лимоном и мёдом.",
+          "question": "Qahramon choyni nima bilan ichishni yoqtiradi?",
           "options": [
-            "учительница",
-            "учительницей",
-            "учительницу",
-            "учительнице"
+            "Sut bilan",
+            "Limon va asal bilan",
+            "Qand bilan",
+            "Shokolad bilan"
           ],
           "correctIndex": 1,
-          "explanation": "работать кем? -> учительницей (-ей qo‘shimchasi)."
+          "explanation": "с лимоном и мёдом."
         },
         {
-          "question": "\"С праздником!\" qanday tarjima qilinadi?",
+          "id": "ru_ex13_3",
+          "type": "fill-blank",
+          "question": "\"Мы гордимся нашей ______ (страна).\"",
+          "placeholder": "kelishik shakli...",
+          "correctAnswer": "страной",
+          "hint": "страна -> страной"
+        },
+        {
+          "id": "ru_ex13_4",
+          "type": "true-false",
+          "question": "«Заниматься» fe'lidan keyin Творительный keladi (заниматься спортом).",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! Заниматься спортом, музыкой."
+        },
+        {
+          "id": "ru_ex13_5",
+          "type": "order",
+          "words": [
+            "Я",
+            "люблю",
+            "гулять",
+            "с",
+            "друзьями"
+          ],
+          "correctSentence": "Я люблю гулять с друзьями",
+          "question": "Gap tuzing: «Men do‘stlarim bilan sayr qilishni yaxshi ko‘raman»",
+          "explanation": "Я люблю гулять с друзьями."
+        },
+        {
+          "id": "ru_ex13_6",
+          "type": "multiple-choice",
+          "question": "Qalam bilan yozmoqchi bo'lsangiz: «Я пишу ______ (карандаш)»",
           "options": [
-            "Xayrli tong!",
-            "Bayramingiz bilan!",
-            "Rahmat!",
-            "Xush kelibsiz!"
+            "карандаш",
+            "карандашом",
+            "карандаша",
+            "карандаше"
           ],
           "correctIndex": 1,
-          "explanation": "Rus xalqida bayram bilan tabriklashning klassik shakli."
+          "explanation": "Творительный vosita: карандашом."
+        }
+      ],
+      "dialogue": {
+        "title": "Увлечения и Профессии",
+        "lines": [
+          {
+            "speaker": "Антон",
+            "text": "Кем ты хочешь стать в будущем?",
+            "uz": "Kelajakda kim bo‘lmoqchisan?"
+          },
+          {
+            "speaker": "Рустам",
+            "text": "Я хочу стать программистом или архитектором.",
+            "uz": "Dasturchi yoki arxitektor bo‘lmoqchiman."
+          },
+          {
+            "speaker": "Антон",
+            "text": "А чем ты увлекаешься в свободное время?",
+            "uz": "Bo‘sh vaqtingda nima bilan shug‘ullanasan?"
+          },
+          {
+            "speaker": "Рустам",
+            "text": "Я занимаюсь спортом и музыкой.",
+            "uz": "Sport va musiqa bilan shug‘ullanaman."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Творительный: -ОМ / -ЕМ (Erkak), -ОЙ / -ЕЙ (Ayol)",
+        "tip": "С чай-ем, с сахар-ом, с сестр-ой! Kasb: работать врач-ом, юрист-ом!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
         }
       ]
     },
@@ -4917,37 +9774,123 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Men IT sohasida katta tajribaga egaman\" rasmiy iborasi:",
+          "id": "ru_ex14_1",
+          "type": "multiple-choice",
+          "question": "Rezyume rus tilida qanday nomlanadi?",
           "options": [
-            "У меня нет работы.",
-            "Я обладаю большим опытом в сфере IT.",
-            "Я хочу в IT.",
-            "IT это сложно."
-          ],
-          "correctIndex": 1,
-          "explanation": "обладать опытом — yuqori darajadagi rasmiy leksika."
-        },
-        {
-          "question": "\"Kompaniya rivojiga hissa qo‘shish\" iborasi qaysi?",
-          "options": [
-            "Уйти домой",
-            "Внести вклад в развитие компании",
-            "Много спать",
-            "Ничего не делать"
-          ],
-          "correctIndex": 1,
-          "explanation": "внести вклад — hissa qo‘shmoq."
-        },
-        {
-          "question": "\"Благодарю за уделённое время\" qachon aytiladi?",
-          "options": [
-            "Suhbat oxirida minnatdorchilik bildirishda",
-            "Salomlashganda",
-            "Kasal bo‘lganda",
-            "Kechikganda"
+            "Резюме",
+            "Заявление",
+            "Договор",
+            "Отчёт"
           ],
           "correctIndex": 0,
-          "explanation": "Ish suhbati yoki uchrashuv oxirida madaniyatli yakun."
+          "explanation": "Резюме."
+        },
+        {
+          "id": "ru_ex14_2",
+          "type": "listening-choice",
+          "audioText": "Мы свяжемся с вами в течение двух рабочих дней.",
+          "question": "Qachon aloqaga chiqishlarini aytishdi?",
+          "options": [
+            "Bugun oqshomda",
+            "Ikki ish kuni ichida",
+            "Kelasi oyda",
+            "Hafta oxirida"
+          ],
+          "correctIndex": 1,
+          "explanation": "в течение двух рабочих дней."
+        },
+        {
+          "id": "ru_ex14_3",
+          "type": "fill-blank",
+          "question": "\"Я готов приступить к ______ со следующего понедельника.\"",
+          "placeholder": "ish...",
+          "correctAnswer": "работе",
+          "hint": "к работе"
+        },
+        {
+          "id": "ru_ex14_4",
+          "type": "true-false",
+          "question": "«Вакансия» bu kompaniyadagi bo‘sh ish o‘rnidir.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "вакансия = bo'sh ish o'rni."
+        },
+        {
+          "id": "ru_ex14_5",
+          "type": "order",
+          "words": [
+            "Я",
+            "умею",
+            "эффективно",
+            "работать",
+            "в",
+            "команде"
+          ],
+          "correctSentence": "Я умею эффективно работать в команде",
+          "question": "Gap tuzing: «Men jamoada samarali ishlay olaman»",
+          "explanation": "Я умею эффективно работать в команде."
+        },
+        {
+          "id": "ru_ex14_6",
+          "type": "multiple-choice",
+          "question": "Ish beruvchi rus tilida kim?",
+          "options": [
+            "Работник",
+            "Работодатель",
+            "Коллега",
+            "Клиент"
+          ],
+          "correctIndex": 1,
+          "explanation": "работодатель."
+        }
+      ],
+      "dialogue": {
+        "title": "На собеседовании",
+        "lines": [
+          {
+            "speaker": "Интервьюер",
+            "text": "Здравствуйте! Расскажите о своём опыте работы.",
+            "uz": "Assalomu alaykum! Ish tajribangiz haqida so‘zlab bering."
+          },
+          {
+            "speaker": "Соискатель",
+            "text": "Я более пяти лет руковожу проектами в сфере логистики.",
+            "uz": "Logistika sohasida 5 yildan ortiq loyihalarga rahbarlik qilaman."
+          },
+          {
+            "speaker": "Интервьюер",
+            "text": "Какие ваши главные достижения?",
+            "uz": "Asosiy yutuqlaringiz nimalardan iborat?"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Деловой язык: Уважаемый & С уважением",
+        "tip": "Rasmiy xatlar doimo «Уважаемый(ая)...» bilan boshlanib, «С уважением,...» bilan tugaydi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
         }
       ]
     },
@@ -5028,37 +9971,123 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Garchi yomg‘ir yoqqaniga qaramay...\" ruscha qaysi bog‘lovchi bilan boshlanadi?",
+          "id": "ru_ex15_1",
+          "type": "multiple-choice",
+          "question": "\"Человек, ______ звонил вчера, снова на связи.\"",
           "options": [
-            "Потому что",
-            "Несмотря на то что",
-            "Как только",
-            "Если бы"
-          ],
-          "correctIndex": 1,
-          "explanation": "Несмотря на то что — garchi ... ga qaramay."
-        },
-        {
-          "question": "\"Do‘stlarim yordam bergani tufayli\" qaysi ibora to‘g‘ri?",
-          "options": [
-            "Благодаря тому что друзья помогли",
-            "Из-за того что плохо",
-            "Почему друзья",
-            "Где друзья"
+            "который",
+            "которая",
+            "которое",
+            "которые"
           ],
           "correctIndex": 0,
-          "explanation": "Благодаря тому что — ijobiy sabab uchun \"tufayli\"."
+          "explanation": "Человек (он) -> который."
         },
         {
-          "question": "Rasmiy xat yakunida qaysi ibora ishlatiladi?",
+          "id": "ru_ex15_2",
+          "type": "listening-choice",
+          "audioText": "Несмотря на сложные условия, проект был сдан вовремя.",
+          "question": "Qiyin sharoitlarga qaramay nima bo‘ldi?",
           "options": [
-            "Пока!",
-            "Привет!",
-            "С уважением,",
-            "До скорого!"
+            "Loyiha bekor qilindi",
+            "Loyiha o‘z vaqtida topshirildi",
+            "Muddati cho‘zildi",
+            "Qayta ishlandi"
           ],
-          "correctIndex": 2,
-          "explanation": "С уважением — rasmiy yozishmalarning oltin yakuni."
+          "correctIndex": 1,
+          "explanation": "был сдан вовремя."
+        },
+        {
+          "id": "ru_ex15_3",
+          "type": "fill-blank",
+          "question": "\"Мы опоздали, ______ что были пробки на дорогах.\"",
+          "placeholder": "bog'lovchi...",
+          "correctAnswer": "потому",
+          "hint": "потому что (chunki)"
+        },
+        {
+          "id": "ru_ex15_4",
+          "type": "true-false",
+          "question": "«Хотя» bog‘lovchisi «chunki» degan ma’noni bildiradi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": false,
+          "explanation": "Хотя = garchi / ...ga qaramasdan."
+        },
+        {
+          "id": "ru_ex15_5",
+          "type": "order",
+          "words": [
+            "Я",
+            "уверен",
+            "что",
+            "мы",
+            "достигнем",
+            "цели"
+          ],
+          "correctSentence": "Я уверен что мы достигнем цели",
+          "question": "Gap tuzing: «Maqsadimizga yetishimizga ishonaman»",
+          "explanation": "Я уверен, что мы достигнем цели."
+        },
+        {
+          "id": "ru_ex15_6",
+          "type": "multiple-choice",
+          "question": "«В связи с тем, что...» qanday uslubga xos?",
+          "options": [
+            "So'zlashuv",
+            "Rasmiy-idoraviy",
+            "Badiiy",
+            "Dialekt"
+          ],
+          "correctIndex": 1,
+          "explanation": "Rasmiy ish yuritish uslubi."
+        }
+      ],
+      "dialogue": {
+        "title": "Официальное письмо",
+        "lines": [
+          {
+            "speaker": "Коллега 1",
+            "text": "Ты отправил отчёт директору?",
+            "uz": "Direktorga hisobotni yubordingmi?"
+          },
+          {
+            "speaker": "Коллега 2",
+            "text": "Да, я написал, что все задачи выполнены успешно.",
+            "uz": "Ha, barcha vazifalar muvaffaqiyatli bajarilganini yozdim."
+          },
+          {
+            "speaker": "Коллеga 1",
+            "text": "Отлично, это именно то, что требовалось.",
+            "uz": "Ajoyib, aynan talab qilingan narsa shu edi."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "Vergul Qo'yilishi Shart!",
+        "tip": "Rus tilida «который», «что», «потому что», «хотя» oldidan HAR DOIM VERGUL (,) qo'yiladi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
         }
       ]
     },
@@ -5139,37 +10168,123 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Bir tomondan ..., boshqa tomondan ...\" rus tilida qaysi biri?",
+          "id": "ru_ex16_1",
+          "type": "multiple-choice",
+          "question": "Akademik nutqda «Mening fikrimcha...» ifodasi:",
           "options": [
-            "Сначала ..., потом ...",
-            "С одной стороны ..., с другой стороны ...",
-            "Там ..., тут ...",
-            "Или ..., или ..."
+            "С моей точки зрения...",
+            "Я так говорю...",
+            "Слушай сюда...",
+            "Мне кажется так себе..."
           ],
-          "correctIndex": 1,
-          "explanation": "С одной стороны ..., с другой стороны ... — bahs-munozaraning nufuzli qolipi."
+          "correctIndex": 0,
+          "explanation": "С моей точки зрения..."
         },
         {
-          "question": "\"Men siz bilan to‘liq roziman\" ruscha qanday aytiladi?",
+          "id": "ru_ex16_2",
+          "type": "listening-choice",
+          "audioText": "До станции метро отсюда буквально рукой подать.",
+          "question": "«Рукой подать» nimani anglatadi?",
           "options": [
-            "Я вас не знаю.",
-            "Я абсолютно согласен с вами.",
-            "Это неправильно.",
-            "Я против."
+            "Juda uzoq",
+            "Juda yaqin (bir qadam)",
+            "Borib bo‘lmaydi",
+            "Qo‘l cho‘zish kerak"
           ],
           "correctIndex": 1,
-          "explanation": "абсолютно согласен — to‘liq roziman."
+          "explanation": "juda yaqin."
         },
         {
-          "question": "\"мастер на все руки\" frazeologizmi nimani bildiradi?",
+          "id": "ru_ex16_3",
+          "type": "fill-blank",
+          "question": "\"Я полностью с вами ______ (erkak kishi).\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "согласен",
+          "hint": "согласен (rozi/qo'shilaman)"
+        },
+        {
+          "id": "ru_ex16_4",
+          "type": "true-false",
+          "question": "«Безусловно» so'zi «Albatta / Shubhasiz» degan ma'noda keladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! Безусловно = shubhasiz."
+        },
+        {
+          "id": "ru_ex16_5",
+          "type": "order",
+          "words": [
+            "По",
+            "моему",
+            "мнению",
+            "это",
+            "лучшее",
+            "решение"
+          ],
+          "correctSentence": "По моему мнению это лучшее решение",
+          "question": "Gap tuzing: «Mening fikrimcha, bu eng yaxshi yechim»",
+          "explanation": "По моему мнению, это лучшее решение."
+        },
+        {
+          "id": "ru_ex16_6",
+          "type": "multiple-choice",
+          "question": "«Золотые руки» iborasi kimga nisbatan aytiladi?",
           "options": [
-            "Dangasa odam",
-            "Barcha ishni qoyillatib uddalaydigan mohir inson",
-            "Yiqilib tushgan odam",
-            "Kasal inson"
+            "Boy odamga",
+            "Qo‘li gul mohir ustaga",
+            "Zargarga",
+            "Dangasa odamga"
           ],
           "correctIndex": 1,
-          "explanation": "мастер на все руки — qo‘li gul, har ishni eplaydigan odam."
+          "explanation": "Qo'li gul mohir insonga nisbatan."
+        }
+      ],
+      "dialogue": {
+        "title": "Круглый стол",
+        "lines": [
+          {
+            "speaker": "Спикер 1",
+            "text": "С моей точки зрения, цифровизация меняет мир к лучшему.",
+            "uz": "Mening nuqtai nazarimcha, raqamlashtirish dunyoni yaxshi tomonga o‘zgartirmoqda."
+          },
+          {
+            "speaker": "Спикер 2",
+            "text": "Не могу с вами не согласиться, однако важно помнить о безопасности данных.",
+            "uz": "Sizga qo‘shilmay ilojim yo‘q, ammo ma’lumotlar xavfsizligini unutmaslik lozim."
+          },
+          {
+            "speaker": "Спикер 1",
+            "text": "Безусловно! Это вопрос первостепенной важности.",
+            "uz": "Shubhasiz! Bu birinchi darajali ahamiyatga ega masala."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "ТРКИ-2 Frazeologizmlari",
+        "tip": "«С глазу на глаз» = yakkama-yakka. «Рукой подать» = juda yaqin. «Золотые руки» = usta, qo'li gul!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "В кафе / Ресторане",
+          "desc": "Общение с официантом и заказ блюд.",
+          "phrase": "Принесите меню, пожалуйста.",
+          "meaning": "Menyuni keltiring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "В городе и на улице",
+          "desc": "Ориентация, транспорт и поиск нужного места.",
+          "phrase": "Подскажите, как туда добраться?",
+          "meaning": "U yerga qanday borishni ayta olmaysizmi?"
+        },
+        {
+          "icon": "💼",
+          "title": "На работе и в делах",
+          "desc": "Вежливое деловое общение и переписка.",
+          "phrase": "Благодарю вас за сотрудничество.",
+          "meaning": "Hamkorlik uchun tashakkur bildiraman."
         }
       ]
     }
@@ -5188,37 +10303,192 @@ module.exports = {
           "title": "Hangeul (한글) — To‘liq 40 ta Harf",
           "description": "Harf ustiga bosing — sof koreyscha talaffuzini eshitasiz!",
           "letters": [
-            { "letter": "ㄱ", "name": "giyeok [k/g]", "example": "가방 (sumka)", "audio": "ㄱ, 가방" },
-            { "letter": "ㄴ", "name": "nieun [n]", "example": "나무 (daraxt)", "audio": "ㄴ, 나무" },
-            { "letter": "ㄷ", "name": "digeut [t/d]", "example": "다리 (oyoq/ko‘prik)", "audio": "ㄷ, 다리" },
-            { "letter": "ㄹ", "name": "rieul [r/l]", "example": "라디오 (radio)", "audio": "ㄹ, 라디오" },
-            { "letter": "ㅁ", "name": "mieum [m]", "example": "마음 (yurak/ko‘ngil)", "audio": "ㅁ, 마음" },
-            { "letter": "ㅂ", "name": "bieup [p/b]", "example": "바지 (shim)", "audio": "ㅂ, 바지" },
-            { "letter": "ㅅ", "name": "siot [s]", "example": "사과 (olma)", "audio": "ㅅ, 사과" },
-            { "letter": "ㅇ", "name": "ieung [ng / tovushsiz]", "example": "아이 (bola)", "audio": "ㅇ, 아이" },
-            { "letter": "ㅈ", "name": "jieut [j/ch]", "example": "지도 (xarita)", "audio": "ㅈ, 지도" },
-            { "letter": "ㅊ", "name": "chieut [ch]", "example": "차 (choy/mashina)", "audio": "ㅊ, 차" },
-            { "letter": "ㅋ", "name": "khieuk [kh]", "example": "커피 (qahva)", "audio": "ㅋ, 커피" },
-            { "letter": "ㅌ", "name": "thieut [th]", "example": "토마토 (pomidor)", "audio": "ㅌ, 토마토" },
-            { "letter": "ㅍ", "name": "phieup [ph]", "example": "포도 (uzum)", "audio": "ㅍ, 포도" },
-            { "letter": "ㅎ", "name": "hieut [h]", "example": "하늘 (osmon)", "audio": "ㅎ, 하늘" },
-            { "letter": "ㄲ", "name": "ssang-giyeok [jarangsiz k]", "example": "꼬리 (dum)", "audio": "ㄲ, 꼬리" },
-            { "letter": "ㄸ", "name": "ssang-digeut [jarangsiz t]", "example": "딸기 (qulupnay)", "audio": "ㄸ, 딸기" },
-            { "letter": "ㅃ", "name": "ssang-bieup [jarangsiz p]", "example": "빵 (non)", "audio": "ㅃ, 빵" },
-            { "letter": "ㅆ", "name": "ssang-siot [jarangsiz s]", "example": "씨앗 (urug‘)", "audio": "ㅆ, 씨앗" },
-            { "letter": "ㅉ", "name": "ssang-jieut [jarangsiz j]", "example": "찌개 (sho‘rva)", "audio": "ㅉ, 찌개" },
-            { "letter": "ㅏ", "name": "a", "example": "아이 (bola)", "audio": "ㅏ, 아이" },
-            { "letter": "ㅑ", "name": "ya", "example": "야구 (beysbol)", "audio": "ㅑ, 야구" },
-            { "letter": "ㅓ", "name": "eo [ochiq o]", "example": "어머니 (ona)", "audio": "ㅓ, 어머니" },
-            { "letter": "ㅕ", "name": "yeo [ochiq yo]", "example": "여자 (ayol)", "audio": "ㅕ, 여자" },
-            { "letter": "ㅗ", "name": "o [yumaloq o]", "example": "오이 (bodring)", "audio": "ㅗ, 오이" },
-            { "letter": "ㅛ", "name": "yo [yumaloq yo]", "example": "요리 (taom)", "audio": "ㅛ, 요리" },
-            { "letter": "ㅜ", "name": "u", "example": "우유 (sut)", "audio": "ㅜ, 우유" },
-            { "letter": "ㅠ", "name": "yu", "example": "유리 (shisha)", "audio": "ㅠ, 유리" },
-            { "letter": "ㅡ", "name": "eu [chuqur i]", "example": "음식 (ovqat)", "audio": "ㅡ, 음식" },
-            { "letter": "ㅣ", "name": "i", "example": "이 (tish)", "audio": "ㅣ, 이" },
-            { "letter": "ㅐ", "name": "ae [e]", "example": "새 (qush)", "audio": "ㅐ, 새" },
-            { "letter": "ㅔ", "name": "e", "example": "베개 (yostiq)", "audio": "ㅔ, 베개" }
+            {
+              "letter": "ㄱ",
+              "name": "giyeok [k/g]",
+              "example": "가방 (sumka)",
+              "audio": "ㄱ, 가방"
+            },
+            {
+              "letter": "ㄴ",
+              "name": "nieun [n]",
+              "example": "나무 (daraxt)",
+              "audio": "ㄴ, 나무"
+            },
+            {
+              "letter": "ㄷ",
+              "name": "digeut [t/d]",
+              "example": "다리 (oyoq/ko‘prik)",
+              "audio": "ㄷ, 다리"
+            },
+            {
+              "letter": "ㄹ",
+              "name": "rieul [r/l]",
+              "example": "라디오 (radio)",
+              "audio": "ㄹ, 라디오"
+            },
+            {
+              "letter": "ㅁ",
+              "name": "mieum [m]",
+              "example": "마음 (yurak/ko‘ngil)",
+              "audio": "ㅁ, 마음"
+            },
+            {
+              "letter": "ㅂ",
+              "name": "bieup [p/b]",
+              "example": "바지 (shim)",
+              "audio": "ㅂ, 바지"
+            },
+            {
+              "letter": "ㅅ",
+              "name": "siot [s]",
+              "example": "사과 (olma)",
+              "audio": "ㅅ, 사과"
+            },
+            {
+              "letter": "ㅇ",
+              "name": "ieung [ng / tovushsiz]",
+              "example": "아이 (bola)",
+              "audio": "ㅇ, 아이"
+            },
+            {
+              "letter": "ㅈ",
+              "name": "jieut [j/ch]",
+              "example": "지도 (xarita)",
+              "audio": "ㅈ, 지도"
+            },
+            {
+              "letter": "ㅊ",
+              "name": "chieut [ch]",
+              "example": "차 (choy/mashina)",
+              "audio": "ㅊ, 차"
+            },
+            {
+              "letter": "ㅋ",
+              "name": "khieuk [kh]",
+              "example": "커피 (qahva)",
+              "audio": "ㅋ, 커피"
+            },
+            {
+              "letter": "ㅌ",
+              "name": "thieut [th]",
+              "example": "토마토 (pomidor)",
+              "audio": "ㅌ, 토마토"
+            },
+            {
+              "letter": "ㅍ",
+              "name": "phieup [ph]",
+              "example": "포도 (uzum)",
+              "audio": "ㅍ, 포도"
+            },
+            {
+              "letter": "ㅎ",
+              "name": "hieut [h]",
+              "example": "하늘 (osmon)",
+              "audio": "ㅎ, 하늘"
+            },
+            {
+              "letter": "ㄲ",
+              "name": "ssang-giyeok [jarangsiz k]",
+              "example": "꼬리 (dum)",
+              "audio": "ㄲ, 꼬리"
+            },
+            {
+              "letter": "ㄸ",
+              "name": "ssang-digeut [jarangsiz t]",
+              "example": "딸기 (qulupnay)",
+              "audio": "ㄸ, 딸기"
+            },
+            {
+              "letter": "ㅃ",
+              "name": "ssang-bieup [jarangsiz p]",
+              "example": "빵 (non)",
+              "audio": "ㅃ, 빵"
+            },
+            {
+              "letter": "ㅆ",
+              "name": "ssang-siot [jarangsiz s]",
+              "example": "씨앗 (urug‘)",
+              "audio": "ㅆ, 씨앗"
+            },
+            {
+              "letter": "ㅉ",
+              "name": "ssang-jieut [jarangsiz j]",
+              "example": "찌개 (sho‘rva)",
+              "audio": "ㅉ, 찌개"
+            },
+            {
+              "letter": "ㅏ",
+              "name": "a",
+              "example": "아이 (bola)",
+              "audio": "ㅏ, 아이"
+            },
+            {
+              "letter": "ㅑ",
+              "name": "ya",
+              "example": "야구 (beysbol)",
+              "audio": "ㅑ, 야구"
+            },
+            {
+              "letter": "ㅓ",
+              "name": "eo [ochiq o]",
+              "example": "어머니 (ona)",
+              "audio": "ㅓ, 어머니"
+            },
+            {
+              "letter": "ㅕ",
+              "name": "yeo [ochiq yo]",
+              "example": "여자 (ayol)",
+              "audio": "ㅕ, 여자"
+            },
+            {
+              "letter": "ㅗ",
+              "name": "o [yumaloq o]",
+              "example": "오이 (bodring)",
+              "audio": "ㅗ, 오이"
+            },
+            {
+              "letter": "ㅛ",
+              "name": "yo [yumaloq yo]",
+              "example": "요리 (taom)",
+              "audio": "ㅛ, 요리"
+            },
+            {
+              "letter": "ㅜ",
+              "name": "u",
+              "example": "우유 (sut)",
+              "audio": "ㅜ, 우유"
+            },
+            {
+              "letter": "ㅠ",
+              "name": "yu",
+              "example": "유리 (shisha)",
+              "audio": "ㅠ, 유리"
+            },
+            {
+              "letter": "ㅡ",
+              "name": "eu [chuqur i]",
+              "example": "음식 (ovqat)",
+              "audio": "ㅡ, 음식"
+            },
+            {
+              "letter": "ㅣ",
+              "name": "i",
+              "example": "이 (tish)",
+              "audio": "ㅣ, 이"
+            },
+            {
+              "letter": "ㅐ",
+              "name": "ae [e]",
+              "example": "새 (qush)",
+              "audio": "ㅐ, 새"
+            },
+            {
+              "letter": "ㅔ",
+              "name": "e",
+              "example": "베개 (yostiq)",
+              "audio": "ㅔ, 베개"
+            }
           ]
         },
         "rules": [
@@ -5257,6 +10527,18 @@ module.exports = {
           {
             "de": "안녕히 계세요",
             "uz": "Yaxshi qoling (qolayotganga)"
+          },
+          {
+            "de": "고맙습니다",
+            "uz": "Tashakkur (Gomapseumnida)"
+          },
+          {
+            "de": "괜찮아요",
+            "uz": "Hechqisi yo‘q / Hammasi joyida (Gwaenchanhayo)"
+          },
+          {
+            "de": "만나서 반갑습니다",
+            "uz": "Uchrashganimdan judayam xursandman"
           }
         ]
       },
@@ -5264,27 +10546,85 @@ module.exports = {
         {
           "id": "ko_ex1_1",
           "type": "multiple-choice",
-          "question": "Koreyscha \"Assalomu alaykum\" qanday aytiladi?",
+          "question": "Koreyada kattalar va yangi tanishlar bilan qanday salomlashiladi?",
           "options": [
-            "감사합니다",
+            "안녕",
             "안녕하세요",
-            "죄송합니다",
-            "네"
+            "잘 가",
+            "밥 먹었어"
           ],
           "correctIndex": 1,
-          "explanation": "안녕하세요 [Annyeonghaseyo] — eng universal salomlashish ifodasi."
+          "explanation": "\"안녕하세요\" — universal va hurmatli salomlashish ifodasidir."
         },
         {
           "id": "ko_ex1_2",
-          "type": "multiple-choice",
-          "question": "Birov sizga yordam bersa, qanday minnatdorchilik bildirasiz?",
+          "type": "listening-choice",
+          "audioText": "감사합니다, 안녕히 가세요!",
+          "question": "Audioda nima deyildi?",
           "options": [
-            "감사합니다",
-            "안녕히 가세요",
-            "아니요"
+            "Katta rahmat, yaxshi boring!",
+            "Kechirasiz, tushunmadim!",
+            "Xayrli tong, do‘stlar!",
+            "Ismingiz nima?"
           ],
           "correctIndex": 0,
-          "explanation": "감사합니다 [Gamsahamnida] — Rahmat."
+          "explanation": "\"감사합니다, 안녕히 가세요!\" — Katta rahmat, yaxshi boring!"
+        },
+        {
+          "id": "ko_ex1_3",
+          "type": "multiple-choice",
+          "question": "Siz do‘kondan chiqib ketayotganingizda, sotuvchiga (qoluvchiga) qaysi xayrlashuv aytiladi?",
+          "options": [
+            "안녕히 가세요",
+            "안녕히 계세요",
+            "잘 가",
+            "또 봐"
+          ],
+          "correctIndex": 1,
+          "explanation": "Qoluvchiga: \"안녕히 계세요\" (Yaxshi qoling) deyiladi."
+        },
+        {
+          "id": "ko_ex1_4",
+          "type": "fill-blank",
+          "question": "«Katta rahmat»: \"______합니다!\"",
+          "placeholder": "so'z...",
+          "correctAnswer": "감사",
+          "hint": "감사 (Gamsa)"
+        },
+        {
+          "id": "ko_ex1_5",
+          "type": "true-false",
+          "question": "Hangeul (koreys alifbosi) 1443 yilda qirol Sejong tomonidan xalq oson o‘qishi uchun yaratilgan.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! Buyuk Qirol Sejong Hangeulni yaratgan."
+        },
+        {
+          "id": "ko_ex1_6",
+          "type": "order",
+          "words": [
+            "만나서",
+            "반갑습니다",
+            "저는",
+            "학생이에요"
+          ],
+          "correctSentence": "만나서 반갑습니다 저는 학생이에요",
+          "question": "Gap tuzing: «Uchrashganimdan xursandman, men talabaman»",
+          "explanation": "만나서 반갑습니다 저는 학생이에요."
+        },
+        {
+          "id": "ko_ex1_7",
+          "type": "multiple-choice",
+          "question": "Koreys tilida «Rahmat»ga javoban «Arzimaydi / Hechqisi yo‘q»:",
+          "options": [
+            "아니에요 / 괜찮아요",
+            "죄송합니다",
+            "실례합니다",
+            "네"
+          ],
+          "correctIndex": 0,
+          "explanation": "아니에요 yoki 괜찮아요."
         }
       ],
       "speakingPrompt": {
@@ -5306,6 +10646,76 @@ module.exports = {
           "Kechirasiz dedi"
         ],
         "correctIndex": 1
+      },
+      "situations": [
+        {
+          "icon": "🙇",
+          "title": "Hurmat bilan Ta’zim va Salomlashish",
+          "desc": "Koreyada salomlashganda biroz ta’zim qilib (bosh egib) salom beriladi.",
+          "phrase": "안녕하세요! 반갑습니다.",
+          "meaning": "Assalomu alaykum! Tanishganimdan xursandman."
+        },
+        {
+          "icon": "☕",
+          "title": "Kafeda Xushmuomalalik",
+          "desc": "Kafeda xodimga murojaat qilish va buyurtma berish.",
+          "phrase": "안녕하세요, 아메리카노 한 잔 주세요.",
+          "meaning": "Assalomu alaykum, bitta amerikano bering, iltimos."
+        },
+        {
+          "icon": "📱",
+          "title": "Tengdoshlar bilan Norasmiy Salomlashish",
+          "desc": "Faqat bir xil yoshdagi yaqin do‘stlar bilan ishlatiladi.",
+          "phrase": "안녕! 잘 지냈어?",
+          "meaning": "Salom! Yaxshi yuribsanmi?"
+        },
+        {
+          "icon": "👋",
+          "title": "Xayrlashuv (Qoluvchi va Ketuvchi)",
+          "desc": "Koreys tilida qolayotgan odamga va ketayotgan odamga alohida xayrlashiladi.",
+          "phrase": "안녕히 가세요! / 안녕히 계세요!",
+          "meaning": "Yaxshi boring! / Yaxshi qoling!"
+        }
+      ],
+      "dialogue": {
+        "title": "Seulda Birinchi Tanishuv",
+        "context": "Minjun va Nodir til markazida ilk bor uchrashib suhbatlashmoqda.",
+        "lines": [
+          {
+            "speaker": "민준 (Minjun)",
+            "text": "안녕하세요! 저는 김민준이에요.",
+            "uz": "Assalomu alaykum! Men Kim Minjunman."
+          },
+          {
+            "speaker": "노디르 (Nodir)",
+            "text": "안녕하세요! 저는 노디르예요. 만나서 반가워요.",
+            "uz": "Assalomu alaykum! Men Nodirman. Uchrashganimdan xursandman."
+          },
+          {
+            "speaker": "민준",
+            "text": "어느 나라 사람이에요?",
+            "uz": "Qaysi davlatdansiz?"
+          },
+          {
+            "speaker": "노디르",
+            "text": "저는 우즈베키스탄 사람이에요.",
+            "uz": "Men O‘zbekistonlikman."
+          },
+          {
+            "speaker": "민준",
+            "text": "와, 반가워요! 한국어 잘하시네요.",
+            "uz": "Ajoyib, juda xursandman! Koreyscha yaxshi gapirar ekansiz."
+          },
+          {
+            "speaker": "노디르",
+            "text": "감사합니다! 앞으로 잘 부탁드립니다.",
+            "uz": "Katta rahmat! Kelgusida yaxshi tanish bo‘lib qolaylik."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "«안녕히 가세요» vs «안녕히 계세요» siri!",
+        "tip": "Koreys tilida KETAYOTGAN odamga «가세요» (boring) deyiladi: 안녕히 가세요 (Yaxshi boring)! Siz ketib, u QOLAYOTGAN bo‘lsa «계세요» (qoling) deyiladi: 안녕히 계세요 (Yaxshi qoling)!"
       }
     },
     {
@@ -5366,22 +10776,72 @@ module.exports = {
         {
           "id": "ko_ex2_1",
           "type": "multiple-choice",
-          "question": "\"Men talabaman\" koreyscha qanday bo‘ladi? (학생 = talaba / undoshga tugaydi)",
+          "question": "\"저는 의사______ (shifokorman).\"",
           "options": [
-            "저는 학생이에요.",
-            "저는 학생예요.",
-            "저는 학생입니다예요."
+            "이에요",
+            "예요",
+            "입니다",
+            "아니에요"
           ],
-          "correctIndex": 0,
-          "explanation": "학생 so‘zi undosh (ㅇ) bilan tugagani uchun \"이에요\" qo‘shiladi."
+          "correctIndex": 1,
+          "explanation": "의사 unli bilan tugagani uchun: 예요."
         },
         {
           "id": "ko_ex2_2",
+          "type": "listening-choice",
+          "audioText": "저는 우즈베키스탄 사람이에요.",
+          "question": "Audiodagi shaxs qayerlik?",
+          "options": [
+            "Koreyalik",
+            "O‘zbekistonlik",
+            "Amerikalik",
+            "Yaponiyalik"
+          ],
+          "correctIndex": 1,
+          "explanation": "우즈베키스탄 사람 (O'zbekistonlik)."
+        },
+        {
+          "id": "ko_ex2_3",
           "type": "fill-blank",
-          "question": "저는 우즈베키스탄 사람______ (Men o‘zbekistonlikman - 사람 undoshga tugaydi)",
-          "placeholder": "이에요 yoki 예요...",
+          "question": "\"저는 선생님______ (o‘qituvchiman).\"",
+          "placeholder": "qo'shimcha...",
           "correctAnswer": "이에요",
-          "hint": "이에요"
+          "hint": "선생님 undosh (ㅁ) bilan tugaydi: 이에요"
+        },
+        {
+          "id": "ko_ex2_4",
+          "type": "true-false",
+          "question": "Koreys tilida inson ismiga «씨» (ssi) qo'shilsa, xushmuomala hurmat (janob/xonim) bo'ladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Masalan: 민준 씨 (Minjun janoblari)."
+        },
+        {
+          "id": "ko_ex2_5",
+          "type": "order",
+          "words": [
+            "저는",
+            "한국어를",
+            "공부하는",
+            "학생이에요"
+          ],
+          "correctSentence": "저는 한국어를 공부하는 학생이에요",
+          "question": "Gap tuzing: «Men koreys tilini o‘rganayotgan talabaman»",
+          "explanation": "저는 한국어를 공부하는 학생이에요."
+        },
+        {
+          "id": "ko_ex2_6",
+          "type": "multiple-choice",
+          "question": "«Mening ismim...» koreyscha:",
+          "options": [
+            "제 이름은...",
+            "내 집은...",
+            "여기는...",
+            "그것은..."
+          ],
+          "correctIndex": 0,
+          "explanation": "제 이름은... (Je ireumeun...)"
         }
       ],
       "speakingPrompt": {
@@ -5403,7 +10863,54 @@ module.exports = {
           "Shifokor"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Tanishuv",
+        "lines": [
+          {
+            "speaker": "지우",
+            "text": "직업이 뭐예요?",
+            "uz": "Kasbingiz nima?"
+          },
+          {
+            "speaker": "알리",
+            "text": "저는 대학교 학생이에요. 지우 씨는요?",
+            "uz": "Men universitet talabasiman. Jiu xonim siz-chi?"
+          },
+          {
+            "speaker": "지우",
+            "text": "저는 회사원이에요.",
+            "uz": "Men kompaniya xodimiman."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "이에요 vs 예요 Qoidasi",
+        "tip": "So'z pachhim (undosh) bilan tugasa = 이에요 (학생이에요). Unli bilan tugasa = 예요 (의사예요)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
+        }
+      ]
     },
     {
       "id": "ko_lesson_3",
@@ -5463,23 +10970,72 @@ module.exports = {
         {
           "id": "ko_ex3_1",
           "type": "multiple-choice",
-          "question": "\"Bu nima?\" koreyscha qanday so‘raladi?",
+          "question": "Qo'lingizda turgan buyumni ko'rsatganda qaysi biri ishlatiladi?",
           "options": [
-            "이게 뭐예요?",
-            "어디예요?",
-            "누구예요?",
-            "얼마예요?"
+            "이것 (bu)",
+            "그것 (u)",
+            "저것 (ana u)",
+            "어디"
           ],
           "correctIndex": 0,
-          "explanation": "\"이게 뭐예요?\" — Bu nima?"
+          "explanation": "이것 = Bu narsa (yaqindagi)."
         },
         {
           "id": "ko_ex3_2",
+          "type": "listening-choice",
+          "audioText": "여기는 우리 대학교예요.",
+          "question": "Bu yer qayer ekanligi aytildi?",
+          "options": [
+            "Kasalxona",
+            "Bizning universitetimiz",
+            "Kutubxona",
+            "Bozor"
+          ],
+          "correctIndex": 1,
+          "explanation": "우리 대학교 (universitetimiz)."
+        },
+        {
+          "id": "ko_ex3_3",
           "type": "fill-blank",
-          "question": "화장실이 ______ 예요? (Hojatxona qayerda?)",
-          "placeholder": "어디 yoki 여기...",
+          "question": "\"식당이 ______예요? (Qayerda?)\"",
+          "placeholder": "so'roq so'z...",
           "correctAnswer": "어디",
-          "hint": "어디 (qayer)"
+          "hint": "어디 (Eodi - qayerda)"
+        },
+        {
+          "id": "ko_ex3_4",
+          "type": "true-false",
+          "question": "«여기» (bu yerda), «거기» (u yerda), «저기» (ana u yerda) ma'nolarini bildiradi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! Joy ko'rsatish olmoshlari."
+        },
+        {
+          "id": "ko_ex3_5",
+          "type": "order",
+          "words": [
+            "이",
+            "책은",
+            "아주",
+            "재미있어요"
+          ],
+          "correctSentence": "이 책은 아주 재미있어요",
+          "question": "Gap tuzing: «Bu kitob juda qiziqarli»",
+          "explanation": "이 책은 아주 재미있어요."
+        },
+        {
+          "id": "ko_ex3_6",
+          "type": "multiple-choice",
+          "question": "«저것» nimani bildiradi?",
+          "options": [
+            "Bu narsa",
+            "U narsa",
+            "Ana u (uzoqdagi) narsa",
+            "Hech narsa"
+          ],
+          "correctIndex": 2,
+          "explanation": "저것 = ana u narsa."
         }
       ],
       "speakingPrompt": {
@@ -5501,7 +11057,54 @@ module.exports = {
           "Do‘kon qayerdaligini"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Joyni Ko'rsatish",
+        "lines": [
+          {
+            "speaker": "손님",
+            "text": "화장실이 어디예요?",
+            "uz": "Hojatxona qayerda?"
+          },
+          {
+            "speaker": "직원",
+            "text": "저기 엘리베이터 옆에 있어요.",
+            "uz": "Ana u yerda, liftning yonida."
+          },
+          {
+            "speaker": "손님",
+            "text": "감사합니다!",
+            "uz": "Rahmat!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "이 (Bu), 그 (U), 저 (Ana u)",
+        "tip": "이 = Gapiruvchiga yaqin. 그 = Tinglovchiga yaqin. 저 = Ikkisidan ham uzoqda!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
+        }
+      ]
     },
     {
       "id": "ko_lesson_4",
@@ -5555,23 +11158,72 @@ module.exports = {
         {
           "id": "ko_ex4_1",
           "type": "multiple-choice",
-          "question": "\"먹다\" (yemoq) fe’li -어요 shaklida qanday bo‘ladi?",
+          "question": "\"저는 지금 사과를 ______ (먹다 fe'li).\"",
           "options": [
-            "먹어요",
             "먹아요",
+            "먹어요",
             "먹해요",
-            "먹습니다요"
+            "먹습니다"
           ],
-          "correctIndex": 0,
-          "explanation": "먹 fe’l asosida ㅓ bo‘lgani uchun -어요 qo‘shilib \"먹어요\" bo‘ladi."
+          "correctIndex": 1,
+          "explanation": "먹다 -> 먹어요."
         },
         {
           "id": "ko_ex4_2",
+          "type": "listening-choice",
+          "audioText": "저는 주말에 친구를 만나요.",
+          "question": "Qahramon dam olish kuni nima qiladi?",
+          "options": [
+            "Uyda uxlaydi",
+            "Do‘sti bilan uchrashadi",
+            "Ishga boradi",
+            "Dars qiladi"
+          ],
+          "correctIndex": 1,
+          "explanation": "친구를 만나요."
+        },
+        {
+          "id": "ko_ex4_3",
           "type": "fill-blank",
-          "question": "저는 매일 한국어를 공부______ (공부하다 -> hozirgi zamon)",
-          "placeholder": "해요 yoki 가요...",
+          "question": "\"지금 공부를 ______ (하다 fe'li).\"",
+          "placeholder": "fe'l...",
           "correctAnswer": "해요",
           "hint": "하다 -> 해요"
+        },
+        {
+          "id": "ko_ex4_4",
+          "type": "true-false",
+          "question": "Koreys tilida fe'l har doim gapning ENG OXIRIDA keladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! SOV tuzilishi: Ega + To'ldiruvchi + Fe'l (oxirida)."
+        },
+        {
+          "id": "ko_ex4_5",
+          "type": "order",
+          "words": [
+            "도서관에서",
+            "한국어를",
+            "열심히",
+            "공부해요"
+          ],
+          "correctSentence": "도서관에서 한국어를 열심히 공부해요",
+          "question": "Gap tuzing: «Kutubxonada koreys tilini qunt bilan o‘qiyman»",
+          "explanation": "도서관에서 한국어를 열심히 공부해요."
+        },
+        {
+          "id": "ko_ex4_6",
+          "type": "multiple-choice",
+          "question": "«Ko'rmoq / Tomosha qilmoq» fe'li:",
+          "options": [
+            "가다",
+            "보다",
+            "자다",
+            "오다"
+          ],
+          "correctIndex": 1,
+          "explanation": "보다 -> 봐요 (ko'rmoq)."
         }
       ],
       "speakingPrompt": {
@@ -5593,7 +11245,54 @@ module.exports = {
           "Kasalxonaga bormoqchi"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Kundalik Hayot",
+        "lines": [
+          {
+            "speaker": "수빈",
+            "text": "지금 뭐 해요?",
+            "uz": "Hozir nima qilyapsiz?"
+          },
+          {
+            "speaker": "민호",
+            "text": "카페에서 커피를 마셔요. 책도 읽어요.",
+            "uz": "Kafeda kofe ichyapman. Kitob ham o‘qiyapman."
+          },
+          {
+            "speaker": "수빈",
+            "text": "좋네요! 저도 갈래요.",
+            "uz": "Zo‘r-ku! Men ham boraman."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "-아요 vs -어요 Siri",
+        "tip": "Fe'l o'zagida 'ㅏ' yoki 'ㅗ' bo'lsa = -아요 (가요, 봐요). Qolgan barcha unlilarda = -어요 (먹어요, 읽어요). 하다 esa 해요 bo'ladi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
+        }
+      ]
     },
     {
       "id": "ko_lesson_5",
@@ -5647,23 +11346,72 @@ module.exports = {
         {
           "id": "ko_ex5_1",
           "type": "multiple-choice",
-          "question": "\"Bu qancha turadi?\" koreyscha qanday aytiladi?",
+          "question": "«Suv bering, iltimos» koreyscha qanday bo‘ladi?",
           "options": [
-            "이거 얼마예요?",
-            "이게 뭐예요?",
-            "어디 가요?",
-            "누구예요?"
+            "물 주세요",
+            "밥 주세요",
+            "차 주세요",
+            "돈 주세요"
           ],
           "correctIndex": 0,
-          "explanation": "\"얼마예요?\" — narx so‘rash ifodasi."
+          "explanation": "물 (mul) = suv. 물 주세요."
         },
         {
           "id": "ko_ex5_2",
+          "type": "listening-choice",
+          "audioText": "이거 얼마예요? 오천 원이에요.",
+          "question": "Bu narsa necha von ekan?",
+          "options": [
+            "1 000 von",
+            "5 000 von",
+            "10 000 von",
+            "50 000 von"
+          ],
+          "correctIndex": 1,
+          "explanation": "오천 원 (5 000 von)."
+        },
+        {
+          "id": "ko_ex5_3",
           "type": "fill-blank",
-          "question": "아메리카노 한 잔 ______ (iltimos, bir chashka amerikano bering).",
-          "placeholder": "주세요...",
+          "question": "\"커피 두 잔 ______ (iltimos bering).\"",
+          "placeholder": "bering...",
           "correctAnswer": "주세요",
-          "hint": "주세요"
+          "hint": "주세요 (juseyo)"
+        },
+        {
+          "id": "ko_ex5_4",
+          "type": "true-false",
+          "question": "Koreyada pul birligi «원» (Won) deb ataladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Koreya voni (KRW)."
+        },
+        {
+          "id": "ko_ex5_5",
+          "type": "order",
+          "words": [
+            "사과",
+            "세",
+            "개",
+            "주세요"
+          ],
+          "correctSentence": "사과 세 개 주세요",
+          "question": "Gap tuzing: «Uchta olma bering, iltimos»",
+          "explanation": "사과 세 개 주세요."
+        },
+        {
+          "id": "ko_ex5_6",
+          "type": "multiple-choice",
+          "question": "« 얼마예요? » savoli nimani anglatadi?",
+          "options": [
+            "Qayerda?",
+            "Qancha turadi? (narxi)",
+            "Kim bu?",
+            "Qachon?"
+          ],
+          "correctIndex": 1,
+          "explanation": "얼마예요? = Narxi qancha?"
         }
       ],
       "speakingPrompt": {
@@ -5685,7 +11433,54 @@ module.exports = {
           "5000 von, 10 ta"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Kafeda Buyurtma",
+        "lines": [
+          {
+            "speaker": "손님",
+            "text": "사장님, 비빔밥 하나 주세요.",
+            "uz": "Xo‘jayin, bitta bibimbap bering, iltimos."
+          },
+          {
+            "speaker": "직원",
+            "text": "네! 모두 8,000원입니다.",
+            "uz": "Xo‘p bo‘ladi! Jami 8 000 von bo‘ldi."
+          },
+          {
+            "speaker": "손님",
+            "text": "여기 카드 있어요.",
+            "uz": "Mana karta."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "...주세요 (Juseyo) — Sehrli So'z!",
+        "tip": "Istalgan so'zga '주세요' qo'shsangiz: 물 주세요 (Suv bering), 커피 주세요 (Kofe bering) — xushmuomala buyurtma bo'ladi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
+        }
+      ]
     },
     {
       "id": "ko_lesson_6",
@@ -5739,23 +11534,72 @@ module.exports = {
         {
           "id": "ko_ex6_1",
           "type": "multiple-choice",
-          "question": "\"Kecha kitob o‘qidim\" (읽다 fe’li) o‘tgan zamonda qanday bo‘ladi?",
+          "question": "\"어제 친구와 운동을 ______ (하다 o'tgan zamonda).\"",
           "options": [
-            "읽었어요",
-            "읽았어요",
-            "읽해요",
-            "읽겠어요"
+            "해요",
+            "했어요",
+            "할 거예요",
+            "하겠어요"
           ],
-          "correctIndex": 0,
-          "explanation": "\"읽다\" fe’l asosida ㅣ (boshqa unli) bo‘lgani uchun -었어요 qo‘shiladi: 읽었어요."
+          "correctIndex": 1,
+          "explanation": "했어요 = qildim."
         },
         {
           "id": "ko_ex6_2",
+          "type": "listening-choice",
+          "audioText": "어제 도서관에서 책을 많이 읽었어요.",
+          "question": "Qahramon kecha qayerda ko‘p kitob o‘qidi?",
+          "options": [
+            "Uyda",
+            "Kutubxonada (도서관)",
+            "Parkda",
+            "Maktabda"
+          ],
+          "correctIndex": 1,
+          "explanation": "도서관에서 (kutubxonada)."
+        },
+        {
+          "id": "ko_ex6_3",
           "type": "fill-blank",
-          "question": "저는 어제 한국 식당______ 불고기를 먹었어요. (restoranda - joy qo‘shimchasi)",
-          "placeholder": "에서 yoki 에...",
-          "correctAnswer": "에서",
-          "hint": "에서"
+          "question": "\"어제 한국 음식을 ______ (먹다 o'tgan zamonda).\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "먹었어요",
+          "hint": "먹었어요 (yedim)"
+        },
+        {
+          "id": "ko_ex6_4",
+          "type": "true-false",
+          "question": "«-에서» qo'shimchasi ish-harakat sodir bo'layotgan joyni ko'rsatadi (Masalan: 집에서 - uyda).",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! Joyda harakat bo'lsa: -에서."
+        },
+        {
+          "id": "ko_ex6_5",
+          "type": "order",
+          "words": [
+            "어제",
+            "백화점에서",
+            "옷을",
+            "샀어요"
+          ],
+          "correctSentence": "어제 백화점에서 옷을 샀어요",
+          "question": "Gap tuzing: «Kecha savdo markazidan kiyim sotib oldim»",
+          "explanation": "어제 백화점에서 옷을 샀어요."
+        },
+        {
+          "id": "ko_ex6_6",
+          "type": "multiple-choice",
+          "question": "«Kecha» so'zi koreyscha:",
+          "options": [
+            "오늘",
+            "내일",
+            "어제",
+            "지금"
+          ],
+          "correctIndex": 2,
+          "explanation": "어제 = kecha (오늘 = bugun, 내일 = ertaga)."
         }
       ],
       "speakingPrompt": {
@@ -5777,7 +11621,59 @@ module.exports = {
           "Uyda uxladi"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Kecha Nima Qildingiz?",
+        "lines": [
+          {
+            "speaker": "유나",
+            "text": "어제 뭐 했어요?",
+            "uz": "Kecha nima qildingiz?"
+          },
+          {
+            "speaker": "진수",
+            "text": "극장에서 한국 영화를 봤어요.",
+            "uz": "Kinoteatrda koreys filmini ko‘rdim."
+          },
+          {
+            "speaker": "유나",
+            "text": "영화가 어땠어요?",
+            "uz": "Film qanday ekan?"
+          },
+          {
+            "speaker": "진수",
+            "text": "정말 감동적이었어요!",
+            "uz": "Juda ta’sirli edi!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "O'tgan Zamon: -았어요 / -었어요",
+        "tip": "보다 -> 봤어요 (ko'rdim). 먹다 -> 먹었어요 (yedim). 하다 -> 했어요 (qildim)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
+        }
+      ]
     },
     {
       "id": "ko_lesson_7",
@@ -5831,23 +11727,72 @@ module.exports = {
         {
           "id": "ko_ex7_1",
           "type": "multiple-choice",
-          "question": "\"Iltimos, bu yerga o‘tiring\" (앉다 fe’li / undoshga tugaydi):",
+          "question": "\"여기 앉______ (o'tiring iltimos).\"",
           "options": [
-            "앉으세요",
-            "앉세요",
-            "앉아요요",
-            "앉었어요"
+            "으세요",
+            "을까요",
+            "어요",
+            "았어요"
           ],
           "correctIndex": 0,
-          "explanation": "\"앉다\" undosh bilan tugagani uchun \"-으세요\" qo‘shilib \"앉으세요\" bo‘ladi."
+          "explanation": "앉으세요 = o'tiring."
         },
         {
           "id": "ko_ex7_2",
+          "type": "listening-choice",
+          "audioText": "내일 몇 시에 만날까요?",
+          "question": "Audiodagi savolda nima so‘raldi?",
+          "options": [
+            "Ertaga qayerda uchrashamiz?",
+            "Ertaga soat nechada uchrashaylik?",
+            "Ertaga bo‘shmisan?",
+            "Bugun kino ko‘ramizmi?"
+          ],
+          "correctIndex": 1,
+          "explanation": "몇 시에 만날까요? (nechada uchrashaylik)."
+        },
+        {
+          "id": "ko_ex7_3",
           "type": "fill-blank",
-          "question": "우리 내일 영화를 ______? (ko‘ramizmi? - 보다 fe’li)",
-          "placeholder": "볼까요 yoki 봐요...",
-          "correctAnswer": "볼까요",
-          "hint": "볼까요"
+          "question": "\"사진을 같이 찍______? (suratga tushaylikmi?)\"",
+          "placeholder": "qo'shimcha...",
+          "correctAnswer": "을까요",
+          "hint": "찍을까요"
+        },
+        {
+          "id": "ko_ex7_4",
+          "type": "true-false",
+          "question": "«-(으)세요» kattalarga nisbatan hurmat bilan iltimos yoki ko'rsatma berishda ishlatiladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha, Masalan: 드세요 (yeng), 보세요 (qarang)."
+        },
+        {
+          "id": "ko_ex7_5",
+          "type": "order",
+          "words": [
+            "주말에",
+            "같이",
+            "영화를",
+            "볼까요"
+          ],
+          "correctSentence": "주말에 같이 영화를 볼까요",
+          "question": "Gap tuzing: «Dam olish kunida birga kino ko‘raylikmi?»",
+          "explanation": "주말에 같이 영화를 볼까요?"
+        },
+        {
+          "id": "ko_ex7_6",
+          "type": "multiple-choice",
+          "question": "«Kiring / Marhamat kiring» koreyscha:",
+          "options": [
+            "들어오세요",
+            "나가세요",
+            "앉으세요",
+            "주세요"
+          ],
+          "correctIndex": 0,
+          "explanation": "들어오세요."
         }
       ],
       "speakingPrompt": {
@@ -5869,7 +11814,54 @@ module.exports = {
           "Kasalxonaga"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Birga Tushlik Qilamiz",
+        "lines": [
+          {
+            "speaker": "수진",
+            "text": "점심 같이 먹을까요?",
+            "uz": "Birga tushlik qilaylikmi?"
+          },
+          {
+            "speaker": "도현",
+            "text": "좋아요! 한국 식당으로 가요.",
+            "uz": "Ajoyib! Koreys restoraniga boraylik."
+          },
+          {
+            "speaker": "수진",
+            "text": "네, 여기에 앉으세요.",
+            "uz": "Xo‘p, bu yerga o‘tiring."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "-(으)ㄹ까요? (Qilaylikmi?)",
+        "tip": "Taklif va fikr so'rash: 갈까요? (Boraylikmi?), 먹을까요? (Yeylikmi?), 시작할까요? (Boshlaylikmi?)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
+        }
+      ]
     },
     {
       "id": "ko_lesson_8",
@@ -5923,23 +11915,72 @@ module.exports = {
         {
           "id": "ko_ex8_1",
           "type": "multiple-choice",
-          "question": "\"Bu taom achchiq, lekin mazali\" koreyscha qanday bo‘ladi?",
+          "question": "\"날씨는 춥______ 하늘은 맑아요 (Havo sovuq, ammo osmon musaffo).\"",
           "options": [
-            "맵지만 맛있어요",
-            "매우니까 맛있어요",
-            "매우면 맛있어요",
-            "맵고 맛있어요"
+            "지만",
+            "니까",
+            "어서",
+            "고"
           ],
           "correctIndex": 0,
-          "explanation": "\"맵다\" (achchiq) + \"-지만\" (lekin) = 맵지만 맛있어요."
+          "explanation": "-지만 = ammo, lekin."
         },
         {
           "id": "ko_ex8_2",
+          "type": "listening-choice",
+          "audioText": "비가 오니까 우산을 가져가세요.",
+          "question": "Nega soyabon olish tavsiya qilindi?",
+          "options": [
+            "Qor yog‘ayotgani uchun",
+            "Yomg‘ir yog‘ayotgani uchun",
+            "Quyosh charqlaganiga",
+            "Kech bo‘lganiga"
+          ],
+          "correctIndex": 1,
+          "explanation": "비가 오니까 (yomg'ir yog'ayotgani sababli)."
+        },
+        {
+          "id": "ko_ex8_3",
           "type": "fill-blank",
-          "question": "지금 바쁘______ 나중에 전화해 주세요. (chunki / sababli)",
-          "placeholder": "니까...",
-          "correctAnswer": "니까",
-          "hint": "니까"
+          "question": "\"돈이 없______ 쇼핑을 안 해요 (Pul yo'qligi sababli).\"",
+          "placeholder": "qo'shimcha...",
+          "correctAnswer": "으니까",
+          "hint": "없으니까"
+        },
+        {
+          "id": "ko_ex8_4",
+          "type": "true-false",
+          "question": "«-지만» bog'lovchisidan oldin fe'l o'zagi to'g'ridan-to'g'ri o'zgarmasdan ulanadi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "크다 -> 크지만, 좋다 -> 좋지만."
+        },
+        {
+          "id": "ko_ex8_5",
+          "type": "order",
+          "words": [
+            "한국어는",
+            "어렵지만",
+            "아주",
+            "재미있어요"
+          ],
+          "correctSentence": "한국어는 어렵지만 아주 재미있어요",
+          "question": "Gap tuzing: «Koreys tili qiyin, ammo juda qiziqarli»",
+          "explanation": "한국어는 어렵지만 아주 재미있어요."
+        },
+        {
+          "id": "ko_ex8_6",
+          "type": "multiple-choice",
+          "question": "«Chunki» sabab qo'shimchasi qaysi?",
+          "options": [
+            "-지만",
+            "-(으)니까",
+            "-(으)러",
+            "-(으)면"
+          ],
+          "correctIndex": 1,
+          "explanation": "-(으)니까."
         }
       ],
       "speakingPrompt": {
@@ -5961,7 +12002,54 @@ module.exports = {
           "Kino ko‘rish uchun"
         ],
         "correctIndex": 1
-      }
+      },
+      "dialogue": {
+        "title": "Fikr Bildirish",
+        "lines": [
+          {
+            "speaker": "보람",
+            "text": "한국어가 어려워요?",
+            "uz": "Koreys tili qiyinmi?"
+          },
+          {
+            "speaker": "지훈",
+            "text": "문법은 어렵지만 정말 재미있어요.",
+            "uz": "Grammatikasi qiyin, ammo juda qiziqarli."
+          },
+          {
+            "speaker": "보람",
+            "text": "열심히 공부하니까 실력이 많이 늘었네요!",
+            "uz": "Qunt bilan o‘qiganingiz uchun mahoratingiz ancha oshibdi!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "-지만 (Lekin) vs -(으)니까 (Chunki)",
+        "tip": "바쁘지만 (bandman, ammo...), 맛있으니까 (mazali bo'lgani uchun...)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
+        }
+      ]
     },
     {
       "id": "ko_lesson_9",
@@ -6040,37 +12128,120 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Nonushta kiritilganmi?\" koreyscha qaysi biri?",
+          "id": "ko_ex9_1",
+          "type": "multiple-choice",
+          "question": "«Xonani band qilmoqchiman» koreyscha:",
           "options": [
-            "조식이 포함되어 있나요?",
-            "밥 먹었어요?",
-            "어디 가요?",
-            "물 주세요."
+            "방을 예약하고 싶어요.",
+            "방이 어디예요?",
+            "방을 청소하세요.",
+            "방을 나가요."
           ],
           "correctIndex": 0,
-          "explanation": "조식 (nonushta) + 포함 (o‘z ichiga olmoq) = 조식이 포함되어 있나요?"
+          "explanation": "방을 예약하고 싶어요."
         },
         {
-          "question": "\"Xona band qilmoqchiman\" qanday aytiladi?",
+          "id": "ko_ex9_2",
+          "type": "listening-choice",
+          "audioText": "체크아웃 시간은 오전 11시입니다.",
+          "question": "Xonani topshirish (check-out) vaqti soat nechada?",
           "options": [
-            "집에 가고 싶어요",
-            "방을 예약하고 싶어요",
-            "잠자고 싶어요",
-            "공부하고 싶어요"
+            "Ertalab soat 9 da",
+            "Ertalab soat 11 da",
+            "Kunduzi 12 da",
+            "Kechki 6 da"
           ],
           "correctIndex": 1,
-          "explanation": "방 (xona) + 예약 (bron) + -고 싶어요 (xohlayman)."
+          "explanation": "오전 11시."
         },
         {
-          "question": "\"Wi-Fi paroli nima?\" koreyscha:",
+          "id": "ko_ex9_3",
+          "type": "fill-blank",
+          "question": "\"조식이 포함되어 ______? (Nonushta kiritilganmi?)\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "있어요",
+          "hint": "포함되어 있어요?"
+        },
+        {
+          "id": "ko_ex9_4",
+          "type": "true-false",
+          "question": "Koreys tilida «조식» nonushta, «석식» esa kechki ovqatni bildiradi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "조식 (ertalabki nonushta)."
+        },
+        {
+          "id": "ko_ex9_5",
+          "type": "order",
+          "words": [
+            "하루",
+            "숙박비가",
+            "얼마입니까"
+          ],
+          "correctSentence": "하루 숙박비가 얼마입니까",
+          "question": "Gap tuzing: «Bir kunlik tunash narxi qancha?»",
+          "explanation": "하루 숙박비가 얼마입니까?"
+        },
+        {
+          "id": "ko_ex9_6",
+          "type": "multiple-choice",
+          "question": "Xona kaliti koreyscha nima deyiladi?",
           "options": [
-            "와이파이 비밀번호가 뭐예요?",
-            "전화번호가 뭐예요?",
-            "이름이 뭐예요?",
-            "얼마예요?"
+            "방 키 / 열쇠",
+            "문",
+            "창문",
+            "가방"
           ],
           "correctIndex": 0,
-          "explanation": "비밀번호 (bimilbeonho) — parol / maxfiy kod."
+          "explanation": "방 키 yoki 열쇠."
+        }
+      ],
+      "dialogue": {
+        "title": "호텔 프런트",
+        "lines": [
+          {
+            "speaker": "직원",
+            "text": "어서 오세요. 예약하셨습니까?",
+            "uz": "Xush kelibsiz. Band qilganmidingiz?"
+          },
+          {
+            "speaker": "손님",
+            "text": "네, 김도현 이름으로 싱글룸 예약했습니다.",
+            "uz": "Ha, Kim Dohyon nomiga bir kishilik xona band qilgandim."
+          },
+          {
+            "speaker": "직원",
+            "text": "확인되었습니다. 502호 키 여기 있습니다.",
+            "uz": "Tasdiqlandi. 502-xona kaliti mana bu yerda."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "예약 (Yeyak) = Bron / Band qilish",
+        "tip": "호텔 예약 (mehmonxona band qilish), 비행기표 예약 (aviabilet bron qilish)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
         }
       ]
     },
@@ -6151,37 +12322,121 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Kutubxonaga kitob o‘qigani boryapman\" koreyscha:",
+          "id": "ko_ex10_1",
+          "type": "multiple-choice",
+          "question": "\"책을 읽______ 도서관에 가요 (o‘qish uchun).\"",
           "options": [
-            "도서관에 책을 읽으러 가요.",
-            "도서관에 자러 가요.",
-            "집에 가요.",
-            "밥을 먹어요."
+            "으러",
+            "으려고",
+            "으니까",
+            "지만"
           ],
           "correctIndex": 0,
-          "explanation": "읽다 (o‘qimoq) undoshga tugagani uchun -으러 가요 qo‘shiladi."
+          "explanation": "읽으러 가요 = o'qish uchun boryapman."
         },
         {
-          "question": "\"Metroda boraman\" qo‘shimchasi qaysi?",
+          "id": "ko_ex10_2",
+          "type": "listening-choice",
+          "audioText": "서울역까지 지하철로 20분 걸려요.",
+          "question": "Seul vokzaligacha metroda qancha vaqt ketadi?",
           "options": [
-            "지하철에",
-            "지하철로",
-            "지하철을",
-            "지하철은"
+            "10 daqiqa",
+            "20 daqiqa (이십 분)",
+            "30 daqiqa",
+            "1 soat"
           ],
           "correctIndex": 1,
-          "explanation": "-(으)로 — vosita kelishigi: metro orqali / metro bilan."
+          "explanation": "20분 걸려요."
         },
         {
-          "question": "\"얼마나 걸려요?\" savolining ma’nosi nima?",
-          "options": [
-            "Necha pul?",
-            "Qayerda?",
-            "Qancha vaqt ketadi?",
-            "Bu kim?"
+          "id": "ko_ex10_3",
+          "type": "fill-blank",
+          "question": "\"한국에 비행기______ 갔어요 (samolyotda).\"",
+          "placeholder": "vosita qo'shimchasi...",
+          "correctAnswer": "로",
+          "hint": "비행기로 (samolyot orqali)"
+        },
+        {
+          "id": "ko_ex10_4",
+          "type": "true-false",
+          "question": "«-(으)로» qo'shimchasi harakat vositasi (transport) yoki yo'nalishni bildiradi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "지하철로 (metro orqali), 오른쪽으로 (o'ng tomonga)."
+        },
+        {
+          "id": "ko_ex10_5",
+          "type": "order",
+          "words": [
+            "친구를",
+            "만나러",
+            "카페에",
+            "가요"
           ],
-          "correctIndex": 2,
-          "explanation": "Vaqt sarflanishini so‘rashda ishlatiladi."
+          "correctSentence": "친구를 만나러 카페에 가요",
+          "question": "Gap tuzing: «Do‘stim bilan ko‘rishish uchun kafega boryapman»",
+          "explanation": "친구를 만나러 카페에 가요."
+        },
+        {
+          "id": "ko_ex10_6",
+          "type": "multiple-choice",
+          "question": "«Taksi bilan boramiz» koreyscha:",
+          "options": [
+            "택시로 가요",
+            "택시에서 가요",
+            "택시를 가요",
+            "택시에게 가요"
+          ],
+          "correctIndex": 0,
+          "explanation": "택시로 가요."
+        }
+      ],
+      "dialogue": {
+        "title": "Metroda Safar",
+        "lines": [
+          {
+            "speaker": "동우",
+            "text": "어디에 가요?",
+            "uz": "Qayerga ketyapsiz?"
+          },
+          {
+            "speaker": "하은",
+            "text": "점심 먹으러 식당에 가요.",
+            "uz": "Tushlik yeyish uchun oshxonaga ketyapman."
+          },
+          {
+            "speaker": "동우",
+            "text": "어떻게 가요? 지하철로 가요?",
+            "uz": "Qanday borasiz? Metro bilanmi?"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "-(으)러 가다 (Qilish uchun bormoq)",
+        "tip": "밥 먹으러 가요 (ovqat yeyishga boryapman), 공부하러 가요 (dars qilishga boryapman)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
         }
       ]
     },
@@ -6262,37 +12517,121 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Mening boshim og‘riyapti\" koreyscha qaysi biri?",
+          "id": "ko_ex11_1",
+          "type": "multiple-choice",
+          "question": "«Mening tishim og‘riyapti» koreyscha:",
           "options": [
-            "머리가 아파요.",
-            "배가 고파요.",
-            "눈이 예뻐요.",
-            "손이 커요."
+            "이가 아파요.",
+            "배가 아파요.",
+            "눈이 아파요.",
+            "다리가 아파요."
           ],
           "correctIndex": 0,
-          "explanation": "머리 (bosh) + 아파요 (og‘riyapti) = 머리가 아파요."
+          "explanation": "이 (tish) -> 이가 아파요."
         },
         {
-          "question": "\"빨리 나으세요!\" iborasining ma’nosi nima?",
+          "id": "ko_ex11_2",
+          "type": "listening-choice",
+          "audioText": "식후 30분에 이 약을 드세요.",
+          "question": "Dori qachon ichilishi kerak?",
           "options": [
-            "Xayrli tong!",
-            "Tezroq sog‘ayib keting!",
-            "Yoqimli ishtaha!",
-            "Tabriklayman!"
+            "Ovqatdan oldin",
+            "Ovqatdan 30 daqiqa keyin (식후 30분)",
+            "Uxlash oldidan",
+            "Och qoringa"
           ],
           "correctIndex": 1,
-          "explanation": "Kasal bo‘lgan kishiga sog‘lik tilash iborasi."
+          "explanation": "식후 30분."
         },
         {
-          "question": "\"이 약을 식후 30분에 드세요\" gapi nimani anglatadi?",
+          "id": "ko_ex11_3",
+          "type": "fill-blank",
+          "question": "\"빨리 ______! (Tezroq tuzalib keting!)\"",
+          "placeholder": "tilak...",
+          "correctAnswer": "나으세요",
+          "hint": "빨리 나으세요"
+        },
+        {
+          "id": "ko_ex11_4",
+          "type": "true-false",
+          "question": "Koreys tilida dorixona «약국» (Yakguk) deb ataladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "약국 = dorixona."
+        },
+        {
+          "id": "ko_ex11_5",
+          "type": "order",
+          "words": [
+            "감기에",
+            "걸려서",
+            "병원에",
+            "갔어요"
+          ],
+          "correctSentence": "감기에 걸려서 병원에 갔어요",
+          "question": "Gap tuzing: «Shamollab qolganim uchun shifoxonaga bordim»",
+          "explanation": "감기에 걸려서 병원에 갔어요."
+        },
+        {
+          "id": "ko_ex11_6",
+          "type": "multiple-choice",
+          "question": "Isitma chiqishi qanday ifodalanadi?",
           "options": [
-            "Bu dorini ovqatdan 30 daqiqa keyin iching.",
-            "Dorini tashlab yuboring.",
-            "Dorini ovqatdan oldin iching.",
-            "Suv ichmang."
+            "열이 나요",
+            "기침을 해요",
+            "목이 아파요",
+            "배가 고파요"
           ],
           "correctIndex": 0,
-          "explanation": "식후 (ovqatdan keyin) + 30분 (30 daqiqa) + 드세요 (iste’mol qiling)."
+          "explanation": "열이 나요."
+        }
+      ],
+      "dialogue": {
+        "title": "Shifokor Qabulida",
+        "lines": [
+          {
+            "speaker": "의사",
+            "text": "어디가 아프세요?",
+            "uz": "Qayeringiz og‘riyapti?"
+          },
+          {
+            "speaker": "환자",
+            "text": "머리가 너무 아프고 열이 나요.",
+            "uz": "Boshim juda og‘riyapti va isitma chiqmoqda."
+          },
+          {
+            "speaker": "의사",
+            "text": "감기 몸살이에요. 이 약을 하루 세 번 드세요.",
+            "uz": "Gripp shamollash. Bu dorini kuniga uch mahal iching."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "열이 나요 (Isitma) vs 아파요 (Og'riq)",
+        "tip": "머리가 아파요 (bosh og'riyapti), 배가 아파요 (qorin og'riyapti), 열이 나요 (isitma chiqmoqda)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
         }
       ]
     },
@@ -6373,37 +12712,122 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Men Koreyaga borganman (tajribam bor)\" koreyscha:",
+          "id": "ko_ex12_1",
+          "type": "multiple-choice",
+          "question": "\"저는 한국어를 유창하게 말할 ______ (gapira olaman).\"",
           "options": [
-            "한국에 가 본 적이 있어요.",
-            "한국에 안 가요.",
-            "한국에 가고 싶어요.",
-            "한국이 좋아요."
+            "수 있어요",
+            "적이 있어요",
+            "고 싶어요",
+            "지 않아요"
           ],
           "correctIndex": 0,
-          "explanation": "-(으)ㄴ 적이 있다 — hayotiy tajribani bildiradi."
+          "explanation": "말할 수 있어요 = gapira olaman."
         },
         {
-          "question": "\"Koreys tilida gapira olasizmi?\" qaysi biri?",
+          "id": "ko_ex12_2",
+          "type": "listening-choice",
+          "audioText": "저는 김치를 먹어 본 적이 없어요.",
+          "question": "Qahramon nima tajribaga ega emas?",
           "options": [
-            "한국말을 알아요?",
-            "한국어로 말할 수 있어요?",
-            "한국 사람이에요?",
-            "한국에 살아요?"
+            "Koreyaga bormagan",
+            "Kimchi tatib ko‘rmagan",
+            "Kino ko‘rmagan",
+            "Dasturlash bilmaydi"
           ],
           "correctIndex": 1,
-          "explanation": "-(으)ㄹ 수 있어요? — qila olasizmi? (imkoniyat)."
+          "explanation": "김치를 먹어 본 적이 없어요."
         },
         {
-          "question": "\"Bugun kela olmayman (imkonim yo‘q)\":",
-          "options": [
-            "오늘 올 수 있어요.",
-            "오늘 올 수 없어요.",
-            "오늘 와요.",
-            "오늘 가요."
+          "id": "ko_ex12_3",
+          "type": "fill-blank",
+          "question": "\"운전할 수 ______? (Mashina hayday olasizmi?)\"",
+          "placeholder": "savol...",
+          "correctAnswer": "있어요",
+          "hint": "수 있어요?"
+        },
+        {
+          "id": "ko_ex12_4",
+          "type": "true-false",
+          "question": "«-(으)ㄹ 수 없다» bu qobiliyatsizlikni (qila olmaslikni) bildiradi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "수 없다 = qila olmaslik."
+        },
+        {
+          "id": "ko_ex12_5",
+          "type": "order",
+          "words": [
+            "저는",
+            "태권도를",
+            "배운",
+            "적이",
+            "있어요"
           ],
-          "correctIndex": 1,
-          "explanation": "-(으)ㄹ 수 없어요 — inkor imkoniyat."
+          "correctSentence": "저는 태권도를 배운 적이 있어요",
+          "question": "Gap tuzing: «Men taekvondoni o‘rgangan tajribam bor»",
+          "explanation": "저는 태권도를 배운 적이 있어요."
+        },
+        {
+          "id": "ko_ex12_6",
+          "type": "multiple-choice",
+          "question": "«Hech borganmisiz?» savoli:",
+          "options": [
+            "가 본 적이 있어요?",
+            "가고 싶어요?",
+            "갈 거예요?",
+            "갔어요?"
+          ],
+          "correctIndex": 0,
+          "explanation": "가 본 적이 있어요?"
+        }
+      ],
+      "dialogue": {
+        "title": "Tajriba Haqida",
+        "lines": [
+          {
+            "speaker": "예린",
+            "text": "제주도에 가 본 적이 있어요?",
+            "uz": "Cheju oroliga borgan tajribangiz bormi?"
+          },
+          {
+            "speaker": "태양",
+            "text": "네, 작년에 가 봤어요. 한국 요리도 할 수 있어요.",
+            "uz": "Ha, o‘tgan yili borganman. Koreys taomlarini ham pishira olaman."
+          },
+          {
+            "speaker": "예린",
+            "text": "정말 대단해요!",
+            "uz": "Haqiqatan qoyilmaqom!"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "-(으)ㄹ 수 있다 (Qila olmoq)",
+        "tip": "할 수 있어요 (qila olaman), 갈 수 있어요 (bora olaman), 말할 수 있어요 (gapira olaman)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
         }
       ]
     },
@@ -6484,37 +12908,116 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Vaqtingiz bo‘lsa, birga boramizmi?\" koreyscha qaysi biri?",
+          "id": "ko_ex13_1",
+          "type": "multiple-choice",
+          "question": "\"질문이 있______ 손을 드세요 (savol bo'lsa).\"",
           "options": [
-            "시간이 있으면 같이 갈래요?",
-            "시간이 없어요.",
-            "혼자 갈래요.",
-            "안 가요."
+            "으면",
+            "을래요",
+            "으니까",
+            "지만"
           ],
           "correctIndex": 0,
-          "explanation": "-(으)면 (agar) + -(으)ㄹ래요? (taklif)."
+          "explanation": "있으면 = bo'lsa."
         },
         {
-          "question": "\"Bugun tushlikka nima yeysiz / yeylik?\" savoli:",
+          "id": "ko_ex13_2",
+          "type": "listening-choice",
+          "audioText": "주말에 같이 콘서트에 갈래요?",
+          "question": "Qanday taklif bildirildi?",
           "options": [
-            "점심에 뭐 먹을래요?",
-            "아침 먹었어요?",
-            "저녁이 좋아요.",
-            "밥 있어요."
+            "Konsertga birga borish",
+            "Kutubxonaga borish",
+            "Ovqat pishirish",
+            "Futbol o‘ynash"
           ],
           "correctIndex": 0,
-          "explanation": "뭐 먹을래요? — suhbatdoshning istagini so‘rab taklif qilish."
+          "explanation": "콘서트에 갈래요?"
         },
         {
-          "question": "\"Havo sovuq bo‘lsa, issiq kiyining\" qaysi biri?",
+          "id": "ko_ex13_3",
+          "type": "fill-blank",
+          "question": "\"무엇을 주문하______? (Nima buyurtma qilasiz?)\"",
+          "placeholder": "taklif...",
+          "correctAnswer": "실래요",
+          "hint": "주문하실래요?"
+        },
+        {
+          "id": "ko_ex13_4",
+          "type": "true-false",
+          "question": "«-(으)ㄹ래요?» norasmiy do'stona taklif qilish yoki o'z niyatini aytish uchun ishlatiladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! 커피 마실래요? (kofe ichasizmi?)."
+        },
+        {
+          "id": "ko_ex13_5",
+          "type": "order",
+          "words": [
+            "도움이",
+            "필요하면",
+            "언제든지",
+            "말씀하세요"
+          ],
+          "correctSentence": "도움이 필요하면 언제든지 말씀하세요",
+          "question": "Gap tuzing: «Yordam kerak bo‘lsa, istalgan vaqtda ayting»",
+          "explanation": "도움이 필요하면 언제든지 말씀하세요."
+        },
+        {
+          "id": "ko_ex13_6",
+          "type": "multiple-choice",
+          "question": "«Agar ertaga yomg'ir yog'sa...» koreyscha:",
           "options": [
-            "날씨가 추우면 따뜻하게 입으세요.",
-            "날씨가 더워요.",
-            "옷이 없어요.",
-            "집에 있어요."
+            "내일 비가 오면...",
+            "내일 비가 오니까...",
+            "내일 비가 오지만...",
+            "내일 비가 오고..."
           ],
           "correctIndex": 0,
-          "explanation": "추우면 — sovuq bo‘lsa."
+          "explanation": "비가 오면."
+        }
+      ],
+      "dialogue": {
+        "title": "Kofe Ichamizmi?",
+        "lines": [
+          {
+            "speaker": "수아",
+            "text": "시간이 있으면 같이 커피 마실래요?",
+            "uz": "Vaqtingiz bo‘lsa birga kofe ichasizmi?"
+          },
+          {
+            "speaker": "준호",
+            "text": "좋아요! 날씨가 좋으면 밖에서 마셔요.",
+            "uz": "Jonim bilan! Havo yaxshi bo‘lsa tashqarida ichamiz."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "-(으)면 (Agar... -sa)",
+        "tip": "돈이 있으면 (pulim bo'lsa), 시간이 있으면 (vaqtim bo'lsa), 날씨가 좋으면 (havo yaxshi bo'lsa)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
         }
       ]
     },
@@ -6595,37 +13098,121 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Bor kuchim bilan astoydil harakat qilaman\" koreyscha rasmiy qolipi:",
+          "id": "ko_ex14_1",
+          "type": "multiple-choice",
+          "question": "Rezyume koreys tilida nima deyiladi?",
           "options": [
-            "놀고 싶어요.",
-            "최선을 다하겠습니다.",
-            "안 할래요.",
-            "피곤해요."
-          ],
-          "correctIndex": 1,
-          "explanation": "최선을 다하겠습니다 — Koreys ish va o‘qish madaniyatining bosh shiori."
-        },
-        {
-          "question": "\"자기소개서\" (jagisogaeseo) qanday hujjat?",
-          "options": [
-            "Haydovchilik guvohnomasi",
-            "O‘zi haqidagi motivatsion bayonnoma / insho",
-            "Pasport",
-            "Shifokor ma’lumotnomasi"
-          ],
-          "correctIndex": 1,
-          "explanation": "Koreyada ishga yoki universitetga topshirishda yoziladigan shaxsiy insho."
-        },
-        {
-          "question": "\"면접 기회를 주셔서 감사합니다\" ma’nosi nima?",
-          "options": [
-            "Suhbat imkoniyati uchun rahmat",
-            "Ovqat uchun rahmat",
-            "Kechirasiz",
-            "Xayr"
+            "이력서",
+            "자기소개서",
+            "계약서",
+            "보고서"
           ],
           "correctIndex": 0,
-          "explanation": "Ish suhbati oxirida bildiriladigan minnatdorchilik."
+          "explanation": "이력서 (CV/Rezyume)."
+        },
+        {
+          "id": "ko_ex14_2",
+          "type": "listening-choice",
+          "audioText": "저는 성실함과 팀워크 능력이 뛰어납니다.",
+          "question": "Nomzod qanday xislatlarini ko‘rsatdi?",
+          "options": [
+            "Tez yugurish",
+            "Hushyorlik, mas’uliyat va jamoada ishlash",
+            "Chet tillarini bilish",
+            "Erta uxlash"
+          ],
+          "correctIndex": 1,
+          "explanation": "성실함과 팀워크."
+        },
+        {
+          "id": "ko_ex14_3",
+          "type": "fill-blank",
+          "question": "\"열심히 ______! (Astimdil mehnat qilaman!)\"",
+          "placeholder": "qasamyod...",
+          "correctAnswer": "하겠습니다",
+          "hint": "하겠습니다"
+        },
+        {
+          "id": "ko_ex14_4",
+          "type": "true-false",
+          "question": "Koreyada intervyu boshlanishi va tugashida 45 gradus egilib ta’zim qilish odob qoidasidir.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! Bosh egib ta'zim qilish yuksak hurmat belgisi."
+        },
+        {
+          "id": "ko_ex14_5",
+          "type": "order",
+          "words": [
+            "최선을",
+            "다해",
+            "회사에",
+            "기여하겠습니다"
+          ],
+          "correctSentence": "최선을 다해 회사에 기여하겠습니다",
+          "question": "Gap tuzing: «Bor kuchimni sarflab kompaniyaga hissa qo‘shaman»",
+          "explanation": "최선을 다해 회사에 기여하겠습니다."
+        },
+        {
+          "id": "ko_ex14_6",
+          "type": "multiple-choice",
+          "question": "«자기소개서» nimani anglatadi?",
+          "options": [
+            "Pasport nusxasi",
+            "O‘zi haqida insho / Motivatsion maktub",
+            "Diplom",
+            "Tibbiy ma'lumotnoma"
+          ],
+          "correctIndex": 1,
+          "explanation": "자기소개서 = o'zi haqida motivatsion xat."
+        }
+      ],
+      "dialogue": {
+        "title": "Koreys Kompaniyasida Intervyu",
+        "lines": [
+          {
+            "speaker": "면접관",
+            "text": "우리 회사에 지원한 동기가 무엇입니까?",
+            "uz": "Bizning korxonaga topshirishingiz sababi nima?"
+          },
+          {
+            "speaker": "지원자",
+            "text": "글로벌 IT 시장을 선도하는 귀사에서 역량을 발휘하고 싶습니다.",
+            "uz": "Global IT bozorida yetakchi bo‘lgan kompaniyangizda o‘z salohiyatimni ko‘rsatmoqchiman."
+          },
+          {
+            "speaker": "면접관",
+            "text": "본인의 가장 큰 장점은 무엇인가요?",
+            "uz": "O‘zingizning eng katta ustun tomoningiz nima?"
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "귀사 (Gvisa) va 입사 (Ipsa)",
+        "tip": "Kompaniyaga hurmat bilan murojaatda «귀사» (sizning hurmatli korxonangiz) deyiladi!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
         }
       ]
     },
@@ -6706,37 +13293,123 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Ertaga yomg‘ir yog‘adi deyishyapti\" qaysi biri to‘g‘ri?",
+          "id": "ko_ex15_1",
+          "type": "multiple-choice",
+          "question": "\"선생님께서 내일 시험이 있______ 하셨어요 (bor deb aytdilar).\"",
           "options": [
-            "내일 비가 와요.",
-            "내일 비가 온다고 해요.",
-            "비가 안 와요.",
-            "비가 좋아요."
+            "다고",
+            "냐고",
+            "자고",
+            "라고"
+          ],
+          "correctIndex": 0,
+          "explanation": "있다고 하셨어요 = bor deb aytdilar."
+        },
+        {
+          "id": "ko_ex15_2",
+          "type": "listening-choice",
+          "audioText": "친구가 오늘 저녁에 같이 밥 먹자고 했어요.",
+          "question": "Do‘sti nima deb taklif qildi?",
+          "options": [
+            "Kino ko‘raylik dedi",
+            "Kechqurun birga ovqatlanaylik dedi",
+            "Bog‘ga boraylik dedi",
+            "Kitob o‘qiylik dedi"
           ],
           "correctIndex": 1,
-          "explanation": "-(느)ㄴ다고 하다 — eshitilgan gapni ko‘chirma tarzda yetkazish."
+          "explanation": "밥 먹자고 했어요 (-자고 하다 = taklif)."
         },
         {
-          "question": "\"Ustoz qachon kelasan deb so‘radilar\" ko‘chirma so‘roq shakli:",
-          "options": [
-            "언제 오냐고 물어보셨어요.",
-            "언제 와요.",
-            "오지 마세요.",
-            "왔어요."
-          ],
-          "correctIndex": 0,
-          "explanation": "-냐고 묻다 / 물어보다 — so‘roq gapni ko‘chirma qilish."
+          "id": "ko_ex15_3",
+          "type": "fill-blank",
+          "question": "\"날씨가 아주 춥______ 해요 (sovuq deyishyapti).\"",
+          "placeholder": "ko'chirma qo'shimchasi...",
+          "correctAnswer": "다고",
+          "hint": "춥다고 해요"
         },
         {
-          "question": "\"Birga ovqatlanaylik deb aytdi\" taklif shakli qaysi?",
+          "id": "ko_ex15_4",
+          "type": "true-false",
+          "question": "Savol gaplarni ko‘chirma nutqda aytganda «-냐고 하다» ishlatiladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "어디 가냐고 물어봤어요 (qayerga ketyapsan deb so'radi)."
+        },
+        {
+          "id": "ko_ex15_5",
+          "type": "order",
+          "words": [
+            "뉴스를",
+            "보니",
+            "내일",
+            "눈이",
+            "온다고",
+            "해요"
+          ],
+          "correctSentence": "뉴스를 보니 내일 눈이 온다고 해요",
+          "question": "Gap tuzing: «Yangiliklarni ko‘rsam, ertaga qor yog‘arkan»",
+          "explanation": "뉴스를 보니 내일 눈이 온다고 해요."
+        },
+        {
+          "id": "ko_ex15_6",
+          "type": "multiple-choice",
+          "question": "Buyruq gaplarni ko'chirganda qaysi grammatika ishlatiladi?",
           "options": [
-            "밥 먹자고 했어요.",
-            "밥 먹으세요.",
-            "밥 없어요.",
-            "밥 먹었어요."
+            "-(으)라고 하다",
+            "-자고 하다",
+            "-다고 하다",
+            "-냐고 하다"
           ],
           "correctIndex": 0,
-          "explanation": "-자고 하다 — taklif gap ko‘chirmasi."
+          "explanation": "-(으)라고 하다 (qil deb aytdi)."
+        }
+      ],
+      "dialogue": {
+        "title": "Xabarni Yetkazish",
+        "lines": [
+          {
+            "speaker": "지은",
+            "text": "민수 씨가 오늘 회의에 참석한대요?",
+            "uz": "Minsu bugungi majlisga qatnasharkanmi?"
+          },
+          {
+            "speaker": "재현",
+            "text": "네, 민수 씨가 조금 늦게 온다고 했어요.",
+            "uz": "Ha, Minsu biroz kechikib kelaman dedi."
+          },
+          {
+            "speaker": "지은",
+            "text": "알겠어요. 회의 자료를 준비해 둘게요.",
+            "uz": "Tushundim. Majlis materiallarini tayyorlab turaman."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "-다고 하다 = ...deb aytdi",
+        "tip": "O'zgalar gapini ko'chirish: 간다고 했어요 (boraman dedi), 좋다고 했어요 (yaxshi deb aytdi)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
         }
       ]
     },
@@ -6817,37 +13490,123 @@ module.exports = {
       },
       "exercises": [
         {
-          "question": "\"Men ham bu fikrga to‘liq qo‘shilaman\" koreyscha rasmiy iborasi:",
+          "id": "ko_ex16_1",
+          "type": "multiple-choice",
+          "question": "Akademik bahsda «Mening fikrimcha...» ifodasi:",
           "options": [
-            "싫어요.",
-            "저도 전적으로 동감합니다.",
-            "틀렸어요.",
-            "몰라요."
+            "제 생각에는 / 저의 견해로는...",
+            "내 말은...",
+            "이봐요...",
+            "그냥 그래요..."
           ],
-          "correctIndex": 1,
-          "explanation": "전적으로 동감합니다 — to‘liq qo‘shilaman."
+          "correctIndex": 0,
+          "explanation": "저의 견해로는... / 제 생각에는..."
         },
         {
-          "question": "\"Xulosa qilib aytganda...\" koreyscha qaysi biri?",
+          "id": "ko_ex16_2",
+          "type": "listening-choice",
+          "audioText": "환경 보호를 위해 일회용품 사용을 줄여야 합니다.",
+          "question": "Atrof-muhitni asrash uchun nima qilish lozimligi aytildi?",
           "options": [
-            "시작하자면",
-            "결론적으로 말하자면",
-            "아침에",
-            "집에서"
+            "Ko‘proq daraxt ekish",
+            "Bir martalik buyumlarni kamaytirish",
+            "Elektr energiyasini tejash",
+            "Mashina minmaslik"
           ],
           "correctIndex": 1,
-          "explanation": "결론적으로 말하자면 — xulosa qilganda."
+          "explanation": "일회용품 사용을 줄여야 합니다."
         },
         {
-          "question": "\"Bir tomondan ..., boshqa tomondan ...\" ifodasi:",
-          "options": [
-            "어제 ..., 오늘 ...",
-            "한편으로는 ..., 다른 한편으로는 ...",
-            "여기 ..., 저기 ...",
-            "밥 ..., 물 ..."
+          "id": "ko_ex16_3",
+          "type": "fill-blank",
+          "question": "\"그 의견에 전적으로 ______합니다 (qo‘shilaman).\"",
+          "placeholder": "fe'l...",
+          "correctAnswer": "동의",
+          "hint": "동의 (Rozilik/Qo'shilish)"
+        },
+        {
+          "id": "ko_ex16_4",
+          "type": "true-false",
+          "question": "TOPIK II imtihonida insho (쓰기) 54-savol 600-700 so'zdan iborat ilmiy mantiqiy fikr bildirishni talab qiladi.",
+          "trueLabel": "To‘g‘ri",
+          "falseLabel": "Noto‘g‘ri",
+          "correctValue": true,
+          "explanation": "Ha! TOPIK 54-savol akademik insho hisoblanadi."
+        },
+        {
+          "id": "ko_ex16_5",
+          "type": "order",
+          "words": [
+            "다양한",
+            "문제를",
+            "해결하기",
+            "위해",
+            "노력해야",
+            "합니다"
           ],
-          "correctIndex": 1,
-          "explanation": "한편으로는 ..., 다른 한편으로는 ... — B2 darajadagi taqqoslash bog‘lovchisi."
+          "correctSentence": "다양한 문제를 해결하기 위해 노력해야 합니다",
+          "question": "Gap tuzing: «Turli muammolarni hal qilish uchun harakat qilishimiz kerak»",
+          "explanation": "다양한 문제를 해결하기 위해 노력해야 합니다."
+        },
+        {
+          "id": "ko_ex16_6",
+          "type": "multiple-choice",
+          "question": "«Shubhasiz / Shubha yo'qki...» koreyscha qaysi ifoda?",
+          "options": [
+            "의심할 여지 없이",
+            "그냥",
+            "어쩌면",
+            "설마"
+          ],
+          "correctIndex": 0,
+          "explanation": "의심할 여지 없이."
+        }
+      ],
+      "dialogue": {
+        "title": "Akademik Muhokama",
+        "lines": [
+          {
+            "speaker": "토론자 1",
+            "text": "현대 사회에서 인공지능의 발전은 필수불가결합니다.",
+            "uz": "Zamonaviy jamiyatda sun’iy intellektning rivojlanishi muqarrar va zarurdir."
+          },
+          {
+            "speaker": "토론자 2",
+            "text": "그 견해에 동의하지만, 윤리적 기준 마련이 선행되어야 합니다.",
+            "uz": "Ushbu qarashga qo‘shilaman, biroq axloqiy me’yorlarni ishlab chiqish birlamchi bo‘lishi lozim."
+          },
+          {
+            "speaker": "토론자 1",
+            "text": "맞습니다. 균형 있는 발전이 가장 중요합니다.",
+            "uz": "To‘g‘ri. Muvozanatli rivojlanish eng muhim omildir."
+          }
+        ]
+      },
+      "mnemonic": {
+        "title": "TOPIK II Yuqori Darajali So'zlar",
+        "tip": "«필수불가결» (ajralmas zarurat), «선행되다» (oldin bajarilishi lozim), «바람직하다» (maqsadga muvofiq)!"
+      },
+      "situations": [
+        {
+          "icon": "☕",
+          "title": "카페 / 식당에서",
+          "desc": "Kafeda xodimga murojaat va buyurtma berish.",
+          "phrase": "여기 메뉴판 좀 보여주세요.",
+          "meaning": "Bu yerga menyuni ko‘rsatib yuboring, iltimos."
+        },
+        {
+          "icon": "🚶",
+          "title": "길 찾기와 대중교통",
+          "desc": "Shaharda yo‘l so‘rash va metroga chiqish.",
+          "phrase": "저기요, 지하철역이 어디예요?",
+          "meaning": "Kechirasiz, metro bekati qayerda?"
+        },
+        {
+          "icon": "💼",
+          "title": "직장과 비즈니스",
+          "desc": "Kompaniyada xushmuomala rasmiy muloqot.",
+          "phrase": "도와주셔서 진심으로 감사드립니다.",
+          "meaning": "Yordamingiz uchun chin dildan minnatdorman."
         }
       ]
     }
